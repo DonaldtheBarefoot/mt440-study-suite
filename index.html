@@ -3,12 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MT440 Urinary System Final Exam Suite - Ultimate Edition</title>
+    <title>MT440 Urinary System Final Exam Suite</title>
     
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- KaTeX for Scientific Formatting -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
     <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
@@ -54,7 +52,6 @@
 </head>
 <body class="antialiased min-h-screen flex flex-col items-center pb-20">
 
-    <!-- Sticky Progress & Control Bar -->
     <div class="sticky top-0 w-full bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm z-50 px-4 py-3 flex justify-between items-center no-print">
         <div class="max-w-6xl mx-auto w-full flex justify-between items-center gap-4">
             <div class="flex items-center gap-4 flex-1">
@@ -73,13 +70,11 @@
 
     <div class="max-w-5xl w-full px-4 mt-8">
         
-        <!-- Header Section -->
         <header class="mb-8 text-center">
             <h1 class="text-4xl font-extrabold text-slate-800 mb-3 tracking-tight">Urinary System Final Exam</h1>
             <p class="text-slate-500 print-only">Generated for Offline PDF Study.</p>
         </header>
 
-        <!-- Print Engine Controls -->
         <div class="bg-blue-50 border border-blue-100 rounded-xl p-4 mb-8 flex flex-wrap justify-center gap-4 no-print shadow-sm">
             <span class="font-semibold text-blue-800 w-full text-center mb-1">🖨️ PDF Print Engine</span>
             <button onclick="triggerPrint('study')" class="bg-white border border-blue-200 hover:bg-blue-100 text-blue-700 py-2 px-4 rounded shadow-sm text-sm font-medium transition">📝 Print Study Guide</button>
@@ -87,7 +82,6 @@
             <button onclick="triggerPrint('key')" class="bg-white border border-blue-200 hover:bg-blue-100 text-blue-700 py-2 px-4 rounded shadow-sm text-sm font-medium transition">🔑 Print Answer Key</button>
         </div>
 
-        <!-- Grade Display (Hidden by default) -->
         <div id="grade-display" class="hidden bg-green-50 border-2 border-green-500 rounded-2xl p-8 mb-8 text-center shadow-md no-print">
             <h2 class="text-3xl font-extrabold text-green-800 mb-2">Exam Complete!</h2>
             <div id="grade-score" class="text-5xl font-black text-green-600 mb-4">85%</div>
@@ -95,28 +89,16 @@
             <button id="review-incorrect-btn" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-xl transition shadow-sm hidden">Study Incorrect Answers Only</button>
         </div>
 
-        <!-- Interactive Diagram Section -->
         <section class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8 mb-12 diagram-container">
             <div class="flex justify-between items-center border-b pb-3 mb-6">
                 <h3 class="text-2xl font-bold text-slate-800">Part I: Macroscopic Anatomy</h3>
             </div>
             
             <div class="flex flex-col md:flex-row gap-8 items-start">
-                <!-- Blank Image -->
                 <div class="w-full md:w-1/2 flex flex-col items-center">
-                    <div class="relative w-full group">
-                        <img id="kidney-diagram" src="Coronal Cross-section of a Human Kidney - Labelling Exercise.png" alt="Coronal Cross-section of a Human Kidney" class="w-full rounded-lg shadow border border-slate-300 object-cover" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Blausen_0592_KidneyAnatomy_01.png/800px-Blausen_0592_KidneyAnatomy_01.png';">
-                        
-                        <div class="absolute inset-0 bg-slate-900 bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg no-print backdrop-blur-sm">
-                            <label for="image-upload" class="bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg shadow-lg cursor-pointer hover:bg-blue-500 transition-colors border border-blue-400 text-sm">
-                                📁 Upload Alternate Image
-                            </label>
-                            <input type="file" id="image-upload" class="hidden" accept="image/*">
-                        </div>
-                    </div>
+                    <img id="kidney-diagram" src="Coronal Cross-section of a Human Kidney - Labelling Exercise.png" alt="Coronal Cross-section of a Human Kidney" class="w-full rounded-lg shadow border border-slate-300 object-cover" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Blausen_0592_KidneyAnatomy_01.png/800px-Blausen_0592_KidneyAnatomy_01.png';">
                 </div>
                 
-                <!-- Text Inputs with Hints -->
                 <div class="w-full md:w-1/2">
                     <div id="diagram-form-container"></div>
                     <div class="mt-6 text-right no-print">
@@ -126,7 +108,6 @@
                 </div>
             </div>
 
-            <!-- Obscured Answer Key Image Section -->
             <div class="mt-8 pt-6 border-t border-slate-200 no-print">
                 <button id="reveal-answer-key-btn" class="w-full bg-purple-50 hover:bg-purple-100 text-purple-800 font-bold py-3 px-6 rounded-lg transition border border-purple-200 flex justify-center items-center gap-2">
                     <span>👁️ Reveal Diagram Answer Key Image</span>
@@ -138,7 +119,6 @@
             </div>
         </section>
 
-        <!-- MCQ Exam Section -->
         <section>
             <div class="flex justify-between items-end border-b pb-3 mb-8">
                 <h3 class="text-2xl font-bold text-slate-800">Part II: Multiple Choice Questions</h3>
@@ -149,7 +129,6 @@
         </section>
     </div>
 
-    <!-- Settings Modal -->
     <div id="settings-modal" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-[100] hidden flex items-center justify-center p-4">
         <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full p-6">
             <h3 class="text-2xl font-bold text-slate-800 mb-4 border-b pb-2">Quiz Settings</h3>
@@ -184,7 +163,6 @@
         </div>
     </div>
 
-    <!-- Application Logic -->
     <script>
         // --- Diagram Data & Logic ---
         const correctDiagramAnswers = { 
@@ -255,7 +233,7 @@
             else { fb.classList.add('bg-red-100', 'text-red-800'); fb.innerHTML = `You got ${score}/10 correct. Try again!`; }
         };
 
-        // --- Core 250 Question Bank (Highly Compressed to respect output limits) ---
+        // --- Core 250 Question Bank ---
         const rawQ = [
             // Phase 1 (1-50)
             { q: "Which of the following best describes the anatomical location of the human kidneys?", opts: ["Intraperitoneal, between T10 and L1", "Retroperitoneal, between T12 and L3", "Retroperitoneal, between T8 and T12", "Intraperitoneal, between L1 and L5"], ans: 1, hint: "Think about their position relative to the abdominal cavity and lower ribs.", exp: "The kidneys are retroperitoneal between T12 and L3 vertebrae, partially protected by the 11th and 12th ribs.", cite: "Tortora, G. J., & Derrickson, B. H. (2021). Principles of Anatomy and Physiology (16th ed.). Wiley. (p. 1044)." },
@@ -674,14 +652,6 @@
             document.getElementById('submit-quiz-btn').addEventListener('click', submitQuiz);
             document.getElementById('review-incorrect-btn').addEventListener('click', reviewIncorrect);
             document.getElementById('check-diagram-btn').addEventListener('click', checkDiagram);
-            
-            // Custom Image Loader
-            const imageUpload = document.getElementById('image-upload');
-            if (imageUpload) {
-                imageUpload.addEventListener('change', function(e) {
-                    if (e.target.files[0]) document.getElementById('kidney-diagram').src = URL.createObjectURL(e.target.files[0]);
-                });
-            }
 
             // Answer Key Reveal Logic
             const revealBtn = document.getElementById('reveal-answer-key-btn');
