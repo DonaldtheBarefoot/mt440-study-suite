@@ -1,6 +1,6 @@
 # MT440 Master Study Suite
-**Student:** Donald Krauss  
-**Program:** Registered Massage Therapy | Willis College (Class of 2026)  
+**Student:** Lord Donald Guindon  
+**Program:** Massage Therapy | Willis College (Class of 2026)  
 **Location:** Ottawa, ON
 
 This repository serves as a centralized hub for interactive study tools, quiz modules, and anatomical resources developed during the MT440 curriculum.
