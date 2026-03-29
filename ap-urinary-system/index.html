@@ -39,18 +39,19 @@
         display: none !important; 
     }
 
-    /* 3. Define the document flow */
-    body, #root { 
-        display: block !important; 
-        height: auto !important; 
+    /* 3. Kill all structural Flexbox behavior causing the 121-page stretch */
+    body, #root, main, main > div, div[class*="max-w-"] {
+        display: block !important;
+        height: auto !important;
+        min-height: 0 !important;
+        width: 100% !important;
     }
 
-    /* 4. The Two-Column Engine */
-    main {
-        display: block !important;
-        column-count: 2;
-        column-gap: 0.3in;
-        column-rule: 1px solid #e5e7eb; /* Adds a subtle line between columns for readability */
+    /* 4. Force the Two-Column Engine on the question containers */
+    main, div[class*="max-w-"] {
+        column-count: 2 !important;
+        column-gap: 0.3in !important;
+        column-rule: 1px solid #cbd5e1 !important;
     }
 
     /* 5. Force the title to span across both columns at the top */
