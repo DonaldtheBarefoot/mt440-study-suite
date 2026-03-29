@@ -5,7 +5,7 @@
  * Difficulty Distribution: 25 Easy, 15 Medium, 10 Hard
  */
 
-const batch5Questions = [
+window.batch5Questions = [
   // ==========================================
   // EASY: Foundational Definitions & Protocols
   // ==========================================
@@ -593,5 +593,3 @@ const batch5Questions = [
     rationale: "The Willis College Clinical Guide explicitly designates Muscle Approximation as the primary advanced protocol for an active muscle spasm. Stretching an active spasm can tear the tissue; deep pressure exacerbates the pain. Approximation uses neurophysiology (slackening intrafusal fibers) to safely disarm the reflex (Willis College OP Protocol)."
   }
 ];
-
-export default batch5Questions;
