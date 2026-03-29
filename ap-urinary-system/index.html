@@ -24,22 +24,22 @@
         ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
 
         /* Print Engine CSS */
-       @media print {
+    @media print {
     /* 1. Standardize margins */
     @page { size: letter; margin: 0.4in; }
 
-    /* Force the browser to print all background colors and highlights */
+    /* 2. Force background colors and highlights */
     * {
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
     }
-           
-    /* 2. Strip UI clutter */
+
+    /* 3. Strip UI clutter */
     button, .no-print, nav, header, [id*="settings"], [id*="modal"], dialog { 
         display: none !important; 
     }
 
-    /* 3. Kill all structural Flexbox behavior causing the 121-page stretch */
+    /* 4. Kill Flexbox stretching (prevents massive blank spaces) */
     body, #root, main, main > div, div[class*="max-w-"] {
         display: block !important;
         height: auto !important;
@@ -47,36 +47,33 @@
         width: 100% !important;
     }
 
-    /* 4. Force the Two-Column Engine on the question containers */
-    main, div[class*="max-w-"] {
-        column-count: 2 !important;
-        column-gap: 0.3in !important;
-        column-rule: 1px solid #cbd5e1 !important;
-    }
-
-    /* 5. Force the title to span across both columns at the top */
-    h1, h2 { 
-        column-span: all; 
-    }
-
-    /* 6. Prevent questions from splitting awkwardly across columns or pages */
+    /* 5. Prevent questions from splitting awkwardly across pages */
     div[class*="mb-"] {
         break-inside: avoid;
         page-break-inside: avoid;
-        margin-bottom: 8px !important;
+        margin-bottom: 12px !important;
         padding: 0 !important;
         border: none !important;
         box-shadow: none !important;
     }
 
-    /* 7. Maximize text density while retaining legibility */
+    /* 6. Maximize text density */
     h1 { font-size: 16pt !important; margin-bottom: 12px !important; }
     h2 { font-size: 14pt !important; margin-top: 8px !important; }
     h3 { font-size: 11pt !important; margin-bottom: 4px !important; }
     p, span, label { font-size: 10pt !important; line-height: 1.2 !important; }
     input[type="radio"] { margin-right: 4px !important; }
-    
-    /* 8. Blank Exam Override: Strip all colors and answers for a clean test */
+
+    /* 7. Force Study Guide to ALWAYS show correct answers */
+    body:not(.print-blank) .print-correct-highlight {
+        background-color: #dcfce7 !important; 
+        border-color: #22c55e !important;     
+    }
+    body:not(.print-blank) .explanation-container {
+        display: block !important;            
+    }
+
+    /* 8. Blank Exam Override */
     body.print-blank * {
         -webkit-print-color-adjust: economy !important;
         print-color-adjust: economy !important;
@@ -85,20 +82,11 @@
     body.print-blank .border-green-500, 
     body.print-blank .border-red-500, 
     body.print-blank .border-blue-500 {
-        border-color: #e2e8f0 !important; /* Reverts colored borders to neutral grey */
+        border-color: #e2e8f0 !important;
     }
     body.print-blank .print-only-key, 
     body.print-blank .explanation-container {
-        display: none !important; /* Hides the correct answer text and explanations */
-    }
-           
-    /* 9. Force Study Guide to ALWAYS show correct answers and explanations */
-    body:not(.print-blank) .print-correct-highlight {
-        background-color: #dcfce7 !important; /* Forces the light green background */
-        border-color: #22c55e !important;     /* Forces the solid green border */
-    }
-    body:not(.print-blank) .explanation-container {
-        display: block !important;            /* Overrides the 'hidden' class */
+        display: none !important; 
     }
 }
         @media screen { .print-only, .print-only-key { display: none !important; } }
