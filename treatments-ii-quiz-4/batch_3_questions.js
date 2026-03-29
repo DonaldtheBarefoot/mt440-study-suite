@@ -5,7 +5,7 @@
  * Difficulty Distribution: 25 Easy, 15 Medium, 10 Hard
  */
 
-const batch3Questions = [
+window.batch3Questions = [
   // ==========================================
   // EASY: Foundational Definitions & Protocols
   // ==========================================
@@ -578,5 +578,3 @@ const batch3Questions = [
     rationale: "A T-score of -2.8 indicates severe osteoporosis (bone porosity and fragility). The bones of the spine and ribs cannot withstand the mechanical shear forces of standard joint mobilizations or heavy downward compressions; applying them is a direct liability and safety hazard (Werner, 2019)."
   }
 ];
-
-export default batch3Questions;
