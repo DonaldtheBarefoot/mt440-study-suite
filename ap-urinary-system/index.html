@@ -90,6 +90,15 @@
     body.print-blank .explanation-container {
         display: none !important; /* Hides the correct answer text and explanations */
     }
+           
+    /* 9. Force Study Guide to ALWAYS show correct answers and explanations */
+    body:not(.print-blank) .print-correct-highlight {
+        background-color: #dcfce7 !important; /* Forces the light green background */
+        border-color: #22c55e !important;     /* Forces the solid green border */
+    }
+    body:not(.print-blank) .explanation-container {
+        display: block !important;            /* Overrides the 'hidden' class */
+    }
 }
         @media screen { .print-only, .print-only-key { display: none !important; } }
     </style>
@@ -595,7 +604,7 @@
                                 }
 
                                 return `
-                                <label class="flex items-start p-3 border rounded-lg hover:bg-slate-50 option-label ${labelClass}">
+                                <label class="flex items-start p-3 border rounded-lg hover:bg-slate-50 option-label ${labelClass} ${oIndex === q.ans ? 'print-correct-highlight' : ''}">
                                     <input type="radio" name="q${q.id}" value="${oIndex}" class="mt-1 mr-3 text-blue-600 focus:ring-blue-500 cursor-pointer" 
                                         ${selectedVal === oIndex ? 'checked' : ''} ${quizSubmitted ? 'disabled' : ''} 
                                         onchange="handleSelection(${q.id}, ${oIndex})">
