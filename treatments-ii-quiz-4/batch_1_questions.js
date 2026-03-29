@@ -5,7 +5,7 @@
  * Difficulty Distribution: 25 Easy, 15 Medium, 10 Hard
  */
 
-const batch1Questions = [
+window.batch1Questions = [
   // ==========================================
   // EASY: Foundational Definitions & Protocols
   // ==========================================
@@ -569,4 +569,3 @@ const batch1Questions = [
   }
 ];
 
-export default batch1Questions;
