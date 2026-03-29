@@ -5,7 +5,7 @@
  * Difficulty Distribution: 25 Easy, 15 Medium, 10 Hard
  */
 
-const batch4Questions = [
+window.batch4Questions = [
   // ==========================================
   // EASY: Foundational Definitions & Protocols
   // ==========================================
@@ -578,5 +578,3 @@ const batch4Questions = [
     rationale: "In severe, late-stage CTS with atrophy and sensory loss, the median nerve is severely compromised and ischemic. Applying deep, heavy friction or direct compression over the tunnel will further crush the dying nerve, exacerbating the neuropraxia. It is an absolute local contraindication; treatment must focus on proximal decompression and fascial release (Hertling & Kessler, 2006)."
   }
 ];
-
-export default batch4Questions;
