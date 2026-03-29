@@ -5,7 +5,7 @@
  * Difficulty Distribution: 25 Easy, 15 Medium, 10 Hard
  */
 
-const batch2Questions = [
+window.batch2Questions = [
   // ==========================================
   // EASY: Foundational Definitions & Protocols
   // ==========================================
@@ -578,5 +578,3 @@ const batch2Questions = [
     rationale: "A hard mass developing in a muscle belly weeks after a severe blunt trauma is the classic presentation of Myositis Ossificans (calcification within the muscle). Massage, friction, and passive stretching are strictly contraindicated as they will provoke further bone deposition (Magee, 2021)."
   }
 ];
-
-export default batch2Questions;
