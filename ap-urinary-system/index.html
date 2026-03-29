@@ -74,6 +74,22 @@
     h3 { font-size: 11pt !important; margin-bottom: 4px !important; }
     p, span, label { font-size: 10pt !important; line-height: 1.2 !important; }
     input[type="radio"] { margin-right: 4px !important; }
+    
+    /* 8. Blank Exam Override: Strip all colors and answers for a clean test */
+    body.print-blank * {
+        -webkit-print-color-adjust: economy !important;
+        print-color-adjust: economy !important;
+        background-color: transparent !important;
+    }
+    body.print-blank .border-green-500, 
+    body.print-blank .border-red-500, 
+    body.print-blank .border-blue-500 {
+        border-color: #e2e8f0 !important; /* Reverts colored borders to neutral grey */
+    }
+    body.print-blank .print-only-key, 
+    body.print-blank .explanation-container {
+        display: none !important; /* Hides the correct answer text and explanations */
+    }
 }
         @media screen { .print-only, .print-only-key { display: none !important; } }
     </style>
