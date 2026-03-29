@@ -28,6 +28,12 @@
     /* 1. Standardize margins */
     @page { size: letter; margin: 0.4in; }
 
+    /* Force the browser to print all background colors and highlights */
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+           
     /* 2. Strip UI clutter */
     button, .no-print, nav, header, [id*="settings"], [id*="modal"], dialog { 
         display: none !important; 
