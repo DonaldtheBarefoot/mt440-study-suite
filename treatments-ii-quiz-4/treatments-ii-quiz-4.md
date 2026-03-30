@@ -140,6 +140,49 @@
     "morphologicalRegion": "Head and Neck",
     "referredRegion": "Cranial vault, orbit"
   }
+,
+  {
+    "condition": "Lower Back Strain",
+    "clinicalFindings": "Aching pain in the lumbar region, muscle spasm, decreased active range of motion (AROM) in flexion/extension.",
+    "palpation4Ts": {
+      "temperature": "Elevated locally during acute inflammatory phase",
+      "tone": "Significant hypertonicity and reflex muscle guarding in the erector spinae and quadratus lumborum",
+      "tenderness": "Localized point tenderness over strained muscle fibers",
+      "texture": "Potential swelling or edema in acute stages"
+    },
+    "treatment": "Acute: RICE, pain-free positioning. Subacute/Chronic: Fascial release, trigger point therapy, and progressive stretching.",
+    "contraindications": "Avoid passive stretching of the affected tissues during the acute inflammatory phase (Andrade, 2023).",
+    "morphologicalRegion": "Lumbar Spine",
+    "referredRegion": "Gluteal region"
+  },
+  {
+    "condition": "Piriformis Syndrome",
+    "clinicalFindings": "Compression of the sciatic nerve by the piriformis muscle. Deep gluteal pain, paresthesia down the posterior thigh and calf, often worsening with prolonged sitting.",
+    "palpation4Ts": {
+      "temperature": "Normal",
+      "tone": "Severe hypertonicity and trigger points within the piriformis belly",
+      "tenderness": "Exquisite tenderness over the greater sciatic foramen",
+      "texture": "Thickened, fibrotic tissue in chronic cases"
+    },
+    "treatment": "Deep cross-fiber friction to the piriformis, followed by prolonged passive stretching (PIR) of the external rotators.",
+    "contraindications": "Aggressive friction or deep pressure directly over an actively inflamed sciatic nerve is contraindicated (Werner, 2019).",
+    "morphologicalRegion": "Pelvis",
+    "referredRegion": "Posterior lower extremity"
+  },
+  {
+    "condition": "Sciatic Nerve Lesion (True Sciatica)",
+    "clinicalFindings": "Neurological deficit often due to radiculopathy (L4-S3). Results in shooting pain, sensory disconnect in the foot/lateral leg, and motor collapse (e.g., 'Foot Drop' or steppage gait if the common fibular branch is affected). Mandatory Tests: Straight Leg Raise (SLR) and Slump Test.",
+    "palpation4Ts": {
+      "temperature": "Cooler in lower extremity if severe motor/vascular compromise exists",
+      "tone": "Flaccidity in affected distal muscles (e.g., tibialis anterior); hypertonicity in compensatory muscles",
+      "tenderness": "Exacerbated by palpation directly along the nerve pathway",
+      "texture": "Trophic skin changes and muscle atrophy in chronic lesions"
+    },
+    "treatment": "Address proximal chokepoints (lumbar spine, pelvic outlet). Maintain tissue viability of paralyzed muscles without stretching the nerve.",
+    "contraindications": "Do not stretch the affected nerve tissue; passive stretching of an inflamed nerve delays axon regeneration (Magee, 2021).",
+    "morphologicalRegion": "Systemic/Neurological",
+    "referredRegion": "Lower extremity to foot"
+  }
 ]
 
 ### Thoracic Outlet Syndrome (TOS) Updates
