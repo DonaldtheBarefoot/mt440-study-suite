@@ -265,6 +265,112 @@
                                                         <p className="font-semibold text-slate-900 mb-3 leading-snug">{q.question}</p>
                                                         <div className="space-y-2 mb-3">
                                                             {q.options.map((opt, optIdx) => (
+                                                                <d
+            const handleAnswerSelect = (optionIndex) => {
+                if (isExamMode) {
+                    setUserAnswers({ ...userAnswers, [currentIndex]: optionIndex });
+                } else {
+                    if (isAnswered) return;
+                    setUserAnswers({ ...userAnswers, [currentIndex]: optionIndex });
+                    setIsAnswered(true);
+                }
+            };
+
+            const nextQuestion = () => {
+                if (currentIndex < activeQuestions.length - 1) {
+                    setCurrentIndex(currentIndex + 1);
+                    setIsAnswered(false);
+                } else {
+                    setView('results');
+                }
+            };
+
+            // --- RENDER HELPERS ---
+            const renderDashboard = () => (
+                <div className="max-w-4xl mx-auto p-6 md:p-12 animate-in fade-in zoom-in-95 duration-500">
+                    <div className="text-center mb-12">
+                        <div className="inline-flex items-center justify-center w-20 h-20 bg-blue-100 text-blue-700 rounded-3xl mb-6 shadow-sm">
+                            <IconBook size={40} />
+                        </div>
+                        <h1 className="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">Treatments II Study Suite</h1>
+                        <p className="text-lg text-slate-500 max-w-2xl mx-auto">
+                            Evidence-based clinical simulation engine for MT390. Master your pathology, orthopedic assessments, and Oral Practical protocols.
+                        </p>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-6 mb-12">
+                        <div className="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between">
+                            <div>
+                                <h3 className="text-xl font-bold text-slate-900 mb-2">Master Question Bank</h3>
+                                <p className="text-slate-500 mb-6">Currently loaded with {fullMasterBank.length} rigorously cited clinical scenarios and multiple-choice questions.</p>
+                            </div>
+                            <div className="flex gap-3">
+                                <div className="text-sm font-semibold text-blue-600 bg-blue-50 px-4 py-3 rounded-xl self-start">
+                                    {isLoadingData ? "Syncing Data..." : "Database Active"}
+                                </div>
+                                {!isLoadingData && studyGuideHTML && (
+                                    <button onClick={() => setView('guide')} className="text-sm font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 px-4 py-3 rounded-xl transition-colors flex items-center gap-2">
+                                        <IconFileText size={16} /> View Study Guide
+                                    </button>
+                                )}
+                            </div>
+                        </div>
+
+                        <div className="bg-slate-900 p-8 rounded-3xl border border-slate-800 shadow-lg text-white flex flex-col justify-center items-center text-center">
+                            <h3 className="text-2xl font-bold mb-4">Ready to test your knowledge?</h3>
+                            <button onClick={() => setView('config')} className="bg-blue-500 hover:bg-blue-400 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-md flex items-center gap-2">
+                                <IconSettings size={20} /> Configure Session
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            );
+
+            const renderStudyGuide = () => {
+                // Group all questions from batches 1-5 by their assigned module
+                const grouped = {};
+                fullMasterBank.forEach(q => {
+                    const mod = getModuleForTopic(q.topic);
+                    // Skip the dynamic Quiz 4 questions to avoid duplicating the Markdown section
+                    if (q.id && String(q.id).startsWith('dyn_')) return; 
+                    if (!grouped[mod]) grouped[mod] = [];
+                    grouped[mod].push(q);
+                });
+
+                return (
+                    <div className="max-w-5xl mx-auto p-4 md:p-8 animate-in fade-in zoom-in-95 duration-500">
+                        <div className="print:hidden mb-6">
+                            <button onClick={() => setView('dashboard')} className="flex items-center gap-2 text-slate-500 hover:text-slate-800 font-medium transition-colors">
+                                <IconHome size={18} /> Back to Dashboard
+                            </button>
+                        </div>
+                        <div className="bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-slate-200 prose prose-slate max-w-none prose-headings:text-slate-900 prose-a:text-blue-600 print:shadow-none print:border-none print:p-0">
+                            
+                            <h2 className="text-4xl font-extrabold mb-2 text-slate-900">Master Clinical Reference Guide</h2>
+                            <p className="text-slate-500 mb-8 border-b pb-6">Comprehensive synthesis of the MT390 curriculum, combining Quiz 4 clinical protocols with the evidence-based master question bank.</p>
+
+                            {/* Part I: Markdown Content (Quiz 4) */}
+                            <div className="mb-16">
+                                <h3 className="text-2xl font-bold text-slate-800 mb-6 bg-slate-100 p-3 rounded-lg print:bg-transparent print:border-b-2 print:border-slate-800">Part I: Clinical Data & Protocols (Quiz 4)</h3>
+                                <div dangerouslySetInnerHTML={{ __html: studyGuideHTML }} />
+                            </div>
+
+                            {/* Part II: Dynamic Question Bank Render (Quizzes 1-3, OP) */}
+                            <div>
+                                <h3 className="text-2xl font-bold text-slate-800 mb-8 bg-slate-100 p-3 rounded-lg print:bg-transparent print:border-b-2 print:border-slate-800">Part II: Historical Curriculum Review</h3>
+                                
+                                {['Quiz 1', 'Quiz 2', 'Quiz 3', 'Oral Practical'].map(mod => {
+                                    if (!grouped[mod] || grouped[mod].length === 0) return null;
+                                    return (
+                                        <div key={mod} className="mb-12">
+                                            <h4 className="text-xl font-bold text-blue-700 mb-6 border-b border-blue-100 pb-2">{mod}</h4>
+                                            <div className="space-y-6">
+                                                {grouped[mod].map((q, idx) => (
+                                                    <div key={idx} className="bg-slate-50 p-6 rounded-xl border border-slate-200 break-inside-avoid print:bg-white print:border-b print:rounded-none">
+                                                        <span className="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-2">{q.topic}</span>
+                                                        <p className="font-semibold text-slate-900 mb-3 leading-snug">{q.question}</p>
+                                                        <div className="space-y-2 mb-3">
+                                                            {q.options.map((opt, optIdx) => (
                                                                 <div key={optIdx} className={`px-4 py-3 rounded-lg border font-medium text-sm ${optIdx === q.correctAnswer ? 'bg-emerald-50 text-emerald-900 border-emerald-200' : 'bg-white text-slate-600 border-slate-200'}`}>
                                                                     {optIdx === q.correctAnswer ? '✓ ' : '○ '}{opt}
                                                                 </div>
