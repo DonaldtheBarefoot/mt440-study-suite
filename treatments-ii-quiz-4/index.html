@@ -370,7 +370,8 @@
                             </button>
                         </div>
                     </div>
-                );
+                </div> // <--- This was the missing closing tag!
+            );
 
             const renderQuiz = () => {
                 const currentQ = activeQuestions[currentIndex];
