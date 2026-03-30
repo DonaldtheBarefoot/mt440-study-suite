@@ -79,7 +79,7 @@
 
             // --- DATA FETCHING LOGIC ---
             useEffect(() => {
-                fetch('./Treatments-ii-quiz-4.md')
+                fetch('./treatments-ii-quiz-4.md')
                     .then(response => {
                         if (!response.ok) throw new Error("Markdown file not found");
                         return response.text();
