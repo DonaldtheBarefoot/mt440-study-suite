@@ -55,6 +55,91 @@
     "morphologicalRegion": "Systemic",
     "referredRegion": "None"
   }
+,
+  {
+    "condition": "Constipation",
+    "clinicalFindings": "Infrequent or difficult bowel movements, abdominal distension.",
+    "palpation4Ts": {
+      "temperature": "Normal",
+      "tone": "Focal hypertonicity or firm fecal impaction palpable in the descending colon",
+      "tenderness": "Mild localized tenderness over affected colon segments",
+      "texture": "Normal"
+    },
+    "treatment": "Deep, specific clockwise clearing strokes progressing from descending to ascending colon (Andrade, 2023).",
+    "contraindications": "Avoid deep pressure if an undiagnosed systemic pathology or bowel obstruction is suspected.",
+    "morphologicalRegion": "Abdomen",
+    "referredRegion": "Lumbar spine"
+  },
+  {
+    "condition": "Inflammatory Bowel Disease (IBD)",
+    "clinicalFindings": "Chronic inflammation of the GI tract (Crohn's or Ulcerative Colitis), severe cramping, weight loss, bloody stool during flare-ups.",
+    "palpation4Ts": {
+      "temperature": "Elevated locally during acute inflammatory phase",
+      "tone": "Severe reflex muscle guarding of the abdominal wall",
+      "tenderness": "Acute, exquisite tenderness",
+      "texture": "Tethering of superficial fascia secondary to chronic inflammation"
+    },
+    "treatment": "Restorative, systemic parasympathetic stimulation; peripheral joint maintenance.",
+    "contraindications": "Absolute contraindication for deep or direct abdominal work during acute flare-ups (Werner, 2019).",
+    "morphologicalRegion": "Abdomen",
+    "referredRegion": "Sacroiliac joint (associated arthropathy)"
+  },
+  {
+    "condition": "Poliomyelitis",
+    "clinicalFindings": "Lower Motor Neuron (LMN) lesion characteristics: asymmetrical flaccid paralysis, severe muscle atrophy, intact sensation.",
+    "palpation4Ts": {
+      "temperature": "Cooler in affected limbs due to decreased muscle pump activity",
+      "tone": "Flaccid in affected muscles; extreme hypertonicity and contractures in compensatory muscles",
+      "tenderness": "Compensatory overuse pain",
+      "texture": "Fibrotic changes in chronically shortened antagonists"
+    },
+    "treatment": "Aggressive contracture management via prolonged passive stretching; fascial release on compensatory structures.",
+    "contraindications": "Deep pressure on flaccid, atrophied tissue is strictly contraindicated as it damages unprotected neurovascular bundles.",
+    "morphologicalRegion": "Systemic",
+    "referredRegion": "None"
+  },
+  {
+    "condition": "Multiple Sclerosis (MS)",
+    "clinicalFindings": "Upper Motor Neuron (UMN) demyelination causing intention tremors, spasticity, paresthesia, and visual disturbances.",
+    "palpation4Ts": {
+      "temperature": "Normal",
+      "tone": "Spasticity and hyperreflexia",
+      "tenderness": "Variable, often related to spasticity and fatigue",
+      "texture": "Normal"
+    },
+    "treatment": "Soothing, cooling hydrotherapy; gentle passive range of motion (PROM) and relaxation massage.",
+    "contraindications": "Absolute contraindication for systemic heat applications, which can trigger severe symptomatic exacerbations (Werner, 2019).",
+    "morphologicalRegion": "Systemic",
+    "referredRegion": "None"
+  },
+  {
+    "condition": "Spinal Cord Injury (SCI)",
+    "clinicalFindings": "Paraplegia or tetraplegia depending on lesion height; loss of sensory and motor function below the lesion level.",
+    "palpation4Ts": {
+      "temperature": "Variable; potential poikilothermia below lesion",
+      "tone": "Spasticity (if UMN) or flaccidity (if spinal shock/LMN)",
+      "tenderness": "Absent below lesion level due to sensory loss",
+      "texture": "High risk for trophic skin changes and decubitus ulcers"
+    },
+    "treatment": "Aggressive prevention of decubitus ulcers, contracture management, and compensatory upper-body care.",
+    "contraindications": "Vigilance required for Autonomic Dysreflexia (a medical emergency triggered by noxious stimuli below the lesion, like a full bladder).",
+    "morphologicalRegion": "Systemic",
+    "referredRegion": "None"
+  },
+  {
+    "condition": "Migraines",
+    "clinicalFindings": "Unilateral, throbbing vascular headache often preceded by sensory aura; photophobia, phonophobia.",
+    "palpation4Ts": {
+      "temperature": "Locally elevated over temporal arteries during attack",
+      "tone": "Hypertonicity in cervical and suboccipital musculature",
+      "tenderness": "Extreme tenderness in cervical trigger points",
+      "texture": "Fascial restrictions in the epicranial aponeurosis"
+    },
+    "treatment": "During attack: cold hydrotherapy to head/neck, dark room, quiet. Inter-attack: aggressive trigger point therapy.",
+    "contraindications": "Deep work to the anterior/posterior cervical triangles and heat applications to the head/neck are contraindicated during an acute attack.",
+    "morphologicalRegion": "Head and Neck",
+    "referredRegion": "Cranial vault, orbit"
+  }
 ]
 
 ### Thoracic Outlet Syndrome (TOS) Updates
@@ -68,7 +153,17 @@
 ### Peripheral Nerve Lesions (Ulnar, Radial, Median) Updates
 * **Assessment Requirements:** Mandatory muscle strength grading (Oxford Scale 0-5) to discern lost motor function and differentiate between neurological versus structural weakness.
 * **Crucial Contraindication:** **Do not stretch the affected nerve tissue.** Passive stretching of an inflamed or compressed nerve exacerbates the lesion and delays axon regeneration.
+### Carpal Tunnel Syndrome (CTS) Updates
+* **Clinical Findings:** Compression of the median nerve beneath the flexor retinaculum. Results in paresthesia, numbness, and "most pronounced" nocturnal pain in the lateral 3.5 digits (thumb, index, middle, and lateral half of ring finger).
+* **Mandatory Special Tests:**
+    * **Phalen's Test:** Forced wrist flexion for 60 seconds to reproduce median nerve symptoms.
+    * **Reverse Phalen's (Prayer) Test:** Forced wrist extension for 60 seconds.
+    * **Tinel's Sign at the Wrist:** Tapping over the flexor retinaculum to elicit a tingling response.
+* **Treatment Focus:** Direct cross-fiber friction to the flexor retinaculum. **Crucial Clinical Parameter:** Friction protocols must be modified based on the stage of inflammation. Avoid aggressive friction during acute inflammatory flare-ups to prevent exacerbating swelling within the confined tunnel (Magee, 2021).
 
+### Double Crush Syndrome
+* **Clinical Definition:** A distinct neurological phenomenon where a proximal compression of a nerve bundle (e.g., the brachial plexus in Thoracic Outlet Syndrome) disrupts axoplasmic flow, rendering the distal portions of the nerve highly susceptible to secondary compression injuries (e.g., the median nerve at the carpal tunnel). 
+* **Clinical Implication:** Always assess proximally when distal nerve compressions are present. Treating CTS will yield poor clinical outcomes if a proximal TOS chokepoint remains unresolved.
 ---
 
 ### References
