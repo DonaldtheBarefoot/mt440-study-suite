@@ -4,22 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Treatments II (MT390) - Master Study Suite</title>
-    
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- React & ReactDOM -->
     <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
-    
-    <!-- Babel -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
-    <!-- 
-      INSTRUCTIONS FOR GITHUB DEPLOYMENT:
-      Upload this index.html file to your repository alongside your batch files.
-      Uncomment the script tags below when you have uploaded the other batches.
-    -->
     <script src="./batch_1_questions.js"></script>
     <script src="./batch_2_questions.js"></script>
     <script src="./batch_3_questions.js"></script>
@@ -40,21 +30,13 @@
         const IconPlay = ({ className, size = 24 }) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><polygon points="5 3 19 12 5 21 5 3"/></svg>;
         const IconHome = ({ className, size = 24 }) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>;
         const IconBook = ({ className, size = 24 }) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>;
+        const IconFileText = ({ className, size = 24 }) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>;
 
-        // --- BATCH 5 FALLBACK (Ensures app works immediately in preview) ---
         const fallbackBatch5 = [
-            { id: 201, topic: "Peripheral Nervous System", difficulty: "Easy", question: "Bell's Palsy involves the acute, unilateral paralysis of the facial muscles. Which specific cranial nerve is affected in this condition?", options: ["Trigeminal Nerve (CN V)", "Facial Nerve (CN VII)", "Vagus Nerve (CN X)", "Hypoglossal Nerve (CN XII)"], correctAnswer: 1, rationale: "Bell's Palsy is a lower motor neuron lesion of the Facial Nerve (Cranial Nerve VII), often triggered by a virus or extreme stress, resulting in flaccid paralysis of one side of the face (Werner, 2019)." },
-            { id: 202, topic: "Peripheral Nervous System", difficulty: "Easy", question: "According to Willis College clinical protocols, what is a crucial visual indicator used to differentiate Bell's Palsy from a Stroke (CVA)?", options: ["A stroke causes bilateral paralysis; Bell's Palsy is unilateral.", "A stroke typically spares the upper face (the client can still wrinkle their forehead); Bell's Palsy paralyzes the entire half of the face, including the forehead.", "Bell's Palsy causes severe slurring of speech; stroke does not.", "There is no visual way to differentiate them."], correctAnswer: 1, rationale: "Because the upper face receives bilateral upper motor neuron innervation, a stroke (upper motor neuron lesion) usually leaves forehead movement intact. Bell's Palsy (a peripheral, lower motor neuron lesion) wipes out nerve conduction to the entire affected side of the face, including the forehead (Norris, 2020)." },
-            { id: 203, topic: "Oral Practical Protocols", difficulty: "Easy", question: "When presented with an acute Grade 2 strain (with visible edema and bruising) during an Oral Practical, which advanced modality MUST you select as your primary intervention?", options: ["Deep Transverse Friction", "Manual Lymph Drainage (MLD)", "Active Resisted Stretching", "Ischemic Compression"], correctAnswer: 1, rationale: "In the acute stage of a tissue tear, bleeding and edema are present. Deep work is strictly contraindicated. MLD is the required advanced protocol to manage the swelling and clear cellular debris (Willis College OP Protocol)." },
-            { id: 224, topic: "Autoimmune Conditions", difficulty: "Easy", question: "What is the primary difference in the pathophysiology of Rheumatoid Arthritis (RA) compared to Osteoarthritis (OA)?", options: ["RA is a mechanical wear-and-tear condition; OA is an autoimmune disease.", "RA is a systemic autoimmune disease targeting synovial membranes; OA is a localized, degenerative mechanical breakdown of articular cartilage.", "RA only affects the spine; OA only affects the hands.", "They are the exact same condition."], correctAnswer: 1, rationale: "RA is driven by an aberrant immune response causing systemic, bilateral joint inflammation. OA is driven by mechanical stress and aging, leading to the localized degradation of cartilage in specific, usually weight-bearing, joints (Werner, 2019)." },
-            { id: 228, topic: "Case Scenario: Torticollis & Dislocation", difficulty: "Medium", question: "STEM: 14-year-old Jamie presents with an acute right SCM Torticollis. His health history notes he dislocated his right shoulder 3 days ago, which has been reduced and is in a sling. How do you adapt your Torticollis treatment?", options: ["Remove the sling and stretch the shoulder to relax the neck.", "The right shoulder is an absolute local contraindication due to the acute capsular tear. Leave the arm in the sling. Treat the acute right SCM spasm indirectly (using O&I at the mastoid and clavicle) to avoid transferring any force to the unstable shoulder joint.", "Massage is absolutely contraindicated for the entire body.", "Perform Grade 3 joint mobilizations on the cervical spine."], correctAnswer: 1, rationale: "This Mock OSCE stem tests safety and protocol integration. A 3-day-old dislocation is highly unstable; the shoulder must not be moved. The torticollis is an acute spasm ('painful to touch'), mandating indirect treatment (O&I) while strictly protecting the compromised shoulder (Willis College OP Protocol)." },
-            { id: 234, topic: "Cardiovascular System", difficulty: "Medium", question: "A client with stable Chronic Congestive Heart Failure (CCHF) requests a full-body relaxation massage. What specific technique modification is mandated?", options: ["Perform deep, vigorous effleurage on the legs to pump blood to the heart.", "Elevate the legs above the heart for the entire treatment.", "Avoid deep, continuous, sweeping effleurage towards the heart (especially on the lower extremities) to prevent artificially increasing venous return, which could overload the weakened heart.", "Perform the entire massage in a prone position."], correctAnswer: 2, rationale: "The failing heart in CCHF cannot process normal blood volumes. Increasing 'preload' by forcefully pushing fluid from the legs back to the core can quickly overwhelm the heart, leading to pulmonary edema (Werner, 2019)." },
-            { id: 241, topic: "Mock OSCE: Acute Strain Protocol", difficulty: "Hard", question: "STEM: Your client is a 15-year-old baseball player with a Grade 2 Triceps strain sustained 2 days ago. There is visible black and blue bruising. Your examiner asks for your complete treatment plan for the affected arm. What is the precise Willis College protocol?", options: ["Deep cross-fiber friction to the triceps tendon, followed by ice.", "Active Resisted stretching to regain strength, followed by deep effleurage.", "The injury is Acute. Deep work is an absolute local CI. Protocol: 1) Pump the terminus. 2) Apply MLD strokes proximal to distal on the arm, moving fluid toward the axillary nodes. 3) Finish with pain-free Passive Range of Motion (PROM) of the elbow/shoulder.", "Apply Muscle Approximation directly over the bruise."], correctAnswer: 2, rationale: "This is a direct test of the Mock OSCE grading rubric. For a 2-day-old strain with bruising, the tissue is actively bleeding/inflamed. MLD is the ONLY indicated advanced technique, and it must follow the strict sequence of Terminus -> MLD -> PROM (Willis College OP Protocol)." },
-            { id: 250, topic: "The Capstone: The OP Spasm Scenario", difficulty: "Hard", question: "STEM: During the final minutes of your OP, the examiner points to the client's hamstring and says, 'The client has just developed an active, agonizing muscle spasm right here. Show me your immediate intervention.' What is the required Willis College physical demonstration?", options: ["I will forcefully stretch the hamstring by flexing the hip and extending the knee.", "I will apply deep, direct elbow pressure to the center of the spasm.", "I will apply the 'Muscle Approximation' technique. I will grasp the tissue near the ischial tuberosity and the posterior knee, and physically push the attachments together to slacken the muscle spindles, holding until the reflex yields.", "I will perform rapid tapotement to confuse the nerve."], correctAnswer: 2, rationale: "The Willis College Clinical Guide explicitly designates Muscle Approximation as the primary advanced protocol for an active muscle spasm. Stretching an active spasm can tear the tissue; deep pressure exacerbates the pain. Approximation uses neurophysiology (slackening intrafusal fibers) to safely disarm the reflex (Willis College OP Protocol)." }
+            { id: 201, topic: "Peripheral Nervous System", difficulty: "Easy", question: "Bell's Palsy involves the acute, unilateral paralysis of the facial muscles. Which specific cranial nerve is affected in this condition?", options: ["Trigeminal Nerve (CN V)", "Facial Nerve (CN VII)", "Vagus Nerve (CN X)", "Hypoglossal Nerve (CN XII)"], correctAnswer: 1, rationale: "Bell's Palsy is a lower motor neuron lesion of the Facial Nerve (Cranial Nerve VII), often triggered by a virus or extreme stress, resulting in flaccid paralysis of one side of the face (Werner, 2019)." }
         ];
 
-        // Ensure we load whatever is available in the global scope, falling back to embedded batch 5
-        const loadMasterBank = () => {
+        const loadStaticBank = () => {
             const externalQuestions = [
                 ...(typeof window.batch1Questions !== 'undefined' ? window.batch1Questions : []),
                 ...(typeof window.batch2Questions !== 'undefined' ? window.batch2Questions : []),
@@ -65,23 +47,24 @@
             return externalQuestions.length > 0 ? externalQuestions : fallbackBatch5;
         };
 
-        const masterBank = loadMasterBank();
+        const staticBank = loadStaticBank();
 
-        // Topic to Module Mapping
         const getModuleForTopic = (topic) => {
             const t = topic.toLowerCase();
             if (t.includes("respiratory") || t.includes("cardiovascular")) return "Quiz 1";
             if (t.includes("lower extremity") || t.includes("upper extremity") || t.includes("pregnancy") || t.includes("musculoskeletal") || t.includes("head, neck")) return "Quiz 2";
             if (t.includes("spinal") || t.includes("joint") || t.includes("autoimmune") || t.includes("headache") || t.includes("hand")) return "Quiz 3";
-            if (t.includes("digestive") || t.includes("metabolic") || t.includes("nervous system") || t.includes("infant")) return "Quiz 4";
+            if (t.includes("digestive") || t.includes("metabolic") || t.includes("nervous system") || t.includes("infant") || t.includes("condition")) return "Quiz 4";
             if (t.includes("oral practical") || t.includes("mock osce") || t.includes("capstone") || t.includes("advanced")) return "Oral Practical";
-            return "Oral Practical"; // Fallback for complex stems
+            return "Oral Practical"; 
         };
 
-        // --- MAIN APP COMPONENT ---
         function App() {
-            const [view, setView] = useState('dashboard'); // dashboard, config, quiz, results
-            
+            const [view, setView] = useState('dashboard'); // dashboard, config, quiz, results, guide
+            const [dynamicQuestions, setDynamicQuestions] = useState([]);
+            const [studyGuideHTML, setStudyGuideHTML] = useState('');
+            const [isLoadingData, setIsLoadingData] = useState(true);
+
             // Session Config State
             const [selectedModules, setSelectedModules] = useState(['Quiz 1', 'Quiz 2', 'Quiz 3', 'Quiz 4', 'Oral Practical']);
             const [selectedDifficulties, setSelectedDifficulties] = useState(['Easy', 'Medium', 'Hard']);
@@ -92,7 +75,52 @@
             const [activeQuestions, setActiveQuestions] = useState([]);
             const [currentIndex, setCurrentIndex] = useState(0);
             const [userAnswers, setUserAnswers] = useState({});
-            const [isAnswered, setIsAnswered] = useState(false); // For study mode
+            const [isAnswered, setIsAnswered] = useState(false);
+
+            // --- DATA FETCHING LOGIC ---
+            useEffect(() => {
+                fetch('./treatments-ii-quiz-4.md')
+                    .then(response => {
+                        if (!response.ok) throw new Error("Markdown file not found");
+                        return response.text();
+                    })
+                    .then(text => {
+                        const splitIndex = text.indexOf('\n###');
+                        if (splitIndex !== -1) {
+                            const jsonPart = text.substring(0, splitIndex).trim();
+                            const mdPart = text.substring(splitIndex).trim();
+                            
+                            try {
+                                const parsedData = JSON.parse(jsonPart);
+                                const mappedQuestions = parsedData.map((item, idx) => ({
+                                    id: `dyn_${idx}`,
+                                    topic: "MT390 Conditions",
+                                    difficulty: "Medium",
+                                    question: `Which of the following describes the clinical findings and correct treatment parameters for ${item.condition}?`,
+                                    options: [
+                                        `${item.clinicalFindings} Treatment involves: ${item.treatment}`,
+                                        `Condition primarily affects the ${item.referredRegion || 'extremities'}. Deep pressure is generally indicated everywhere.`,
+                                        `Symptoms include severe structural deviations. Treatment: High-velocity manipulations.`,
+                                        `There are no specific clinical findings. General Swedish Massage is applied normally.`
+                                    ],
+                                    correctAnswer: 0,
+                                    rationale: `Palpation reveals: Temperature: ${item.palpation4Ts.temperature}, Tone: ${item.palpation4Ts.tone}, Tenderness: ${item.palpation4Ts.tenderness}. Contraindication note: ${item.contraindications}`
+                                }));
+                                setDynamicQuestions(mappedQuestions);
+                            } catch (e) {
+                                console.error("Error parsing JSON from MD file:", e);
+                            }
+                            setStudyGuideHTML(marked.parse(mdPart));
+                        }
+                        setIsLoadingData(false);
+                    })
+                    .catch(err => {
+                        console.error("Fetch error:", err);
+                        setIsLoadingData(false);
+                    });
+            }, []);
+
+            const fullMasterBank = [...staticBank, ...dynamicQuestions];
 
             const handleModuleToggle = (mod) => {
                 if (selectedModules.includes(mod)) {
@@ -111,22 +139,18 @@
             };
 
             const startSession = () => {
-                let pool = masterBank.filter(q => 
+                let pool = fullMasterBank.filter(q => 
                     selectedModules.includes(getModuleForTopic(q.topic)) && 
                     selectedDifficulties.includes(q.difficulty)
                 );
-                
-                // Shuffle pool
                 pool = pool.sort(() => 0.5 - Math.random());
-                
-                // Slice to length
                 const selectedSet = pool.slice(0, sessionLength > pool.length ? pool.length : sessionLength);
                 
                 if (selectedSet.length === 0) {
                     alert("No questions found matching these filters. Please broaden your selection.");
                     return;
                 }
-
+                
                 setActiveQuestions(selectedSet);
                 setCurrentIndex(0);
                 setUserAnswers({});
@@ -170,23 +194,38 @@
                         <div className="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between">
                             <div>
                                 <h3 className="text-xl font-bold text-slate-900 mb-2">Master Question Bank</h3>
-                                <p className="text-slate-500 mb-6">Currently loaded with {masterBank.length} rigorously cited clinical scenarios and multiple-choice questions.</p>
+                                <p className="text-slate-500 mb-6">Currently loaded with {fullMasterBank.length} rigorously cited clinical scenarios and multiple-choice questions.</p>
                             </div>
-                            <div className="text-sm font-semibold text-blue-600 bg-blue-50 px-4 py-3 rounded-xl self-start">
-                                Database Active
+                            <div className="flex gap-3">
+                                <div className="text-sm font-semibold text-blue-600 bg-blue-50 px-4 py-3 rounded-xl self-start">
+                                    {isLoadingData ? "Syncing Data..." : "Database Active"}
+                                </div>
+                                {!isLoadingData && studyGuideHTML && (
+                                    <button onClick={() => setView('guide')} className="text-sm font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 px-4 py-3 rounded-xl transition-colors flex items-center gap-2">
+                                        <IconFileText size={16} /> View Study Guide
+                                    </button>
+                                )}
                             </div>
                         </div>
-                        
+
                         <div className="bg-slate-900 p-8 rounded-3xl border border-slate-800 shadow-lg text-white flex flex-col justify-center items-center text-center">
                             <h3 className="text-2xl font-bold mb-4">Ready to test your knowledge?</h3>
-                            <button 
-                                onClick={() => setView('config')}
-                                className="bg-blue-500 hover:bg-blue-400 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-md flex items-center gap-2"
-                            >
-                                <IconSettings size={20} />
-                                Configure Session
+                            <button onClick={() => setView('config')} className="bg-blue-500 hover:bg-blue-400 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-md flex items-center gap-2">
+                                <IconSettings size={20} /> Configure Session
                             </button>
                         </div>
+                    </div>
+                </div>
+            );
+
+            const renderStudyGuide = () => (
+                <div className="max-w-4xl mx-auto p-6 md:p-12 animate-in fade-in zoom-in-95 duration-500">
+                    <button onClick={() => setView('dashboard')} className="flex items-center gap-2 text-slate-500 hover:text-slate-800 mb-6 font-medium transition-colors">
+                        <IconHome size={18} /> Back to Dashboard
+                    </button>
+                    <div className="bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-slate-200 prose prose-slate max-w-none prose-headings:text-slate-900 prose-a:text-blue-600">
+                        <h2 className="text-3xl font-bold mb-6 border-b pb-4">Clinical Reference Guide (Quiz 4)</h2>
+                        <div dangerouslySetInnerHTML={{ __html: studyGuideHTML }} />
                     </div>
                 </div>
             );
@@ -200,87 +239,57 @@
                     <div className="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden">
                         <div className="p-8 border-b border-slate-100 bg-slate-50">
                             <h2 className="text-2xl font-bold text-slate-900">Session Setup</h2>
-                            <p className="text-slate-500 mt-1">Customize your clinical review block.</p>
                         </div>
-                        
                         <div className="p-8 space-y-8">
-                            {/* Modules */}
                             <div>
                                 <label className="block text-sm font-bold text-slate-900 uppercase tracking-wider mb-4">Curriculum Modules</label>
                                 <div className="flex flex-wrap gap-3">
                                     {['Quiz 1', 'Quiz 2', 'Quiz 3', 'Quiz 4', 'Oral Practical'].map(mod => (
-                                        <button 
-                                            key={mod}
-                                            onClick={() => handleModuleToggle(mod)}
-                                            className={`px-5 py-2.5 rounded-xl font-medium border-2 transition-all ${selectedModules.includes(mod) ? 'bg-blue-50 border-blue-500 text-blue-700' : 'bg-white border-slate-200 text-slate-500 hover:border-slate-300'}`}
-                                        >
+                                        <button key={mod} onClick={() => handleModuleToggle(mod)} className={`px-5 py-2.5 rounded-xl font-medium border-2 transition-all ${selectedModules.includes(mod) ? 'bg-blue-50 border-blue-500 text-blue-700' : 'bg-white border-slate-200 text-slate-500 hover:border-slate-300'}`}>
                                             {mod}
                                         </button>
                                     ))}
                                 </div>
                             </div>
-
-                            {/* Difficulty */}
-<div>
-    <label className="block text-sm font-bold text-slate-900 uppercase tracking-wider mb-4">Difficulty Level</label>
-    <div className="flex flex-wrap gap-3">
-        <button onClick={() => handleDifficultyToggle('Easy')} 
-            className={`px-5 py-2.5 rounded-xl font-medium border-2 transition-all ${selectedDifficulties.includes('Easy') ? 'bg-green-500 border-green-500 text-white' : 'bg-white border-green-500 text-green-700 hover:bg-green-500 hover:text-white'}`}>
-            Easy
-        </button>
-        <button onClick={() => handleDifficultyToggle('Medium')} 
-            className={`px-5 py-2.5 rounded-xl font-medium border-2 transition-all ${selectedDifficulties.includes('Medium') ? 'bg-orange-500 border-orange-500 text-white' : 'bg-white border-orange-500 text-orange-700 hover:bg-orange-500 hover:text-white'}`}>
-            Medium
-        </button>
-        <button onClick={() => handleDifficultyToggle('Hard')} 
-            className={`px-5 py-2.5 rounded-xl font-medium border-2 transition-all ${selectedDifficulties.includes('Hard') ? 'bg-red-500 border-red-500 text-white' : 'bg-white border-red-500 text-red-700 hover:bg-red-500 hover:text-white'}`}>
-            Hard
-        </button>
-    </div>
-</div>
-
-                            {/* Settings Row */}
+                            <div>
+                                <label className="block text-sm font-bold text-slate-900 uppercase tracking-wider mb-4">Difficulty Level</label>
+                                <div className="flex flex-wrap gap-3">
+                                    {['Easy', 'Medium', 'Hard'].map(diff => {
+                                        const colors = diff === 'Easy' ? 'green' : diff === 'Medium' ? 'orange' : 'red';
+                                        const isSelected = selectedDifficulties.includes(diff);
+                                        return (
+                                            <button key={diff} onClick={() => handleDifficultyToggle(diff)} className={`px-5 py-2.5 rounded-xl font-medium border-2 transition-all ${isSelected ? `bg-${colors}-500 border-${colors}-500 text-white` : `bg-white border-${colors}-500 text-${colors}-700 hover:bg-${colors}-500 hover:text-white`}`}>
+                                                {diff}
+                                            </button>
+                                        )
+                                    })}
+                                </div>
+                            </div>
                             <div className="grid md:grid-cols-2 gap-8 pt-4 border-t border-slate-100">
                                 <div>
                                     <label className="block text-sm font-bold text-slate-900 uppercase tracking-wider mb-4">Question Count</label>
-                                    <select 
-                                        value={sessionLength}
-                                        onChange={(e) => setSessionLength(Number(e.target.value))}
-                                        className="w-full bg-slate-50 border-2 border-slate-200 text-slate-900 text-lg font-medium rounded-xl focus:ring-blue-500 focus:border-blue-500 block p-3"
-                                    >
-                                        <option value={5}>5 Questions (Quick Review)</option>
+                                    <select value={sessionLength} onChange={(e) => setSessionLength(Number(e.target.value))} className="w-full bg-slate-50 border-2 border-slate-200 text-slate-900 text-lg font-medium rounded-xl focus:ring-blue-500 focus:border-blue-500 block p-3">
+                                        <option value={5}>5 Questions</option>
                                         <option value={10}>10 Questions</option>
-                                        <option value={25}>25 Questions (Standard Block)</option>
-                                        <option value={50}>50 Questions (Deep Dive)</option>
+                                        <option value={25}>25 Questions</option>
+                                        <option value={50}>50 Questions</option>
                                     </select>
                                 </div>
                                 <div>
                                     <label className="block text-sm font-bold text-slate-900 uppercase tracking-wider mb-4">Testing Mode</label>
                                     <div className="flex gap-4">
-                                        <button 
-                                            onClick={() => setIsExamMode(false)}
-                                            className={`flex-1 py-3 px-4 rounded-xl font-bold border-2 transition-all ${!isExamMode ? 'bg-emerald-50 border-emerald-500 text-emerald-800' : 'bg-white border-slate-200 text-slate-400'}`}
-                                        >
-                                            Study Mode
-                                            <span className="block text-xs font-normal mt-1 opacity-80">Instant Rationales</span>
+                                        <button onClick={() => setIsExamMode(false)} className={`flex-1 py-3 px-4 rounded-xl font-bold border-2 transition-all ${!isExamMode ? 'bg-emerald-50 border-emerald-500 text-emerald-800' : 'bg-white border-slate-200 text-slate-400'}`}>
+                                            Study <span className="block text-xs font-normal mt-1 opacity-80">Instant</span>
                                         </button>
-                                        <button 
-                                            onClick={() => setIsExamMode(true)}
-                                            className={`flex-1 py-3 px-4 rounded-xl font-bold border-2 transition-all ${isExamMode ? 'bg-purple-50 border-purple-500 text-purple-800' : 'bg-white border-slate-200 text-slate-400'}`}
-                                        >
-                                            Exam Mode
-                                            <span className="block text-xs font-normal mt-1 opacity-80">Blind testing</span>
+                                        <button onClick={() => setIsExamMode(true)} className={`flex-1 py-3 px-4 rounded-xl font-bold border-2 transition-all ${isExamMode ? 'bg-purple-50 border-purple-500 text-purple-800' : 'bg-white border-slate-200 text-slate-400'}`}>
+                                            Exam <span className="block text-xs font-normal mt-1 opacity-80">Blind</span>
                                         </button>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
                         <div className="p-6 bg-slate-50 border-t border-slate-200">
-                            <button 
-                                onClick={startSession}
-                                className="w-full bg-blue-600 hover:bg-blue-700 text-white py-4 rounded-xl font-bold text-lg transition-all shadow-md flex justify-center items-center gap-2"
-                            >
+                            <button onClick={startSession} className="w-full bg-blue-600 hover:bg-blue-700 text-white py-4 rounded-xl font-bold text-lg transition-all shadow-md flex justify-center items-center gap-2">
                                 <IconPlay size={20} /> Launch Simulator
                             </button>
                         </div>
@@ -294,22 +303,18 @@
 
                 return (
                     <div className="max-w-4xl mx-auto p-4 md:p-8">
-                        {/* Header Status */}
                         <div className="flex justify-between items-center mb-6">
                             <div className="flex gap-3 items-center">
                                 <span className={`px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-lg ${!isExamMode ? 'bg-emerald-100 text-emerald-800' : 'bg-purple-100 text-purple-800'}`}>
                                     {!isExamMode ? 'Study Mode' : 'Exam Mode'}
                                 </span>
-                                <span className="text-sm font-semibold text-slate-500">
-                                    Q {currentIndex + 1} of {activeQuestions.length}
-                                </span>
+                                <span className="text-sm font-semibold text-slate-500">Q {currentIndex + 1} of {activeQuestions.length}</span>
                             </div>
                             <button onClick={() => setView('dashboard')} className="text-slate-400 hover:text-slate-700">
                                 <IconX size={24} />
                             </button>
                         </div>
 
-                        {/* Progress Bar */}
                         <div className="bg-slate-200 h-2 w-full rounded-full mb-8 overflow-hidden">
                             <div className="bg-blue-600 h-2 transition-all duration-300" style={{ width: `${((currentIndex + 1) / activeQuestions.length) * 100}%` }}></div>
                         </div>
@@ -317,14 +322,10 @@
                         <div className="bg-white p-6 md:p-10 rounded-3xl shadow-sm border border-slate-200 animate-in fade-in duration-300">
                             <div className="flex items-center gap-3 mb-6">
                                 <span className="px-3 py-1 bg-slate-100 text-slate-600 text-sm font-bold rounded-full">{currentQ.topic}</span>
-<span className={`px-3 py-1 text-sm font-bold rounded-full text-white ${currentQ.difficulty === 'Easy' ? 'bg-green-500' : currentQ.difficulty === 'Medium' ? 'bg-orange-500' : 'bg-red-500'}`}>                                    {currentQ.difficulty}
-                                </span>
                             </div>
-
-                            <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-8 leading-tight">
-                                {currentQ.question}
-                            </h2>
-
+                            
+                            <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-8 leading-tight">{currentQ.question}</h2>
+                            
                             <div className="space-y-4">
                                 {currentQ.options.map((option, idx) => {
                                     let btnClass = "bg-white border-slate-200 hover:border-blue-400 hover:bg-blue-50 text-slate-700";
@@ -345,18 +346,8 @@
                                     }
 
                                     return (
-                                        <button
-                                            key={idx}
-                                            onClick={() => handleAnswerSelect(idx)}
-                                            disabled={!isExamMode && isAnswered}
-                                            className={`w-full text-left p-5 rounded-2xl border-2 transition-all duration-200 flex items-center gap-4 ${btnClass}`}
-                                        >
-                                            <span className={`flex items-center justify-center flex-shrink-0 w-8 h-8 rounded-full border text-sm font-bold ${
-                                                (!isExamMode && isAnswered && idx === currentQ.correctAnswer) ? 'bg-emerald-500 border-emerald-600 text-white' : 
-                                                (!isExamMode && isAnswered && idx === userAnswers[currentIndex]) ? 'bg-red-500 border-red-600 text-white' : 
-                                                (isExamMode && userAnswers[currentIndex] === idx) ? 'bg-blue-600 border-blue-700 text-white' : 
-                                                'bg-slate-100 border-slate-300 text-slate-500'
-                                            }`}>
+                                        <button key={idx} onClick={() => handleAnswerSelect(idx)} disabled={!isExamMode && isAnswered} className={`w-full text-left p-5 rounded-2xl border-2 transition-all duration-200 flex items-center gap-4 ${btnClass}`}>
+                                            <span className={`flex items-center justify-center flex-shrink-0 w-8 h-8 rounded-full border text-sm font-bold ${(!isExamMode && isAnswered && idx === currentQ.correctAnswer) ? 'bg-emerald-500 border-emerald-600 text-white' : (!isExamMode && isAnswered && idx === userAnswers[currentIndex]) ? 'bg-red-500 border-red-600 text-white' : (isExamMode && userAnswers[currentIndex] === idx) ? 'bg-blue-600 border-blue-700 text-white' : 'bg-slate-100 border-slate-300 text-slate-500'}`}>
                                                 {String.fromCharCode(65 + idx)}
                                             </span>
                                             <span className="flex-1 font-medium text-lg leading-snug">{option}</span>
@@ -366,30 +357,21 @@
                                 })}
                             </div>
 
-                            {/* Study Mode Rationale */}
                             {!isExamMode && isAnswered && (
                                 <div className={`mt-8 p-6 rounded-2xl border ${userAnswers[currentIndex] === currentQ.correctAnswer ? 'bg-emerald-50 border-emerald-200' : 'bg-slate-50 border-slate-200'} animate-in slide-in-from-bottom-4 duration-500`}>
                                     <div className="flex items-start gap-4">
                                         <IconAlert className={`mt-1 flex-shrink-0 ${userAnswers[currentIndex] === currentQ.correctAnswer ? 'text-emerald-600' : 'text-slate-500'}`} size={24} />
                                         <div>
-                                            <h4 className={`font-bold mb-2 text-lg ${userAnswers[currentIndex] === currentQ.correctAnswer ? 'text-emerald-900' : 'text-slate-800'}`}>
-                                                Evidence-Based Rationale
-                                            </h4>
-                                            <p className={`text-base leading-relaxed ${userAnswers[currentIndex] === currentQ.correctAnswer ? 'text-emerald-800' : 'text-slate-600'}`}>
-                                                {currentQ.rationale}
-                                            </p>
+                                            <h4 className={`font-bold mb-2 text-lg ${userAnswers[currentIndex] === currentQ.correctAnswer ? 'text-emerald-900' : 'text-slate-800'}`}>Evidence-Based Rationale</h4>
+                                            <p className={`text-base leading-relaxed ${userAnswers[currentIndex] === currentQ.correctAnswer ? 'text-emerald-800' : 'text-slate-600'}`}>{currentQ.rationale}</p>
                                         </div>
                                     </div>
                                 </div>
                             )}
 
-                            {/* Next Button */}
                             {hasAnswered && (
                                 <div className="mt-8 flex justify-end">
-                                    <button
-                                        onClick={nextQuestion}
-                                        className="bg-slate-900 hover:bg-slate-800 text-white px-10 py-4 rounded-xl font-bold transition-all shadow-md flex items-center gap-2 text-lg"
-                                    >
+                                    <button onClick={nextQuestion} className="bg-slate-900 hover:bg-slate-800 text-white px-10 py-4 rounded-xl font-bold transition-all shadow-md flex items-center gap-2 text-lg">
                                         {currentIndex === activeQuestions.length - 1 ? 'View Results' : 'Next Question'}
                                     </button>
                                 </div>
@@ -401,9 +383,7 @@
 
             const renderResults = () => {
                 let score = 0;
-                activeQuestions.forEach((q, idx) => {
-                    if (userAnswers[idx] === q.correctAnswer) score++;
-                });
+                activeQuestions.forEach((q, idx) => { if (userAnswers[idx] === q.correctAnswer) score++; });
                 const percentage = Math.round((score / activeQuestions.length) * 100);
 
                 return (
@@ -413,61 +393,19 @@
                                 <IconCheck className="text-blue-600" size={48} />
                             </div>
                             <h2 className="text-4xl font-extrabold text-slate-900 mb-4">Diagnostic Complete</h2>
-                            
                             <div className="flex justify-center gap-6 mb-8">
                                 <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 min-w-[140px]">
                                     <div className="text-sm text-slate-500 font-bold uppercase tracking-wider mb-2">Final Grade</div>
-                                    <div className={`text-5xl font-black ${percentage >= 70 ? 'text-emerald-600' : 'text-red-500'}`}>
-                                        {percentage}%
-                                    </div>
+                                    <div className={`text-5xl font-black ${percentage >= 70 ? 'text-emerald-600' : 'text-red-500'}`}>{percentage}%</div>
                                 </div>
                                 <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 min-w-[140px]">
                                     <div className="text-sm text-slate-500 font-bold uppercase tracking-wider mb-2">Raw Score</div>
-                                    <div className="text-5xl font-black text-slate-800">
-                                        {score}<span className="text-2xl text-slate-400">/{activeQuestions.length}</span>
-                                    </div>
+                                    <div className="text-5xl font-black text-slate-800">{score}<span className="text-2xl text-slate-400">/{activeQuestions.length}</span></div>
                                 </div>
                             </div>
-
                             <button onClick={() => setView('dashboard')} className="bg-slate-900 hover:bg-slate-800 text-white px-10 py-4 rounded-xl font-bold transition-all shadow-md inline-flex items-center gap-2 text-lg">
                                 <IconHome size={20} /> Return to Dashboard
                             </button>
-                        </div>
-
-                        {/* Review Section */}
-                        <div className="space-y-6">
-                            <h3 className="text-2xl font-bold text-slate-800 px-4">Performance Review</h3>
-                            {activeQuestions.map((q, idx) => {
-                                const isCorrect = userAnswers[idx] === q.correctAnswer;
-                                return (
-                                    <div key={idx} className={`p-6 rounded-3xl border ${isCorrect ? 'bg-white border-emerald-200' : 'bg-red-50 border-red-200'}`}>
-                                        <div className="flex gap-4 mb-4">
-                                            <div className={`mt-1 flex-shrink-0 ${isCorrect ? 'text-emerald-500' : 'text-red-500'}`}>
-                                                {isCorrect ? <IconCheck size={28} /> : <IconX size={28} />}
-                                            </div>
-                                            <div>
-                                                <div className="text-sm font-bold text-slate-500 mb-2 uppercase tracking-wide">{q.topic}</div>
-                                                <h4 className="text-xl font-bold text-slate-900 mb-4">{q.question}</h4>
-                                                
-                                                <div className="space-y-2 mb-6">
-                                                    {!isCorrect && userAnswers[idx] !== undefined && (
-                                                        <div className="p-3 bg-red-100 text-red-900 rounded-xl line-through opacity-80">
-                                                            <strong>Your Answer:</strong> {q.options[userAnswers[idx]]}
-                                                        </div>
-                                                    )}
-                                                    <div className="p-3 bg-emerald-100 text-emerald-900 rounded-xl">
-                                                        <strong>Correct Answer:</strong> {q.options[q.correctAnswer]}
-                                                    </div>
-                                                </div>
-
-                                                <div className="p-4 bg-slate-50 rounded-xl border border-slate-200">
-                                                    <p className="text-slate-700 leading-relaxed"><strong className="text-slate-900">Rationale:</strong> {q.rationale}</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                );
-                            })}
                         </div>
                     </div>
                 );
@@ -476,6 +414,7 @@
             return (
                 <main>
                     {view === 'dashboard' && renderDashboard()}
+                    {view === 'guide' && renderStudyGuide()}
                     {view === 'config' && renderConfigurator()}
                     {view === 'quiz' && renderQuiz()}
                     {view === 'results' && renderResults()}
