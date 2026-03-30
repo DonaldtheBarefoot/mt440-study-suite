@@ -15,6 +15,20 @@
     <script src="./batch_3_questions.js"></script>
     <script src="./batch_4_questions.js"></script>
     <script src="./batch_5_questions.js"></script>
+    
+    <style>
+        /* Print optimization for 8.5x11 inch standard paper */
+        @media print {
+            body { background-color: white !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .print\:hidden { display: none !important; }
+            .print\:shadow-none { box-shadow: none !important; }
+            .print\:border-none { border: none !important; }
+            .print\:p-0 { padding: 0 !important; }
+            .print\:bg-transparent { background-color: transparent !important; }
+            .break-inside-avoid { break-inside: avoid; page-break-inside: avoid; }
+            @page { margin: 1in; }
+        }
+    </style>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen">
     <div id="root"></div>
@@ -60,7 +74,7 @@
         };
 
         function App() {
-            const [view, setView] = useState('dashboard'); // dashboard, config, quiz, results, guide
+            const [view, setView] = useState('dashboard'); 
             const [dynamicQuestions, setDynamicQuestions] = useState([]);
             const [studyGuideHTML, setStudyGuideHTML] = useState('');
             const [isLoadingData, setIsLoadingData] = useState(true);
@@ -164,7 +178,7 @@
                 if (isExamMode) {
                     setUserAnswers({ ...userAnswers, [currentIndex]: optionIndex });
                 } else {
-                    if (isAnswered) return;
+                    if (isAnswered) return; 
                     setUserAnswers({ ...userAnswers, [currentIndex]: optionIndex });
                     setIsAnswered(true);
                 }
@@ -181,9 +195,9 @@
 
             // --- RENDER HELPERS ---
             const renderDashboard = () => (
-                <div className="max-w-4xl mx-auto p-6 md:p-12 animate-in fade-in zoom-in-95 duration-500">
+                <div className="max-w-4xl mx-auto p-6 md:p-12 animate-in fade-in zoom-in-95 duration-500 print:p-0">
                     <div className="text-center mb-12">
-                        <div className="inline-flex items-center justify-center w-20 h-20 bg-blue-100 text-blue-700 rounded-3xl mb-6 shadow-sm">
+                        <div className="inline-flex items-center justify-center w-20 h-20 bg-blue-100 text-blue-700 rounded-3xl mb-6 shadow-sm print:hidden">
                             <IconBook size={40} />
                         </div>
                         <h1 className="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">Treatments II Study Suite</h1>
@@ -192,58 +206,7 @@
                         </p>
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-6 mb-12">
-                        <div className="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between">
-                            <div>
-                                <h3 className="text-xl font-bold text-slate-900 mb-2">Master Question Bank</h3>
-                                <p className="text-slate-500 mb-6">Currently loaded with {fullMasterBank.length} rigorously cited clinical scenarios and multiple-choice questions.</p>
-                            </div>
-                            <div className="flex gap-3">
-                                <div className="text-sm font-semibold text-blue-600 bg-blue-50 px-4 py-3 rounded-xl self-start">
-                                    {isLoadingData ? "Syncing Data..." : "Database Active"}
-                                </div>
-                                {!isLoadingData && studyGuideHTML && (
-                                    <button onClick={() => setView('guide')} className="text-sm font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 px-4 py-3 rounded-xl transition-colors flex items-center gap-2">
-                                        <IconFileText size={16} /> View Study Guide
-                                    </button>
-                                )}
-                            </div>
-                        </div>
-
-                        <div className="bg-slate-900 p-8 rounded-3xl border border-slate-800 shadow-lg text-white flex flex-col justify-center items-center text-center">
-                            <h3 className="text-2xl font-bold mb-4">Ready to test your knowledge?</h3>
-                            <button onClick={() => setView('config')} className="bg-blue-500 hover:bg-blue-400 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-md flex items-center gap-2">
-                                <IconSettings size={20} /> Configure Session
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            );
-
-            const handleAnswerSelect = (optionIndex) => {
-        if (isExamMode) {
-            setUserAnswers({ ...userAnswers, [currentIndex]: optionIndex });
-        } else {
-            if (showRationale) return; // Prevents changing the answer after viewing the rationale
-            setUserAnswers({ ...userAnswers, [currentIndex]: optionIndex });
-            setShowRationale(true);
-        }
-    };
-           
-            // --- RENDER HELPERS ---
-            const renderDashboard = () => (
-                <div className="max-w-4xl mx-auto p-6 md:p-12 animate-in fade-in zoom-in-95 duration-500">
-                    <div className="text-center mb-12">
-                        <div className="inline-flex items-center justify-center w-20 h-20 bg-blue-100 text-blue-700 rounded-3xl mb-6 shadow-sm">
-                            <IconBook size={40} />
-                        </div>
-                        <h1 className="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">Treatments II Study Suite</h1>
-                        <p className="text-lg text-slate-500 max-w-2xl mx-auto">
-                            Evidence-based clinical simulation engine for MT390. Master your pathology, orthopedic assessments, and Oral Practical protocols.
-                        </p>
-                    </div>
-
-                    <div className="grid md:grid-cols-2 gap-6 mb-12">
+                    <div className="grid md:grid-cols-2 gap-6 mb-12 print:hidden">
                         <div className="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between">
                             <div>
                                 <h3 className="text-xl font-bold text-slate-900 mb-2">Master Question Bank</h3>
@@ -272,11 +235,9 @@
             );
 
             const renderStudyGuide = () => {
-                // Group all questions from batches 1-5 by their assigned module
                 const grouped = {};
                 fullMasterBank.forEach(q => {
                     const mod = getModuleForTopic(q.topic);
-                    // Skip the dynamic Quiz 4 questions to avoid duplicating the Markdown section
                     if (q.id && String(q.id).startsWith('dyn_')) return; 
                     if (!grouped[mod]) grouped[mod] = [];
                     grouped[mod].push(q);
@@ -294,13 +255,11 @@
                             <h2 className="text-4xl font-extrabold mb-2 text-slate-900">Master Clinical Reference Guide</h2>
                             <p className="text-slate-500 mb-8 border-b pb-6">Comprehensive synthesis of the MT390 curriculum, combining Quiz 4 clinical protocols with the evidence-based master question bank.</p>
 
-                            {/* Part I: Markdown Content (Quiz 4) */}
                             <div className="mb-16">
                                 <h3 className="text-2xl font-bold text-slate-800 mb-6 bg-slate-100 p-3 rounded-lg print:bg-transparent print:border-b-2 print:border-slate-800">Part I: Clinical Data & Protocols (Quiz 4)</h3>
                                 <div dangerouslySetInnerHTML={{ __html: studyGuideHTML }} />
                             </div>
 
-                            {/* Part II: Dynamic Question Bank Render (Quizzes 1-3, OP) */}
                             <div>
                                 <h3 className="text-2xl font-bold text-slate-800 mb-8 bg-slate-100 p-3 rounded-lg print:bg-transparent print:border-b-2 print:border-slate-800">Part II: Historical Curriculum Review</h3>
                                 
@@ -359,10 +318,23 @@
                                 <label className="block text-sm font-bold text-slate-900 uppercase tracking-wider mb-4">Difficulty Level</label>
                                 <div className="flex flex-wrap gap-3">
                                     {['Easy', 'Medium', 'Hard'].map(diff => {
-                                        const colors = diff === 'Easy' ? 'green' : diff === 'Medium' ? 'orange' : 'red';
                                         const isSelected = selectedDifficulties.includes(diff);
+                                        let selectedClass = '';
+                                        let unselectedClass = '';
+                                        
+                                        if (diff === 'Easy') {
+                                            selectedClass = 'bg-emerald-500 border-emerald-500 text-white';
+                                            unselectedClass = 'bg-white border-emerald-500 text-emerald-700 hover:bg-emerald-500 hover:text-white';
+                                        } else if (diff === 'Medium') {
+                                            selectedClass = 'bg-orange-500 border-orange-500 text-white';
+                                            unselectedClass = 'bg-white border-orange-500 text-orange-700 hover:bg-orange-500 hover:text-white';
+                                        } else {
+                                            selectedClass = 'bg-red-500 border-red-500 text-white';
+                                            unselectedClass = 'bg-white border-red-500 text-red-700 hover:bg-red-500 hover:text-white';
+                                        }
+
                                         return (
-                                            <button key={diff} onClick={() => handleDifficultyToggle(diff)} className={`px-5 py-2.5 rounded-xl font-medium border-2 transition-all ${isSelected ? `bg-${colors}-500 border-${colors}-500 text-white` : `bg-white border-${colors}-500 text-${colors}-700 hover:bg-${colors}-500 hover:text-white`}`}>
+                                            <button key={diff} onClick={() => handleDifficultyToggle(diff)} className={`px-5 py-2.5 rounded-xl font-medium border-2 transition-all ${isSelected ? selectedClass : unselectedClass}`}>
                                                 {diff}
                                             </button>
                                         )
@@ -398,8 +370,7 @@
                             </button>
                         </div>
                     </div>
-                </div>
-            );
+                );
 
             const renderQuiz = () => {
                 const currentQ = activeQuestions[currentIndex];
