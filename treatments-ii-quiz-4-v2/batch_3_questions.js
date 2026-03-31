@@ -1,580 +1,409 @@
 /**
  * MT390 Treatments II - Master Clinical Simulator
- * Phase 3 - Action 3: Batch 3 (Questions 101 - 150)
- * Curriculum: Quiz 3 (Spinal Posture, Joint Dysfunction, Autoimmune & Systemic)
- * Difficulty Distribution: 25 Easy, 15 Medium, 10 Hard
+ * Phase 3: Batch 3 (Questions 101 - 150)
+ * Curriculum: Spinal Posture, Joint Dysfunction, Autoimmune & Systemic
+ * Features: v2.0 Hint Integration & APA Citations
  */
 
 window.batch3Questions = [
-  // ==========================================
-  // EASY: Foundational Definitions & Protocols
-  // ==========================================
   {
-    id: 101,
-    topic: "Spinal & Postural Conditions",
-    difficulty: "Easy",
+    id: 101, topic: "Spinal & Postural Conditions", difficulty: "Easy",
     question: "Scoliosis is clinically defined as:",
     options: ["An exaggerated anterior curve of the lumbar spine.", "A lateral deviation of the spine, usually accompanied by vertebral rotation.", "A fusion of the cervical vertebrae.", "An exaggerated posterior curve of the thoracic spine."],
     correctAnswer: 1,
+    hint: "This condition involves a three-dimensional deformity of the spine, often presenting with a prominent rib hump on one side.",
     rationale: "Scoliosis is a three-dimensional deformity involving a lateral deviation of the spinal column, most frequently accompanied by rotation of the vertebral bodies (Magee, 2021)."
   },
   {
-    id: 102,
-    topic: "Spinal & Postural Conditions",
-    difficulty: "Easy",
+    id: 102, topic: "Spinal & Postural Conditions", difficulty: "Easy",
     question: "Hyperkyphosis is characterized by an excessive posterior curvature in which region of the spine?",
     options: ["Cervical", "Thoracic", "Lumbar", "Sacral"],
     correctAnswer: 1,
-    rationale: "Hyperkyphosis (often colloquially called a 'hunchback') is an exaggerated posterior convexity, specifically located in the thoracic spine (Hertling & Kessler, 2006)."
+    hint: "This curvature creates a rounded, 'hunchback' posture often associated with forward head carriage.",
+    rationale: "Hyperkyphosis (often colloquially called a hunchback) is an exaggerated posterior curvature of the thoracic spine, frequently driven by poor ergonomics or osteoporosis (Werner, 2019)."
   },
   {
-    id: 103,
-    topic: "Spinal & Postural Conditions",
-    difficulty: "Easy",
-    question: "Which postural deviation is strongly associated with an anterior pelvic tilt?",
-    options: ["Hyperkyphosis", "Hyperlordosis", "Scoliosis", "Torticollis"],
+    id: 103, topic: "Orthopedic Assessment", difficulty: "Medium",
+    question: "To differentiate between structural and functional scoliosis, which active assessment is considered the gold standard?",
+    options: ["Slump Test", "Adam's Forward Bend Test", "Straight Leg Raise", "Kemp's Test"],
     correctAnswer: 1,
-    rationale: "Hyperlordosis is an exaggerated anterior curvature of the lumbar spine, directly driven mechanically by an anterior tilt of the pelvis (Magee, 2021)."
+    hint: "The client flexes forward at the waist while the therapist observes the spine from behind for a rotational rib hump.",
+    rationale: "Adam's Forward Bend Test differentiates structural from functional scoliosis. If the lateral curve and rib hump remain visible during flexion, the scoliosis is structural (bony). If the spine straightens, it is functional (muscular) (Magee, 2021)."
   },
   {
-    id: 104,
-    topic: "Spinal & Postural Conditions",
-    difficulty: "Easy",
-    question: "Degenerative Disc Disease (DDD) primarily involves the breakdown of which structures?",
-    options: ["The facet joints of the vertebrae.", "The anterior longitudinal ligament.", "The annulus fibrosus and nucleus pulposus of the intervertebral discs.", "The vertebral bodies themselves."],
+    id: 104, topic: "Spinal & Postural Conditions", difficulty: "Medium",
+    question: "In a client presenting with Hyperlordosis (Lower Crossed Syndrome), which specific muscle groups are adaptively shortened and hypertonic?",
+    options: ["Gluteus maximus and abdominals.", "Iliopsoas, rectus femoris, and lumbar erector spinae.", "Hamstrings and latissimus dorsi.", "Rhomboids and middle trapezius."],
+    correctAnswer: 1,
+    hint: "Think about the muscles that tilt the pelvis anteriorly (down in the front, up in the back).",
+    rationale: "Lower Crossed Syndrome involves an anterior pelvic tilt driven by tight, adaptively shortened hip flexors (iliopsoas/rectus femoris) and lumbar extensors (erector spinae), paired with weak glutes and abdominals (Hertling & Kessler, 2006)."
+  },
+  {
+    id: 105, topic: "Clinical Interventions", difficulty: "Medium",
+    question: "When treating a functional Hyperkyphosis, what is the primary structural goal of the massage treatment plan?",
+    options: ["Stretch the rhomboids and strengthen the pectoralis major.", "Stretch the anterior chest (pectorals) and stimulate/strengthen the posterior thoracic extensors (rhomboids, middle trapezius).", "Apply aggressive transverse friction to the spinous processes.", "Perform high-velocity manipulations to the cervical spine."],
+    correctAnswer: 1,
+    hint: "You must lengthen the tissues pulling the shoulders forward and wake up the tissues failing to hold the shoulders back.",
+    rationale: "Treatment for hyperkyphosis centers on lengthening the adaptively shortened anterior structures (pectoralis major/minor) while stimulating and facilitating the overstretched, ischemic posterior stabilizers (rhomboids, mid-trapezius) (Andrade, 2023)."
+  },
+  {
+    id: 106, topic: "Systemic Conditions", difficulty: "Easy",
+    question: "Which condition is characterized by a severe decrease in bone mass and density, increasing the critical risk of pathological fractures?",
+    options: ["Osteoarthritis", "Osteoporosis", "Rheumatoid Arthritis", "Scleroderma"],
+    correctAnswer: 1,
+    hint: "The name of this disease literally translates to 'porous bone'.",
+    rationale: "Osteoporosis is a metabolic bone disorder where osteoclast activity outpaces osteoblast activity, resulting in porous, fragile bones highly susceptible to fracture (Norris, 2020)."
+  },
+  {
+    id: 107, topic: "Systemic Conditions", difficulty: "Hard",
+    question: "A client with advanced Ankylosing Spondylitis (AS) is on your table. What pathological process defines this disease, and what is its classic radiographic presentation?",
+    options: ["The breakdown of hyaline cartilage; presenting as bone spurs.", "A bacterial infection of the intervertebral discs; presenting as disc space narrowing.", "A chronic, systemic autoimmune inflammatory disease that causes fusion of the spinal vertebrae and SI joints; presenting as a 'bamboo spine'.", "A demyelinating disease of the central nervous system; presenting as spinal lesions."],
     correctAnswer: 2,
-    rationale: "DDD is a condition where the intervertebral discs lose their water content and structural integrity, specifically affecting the central nucleus pulposus and the outer annulus fibrosus (Norris, 2020)."
+    hint: "This condition causes the spinal ligaments to ossify, eventually welding the spine into a single, rigid column.",
+    rationale: "Ankylosing Spondylitis is a chronic autoimmune inflammatory arthritis that targets the axial skeleton, leading to the progressive ossification and fusion of the vertebrae and SI joints, creating the classic 'bamboo spine' appearance (Werner, 2019)."
   },
   {
-    id: 105,
-    topic: "Joint Dysfunction",
-    difficulty: "Easy",
-    question: "What is the clinical definition of a joint dislocation (luxation)?",
-    options: ["A severe stretching of the joint capsule.", "A partial loss of contact between two articular surfaces.", "A complete and total loss of contact between the articulating surfaces of a joint.", "A fracture of the articular cartilage."],
-    correctAnswer: 2,
-    rationale: "A dislocation (luxation) is the complete disassociation of the articular surfaces of a joint. A partial loss of contact is termed a subluxation (Magee, 2021)."
-  },
-  {
-    id: 106,
-    topic: "Joint Dysfunction",
-    difficulty: "Easy",
-    question: "A Fall On an Outstretched Hand (FOOSH) injury is the most common mechanism for the dislocation of which carpal bone?",
-    options: ["Scaphoid", "Lunate", "Pisiform", "Trapezium"],
-    correctAnswer: 1,
-    rationale: "The lunate is the most frequently dislocated carpal bone, typically forced anteriorly (palmar direction) during a severe hyperextension injury like a FOOSH (Hertling & Kessler, 2006)."
-  },
-  {
-    id: 107,
-    topic: "Joint Dysfunction",
-    difficulty: "Easy",
-    question: "In which direction does the glenohumeral (shoulder) joint most commonly dislocate?",
-    options: ["Posteriorly", "Superiorly", "Anteriorly", "Inferiorly"],
-    correctAnswer: 2,
-    rationale: "Approximately 95% of shoulder dislocations are anterior, usually occurring when the arm is forcefully abducted and externally rotated (Magee, 2021)."
-  },
-  {
-    id: 108,
-    topic: "Joint Dysfunction",
-    difficulty: "Easy",
-    question: "What is the primary anatomical function of the menisci in the knee?",
-    options: ["To connect the femur directly to the fibula.", "To provide shock absorption, deepen the articular surface, and distribute weight.", "To produce synovial fluid.", "To actively extend the knee joint."],
-    correctAnswer: 1,
-    rationale: "The medial and lateral menisci are fibrocartilage pads that deepen the shallow tibial plateau, increasing joint stability and acting as crucial shock absorbers during weight-bearing activities (Tortora & Derrickson, 2017)."
-  },
-  {
-    id: 109,
-    topic: "Joint Dysfunction",
-    difficulty: "Easy",
-    question: "The Anterior Cruciate Ligament (ACL) is designed to prevent which specific movement?",
-    options: ["Posterior translation of the tibia on the femur.", "Anterior translation of the tibia on the femur.", "Excessive knee flexion.", "Medial rotation of the femur."],
-    correctAnswer: 1,
-    rationale: "The ACL is the primary static stabilizer that prevents the tibia from sliding anteriorly (forward) out from under the femur (Magee, 2021)."
-  },
-  {
-    id: 110,
-    topic: "Autoimmune & Systemic Conditions",
-    difficulty: "Easy",
-    question: "Which of the following describes the hallmark presentation of Rheumatoid Arthritis (RA)?",
-    options: ["A systemic, autoimmune disease causing symmetrical inflammation of the synovial joints (often starting in the hands and feet).", "A mechanical wear-and-tear condition of a single weight-bearing joint.", "A bacterial infection of the joint capsule.", "A congenital defect of the bone marrow."],
+    id: 108, topic: "Autoimmune Disorders", difficulty: "Medium",
+    question: "Systemic Lupus Erythematosus (SLE) is a complex autoimmune disease. Which visible clinical sign is a hallmark of an acute SLE flare-up?",
+    options: ["A 'butterfly' (malar) rash across the bridge of the nose and cheeks.", "Severe clubbing of the fingernails.", "A distinct 'barrel chest' deformity.", "Severe unilateral facial paralysis."],
     correctAnswer: 0,
-    rationale: "Unlike osteoarthritis, RA is a systemic autoimmune disorder that attacks the synovial membranes, typically presenting bilaterally and symmetrically in smaller joints before progressing to larger ones (Norris, 2020)."
+    hint: "This photosensitive dermatological sign is named for its wing-like shape across the face.",
+    rationale: "The malar or 'butterfly' rash across the nose and cheeks is a hallmark symptom of Systemic Lupus Erythematosus, often triggered or worsened by exposure to ultraviolet light (Norris, 2020)."
   },
   {
-    id: 111,
-    topic: "Autoimmune & Systemic Conditions",
-    difficulty: "Easy",
-    question: "Systemic Lupus Erythematosus (SLE) is frequently associated with a distinct dermatological sign on the face. What is it called?",
-    options: ["A target lesion", "A malar (butterfly) rash", "Psoriatic plaques", "Urticaria (hives)"],
+    id: 109, topic: "Spinal Pathologies", difficulty: "Medium",
+    question: "A client presents with Degenerative Disc Disease (DDD) in the lumbar spine. Which symptoms are most characteristic of this condition before it progresses to frank herniation?",
+    options: ["Sharp, shooting electrical pain down the leg to the foot.", "A dull, chronic, localized ache in the lower back that worsens with prolonged sitting and improves with walking.", "Complete paralysis of the lower extremities.", "Loss of bowel and bladder control."],
     correctAnswer: 1,
-    rationale: "A classic clinical sign of SLE is the malar rash, a red, butterfly-shaped rash that spreads across the bridge of the nose and the cheeks (Werner, 2019)."
+    hint: "Without herniation, the pain is usually confined to the disc's outer annulus and the surrounding guarding muscles, rather than a compressed nerve root.",
+    rationale: "Early DDD typically presents as a localized, dull, aching pain caused by micro-tears in the annulus fibrosus and localized muscle splinting. Sitting increases intradiscal pressure, exacerbating the pain (Hertling & Kessler, 2006)."
   },
   {
-    id: 112,
-    topic: "Autoimmune & Systemic Conditions",
-    difficulty: "Easy",
-    question: "Which autoimmune disease is characterized by the massive overproduction and deposition of collagen, leading to the hardening and tightening of the skin and connective tissues?",
-    options: ["Ankylosing Spondylitis", "Gout", "Scleroderma", "Rheumatoid Arthritis"],
-    correctAnswer: 2,
-    rationale: "Scleroderma (literally 'hard skin') is an autoimmune condition where fibroblasts overproduce collagen, causing abnormal thickening and fibrosis of the skin and internal organs (Norris, 2020)."
-  },
-  {
-    id: 113,
-    topic: "Autoimmune & Systemic Conditions",
-    difficulty: "Easy",
-    question: "Ankylosing Spondylitis (AS) is a chronic inflammatory disease that primarily affects which part of the body?",
-    options: ["The small joints of the hands.", "The axial skeleton (spine and sacroiliac joints), eventually leading to bony fusion.", "The descending colon.", "The myelin sheaths of peripheral nerves."],
+    id: 110, topic: "Spinal Pathologies", difficulty: "Medium",
+    question: "In Facet Joint Syndrome of the lumbar spine, which specific active movement will most reliably provoke the client's localized, sharp back pain?",
+    options: ["Spinal Flexion", "Spinal Extension", "Cervical Rotation", "Ankle Dorsiflexion"],
     correctAnswer: 1,
-    rationale: "AS is a progressive form of inflammatory arthritis targeting the sacroiliac joints and spine. Over time, it causes the vertebral bodies to fuse together (a condition visible on x-ray as 'bamboo spine') (Werner, 2019)."
+    hint: "Consider the anatomical position of the facet joints (zygapophyseal joints) on the posterior aspect of the vertebrae.",
+    rationale: "Facet joints are located posteriorly. Spinal extension powerfully compresses these joints together; if they are inflamed or arthritic (Facet Syndrome), extension will predictably provoke sharp, localized pain (Magee, 2021)."
   },
   {
-    id: 114,
-    topic: "Autoimmune & Systemic Conditions",
-    difficulty: "Easy",
-    question: "Gout is a type of inflammatory arthritis caused by the accumulation of what substance in the joints?",
-    options: ["Calcium pyrophosphate", "Lactic acid", "Uric acid crystals", "Synovial fluid"],
-    correctAnswer: 2,
-    rationale: "Gout results from hyperuricemia (excess uric acid in the blood). The uric acid forms sharp, needle-like urate crystals that deposit in joints (most commonly the first metatarsophalangeal joint of the big toe), causing severe acute pain (Norris, 2020)."
-  },
-  {
-    id: 115,
-    topic: "Headaches",
-    difficulty: "Easy",
-    question: "A client describes a headache that feels like a 'tight band squeezing around both sides of my head.' There is no nausea or visual aura. What is the most likely classification?",
-    options: ["Migraine Headache", "Cluster Headache", "Tension-Type Headache", "Sinus Headache"],
-    correctAnswer: 2,
-    rationale: "Tension-type headaches are the most common form of headache, typically presenting as a bilateral, dull, non-pulsating ache or a 'hat-band' distribution of pressure, often driven by muscle hypertonicity and trigger points (Werner, 2019)."
-  },
-  {
-    id: 116,
-    topic: "Hand Conditions",
-    difficulty: "Easy",
-    question: "Dupuytren’s Contracture is a condition that results in the fixed flexion of which fingers?",
-    options: ["Thumb and index finger (1st and 2nd digits)", "Middle and ring finger (3rd and 4th digits)", "Ring and little finger (4th and 5th digits)", "All five digits simultaneously"],
-    correctAnswer: 2,
-    rationale: "Dupuytren's Contracture involves the thickening and shortening of the palmar fascia, most commonly drawing the 4th (ring) and 5th (little) digits into an unyielding flexed position (Hertling & Kessler, 2006)."
-  },
-  {
-    id: 117,
-    topic: "Spinal & Postural Conditions",
-    difficulty: "Easy",
-    question: "In a client with an S-curve scoliosis, how does the musculature adapt on the concave side of the curve?",
-    options: ["It becomes overstretched and weak.", "It becomes chronically shortened, hypertonic, and fibrotic.", "It atrophies completely.", "It remains unaffected."],
+    id: 111, topic: "Systemic Conditions", difficulty: "Medium",
+    question: "Which of the following describes the pathophysiology of Rheumatoid Arthritis (RA)?",
+    options: ["A localized, mechanical wear-and-tear of articular cartilage.", "A systemic autoimmune attack on the synovial membranes, leading to pannus formation and joint destruction.", "A metabolic buildup of uric acid crystals in the great toe.", "A chronic infection of the bone marrow."],
     correctAnswer: 1,
-    rationale: "According to biomechanical principles, the muscles on the 'inside' (concave side) of a spinal curve become chronically shortened, tight, and adaptively fibrotic, pulling the spine out of alignment (Andrade, 2023)."
+    hint: "Unlike osteoarthritis, this condition is driven by a confused immune system attacking the joint linings systemically.",
+    rationale: "Rheumatoid Arthritis is a systemic autoimmune disease where the immune system attacks the synovial membranes lining the joints, causing severe inflammation, pannus formation, and eventual structural deformity (Norris, 2020)."
   },
   {
-    id: 118,
-    topic: "Spinal & Postural Conditions",
-    difficulty: "Easy",
-    question: "In a classic Hyperkyphosis (Upper Crossed Syndrome) presentation, which muscles are typically adaptively shortened?",
-    options: ["Rhomboids and Middle Trapezius", "Pectoralis Major and Minor", "Latissimus Dorsi and Quadratus Lumborum", "Deep neck flexors"],
+    id: 112, topic: "Clinical Interventions", difficulty: "Hard",
+    question: "During an assessment of a client with a suspected posterolateral lumbar disc herniation (L4-L5), you perform a Straight Leg Raise (SLR). The client reports severe shooting pain into the foot at 35 degrees of hip flexion. What is the clinical implication?",
+    options: ["The pain is likely muscular (hamstrings) because nerves don't stretch until 70 degrees.", "The test is positive for sciatic nerve root compression (radiculopathy) by the herniated disc.", "The client has a sacroiliac joint subluxation.", "The test indicates an acute tear of the gluteus maximus."],
     correctAnswer: 1,
-    rationale: "Hyperkyphosis involves rounded, protracted shoulders and a depressed anterior chest. This posture chronically shortens the anterior musculature, primarily the Pectoralis Major and Minor (Magee, 2021)."
+    hint: "Pain arising between 35 and 70 degrees of the SLR places maximal tension directly on the sciatic nerve roots.",
+    rationale: "A positive Straight Leg Raise between 35 and 70 degrees places maximal tension on the sciatic nerve roots. Neurological pain (shooting/burning) in this range strongly indicates radiculopathy caused by space-occupying lesions like a disc herniation (Magee, 2021)."
   },
   {
-    id: 119,
-    topic: "Spinal & Postural Conditions",
-    difficulty: "Easy",
-    question: "Which major hip flexor is almost always adaptively shortened and hypertonic in a client with severe lumbar Hyperlordosis?",
-    options: ["Gluteus Maximus", "Biceps Femoris", "Iliopsoas (Psoas Major and Iliacus)", "Transverse Abdominis"],
-    correctAnswer: 2,
-    rationale: "The Iliopsoas is the most powerful hip flexor. When hypertonic or shortened, it creates a strong anterior pull on the lumbar spine and pelvis, exacerbating the anterior pelvic tilt and lordotic curve (Hertling & Kessler, 2006)."
-  },
-  {
-    id: 120,
-    topic: "Joint Dysfunction",
-    difficulty: "Easy",
-    question: "A client arrives at your clinic stating they dislocated their shoulder yesterday, and it has NOT yet been reduced by a physician. What is your clinical action?",
-    options: ["Perform a Grade 4 joint mobilization to pop it back into place.", "Apply deep transverse friction to the joint capsule.", "Massage is an absolute contraindication; refer them immediately to the ER for medical reduction.", "Apply heat and perform active resisted stretching."],
-    correctAnswer: 2,
-    rationale: "An unreduced dislocation is an absolute medical emergency due to the high risk of severe nerve and vascular damage. Massage therapists are strictly prohibited from attempting to reduce a dislocated joint (Werner, 2019)."
-  },
-  {
-    id: 121,
-    topic: "Joint Dysfunction",
-    difficulty: "Easy",
-    question: "Which of the following is a classic subjective symptom reported by a client with a Meniscal tear?",
-    options: ["The knee turns completely black and blue within 5 minutes.", "The knee frequently 'catches' or 'locks' during movement.", "The pain is only felt in the hip.", "The knee is completely numb."],
+    id: 113, topic: "Autoimmune Disorders", difficulty: "Medium",
+    question: "Multiple Sclerosis (MS) is characterized by the autoimmune destruction of what specific neurological structure?",
+    options: ["The neuromuscular junction.", "The myelin sheath surrounding axons in the Central Nervous System (brain and spinal cord).", "The peripheral pain receptors in the skin.", "The Golgi Tendon Organs."],
     correctAnswer: 1,
-    rationale: "Torn meniscal cartilage can create a physical flap. When this flap gets caught between the femoral condyles and the tibial plateau, it causes a mechanical block, leading the client to report 'catching' or 'locking' of the knee (Magee, 2021)."
+    hint: "This structure acts as the 'insulation' around the nerve wire, allowing electrical signals to travel quickly.",
+    rationale: "Multiple Sclerosis is a chronic demyelinating disease where the immune system destroys the myelin sheath within the Central Nervous System, severely disrupting the transmission of electrical impulses (Norris, 2020)."
   },
   {
-    id: 122,
-    topic: "Autoimmune & Systemic Conditions",
-    difficulty: "Easy",
-    question: "During an acute, active flare-up of Rheumatoid Arthritis, what is the appropriate massage modification for the inflamed joints?",
-    options: ["Perform deep cross-fiber friction to break down joint adhesions.", "Apply Grade 3 joint mobilizations to maintain range of motion.", "Direct massage and joint mobilizations on the actively inflamed joints are absolutely contraindicated.", "Apply hot hydrotherapy followed by active resisted stretching."],
+    id: 114, topic: "Clinical Interventions", difficulty: "Medium",
+    question: "When treating a client with Multiple Sclerosis, what specific environmental or therapeutic trigger must be strictly avoided as it rapidly exacerbates their neurological symptoms (Uhthoff's phenomenon)?",
+    options: ["Deep pressure.", "Cold hydrotherapy.", "Excessive heat (e.g., hot packs, overheated rooms, vigorous prolonged friction).", "Myofascial release."],
     correctAnswer: 2,
-    rationale: "During an RA flare-up, the synovial capsule is actively under immune attack, highly inflamed, and structurally vulnerable. Direct pressure, friction, or mobilization will exacerbate the tissue damage and is strictly contraindicated (Werner, 2019)."
+    hint: "Demyelinated nerves are highly sensitive to increases in core body temperature, which blocks electrical conduction.",
+    rationale: "Uhthoff's phenomenon is a characteristic of MS where an increase in body temperature (from heat applications, fever, or aggressive exercise) temporarily worsens neurological symptoms by blocking conduction in demyelinated nerves (Werner, 2019)."
   },
   {
-    id: 123,
-    topic: "Autoimmune & Systemic Conditions",
-    difficulty: "Easy",
-    question: "Clients with Scleroderma frequently experience severe vasospasms in their fingers and toes when exposed to cold or stress. This secondary condition is known as:",
-    options: ["Deep Vein Thrombosis", "Raynaud's Phenomenon", "Thoracic Outlet Syndrome", "Carpal Tunnel Syndrome"],
+    id: 115, topic: "Systemic Conditions", difficulty: "Easy",
+    question: "Fibromyalgia Syndrome (FMS) is clinically defined by widespread musculoskeletal pain. Which of the following is considered the primary pathophysiological driver of FMS?",
+    options: ["Severe micro-tearing of the muscle fibers.", "Central Nervous System sensitization, leading to a lowered pain threshold (allodynia and hyperalgesia).", "A chronic viral infection in the bloodstream.", "Severe osteoarthritis of all major joints."],
     correctAnswer: 1,
-    rationale: "Raynaud's Phenomenon is a very common secondary complication of Scleroderma, resulting from the fibrosis of the connective tissues surrounding the small peripheral blood vessels, causing severe episodic vasoconstriction (Norris, 2020)."
+    hint: "The hardware (muscles) is usually fine; the software (the brain's pain processing center) is malfunctioning and amplifying signals.",
+    rationale: "Fibromyalgia is driven by central sensitization, where the central nervous system becomes hyper-reactive, amplifying normal sensory input into profound pain signals without any actual peripheral tissue damage (Norris, 2020)."
   },
   {
-    id: 124,
-    topic: "Joint Dysfunction",
-    difficulty: "Easy",
-    question: "When the patella dislocates, it almost universally slips out of the trochlear groove in which direction?",
-    options: ["Medially", "Superiorly", "Laterally", "Inferiorly"],
-    correctAnswer: 2,
-    rationale: "Due to the natural Q-angle of the leg and the pull of the strong lateral structures (IT band, vastus lateralis), patellar dislocations are almost exclusively lateral (Magee, 2021)."
-  },
-  {
-    id: 125,
-    topic: "Headaches",
-    difficulty: "Easy",
-    question: "Which muscle group is a primary contributor to Tension-Type Headaches due to its attachment to the occiput and its tendency to harbor active trigger points?",
-    options: ["The Suboccipitals", "The Pectoralis Minor", "The Anterior Scalenes", "The Masseter"],
+    id: 116, topic: "Orthopedic Assessment", difficulty: "Medium",
+    question: "Which special test is used to assess the integrity of the Sacroiliac (SI) Joint by placing the client's foot on their opposite knee (Figure-4) and applying downward pressure to the flexed knee and the contralateral ASIS?",
+    options: ["Faber's (Patrick's) Test", "Ober's Test", "Ely's Test", "Thomas Test"],
     correctAnswer: 0,
-    rationale: "The suboccipital muscles (rectus capitis posterior major/minor, obliquus capitis inferior/superior) are prone to severe hypertonicity from forward head posture. Their trigger points refer pain in a classic 'headband' pattern (Hertling & Kessler, 2006)."
+    hint: "The acronym stands for Flexion, Abduction, and External Rotation.",
+    rationale: "FABER's (Patrick's) Test stresses the anterior SI joint. Pain located posteriorly at the SI joint during this maneuver indicates SI joint dysfunction or pathology (Magee, 2021)."
   },
-
-  // ==========================================
-  // MEDIUM: Pathophysiology & Clinical Reasoning
-  // ==========================================
   {
-    id: 126,
-    topic: "Spinal & Postural Conditions",
-    difficulty: "Medium",
-    question: "How does the Adam's Forward Bend Test clinically differentiate between a functional and a structural scoliosis?",
-    options: [
-      "If the rib hump disappears during forward flexion, the curve is structural; if it remains, it is functional.",
-      "If the rib hump disappears during forward flexion, the curve is functional (muscular); if the rib hump remains visible, the curve is structural (fixed vertebral rotation).",
-      "The test only measures hamstring flexibility, not scoliosis.",
-      "A functional curve will cause pain; a structural curve is always painless."
-    ],
+    id: 117, topic: "Head and Neck", difficulty: "Hard",
+    question: "A client with Temporomandibular Joint (TMJ) Dysfunction presents with an 'S-curve' deviation when opening their mouth. What does an S-curve typically indicate compared to a C-curve?",
+    options: ["An S-curve indicates a unilateral capsular restriction.", "An S-curve indicates a muscular imbalance (motor control issue), whereas a C-curve typically indicates a structural or capsular restriction.", "An S-curve means the jaw is broken.", "An S-curve indicates trigeminal neuralgia."],
     correctAnswer: 1,
-    rationale: "Functional scoliosis is maintained by muscular imbalance and gravity; when the spine flexes forward, gravity's effect is altered and the muscles relax, causing the curve to straighten. In a structural scoliosis, the bones are permanently rotated, so the rib hump persists regardless of position (Magee, 2021)."
+    hint: "A deviation that wanders but ultimately returns to the midline suggests the muscles are firing out of sequence, rather than hitting a hard physical wall.",
+    rationale: "An S-curve deviation during mandibular depression implies a neuromuscular imbalance or altered firing sequence of the pterygoids. A C-curve typically implies a hard capsular restriction or displaced disc on the side of the deviation (Hertling & Kessler, 2006)."
   },
   {
-    id: 127,
-    topic: "Spinal & Postural Conditions",
-    difficulty: "Medium",
-    question: "In Janda's Upper Crossed Syndrome, what is the classic pattern of muscular imbalance?",
-    options: [
-      "Tight rhomboids and deep neck flexors; weak pectorals and upper trapezius.",
-      "Tight pectorals and upper trapezius/levator scapulae; weak deep neck flexors and rhomboids/lower trapezius.",
-      "Tight latissimus dorsi; weak abdominals.",
-      "All anterior and posterior muscles are equally weak."
-    ],
-    correctAnswer: 1,
-    rationale: "Upper Crossed Syndrome is characterized by a 'cross' of hypertonic muscles (anterior pectorals + posterior upper traps/levator) and a 'cross' of weak, inhibited muscles (anterior deep neck flexors + posterior mid/lower traps and rhomboids) (Hertling & Kessler, 2006)."
-  },
-  {
-    id: 128,
-    topic: "Spinal & Postural Conditions",
-    difficulty: "Medium",
-    question: "In Janda's Lower Crossed Syndrome (driving Hyperlordosis), which muscles are classically WEAK and inhibited?",
-    options: [
-      "The Iliopsoas and Erector Spinae",
-      "The Rectus Femoris and Tensor Fascia Latae",
-      "The Gluteus Maximus and the Abdominals",
-      "The Quadratus Lumborum and Latissimus Dorsi"
-    ],
+    id: 118, topic: "Systemic Conditions", difficulty: "Medium",
+    question: "Which of the following statements is clinically accurate regarding the massage treatment of a client with Gout during an acute flare-up?",
+    options: ["Aggressive Joint Mobilizations are required to crush the uric acid crystals.", "Heat must be applied to the inflamed joint to melt the crystals.", "The affected joint is acutely inflamed and agonizingly painful; local massage is an absolute contraindication.", "Deep transverse friction should be applied to the joint capsule."],
     correctAnswer: 2,
-    rationale: "Lower Crossed Syndrome features tight hip flexors (psoas) and tight lumbar erectors, which reciprocally inhibit their antagonists: the gluteus maximus (hip extensors) and the abdominal core muscles (Andrade, 2023)."
+    hint: "Gout feels like the joint is filled with microscopic shards of glass. Any mechanical pressure will cause excruciating pain.",
+    rationale: "Acute gout involves the deposition of needle-like monosodium urate crystals in the joint space (commonly the first MTP). The joint is exquisitely painful, swollen, and hot, representing an absolute local contraindication for manual therapy (Werner, 2019)."
   },
   {
-    id: 129,
-    topic: "Spinal & Postural Conditions",
-    difficulty: "Medium",
-    question: "What is the primary pathophysiological mechanism driving Degenerative Disc Disease (DDD)?",
-    options: [
-      "A sudden, acute tear of the anterior longitudinal ligament.",
-      "An autoimmune attack on the vertebral bone marrow.",
-      "A progressive loss of hydration (water content) in the nucleus pulposus, reducing the disc's ability to absorb shock and maintain disc height.",
-      "An overproduction of synovial fluid in the facet joints."
-    ],
+    id: 119, topic: "Clinical Interventions", difficulty: "Medium",
+    question: "When addressing a severe trigger point in the upper trapezius, you apply Specific Compression. How long should you generally hold the ischemic compression to achieve a release?",
+    options: ["2 to 3 seconds.", "Until the client cries.", "Approximately 20 to 60 seconds, or until you feel the tissue soften and the referred pain diminish.", "Exactly 5 minutes."],
     correctAnswer: 2,
-    rationale: "As part of the aging process or chronic wear, the gelatinous nucleus pulposus loses its proteoglycans and water content. The disc desiccates (dries out), loses height, and transfers abnormal mechanical stress to the annulus fibrosus and facet joints (Norris, 2020)."
+    hint: "The pressure must be sustained long enough to disrupt the neurological feedback loop without causing tissue necrosis.",
+    rationale: "Specific Compression on a trigger point should be held between 20 to 60 seconds. The therapist waits for the neurological 'yield' (a softening of the tissue and a decrease in the client's reported referred pain) before slowly releasing (Andrade, 2023)."
   },
   {
-    id: 130,
-    topic: "Joint Dysfunction",
-    difficulty: "Medium",
-    question: "When performing an orthopedic assessment on a client with a history of recurrent anterior shoulder dislocations, which specific test is used to assess joint instability?",
-    options: ["Empty Can Test", "Apprehension Test (Crank Test)", "Hawkins-Kennedy Test", "Yergason's Test"],
-    correctAnswer: 1,
-    rationale: "The Apprehension test places the shoulder in abduction and passive external rotation (the mechanism of injury). A positive sign is the client's visible apprehension or muscular guarding to prevent the shoulder from dislocating again, indicating anterior instability (Magee, 2021)."
-  },
-  {
-    id: 131,
-    topic: "Joint Dysfunction",
-    difficulty: "Medium",
-    question: "What is the biomechanical rationale behind McMurray's Test for meniscal tears?",
-    options: [
-      "It tests the strength of the quadriceps tendon.",
-      "It applies anterior traction to test the ACL.",
-      "It combines knee flexion, compression, and rotation to intentionally pinch a torn meniscal flap between the tibia and femur, eliciting a palpable 'click' or pain.",
-      "It measures the volume of swelling in the joint capsule."
-    ],
+    id: 120, topic: "Spinal Pathologies", difficulty: "Hard",
+    question: "A client with a known L5-S1 disc herniation presents with sudden, bilateral leg weakness, a loss of sensation in their 'saddle' region (groin and inner thighs), and reports recent urinary incontinence. What is your immediate clinical responsibility?",
+    options: ["Perform deep MFR on the lumbar fascia to relieve the pressure.", "Suggest they try hot/cold contrast therapy at home.", "Recognize this as Cauda Equina Syndrome; this is a severe medical emergency requiring immediate dispatch to the hospital to prevent permanent paralysis.", "Perform aggressive passive stretching of the hamstrings."],
     correctAnswer: 2,
-    rationale: "McMurray's test works by manipulating the knee joint to catch the torn fragment of the meniscus. Rotating the tibia while extending the knee under valgus/varus stress forces the torn cartilage to pop or click out from between the articulating bones (Magee, 2021)."
+    hint: "Bilateral neurological deficits paired with bowel/bladder dysfunction represent a catastrophic spinal cord compression.",
+    rationale: "Saddle anesthesia, bilateral motor weakness, and bowel/bladder incontinence are the cardinal red flags for Cauda Equina Syndrome. This is a surgical emergency; delaying medical intervention can result in permanent paraplegia (Magee, 2021)."
   },
   {
-    id: 132,
-    topic: "Joint Dysfunction",
-    difficulty: "Medium",
-    question: "Why is Lachman's Test considered superior to the Anterior Drawer Test when assessing an acute Anterior Cruciate Ligament (ACL) tear?",
-    options: [
-      "Lachman's is performed in prone, which is more comfortable.",
-      "The Anterior Drawer test requires 90 degrees of flexion, which is often impossible due to acute swelling and hamstring guarding. Lachman's only requires 20-30 degrees of flexion.",
-      "Lachman's test evaluates the PCL, not the ACL.",
-      "The Anterior Drawer test is only used for meniscal tears."
-    ],
+    id: 121, topic: "Autoimmune Disorders", difficulty: "Medium",
+    question: "A client presents with Scleroderma. What is the primary pathological feature of this autoimmune condition?",
+    options: ["The demyelination of peripheral nerves.", "The overproduction of collagen, leading to the thickening, hardening, and tightening of the skin and internal connective tissues.", "The destruction of the alveoli in the lungs.", "The formation of uric acid crystals in the blood."],
     correctAnswer: 1,
-    rationale: "Acute knee injuries generate massive joint effusion (swelling) and hamstring spasms, making 90 degrees of flexion (required for Anterior Drawer) too painful. Lachman's test isolates the ACL at 20-30 degrees, bypassing hamstring guarding and joint swelling (Magee, 2021)."
+    hint: "The name of the disease literally translates to 'hard skin'.",
+    rationale: "Scleroderma is a chronic connective tissue disease characterized by autoimmune-driven overproduction of collagen, causing progressive fibrosis and hardening of the skin (and often internal organs) (Norris, 2020)."
   },
   {
-    id: 133,
-    topic: "Autoimmune & Systemic Conditions",
-    difficulty: "Medium",
-    question: "How does the clinical presentation of Rheumatoid Arthritis (RA) typically differ from Osteoarthritis (OA) regarding morning stiffness?",
-    options: [
-      "RA stiffness lasts only 5-10 minutes; OA stiffness lasts all day.",
-      "RA is characterized by prolonged morning stiffness (often lasting > 1 hour) that slowly improves with movement. OA stiffness is typically brief (under 30 minutes) but pain worsens with activity.",
-      "Neither condition causes morning stiffness.",
-      "There is no difference; they are the same disease."
-    ],
+    id: 122, topic: "Clinical Fundamentals", difficulty: "Easy",
+    question: "According to standard grading for Joint Mobilizations (Maitland's Grades), which grades are strictly utilized for pain modulation and neurophysiological relaxation without stretching the joint capsule?",
+    options: ["Grades 3 and 4", "Grades 1 and 2", "Grades 2 and 3", "Grade 5 (High-Velocity Thrust)"],
     correctAnswer: 1,
-    rationale: "RA causes severe, prolonged morning stiffness due to the systemic accumulation of inflammatory fluids overnight. OA is a mechanical degeneration; stiffness dissipates quickly with movement, but joint pain increases as mechanical loading (activity) continues throughout the day (Norris, 2020)."
+    hint: "These grades involve small or large amplitude oscillations that stay completely out of the tissue resistance barrier.",
+    rationale: "Grades 1 and 2 mobilizations operate within the free space of the joint. They stimulate mechanoreceptors to gate pain and move synovial fluid, but do not mechanically stretch the capsular tissues (Hertling & Kessler, 2006)."
   },
   {
-    id: 134,
-    topic: "Autoimmune & Systemic Conditions",
-    difficulty: "Medium",
-    question: "A client with Systemic Lupus Erythematosus (SLE) schedules a massage. They mention they are currently experiencing a 'flare-up.' Aside from joint pain, what systemic symptom must the therapist heavily modify the treatment for?",
-    options: [
-      "Severe, paralyzing muscle spasms.",
-      "Profound, debilitating fatigue and systemic inflammation.",
-      "Acute blindness.",
-      "Uncontrollable shivering."
-    ],
+    id: 123, topic: "Orthopedic Assessment", difficulty: "Medium",
+    question: "When performing Kemp's Test (Lumbar Quadrant Test), the therapist guides the seated client into lumbar extension, lateral flexion, and rotation. What does localized pain on the concave (compressed) side indicate?",
+    options: ["A muscle strain of the erector spinae on the stretched side.", "Facet joint irritation or pathology on the compressed side.", "A tear in the anterior longitudinal ligament.", "A healthy, normal spine."],
     correctAnswer: 1,
-    rationale: "SLE is a systemic autoimmune disease. During a flare, the body's immune system is highly active, resulting in profound fatigue and systemic inflammation. Vigorous or prolonged massage can severely overtax the client's energy reserves, requiring treatments to be short, gentle, and palliative (Werner, 2019)."
+    hint: "This three-dimensional movement completely closes down the posterior articular structures on the side of the bending.",
+    rationale: "Kemp's Test maximally compresses the lumbar facet joints and narrows the intervertebral foramen. Localized back pain during this maneuver strongly suggests facet joint irritation or arthritis (Magee, 2021)."
   },
   {
-    id: 135,
-    topic: "Autoimmune & Systemic Conditions",
-    difficulty: "Medium",
-    question: "Why do clients with advanced Ankylosing Spondylitis (AS) often present with secondary respiratory complications?",
-    options: [
-      "The autoimmune disease attacks the lung tissue directly.",
-      "AS frequently causes asthma.",
-      "The fusion of the costovertebral joints and thoracic spine rigidly restricts the ribcage, severely limiting lung expansion and diaphragmatic breathing.",
-      "The client develops severe allergies to NSAIDs."
-    ],
-    correctAnswer: 2,
-    rationale: "AS causes progressive ossification of the spinal ligaments and joints. When this fusion reaches the thoracic spine and the costovertebral joints (where ribs meet the spine), the chest wall becomes rigid. This mechanical restriction severely limits lung excursion and breathing capacity (Norris, 2020)."
-  },
-  {
-    id: 136,
-    topic: "Autoimmune & Systemic Conditions",
-    difficulty: "Medium",
-    question: "What is the primary pathophysiological defect that leads to Gout?",
-    options: [
-      "A defect in purine metabolism, resulting in hyperuricemia (high uric acid levels in the blood).",
-      "A vitamin C deficiency.",
-      "A bacterial infection of the synovial fluid.",
-      "The mechanical wearing away of articular cartilage."
-    ],
+    id: 124, topic: "Systemic Conditions", difficulty: "Medium",
+    question: "A client with Chronic Fatigue Syndrome (Myalgic Encephalomyelitis) schedules a massage. What is a critical post-treatment phenomenon you must educate them about?",
+    options: ["Post-Exertional Malaise (PEM): Even a gentle massage can trigger a severe, multi-day crash in their energy levels.", "They will immediately feel a massive surge of adrenaline.", "Their bone density will drop for 24 hours.", "They must run 5 kilometers immediately after the massage."],
     correctAnswer: 0,
-    rationale: "Gout is a metabolic disorder where the body either produces too much uric acid (from breaking down purines) or the kidneys fail to excrete enough of it. The excess crystallizes in the joints, triggering a massive inflammatory response (Werner, 2019)."
+    hint: "Clients with this condition have broken cellular energy systems; any physiological stress (even relaxing bodywork) requires energy to process.",
+    rationale: "Post-Exertional Malaise (PEM) is the hallmark of Chronic Fatigue Syndrome. Even minor physical, cognitive, or sensory exertion (including massage) can trigger a disproportionate and debilitating exacerbation of fatigue and pain lasting days or weeks (Werner, 2019)."
   },
   {
-    id: 137,
-    topic: "Headaches",
-    difficulty: "Medium",
-    question: "How can a therapist clinically differentiate a severe Tension-Type Headache from a classic Migraine?",
-    options: [
-      "Tension headaches only occur in men; Migraines only occur in women.",
-      "Tension headaches are muscular and bilateral; Migraines are primarily vascular/neurological, typically unilateral, throbbing, and often accompanied by photophobia, nausea, or an aura.",
-      "Tension headaches cause temporary blindness; Migraines do not.",
-      "Tension headaches are triggered by cheese; Migraines are triggered by stress."
-    ],
+    id: 125, topic: "Myofascial Techniques", difficulty: "Medium",
+    question: "You are applying Myofascial Release (MFR) to the IT Band. You engage the tissue, apply longitudinal traction, and hold. How do you know when a fascial 'release' has occurred?",
+    options: ["The tissue will pop audibly.", "You will feel a subtle yielding, softening, or lengthening of the tissue under your hands.", "The client will shout in pain.", "The skin will instantly turn white."],
     correctAnswer: 1,
-    rationale: "Tension headaches are musculoskeletal in origin, causing a dull, bilateral ache. Migraines involve complex neurovascular mechanisms, resulting in a unilateral, pulsating pain often preceded by an aura and accompanied by severe sensory sensitivities (photophobia/phonophobia) and nausea (Norris, 2020)."
+    hint: "Fascia is a thixotropic gel; under sustained mechanical tension, it changes from a solid state to a more liquid state.",
+    rationale: "A fascial release is palpated as a subtle melting, yielding, or giving way of the restrictive barrier. The therapist must maintain constant tension until this thixotropic change occurs, usually after 90 to 120 seconds (Andrade, 2023)."
   },
   {
-    id: 138,
-    topic: "Hand Conditions",
-    difficulty: "Medium",
-    question: "A client presents with the 4th and 5th digits of their hand drawn into flexion. How can you differentiate Dupuytren’s Contracture from an Ulnar Nerve lesion (which also causes a 'claw' presentation in those digits)?",
-    options: [
-      "Perform a blood test.",
-      "Dupuytren's involves palpable, painless fibrous nodules and cords in the palmar fascia with NO sensory loss. An Ulnar nerve lesion will present with numbness/tingling in the 4th and 5th digits and muscle atrophy.",
-      "Dupuytren's only affects the right hand.",
-      "There is no clinical way to differentiate them."
-    ],
+    id: 126, topic: "Spinal & Postural Conditions", difficulty: "Hard",
+    question: "A client presents with 'Flat Back' posture. Which muscle imbalances characterize this specific deviation?",
+    options: ["Tight hip flexors and weak abdominals.", "Tight hamstrings pulling the pelvis into posterior tilt, paired with weak, lengthened lumbar erector spinae.", "Hypertonic pectorals and weak rhomboids.", "Tight calves and weak quadriceps."],
     correctAnswer: 1,
-    rationale: "Dupuytren's is a structural fibrosis of the connective tissue (fascia) of the palm; nerves are not directly compressed, so sensation is fully intact. An Ulnar nerve lesion is a neuropathy that will inevitably present with sensory deficits (paresthesia) and motor weakness/atrophy (Magee, 2021)."
+    hint: "In this posture, the normal lumbar lordosis is completely lost, tucking the tailbone underneath the body.",
+    rationale: "Flat Back posture involves a posterior pelvic tilt that flattens the lumbar curve. This is mechanically driven by adaptively shortened hamstrings and abdominals, paired with weak, overstretched hip flexors and lumbar extensors (Hertling & Kessler, 2006)."
   },
   {
-    id: 139,
-    topic: "Spinal & Postural Conditions",
-    difficulty: "Medium",
-    question: "A senior client presents with severe Hyperkyphosis. Their health history reveals they have Osteoporosis. How does this finding alter your clinical approach?",
-    options: [
-      "It requires aggressive Grade 4 thoracic mobilizations to straighten the spine.",
-      "It makes no difference; treat the hyperkyphosis standardly.",
-      "The hyperkyphosis is likely structural (pathological) due to anterior wedge fractures of the weakened vertebrae. Moderate to deep vertical pressure and aggressive mobilization are strictly contraindicated due to the high risk of causing further fractures.",
-      "It indicates the need for deep cross-fiber friction on the spinous processes."
-    ],
+    id: 127, topic: "Head and Neck", difficulty: "Medium",
+    question: "When assessing the TMJ, you instruct the client to open their mouth as wide as possible. What is the normal, functional range of motion for mandibular depression (measured in knuckles)?",
+    options: ["One knuckle", "Two knuckles", "Three knuckles", "Four knuckles"],
     correctAnswer: 2,
-    rationale: "In an osteoporotic spine, the anterior aspect of the vertebral bodies collapses (wedge fractures), creating a structural 'Dowager's hump'. The bones are extremely fragile. Any heavy pressure, high-velocity mobilization, or aggressive forced extension risks breaking the spine (Werner, 2019)."
+    hint: "A healthy jaw should accommodate the width of the client's own non-thumb digits stacked vertically.",
+    rationale: "Functional opening of the TMJ is commonly assessed using the 'Three-Knuckle Test'. The client should be able to insert their own index, middle, and ring fingers vertically between their incisors without pain (Magee, 2021)."
   },
   {
-    id: 140,
-    topic: "Joint Dysfunction",
-    difficulty: "Medium",
-    question: "A client presents with jaw pain and suspects TMJ dysfunction. However, you find the TMJ joint capsule is healthy and there is no pain upon mastication. Which cervical muscle frequently refers pain directly into the jaw and face, mimicking TMJ pain?",
-    options: ["Rhomboid Major", "Sternocleidomastoid (SCM)", "Serratus Anterior", "Longus Colli"],
+    id: 128, topic: "Orthopedic Assessment", difficulty: "Hard",
+    question: "A client complains of neck pain that radiates into their right arm. You perform Spurling's Test (Cervical Compression). The client reports sharp pain radiating down to their thumb. What does this confirm?",
+    options: ["A thoracic outlet syndrome at the scalenes.", "A cervical radiculopathy (nerve root compression), likely at the C6 nerve root level.", "A suboccipital trigger point.", "A torn rotator cuff."],
     correctAnswer: 1,
-    rationale: "Active trigger points in both the sternal and clavicular heads of the SCM frequently refer pain in a complex pattern encompassing the jaw, cheek, forehead, and deep inside the ear, which clients often mistake for primary TMJ dysfunction or sinus headaches (Hertling & Kessler, 2006)."
+    hint: "Spurling's test closes the intervertebral foramen. Pain traveling to the thumb follows a highly specific dermatome.",
+    rationale: "Spurling's Test compresses the cervical nerve roots. Sharp, radiating pain into the arm confirms radiculopathy. Pain extending to the thumb specifically implicates the C6 neurological level (Magee, 2021)."
   },
-
-  // ==========================================
-  // HARD: Complex STEMs & OP Clinical Reasoning
-  // ==========================================
   {
-    id: 141,
-    topic: "Case Scenario: Postural & Respiratory Integration",
-    difficulty: "Hard",
-    question: "STEM: A college student presents with Functional Hyperkyphosis (forward head, rounded shoulders). Their health history notes Chronic Bronchitis. What is the advanced clinical rationale for releasing the pectoralis minor and major in this specific client?",
-    options: [
-      "To prevent a secondary shoulder dislocation.",
-      "To increase the structural compression on the anterior rib cage.",
-      "The tight pectorals pull the scapulae into protraction and physically restrict the anterior expansion of the ribcage. Releasing them restores thoracic mobility, which is essential for maximizing diaphragmatic excursion and assisting mucus clearance in their Chronic Bronchitis.",
-      "To increase the hypertonicity of the rhomboids."
-    ],
+    id: 129, topic: "Clinical Fundamentals", difficulty: "Easy",
+    question: "Which of the following describes a 'Tensegrity' model of the human body?",
+    options: ["The body is a stack of building blocks that relies entirely on gravity.", "The bones float in a continuous tension network of fascia and muscle, meaning a restriction in one area will mechanically affect distant areas.", "The nervous system controls all pain.", "The body heals by resting."],
+    correctAnswer: 1,
+    hint: "Think about a geodesic dome or a spiderweb; pulling on one string changes the shape of the entire structure.",
+    rationale: "Tensegrity (tensional integrity) dictates that the skeleton does not bear weight like a stacked wall; rather, the bones act as rigid spacers suspended within a continuous, tensioned web of myofascial tissue. A restriction in the foot can thereby pull on the fascia of the neck (Andrade, 2023)."
+  },
+  {
+    id: 130, topic: "Systemic Conditions", difficulty: "Medium",
+    question: "A client has been on long-term systemic Corticosteroid medication (e.g., Prednisone) for an autoimmune disorder. What critical precaution must you take during treatment?",
+    options: ["You must perform aggressive deep tissue to counteract the drugs.", "No precautions are necessary.", "Long-term steroid use severely degrades tissue integrity, leading to fragile skin, weakened ligaments, and osteoporosis. Deep pressure and aggressive joint mobilizations are contraindicated.", "You must only treat them while they are standing."],
     correctAnswer: 2,
-    rationale: "Treatments II requires synthesizing conditions. Hyperkyphosis mechanically compresses the thorax. For a client with COPD (Bronchitis), compromised respiratory mechanics exacerbate their symptoms. Releasing the anterior fascial/muscular restrictions directly improves respiratory volume and efficiency (Andrade, 2023)."
+    hint: "These powerful anti-inflammatories catabolize (break down) collagen networks over time.",
+    rationale: "Prolonged corticosteroid use inhibits collagen synthesis and calcium absorption, rendering the skin, tendons, ligaments, and bones highly fragile and susceptible to tearing and pathological fractures (Werner, 2019)."
   },
   {
-    id: 142,
-    topic: "Case Scenario: Scoliosis OP Protocol",
-    difficulty: "Hard",
-    question: "STEM: During your Oral Practical, you are presented with a client with an S-curve scoliosis (right thoracic convexity). The examiner asks you to demonstrate the correct treatment protocol for the paraspinal musculature. What is the correct approach?",
-    options: [
-      "Apply deep transverse friction to the spinous processes.",
-      "Apply Myofascial Release (MFR) and passive stretching to the chronically shortened, fibrotic tissues on the CONCAVE (left) side. Apply stimulating techniques (tapotement/kneading) to the overstretched, fatigued tissues on the CONVEX (right) side.",
-      "Stretch the right side; stimulate the left side.",
-      "Apply hot hydrotherapy and Muscle Approximation to both sides equally."
-    ],
+    id: 131, topic: "Spinal Pathologies", difficulty: "Hard",
+    question: "In the context of disc herniations, what is the difference between a 'Protrusion' and an 'Extrusion'?",
+    options: ["Protrusions only happen in the neck; extrusions only happen in the lower back.", "A protrusion means the annulus fibrosus is bulging but intact; an extrusion means the annulus has torn and the nucleus pulposus has spilled out into the epidural space.", "They are two words for the exact same condition.", "An extrusion is easily fixed with massage, a protrusion requires surgery."],
     correctAnswer: 1,
-    rationale: "Scoliosis treatment targets biomechanical imbalance. The concave side of the curve is adaptively shortened and requires lengthening (MFR, stretching). The convex side is pulled taut, overstretched, and weak, requiring circulatory stimulation and strengthening (Willis College OP Protocol)."
+    hint: "One is a bulge in the tire, the other is a blowout where the inner gel leaks.",
+    rationale: "In a disc protrusion, the posterior longitudinal ligament and outer annular fibers remain intact to contain the bulge. In an extrusion, the annular fibers completely rupture, allowing the nuclear material to leak into the spinal canal (Hertling & Kessler, 2006)."
   },
   {
-    id: 143,
-    topic: "Case Scenario: Hyperlordosis & Digestive",
-    difficulty: "Hard",
-    question: "STEM: A client presents with severe Lumbar Hyperlordosis and an anterior pelvic tilt. They also report suffering from chronic Irritable Bowel Syndrome (IBS) and constipation. During your assessment, you find a severely contractured Psoas Major. How are these conditions clinically linked?",
-    options: [
-      "The psoas major directly digests food.",
-      "The contractured psoas pulls the lumbar spine anteriorly, physically decreasing the volume of the abdominal cavity. This increased intra-abdominal pressure and structural crowding can mechanically restrict normal bowel motility, exacerbating constipation.",
-      "There is no link; they are completely separate systems.",
-      "The hyperlordosis stretches the stomach, causing IBS."
-    ],
+    id: 132, topic: "Spinal & Postural Conditions", difficulty: "Medium",
+    question: "A client with advanced Scheuermann's Disease seeks massage for back pain. What is the underlying pathology of this condition?",
+    options: ["An autoimmune attack on the SI joint.", "A juvenile osteochondrosis resulting in the wedging of multiple thoracic vertebrae, causing a rigid, structural hyperkyphosis.", "A lateral deviation of the lumbar spine.", "A softening of the cranial bones."],
     correctAnswer: 1,
-    rationale: "The Psoas lies deep in the posterior abdominal wall. Severe hypertonicity alters pelvic mechanics and physically encroaches on the visceral space. By treating the musculoskeletal restriction (Psoas/Hyperlordosis), the therapist can reduce visceral compression and support normal gastrointestinal motility (Andrade, 2023)."
+    hint: "This is a growth-plate disorder that occurs in teenagers, permanently altering the shape of the thoracic vertebral bodies from cylinders into wedges.",
+    rationale: "Scheuermann's Disease is a structural deformity where anterior wedging of the thoracic vertebral bodies occurs during adolescence, resulting in a fixed, non-reversible hyperkyphosis (Magee, 2021)."
   },
   {
-    id: 144,
-    topic: "Case Scenario: Acute Dislocation Management",
-    difficulty: "Hard",
-    question: "STEM: A client presents 3 days after an anterior shoulder dislocation. A physician has successfully reduced (relocated) the joint, and the arm is currently immobilized in a sling. What is the appropriate, safe massage intervention at this stage?",
-    options: [
-      "Remove the sling and perform Grade 4 joint mobilizations to prevent a frozen shoulder.",
-      "Remove the sling and passively stretch the arm into external rotation to test the joint capsule.",
-      "Leave the arm supported. The anterior capsule is torn and highly unstable. Do NOT move the shoulder. Apply MLD for edema, and treat the compensatory spasms in the neck, upper trapezius, and uninjured arm.",
-      "Apply deep cross-fiber friction directly to the anterior glenohumeral capsule to reduce scar tissue."
-    ],
+    id: 133, topic: "Orthopedic Assessment", difficulty: "Easy",
+    question: "What is the primary purpose of assessing a client's active and passive range of motion bilaterally?",
+    options: ["To cause pain.", "To establish a baseline of the client's 'normal' unaffected side to compare against the injured side.", "To stretch the muscles.", "To test their cardiovascular endurance."],
+    correctAnswer: 1,
+    hint: "You cannot know what 'restricted' means for a specific individual unless you know what 'normal' looks like for their unique body.",
+    rationale: "Bilateral comparison is the bedrock of orthopedic assessment. The uninjured side serves as the client's own control standard, allowing the therapist to accurately identify pathological limitations in the affected joint (Magee, 2021)."
+  },
+  {
+    id: 134, topic: "Clinical Interventions", difficulty: "Medium",
+    question: "When performing Joint Mobilizations, what is the Convex-Concave Rule regarding the glenohumeral joint?",
+    options: ["If you want the arm to go up, you push the bone up.", "Because the convex humeral head moves on the concave glenoid fossa, the arthrokinematic glide occurs in the OPPOSITE direction of the osteokinematic movement.", "It states that mobilizations are contraindicated in the shoulder.", "It dictates that the shoulder must be tractioned before any movement."],
+    correctAnswer: 1,
+    hint: "Imagine a ball rolling inside a cup; to roll the top of the ball to the left, the bottom of the ball must slide to the right to avoid popping out of the cup.",
+    rationale: "The Convex-Concave Rule dictates that when a convex surface (humeral head) moves on a stable concave surface (glenoid fossa), the internal bone glide occurs in the opposite direction of the limb's external swing (Hertling & Kessler, 2006)."
+  },
+  {
+    id: 135, topic: "Autoimmune Disorders", difficulty: "Hard",
+    question: "Which of the following is a key distinguishing feature between Rheumatoid Arthritis (RA) and Osteoarthritis (OA) regarding morning stiffness?",
+    options: ["OA morning stiffness lasts for hours; RA morning stiffness lasts only 5 minutes.", "RA morning stiffness typically lasts for over an hour and improves slowly with movement, whereas OA morning stiffness usually resolves within 15-30 minutes of waking.", "Neither condition causes morning stiffness.", "RA only causes stiffness at night."],
+    correctAnswer: 1,
+    hint: "Systemic autoimmune inflammation generates a massive amount of inflammatory exudate overnight that takes significant time to flush out of the tissues.",
+    rationale: "Prolonged morning stiffness lasting greater than 60 minutes is a hallmark diagnostic feature of the systemic inflammation in Rheumatoid Arthritis, sharply contrasting with the brief, mechanical 'gelling' seen in Osteoarthritis (Norris, 2020)."
+  },
+  {
+    id: 136, topic: "Spinal & Postural Conditions", difficulty: "Medium",
+    question: "During an assessment of a client with Hyperlordosis, you observe that their knees are locked in hyper-extension (genu recurvatum). How does this affect the pelvis?",
+    options: ["It causes an anterior pelvic tilt, exacerbating the lumbar lordosis.", "It causes a posterior pelvic tilt, flattening the lumbar spine.", "It has no effect on the pelvis.", "It causes a lateral pelvic tilt."],
+    correctAnswer: 0,
+    hint: "Locking the knees backward drops the front of the pelvis downward.",
+    rationale: "Genu recurvatum (locked, hyperextended knees) shifts the body's center of mass forward, dragging the pelvis into a severe anterior tilt, which mechanically forces the lumbar spine into a deeper, painful hyperlordosis (Hertling & Kessler, 2006)."
+  },
+  {
+    id: 137, topic: "Myofascial Techniques", difficulty: "Medium",
+    question: "What is 'Skin Rolling' primarily used to assess and treat?",
+    options: ["Deep muscle spasms.", "Superficial fascial restrictions and adhesions between the skin, superficial fascia, and the underlying muscle.", "Bone density.", "Joint capsule tightness."],
+    correctAnswer: 1,
+    hint: "This technique involves lifting the cutaneous tissues away from the body and rolling them forward like a wave.",
+    rationale: "Skin rolling is both an assessment and treatment technique that lifts and shears the superficial fascia, breaking adhesions and restoring glide between the integumentary layer and the deeper myofascial envelopes (Andrade, 2023)."
+  },
+  {
+    id: 138, topic: "Head and Neck", difficulty: "Hard",
+    question: "A client presents with unilateral jaw pain and clicking. Upon palpation, you note severe hypertonicity of the Lateral Pterygoid muscle. How is this muscle most effectively accessed for manual release?",
+    options: ["By stripping the masseter externally on the cheek.", "By applying direct ischemic compression to the temples.", "Through intra-oral massage, accessing the muscle behind the upper molars (with proper gloving and consent).", "By applying heavy tapotement to the mandible."],
     correctAnswer: 2,
-    rationale: "An acute dislocation (even after reduction) involves a massive rupture of the joint capsule and ligaments. Moving the arm risks re-dislocation. The site is an absolute local contraindication for mechanical work. Treatment focuses solely on fluid management (MLD) and relieving compensatory tension caused by wearing the sling (Magee, 2021)."
+    hint: "This muscle lies deep within the skull, attaching to the condyle of the mandible and the sphenoid bone. It cannot be reached effectively from the outside.",
+    rationale: "The lateral pterygoid lies deep within the infratemporal fossa. Effective manual release requires intra-oral techniques, accessing the muscle tissue along the upper gum line behind the molars, strictly requiring advanced training and explicit consent (Hertling & Kessler, 2006)."
   },
   {
-    id: 145,
-    topic: "Orthopedic Assessment: The 'Locked' Knee",
-    difficulty: "Hard",
-    question: "STEM: A client injures their knee playing soccer. They limp into your clinic, stating their knee 'locked up' and they cannot fully straighten their leg. Which orthopedic test sequence represents the safest and most diagnostic approach?",
-    options: [
-      "Immediately perform a Lachman's test with maximum force.",
-      "First rule out a fracture. Then, perform AROM (noting the mechanical block to extension). Proceed to McMurray's test to assess if a torn meniscal flap is causing the mechanical joint locking.",
-      "Apply deep friction to the patellar tendon, then perform the Ober's test.",
-      "Perform passive forced extension to 'pop' the knee back into place."
-    ],
+    id: 139, topic: "Spinal Pathologies", difficulty: "Easy",
+    question: "Which condition is characterized by a unilateral narrowing of the intervertebral foramen, leading to nerve root compression and radicular pain?",
+    options: ["Spinal Stenosis (Lateral)", "Spina Bifida", "Meningitis", "Osteoporosis"],
+    correctAnswer: 0,
+    hint: "The term 'stenosis' means the abnormal narrowing of a biological passage.",
+    rationale: "Lateral Spinal Stenosis occurs when osteophytes (bone spurs) or disc degeneration narrows the intervertebral foramen, physically crushing the exiting spinal nerve root and causing radiculopathy (Werner, 2019)."
+  },
+  {
+    id: 140, topic: "Orthopedic Assessment", difficulty: "Medium",
+    question: "What is the primary purpose of the Valsalva Maneuver during a spinal assessment?",
+    options: ["To stretch the hamstrings.", "To voluntarily increase intrathecal (spinal cord) pressure, which will exacerbate pain if a space-occupying lesion (like a herniated disc) is present.", "To test lung capacity.", "To realign the SI joint."],
     correctAnswer: 1,
-    rationale: "A 'locked' joint indicating a mechanical block is the hallmark of a severe meniscal tear (like a bucket-handle tear). You must assess AROM to define the limit, then use the specific diagnostic test for menisci (McMurray's or Apley's compression). Forcing the joint is strictly prohibited (Magee, 2021)."
+    hint: "The client takes a deep breath and 'bears down' as if having a bowel movement, increasing pressure in the core cylinder.",
+    rationale: "The Valsalva maneuver increases intrathecal pressure. If a herniated disc or tumor is pressing on the spinal cord or nerve root, this added pressure will reproduce the client's radicular pain (Magee, 2021)."
   },
   {
-    id: 146,
-    topic: "Case Scenario: RA Remission Management",
-    difficulty: "Hard",
-    question: "STEM: A client with Rheumatoid Arthritis (RA) comes in for a treatment. They are currently in remission (no active flare-ups, no acute joint swelling or heat). What is the primary objective of your treatment plan?",
-    options: [
-      "To aggressively stretch the joint capsules to reverse deformities.",
-      "To cure the autoimmune disease.",
-      "To maintain available joint mobility with gentle ROM, reduce periarticular muscle spasms, and manage stress, while carefully avoiding aggressive techniques that could trigger a new inflammatory flare.",
-      "To perform deep, ischemic compressions on all the small joints of the hand."
-    ],
+    id: 141, topic: "OP Protocols: Systemic Precaution", difficulty: "Hard",
+    question: "STEM: During an Oral Practical, you are presented with a 45-year-old client in the late stages of Multiple Sclerosis. They are currently experiencing severe lower extremity spasticity. The examiner asks: 'How must you adapt your massage pressure and hydrotherapy?'",
+    options: ["Apply deep, aggressive stripping to break the spasticity, and use hot packs.", "Use moderate, soothing pressure to calm the nervous system. Heat is strictly contraindicated due to Uhthoff's phenomenon; use cool/tepid applications if necessary.", "Massage is an absolute contraindication.", "Use rapid, heavy tapotement to exhaust the muscles, followed by an ice bath."],
+    correctAnswer: 1,
+    hint: "Aggressive mechanical input will trigger worse spasticity, and heat will cause their nerves to stop conducting entirely.",
+    rationale: "Spasticity is a neurological reflex that will worsen with aggressive mechanical stimulation. Furthermore, heat exacerbates demyelinating diseases (Uhthoff's phenomenon) and is strictly contraindicated. Treatment must be soothing and neurologically calming (Werner, 2019)."
+  },
+  {
+    id: 142, topic: "Spinal & Postural Conditions", difficulty: "Medium",
+    question: "A client with an exaggerated anterior pelvic tilt (Hyperlordosis) is experiencing lower back pain. Which specific remedial exercise is most indicated to correct the pelvic position?",
+    options: ["Heavy deadlifts to strengthen the back.", "Passive stretching of the gluteus maximus.", "Pelvic tilt exercises (strengthening the abdominals) and stretching the iliopsoas.", "Neck stretches."],
     correctAnswer: 2,
-    rationale: "Even in remission, RA joints are permanently altered and fragile. The goal is palliative: maintain function, reduce the muscle tension caused by joint guarding, and downregulate the nervous system, while adhering strictly to the principle of 'do no harm' (avoiding excessive force that might trigger inflammation) (Werner, 2019)."
+    hint: "To level the pelvis, you must pull up on the front (abdominals) and release the anchor pulling down on the front (hip flexors).",
+    rationale: "Correcting hyperlordosis requires reversing the pelvic tilt. Strengthening the weak abdominals (which pull the anterior pelvis up) and stretching the tight iliopsoas (which pull the anterior pelvis down) restores neutral mechanics (Hertling & Kessler, 2006)."
   },
   {
-    id: 147,
-    topic: "Case Scenario: Ankylosing Spondylitis",
-    difficulty: "Hard",
-    question: "STEM: A client with advanced Ankylosing Spondylitis (AS) presents for massage. Their lumbar and lower thoracic spine are completely fused. During your assessment, what critical secondary impairment must you evaluate to ensure their safety and guide your treatment?",
-    options: [
-      "Assess for Carpal Tunnel Syndrome.",
-      "Assess respiratory excursion (chest expansion). Because the ribs fuse to the spine in advanced AS, diaphragmatic and intercostal breathing are often severely compromised.",
-      "Assess for foot pronation.",
-      "Assess their ability to perform high-impact jumping."
-    ],
+    id: 143, topic: "Systemic Conditions", difficulty: "Easy",
+    question: "Which of the following describes 'Crepitus' in an osteoarthritic joint?",
+    options: ["A severe muscle spasm.", "A palpable or audible crunching, grinding, or popping sensation caused by roughened articular surfaces rubbing together.", "A sudden loss of blood flow.", "The surgical replacement of a joint."],
     correctAnswer: 1,
-    rationale: "As AS progresses superiorly up the spine, it ossifies the costovertebral joints. The ribs can no longer expand during inhalation. The therapist must assess this mechanical respiratory restriction and focus treatment on maintaining whatever mobility remains in the upper thorax and anterior chest muscles (Norris, 2020)."
+    hint: "This is the sound and feeling of the smooth cartilage 'shock absorbers' wearing away, leaving bone grinding on bone.",
+    rationale: "Crepitus is the clinical term for the grinding, cracking, or grating sensation felt within a joint, typically caused by the degradation of hyaline cartilage in osteoarthritis (Magee, 2021)."
   },
   {
-    id: 148,
-    topic: "Case Scenario: Lupus & Acute Trauma",
-    difficulty: "Hard",
-    question: "STEM: A client with Systemic Lupus Erythematosus (SLE) books a treatment for a Grade 1 ankle sprain they sustained yesterday. When they arrive, they report feeling exhausted, achy all over, and running a low-grade fever—they are in an acute SLE flare. How do you proceed?",
-    options: [
-      "Perform aggressive MLD on the ankle and a deep tissue massage to relieve the full-body aches.",
-      "Ignore the lupus flare and treat the ankle sprain normally with friction and stretching.",
-      "Systemic massage is contraindicated during an acute autoimmune flare with fever. You must modify to a very short, light, palliative treatment (e.g., gentle energy work or very light MLD to the ankle only), or reschedule the appointment to avoid overtaxing their system.",
-      "Apply ice to the entire body."
-    ],
+    id: 144, topic: "Orthopedic Assessment", difficulty: "Medium",
+    question: "To assess a client with suspected Ankylosing Spondylitis, the therapist measures the expansion of the rib cage during a deep breath. What is this clinical assessment called?",
+    options: ["Schober's Test", "Costochondral Expansion Test (Chest Expansion Test)", "Valsalva Maneuver", "Brudzinski's Sign"],
+    correctAnswer: 1,
+    hint: "As the spine fuses, the ribs lose their ability to swing outward like bucket handles.",
+    rationale: "The Chest Expansion Test measures the mobility of the costovertebral joints. A significantly reduced expansion (< 2.5 cm) is a strong clinical indicator of the rib fusion characteristic of Ankylosing Spondylitis (Magee, 2021)."
+  },
+  {
+    id: 145, topic: "Clinical Interventions", difficulty: "Medium",
+    question: "A client with early-stage Osteoarthritis of the knee presents for treatment. The joint is stiff but not acutely inflamed. Which intervention is highly indicated to improve cartilage nutrition?",
+    options: ["Total immobilization of the knee.", "Grade 1 and 2 Joint Mobilizations to stimulate synovial fluid production, bathing the avascular cartilage in nutrients.", "Deep transverse friction to the patellar tendon.", "Heavy tapotement to the joint line."],
+    correctAnswer: 1,
+    hint: "Hyaline cartilage does not have a blood supply; it relies entirely on the 'sponge effect' of movement to absorb joint fluid.",
+    rationale: "Articular cartilage is avascular and relies on the mechanical pumping of synovial fluid for nutrition. Gentle, pain-free joint mobilizations stimulate synovial production and distribution, preserving joint health in OA (Hertling & Kessler, 2006)."
+  },
+  {
+    id: 146, topic: "Autoimmune Disorders", difficulty: "Hard",
+    question: "In Rheumatoid Arthritis, what is a 'Pannus'?",
+    options: ["A type of bone spur.", "A highly destructive, hyperactive inflammatory membrane that grows over the articular cartilage, releasing enzymes that dissolve the joint structures.", "A benign tumor of the muscle.", "The protective fluid inside a bursa."],
+    correctAnswer: 1,
+    hint: "This is the abnormal, invasive tissue layer generated by the malfunctioning immune system that physically destroys the joint.",
+    rationale: "A pannus is a hallmark of RA. It is an abnormal layer of fibrovascular tissue or granulation tissue that proliferates over the joint surface, secreting lytic enzymes that aggressively destroy cartilage and bone (Norris, 2020)."
+  },
+  {
+    id: 147, topic: "Spinal & Postural Conditions", difficulty: "Medium",
+    question: "When assessing a client with a functional leg length discrepancy, which pelvic landmark is commonly palpated bilaterally to check for uneven height?",
+    options: ["The greater trochanter.", "The Anterior Superior Iliac Spine (ASIS) and Posterior Superior Iliac Spine (PSIS).", "The ischial tuberosity.", "The xiphoid process."],
+    correctAnswer: 1,
+    hint: "These are the prominent 'hip bones' at the front and the dimples at the lower back.",
+    rationale: "Palpating the ASIS and PSIS bilaterally allows the therapist to assess for pelvic obliquity (tilting or rotation), which is the primary driver of functional leg length discrepancies and compensatory scoliosis (Magee, 2021)."
+  },
+  {
+    id: 148, topic: "Clinical Interventions", difficulty: "Easy",
+    question: "What is the primary rationale for applying heat to the surrounding musculature of a joint afflicted with chronic Osteoarthritis?",
+    options: ["To melt the bone spurs.", "To reduce compensatory muscle hypertonicity, increase local circulation, and prepare the tissues for gentle stretching.", "To numb the nerve endings.", "To completely cure the arthritis."],
+    correctAnswer: 1,
+    hint: "While heat cannot reverse joint damage, it profoundly changes the state of the surrounding soft tissues.",
+    rationale: "In chronic OA, the surrounding muscles often enter a state of protective guarding. Heat applications relieve this secondary hypertonicity, increase tissue extensibility, and reduce pain, allowing for more effective manual therapy and mobilization (Andrade, 2023)."
+  },
+  {
+    id: 149, topic: "Head and Neck", difficulty: "Hard",
+    question: "A client presents with unilateral TMJ pain. The dentist confirms the articular disc is displacing anteriorly. Which muscle directly attaches to the articular disc of the TMJ and, when hypertonic, pulls the disc out of place?",
+    options: ["The Masseter", "The Temporalis", "The Superior Head of the Lateral Pterygoid", "The Medial Pterygoid"],
     correctAnswer: 2,
-    rationale: "An SLE flare accompanied by a fever represents an acute, systemic inflammatory crisis. Vigorous massage will add metabolic demand to an already overwhelmed immune system, potentially causing harm. Treatment must be radically scaled back or delayed (Werner, 2019)."
+    hint: "This deep muscle runs horizontally and has two heads; the upper head inserts directly into the joint capsule and disc.",
+    rationale: "The superior head of the lateral pterygoid inserts directly into the TMJ capsule and the articular disc. Hypertonicity or spasm in this muscle physically pulls the disc anteriorly, causing the classic 'click' and locking of TMJ dysfunction (Hertling & Kessler, 2006)."
   },
   {
-    id: 149,
-    topic: "Case Scenario: Tension Headache Differentiation",
-    difficulty: "Hard",
-    question: "STEM: During an Oral Practical, your client complains of a severe Tension Headache. They describe a deep ache inside the skull behind the eye and a pain radiating to the top of the head. Which specific cervical muscle's trigger point classically produces this exact referral pattern?",
-    options: ["Rhomboid Minor", "Splenius Capitis", "Upper Trapezius", "Levator Scapulae"],
-    correctAnswer: 1,
-    rationale: "The Splenius Capitis trigger point has a highly specific referral pattern: a distinct ache at the vertex (top) of the head. The SCM refers to the forehead and ear, and the Suboccipitals refer to the side of the head like a headband. Precise anatomical knowledge is required for the OP (Hertling & Kessler, 2006)."
-  },
-  {
-    id: 150,
-    topic: "Case Scenario: Osteoporosis Precaution",
-    difficulty: "Hard",
+    id: 150, topic: "Case Scenario: Osteoporosis Precaution", difficulty: "Hard",
     question: "STEM: A 72-year-old female client presents with Functional Hyperkyphosis. You plan to perform joint mobilizations on her thoracic spine to improve extension. However, her intake form lists a recent diagnosis of Osteoporosis (T-score -2.8). How must you alter your OP protocol?",
-    options: [
-      "Perform Grade 4 thrusts to correct the bone density.",
-      "Osteoporosis is an absolute systemic contraindication for massage; refuse treatment.",
-      "Direct vertical pressure (such as CPR-style compressions) and any Grade 3 or 4 joint mobilizations on the spine and ribs are absolute local contraindications due to the critical risk of causing pathological fractures. Treatment must rely on soft tissue MFR and gentle active movement.",
-      "Treat her only in the prone position."
-    ],
+    options: ["Perform Grade 4 thrusts to correct the bone density.", "Osteoporosis is an absolute systemic contraindication for massage; refuse treatment.", "Direct vertical pressure (such as CPR-style compressions) and any Grade 3 or 4 joint mobilizations on the spine and ribs are absolute local contraindications due to the critical risk of causing pathological fractures. Treatment must rely on soft tissue MFR and gentle active movement.", "Treat her only in the prone position."],
     correctAnswer: 2,
+    hint: "A T-score of -2.8 indicates severe structural fragility; the bones cannot withstand mechanical shearing forces.",
     rationale: "A T-score of -2.8 indicates severe osteoporosis (bone porosity and fragility). The bones of the spine and ribs cannot withstand the mechanical shear forces of standard joint mobilizations or heavy downward compressions; applying them is a direct liability and safety hazard (Werner, 2019)."
   }
 ];
