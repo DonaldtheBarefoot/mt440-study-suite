@@ -68,7 +68,7 @@
         const IconPlay = ({ size = 24, className }) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><polygon points="5 3 19 12 5 21 5 3"/></svg>;
 
         const fallbackBatch5 = [
-            { id: 201, topic: "Peripheral Nervous System", difficulty: "Easy", question: "Bell's Palsy involves the acute, unilateral paralysis of the facial muscles. Which cranial nerve is affected?", options: ["Trigeminal Nerve (CN V)", "Facial Nerve (CN VII)", "Vagus Nerve (CN X)", "Hypoglossal Nerve (CN XII)"], correctAnswer: 1, rationale: "Bell's Palsy is a lower motor neuron lesion of the Facial Nerve (CN VII) resulting in flaccid paralysis." }
+            { id: 201, topic: "Peripheral Nervous System", difficulty: "Easy", question: "Bell's Palsy involves the acute, unilateral paralysis of the facial muscles. Which cranial nerve is affected?", options: ["Trigeminal Nerve (CN V)", "Facial Nerve (CN VII)", "Vagus Nerve (CN X)", "Hypoglossal Nerve (CN XII)"], correctAnswer: 1, hint: "This nerve controls the muscles of facial expression.", rationale: "Bell's Palsy is a lower motor neuron lesion of the Facial Nerve (CN VII) resulting in flaccid paralysis." }
         ];
 
         const loadStaticBank = () => {
@@ -136,6 +136,7 @@
                                         `There are no specific clinical findings. General Swedish Massage is applied normally.`
                                     ],
                                     correctAnswer: 0,
+                                    hint: `Clinical Focus: Consider the specific 4T palpation findings and safety contraindications associated with ${item.condition}.`,
                                     rationale: `Palpation reveals: Temperature: ${item.palpation4Ts.temperature}, Tone: ${item.palpation4Ts.tone}, Tenderness: ${item.palpation4Ts.tenderness}. Contraindication note: ${item.contraindications}`
                                 }));
                                 setDynamicQuestions(mappedQuestions);
