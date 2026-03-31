@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Treatments II (MT390) - Master Study Suite v2.0</title>
+    <title>Student-RMT-Matrix | Treatments II v2.0</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
@@ -63,7 +63,7 @@
         // --- ICON COMPONENTS ---
         const IconCheck = ({ size = 24, className }) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M20 6 9 17l-5-5"/></svg>;
         const IconX = ({ size = 24, className }) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M18 6 6 18M6 6l12 12"/></svg>;
-        const IconSettings = ({ size = 24, className }) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>;
+        const IconSettings = ({ size = 24, className }) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1 0-2.83 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>;
         const IconBook = ({ size = 24, className }) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>;
         const IconPlay = ({ size = 24, className }) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><polygon points="5 3 19 12 5 21 5 3"/></svg>;
 
@@ -108,7 +108,6 @@
             // Active Quiz State
             const [currentQuiz, setCurrentQuiz] = useState([]);
             const [userAnswers, setUserAnswers] = useState({});
-            const [quizSubmitted, setQuizSubmitted] = useState(false);
             const [visibleHints, setVisibleHints] = useState({});
 
             useEffect(() => {
@@ -180,31 +179,22 @@
                 
                 setCurrentQuiz(selectedSet);
                 setUserAnswers({});
-                setQuizSubmitted(false);
                 setVisibleHints({});
                 setIsSettingsOpen(false);
                 setView('exam');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             };
 
+            // Immediate Feedback Logic: Locks in the answer instantly
             const handleSelection = (qId, oIndex) => {
-                if (quizSubmitted) return;
+                if (userAnswers[qId] !== undefined) return; 
                 setUserAnswers(prev => ({ ...prev, [qId]: oIndex }));
-            };
-
-            const submitQuiz = () => {
-                if (Object.keys(userAnswers).length < currentQuiz.length) {
-                    if (!window.confirm("You haven't answered all questions. Submit anyway?")) return;
-                }
-                setQuizSubmitted(true);
-                window.scrollTo({ top: 0, behavior: 'smooth' });
             };
 
             const reviewIncorrect = () => {
                 const incorrectQs = currentQuiz.filter(q => userAnswers[q.id] !== q.correctAnswer);
                 setCurrentQuiz(incorrectQs);
                 setUserAnswers({});
-                setQuizSubmitted(false);
                 setVisibleHints({});
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             };
@@ -220,14 +210,16 @@
                 window.print();
             };
 
+            // Dynamic Running Score Calculation
             const answeredCount = Object.keys(userAnswers).length;
             const progressPct = currentQuiz.length > 0 ? (answeredCount / currentQuiz.length) * 100 : 0;
             
             let correctCount = 0;
-            if (quizSubmitted) {
-                currentQuiz.forEach(q => { if (userAnswers[q.id] === q.correctAnswer) correctCount++; });
-            }
-            const scorePct = currentQuiz.length > 0 ? Math.round((correctCount / currentQuiz.length) * 100) : 0;
+            currentQuiz.forEach(q => {
+                if (userAnswers[q.id] === q.correctAnswer) correctCount++;
+            });
+            const currentScorePct = answeredCount > 0 ? Math.round((correctCount / answeredCount) * 100) : 0;
+            const isComplete = answeredCount === currentQuiz.length && currentQuiz.length > 0;
 
             // --- RENDERERS ---
 
@@ -288,7 +280,7 @@
                             <div className="inline-flex items-center justify-center w-20 h-20 bg-blue-100 text-blue-700 rounded-3xl mb-6 shadow-sm">
                                 <IconBook size={40} />
                             </div>
-                            <h1 className="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">Treatments II Study Suite</h1>
+                            <h1 className="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">Student-RMT-Matrix</h1>
                             <p className="text-lg text-slate-500 max-w-2xl mx-auto">
                                 Evidence-based clinical simulation engine for MT390. Master your pathology, orthopedic assessments, and Oral Practical protocols.
                             </p>
@@ -308,7 +300,7 @@
                 <div className="w-full">
                     {renderSettingsModal()}
                     
-                    {/* Sticky Header */}
+                    {/* Sticky Header with Running Cumulative Score */}
                     <div className="sticky top-0 w-full bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm z-50 px-4 py-3 flex justify-between items-center no-print">
                         <div className="max-w-6xl mx-auto w-full flex justify-between items-center gap-4">
                             <div className="flex items-center gap-4 flex-1">
@@ -318,12 +310,15 @@
                                 </div>
                                 <span className="text-sm font-semibold text-slate-600 whitespace-nowrap">{answeredCount} / {currentQuiz.length}</span>
                             </div>
-                            <div className="flex gap-2">
+                            <div className="flex gap-4 items-center">
+                                {answeredCount > 0 && (
+                                    <div className="bg-slate-100 border border-slate-200 px-4 py-1.5 rounded-lg flex items-center gap-2 shadow-sm animate-in fade-in zoom-in-95">
+                                        <span className="text-xs font-bold uppercase text-slate-500 tracking-wider">Live Grade</span>
+                                        <span className={`text-lg font-black ${currentScorePct >= 70 ? 'text-green-600' : 'text-red-500'}`}>{currentScorePct}%</span>
+                                    </div>
+                                )}
                                 <button onClick={() => setIsSettingsOpen(true)} className="bg-slate-100 hover:bg-slate-200 text-slate-700 p-2 rounded-lg transition" title="Quiz Settings">
                                     <IconSettings size={20} />
-                                </button>
-                                <button onClick={submitQuiz} disabled={quizSubmitted} className={`font-bold py-2 px-6 rounded-lg transition shadow-sm ${quizSubmitted ? 'bg-slate-300 text-slate-500 cursor-not-allowed' : 'bg-green-600 hover:bg-green-700 text-white'}`}>
-                                    Grade Exam
                                 </button>
                             </div>
                         </div>
@@ -331,7 +326,7 @@
 
                     <div className="max-w-5xl mx-auto px-4 mt-8">
                         <header className="mb-8 text-center">
-                        <h1 className="text-4xl font-extrabold text-slate-800 mb-3 tracking-tight">Treatments II | Cumulative MCQ Database | Quiz #1 - Quiz #4</h1>
+                            <h1 className="text-4xl font-extrabold text-slate-800 mb-3 tracking-tight">Treatments II - Master Exam</h1>
                             <p className="text-slate-500 print-only">Generated for Offline PDF Study.</p>
                         </header>
 
@@ -343,11 +338,11 @@
                             <button onClick={() => triggerPrint('key')} className="bg-white border border-blue-200 hover:bg-blue-100 text-blue-700 py-2 px-4 rounded shadow-sm text-sm font-medium transition">🔑 Print Answer Key</button>
                         </div>
 
-                        {/* Grade Display Banner */}
-                        {quizSubmitted && (
+                        {/* Grade Display Banner (Shows only when all questions are answered) */}
+                        {isComplete && (
                             <div className="bg-green-50 border-2 border-green-500 rounded-2xl p-8 mb-8 text-center shadow-md no-print animate-in zoom-in-95 duration-300">
                                 <h2 className="text-3xl font-extrabold text-green-800 mb-2">Exam Complete!</h2>
-                                <div className="text-5xl font-black text-green-600 mb-4">{scorePct}%</div>
+                                <div className="text-5xl font-black text-green-600 mb-4">{currentScorePct}%</div>
                                 <p className="text-lg text-green-700 font-medium mb-6">{correctCount} / {currentQuiz.length} Correct</p>
                                 {correctCount < currentQuiz.length && (
                                     <button onClick={reviewIncorrect} className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-xl transition shadow-sm">
@@ -371,7 +366,7 @@
                                     const isCorrect = selectedVal === q.correctAnswer;
                                     
                                     let cardBorder = 'border-slate-200';
-                                    if (quizSubmitted) { cardBorder = isCorrect ? 'border-green-500' : 'border-red-500'; }
+                                    if (isAnswered) { cardBorder = isCorrect ? 'border-green-500' : 'border-red-500'; }
 
                                     return (
                                         <div key={q.id} className={`bg-white rounded-xl shadow-sm p-6 border-2 ${cardBorder} question-card`}>
@@ -383,17 +378,28 @@
                                             <div className="space-y-3 mb-4">
                                                 {q.options.map((opt, oIndex) => {
                                                     let labelClass = 'bg-white border-slate-200';
-                                                    if (isAnswered && !quizSubmitted) {
-                                                        if (selectedVal === oIndex) labelClass = 'bg-blue-50 border-blue-500';
-                                                    } else if (quizSubmitted) {
-                                                        if (oIndex === q.correctAnswer) labelClass = 'bg-green-100 border-green-500';
-                                                        else if (selectedVal === oIndex) labelClass = 'bg-red-100 border-red-500 opacity-70';
+                                                    if (isAnswered) {
+                                                        if (oIndex === q.correctAnswer) {
+                                                            labelClass = 'bg-green-100 border-green-500';
+                                                        } else if (selectedVal === oIndex && !isCorrect) {
+                                                            labelClass = 'bg-red-100 border-red-500 opacity-70';
+                                                        } else {
+                                                            labelClass = 'bg-slate-50 border-slate-100 opacity-50';
+                                                        }
                                                     }
 
                                                     return (
-                                                        <label key={oIndex} className={`flex items-start p-3 border rounded-lg option-label ${labelClass} ${oIndex === q.correctAnswer ? 'print-correct-highlight' : ''} ${!quizSubmitted ? 'hover:bg-slate-50' : ''}`}>
-                                                            <input type="radio" name={`q${q.id}`} value={oIndex} checked={selectedVal === oIndex} disabled={quizSubmitted} onChange={() => handleSelection(q.id, oIndex)} className="mt-1 mr-3 text-blue-600 focus:ring-blue-500 cursor-pointer" />
-                                                            <span className="text-slate-700 font-medium">{opt}</span>
+                                                        <label key={oIndex} className={`flex items-start p-3 border rounded-lg option-label ${labelClass} ${oIndex === q.correctAnswer ? 'print-correct-highlight' : ''} ${!isAnswered ? 'hover:bg-slate-50' : 'cursor-default'}`}>
+                                                            <input 
+                                                                type="radio" 
+                                                                name={`q${q.id}`} 
+                                                                value={oIndex} 
+                                                                checked={selectedVal === oIndex} 
+                                                                disabled={isAnswered} 
+                                                                onChange={() => handleSelection(q.id, oIndex)} 
+                                                                className={`mt-1 mr-3 text-blue-600 focus:ring-blue-500 ${isAnswered ? 'cursor-default' : 'cursor-pointer'}`} 
+                                                            />
+                                                            <span className={`font-medium ${isAnswered && selectedVal !== oIndex && oIndex !== q.correctAnswer ? 'text-slate-400' : 'text-slate-700'}`}>{opt}</span>
                                                         </label>
                                                     );
                                                 })}
@@ -401,20 +407,23 @@
 
                                             <div className="print-only-key mb-2 font-medium text-slate-800"><span className="text-slate-500">Correct Answer:</span> {q.options[q.correctAnswer]}</div>
 
-                                            {/* Hint Logic - Conditionally render if 'hint' exists in data source */}
-                                            {q.hint && !quizSubmitted && (
+                                            {/* Hint Logic - Hidden once the user answers the question */}
+                                            {q.hint && !isAnswered && (
                                                 <div className="no-print mb-4">
                                                     <button onClick={() => toggleHint(q.id)} className="text-sm font-semibold text-blue-500 hover:text-blue-700 flex items-center gap-1">💡 Show Hint</button>
                                                     {visibleHints[q.id] && (
-                                                        <div className="mt-2 p-3 bg-yellow-50 text-yellow-800 rounded-lg text-sm italic border border-yellow-200">{q.hint}</div>
+                                                        <div className="mt-2 p-3 bg-yellow-50 text-yellow-800 rounded-lg text-sm italic border border-yellow-200 animate-in fade-in duration-200">{q.hint}</div>
                                                     )}
                                                 </div>
                                             )}
 
-                                            {/* Clinical Rationale Block - Shows after submission or in Study Guide Print */}
-                                            <div className={`${quizSubmitted ? 'block' : 'hidden'} explanation-container mt-4 p-4 rounded-lg bg-slate-50 border-l-4 border-blue-500`}>
-                                                <p className="font-semibold text-slate-800 mb-1">Evidence-Based Rationale:</p>
-                                                <p className="text-slate-700 text-sm mb-1">{q.rationale}</p>
+                                            {/* Clinical Rationale Block - Shows IMMEDIATELY after answering */}
+                                            <div className={`${isAnswered ? 'block animate-in slide-in-from-top-2 duration-300' : 'hidden'} explanation-container mt-4 p-4 rounded-lg bg-slate-50 border-l-4 border-blue-500`}>
+                                                <div className="flex items-start gap-2 mb-1">
+                                                    {isCorrect ? <IconCheck className="text-green-600 mt-0.5" size={18} /> : <IconX className="text-red-500 mt-0.5" size={18} />}
+                                                    <p className={`font-bold ${isCorrect ? 'text-green-800' : 'text-red-800'}`}>{isCorrect ? 'Correct!' : 'Incorrect.'} Evidence-Based Rationale:</p>
+                                                </div>
+                                                <p className="text-slate-700 text-sm pl-7">{q.rationale}</p>
                                             </div>
                                         </div>
                                     );
