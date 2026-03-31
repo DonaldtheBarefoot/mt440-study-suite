@@ -1,570 +1,409 @@
 /**
  * MT390 Treatments II - Master Clinical Simulator
- * Phase 3 - Action 1: Batch 1 (Questions 1 - 50)
+ * Phase 1: Batch 1 (Questions 1 - 50)
  * Curriculum: Respiratory, Cardiovascular, Basic Musculoskeletal (Quiz 1 & Early Quiz 2)
- * Difficulty Distribution: 25 Easy, 15 Medium, 10 Hard
+ * Features: v2.0 Hint Integration & APA Citations
  */
 
 window.batch1Questions = [
-  // ==========================================
-  // EASY: Foundational Definitions & Protocols
-  // ==========================================
   {
-    id: 1,
-    topic: "Respiratory System",
-    difficulty: "Easy",
+    id: 1, topic: "Respiratory System", difficulty: "Easy",
     question: "Which respiratory condition is defined as a chronic inflammatory disorder of the airways characterized by reversible bronchospasm and excessive mucus production?",
     options: ["Emphysema", "Asthma", "Chronic Bronchitis", "Sinusitis"],
     correctAnswer: 1,
+    hint: "Think about the condition characterized by 'hyperreactivity' to triggers rather than permanent alveolar destruction.",
     rationale: "Asthma involves reversible airway obstruction, inflammation, and increased airway responsiveness to various stimuli (Norris, 2020)."
   },
   {
-    id: 2,
-    topic: "Respiratory System",
-    difficulty: "Easy",
+    id: 2, topic: "Respiratory System", difficulty: "Easy",
     question: "Which chronic obstructive pulmonary disease (COPD) is characterized by the permanent destruction of alveolar walls and a resulting 'barrel chest' presentation?",
     options: ["Asthma", "Cystic Fibrosis", "Chronic Bronchitis", "Emphysema"],
     correctAnswer: 3,
+    hint: "This pathology results in air trapping and a loss of lung elasticity, permanently altering the shape of the thorax.",
     rationale: "Emphysema destroys the elastin in alveolar walls, leading to air trapping, hyperinflation of the lungs, and a characteristic 'barrel chest' (Werner, 2019)."
   },
   {
-    id: 3,
-    topic: "Respiratory System",
-    difficulty: "Easy",
-    question: "A clinical diagnosis of Chronic Bronchitis requires the presence of a productive cough for at least how long?",
-    options: ["3 consecutive weeks", "3 months of the year for 2 consecutive years", "6 months continuously", "1 month of the year for 3 consecutive years"],
+    id: 3, topic: "Respiratory System", difficulty: "Medium",
+    question: "A client presents with Chronic Bronchitis. Which manual therapy technique is highly indicated to assist with the mobilization of excessive bronchial secretions?",
+    options: ["Deep transverse friction to the intercostals.", "Heavy tapotement over the thorax.", "Origin and Insertion technique on the diaphragm.", "High-velocity cervical Joint Mobilizations."],
     correctAnswer: 1,
-    rationale: "Chronic bronchitis is clinically defined by a hypersecretion of mucus and chronic productive cough that lasts for at least 3 months of the year for at least 2 consecutive years (Norris, 2020)."
+    hint: "Select the percussive technique specifically designed to mechanically loosen mucus in the respiratory tract.",
+    rationale: "Tapotement (specifically cupping and hacking) over the thorax creates mechanical vibrations that help dislodge and mobilize thick mucus secretions in chronic bronchitis (Andrade, 2023)."
   },
   {
-    id: 4,
-    topic: "Respiratory System",
-    difficulty: "Easy",
-    question: "Massage therapy is generally considered an absolute systemic contraindication for a client presenting with acute Sinusitis if it is accompanied by:",
-    options: ["A low-grade headache", "A systemic fever and active infection", "Nasal congestion", "Post-nasal drip"],
+    id: 4, topic: "Respiratory System", difficulty: "Hard",
+    question: "During a treatment for a client with an acute asthma flare-up, which of the following clinical parameters is an absolute contraindication?",
+    options: ["Treating the scalenes and sternocleidomastoid.", "Utilizing prolonged prone positioning.", "Applying superficial reflex techniques.", "Elevating the client's torso with pillows."],
     correctAnswer: 1,
-    rationale: "Acute sinusitis accompanied by a fever indicates an active, systemic bacterial or viral infection. Systemic infections are absolute contraindications for massage to prevent overwhelming the immune system (Werner, 2019)."
+    hint: "Consider how gravity and body weight affect the mechanical expansion of the rib cage during labored breathing.",
+    rationale: "Prolonged prone positioning restricts anterior rib cage expansion and places additional mechanical stress on the accessory muscles of respiration, which can trigger or exacerbate an asthma attack (Werner, 2019)."
   },
   {
-    id: 5,
-    topic: "Cardiovascular System",
-    difficulty: "Easy",
-    question: "Primary hypertension is clinically defined as a sustained blood pressure reading greater than:",
-    options: ["120/80 mmHg", "130/85 mmHg", "140/90 mmHg", "160/100 mmHg"],
+    id: 5, topic: "Cardiovascular System", difficulty: "Easy",
+    question: "Which condition is a direct local contraindication for massage due to the severe risk of dislodging a thrombus?",
+    options: ["Primary Hypertension", "Raynaud's Phenomenon", "Deep Vein Thrombosis (DVT)", "Varicose Veins"],
     correctAnswer: 2,
-    rationale: "Stage 1 Hypertension is traditionally diagnosed when resting blood pressure is consistently measured at or above 140/90 mmHg (Tortora & Derrickson, 2017)."
+    hint: "This condition typically presents as unilateral heat, swelling, and deep calf pain.",
+    rationale: "Deep Vein Thrombosis involves a clot in a deep vein. Massage poses a critical risk of dislodging the clot, leading to a potentially fatal pulmonary embolism (Norris, 2020)."
   },
   {
-    id: 6,
-    topic: "Cardiovascular System",
-    difficulty: "Easy",
-    question: "Chronic Congestive Heart Failure (CCHF) is a condition where:",
-    options: ["The heart muscle becomes too thick to contract.", "The heart cannot pump enough blood to meet the metabolic demands of the body.", "There is a complete blockage of the coronary arteries.", "The valves of the heart fail to close, causing immediate cardiac arrest."],
+    id: 6, topic: "Cardiovascular System", difficulty: "Medium",
+    question: "A client with Raynaud's Disease presents for a massage. Which hydrotherapy application must be strictly avoided?",
+    options: ["Warm moist heat to the cervical spine.", "Cold applications to the extremities.", "Tepid compress to the forehead.", "Warm paraffin wax on the hands."],
     correctAnswer: 1,
-    rationale: "CCHF is a progressive syndrome in which the heart's pumping capability is impaired, resulting in insufficient cardiac output to meet systemic metabolic needs (Norris, 2020)."
+    hint: "Raynaud's is a vasospastic disorder. Consider what temperature extreme triggers peripheral vasoconstriction.",
+    rationale: "Cold applications trigger severe vasospasm in the arterioles of the digits in clients with Raynaud's Disease, exacerbating tissue ischemia and pain (Werner, 2019)."
   },
   {
-    id: 7,
-    topic: "Cardiovascular System",
-    difficulty: "Easy",
-    question: "A client presents with unilateral, deep, localized aching in their calf, accompanied by heat, redness, and swelling. What condition must be suspected?",
-    options: ["Varicose Veins", "Gastrocnemius Strain", "Deep Vein Thrombosis (DVT)", "Periostitis (Shin Splints)"],
-    correctAnswer: 2,
-    rationale: "Unilateral calf pain, heat, redness, and swelling are classic signs of Deep Vein Thrombosis, a medical emergency requiring immediate referral (Werner, 2019)."
+    id: 7, topic: "Cardiovascular System", difficulty: "Hard",
+    question: "A client with a history of primary hypertension complains of a sudden, severe, 'tearing' pain in their upper back. Their pulse is rapid and weak. What life-threatening event must you suspect?",
+    options: ["Myocardial Infarction", "Aortic Dissection (Aneurysm Rupture)", "Acute Asthma Attack", "Pulmonary Embolism"],
+    correctAnswer: 1,
+    hint: "The description of the pain as 'tearing' in the upper back alongside systemic shock is a classic hallmark for this specific vascular rupture.",
+    rationale: "Sudden, severe, 'tearing' pain in the chest or upper back in a hypertensive patient strongly indicates an aortic dissection, requiring immediate emergency medical dispatch (Norris, 2020)."
   },
   {
-    id: 8,
-    topic: "Cardiovascular System",
-    difficulty: "Easy",
-    question: "Which condition involves abnormally dilated, tortuous superficial veins, most commonly found in the lower extremities?",
-    options: ["Deep Vein Thrombosis", "Raynaud's Disease", "Atherosclerosis", "Varicose Veins"],
+    id: 8, topic: "Cardiovascular System", difficulty: "Medium",
+    question: "When treating a client with moderate Varicose Veins, what is the appropriate clinical modification?",
+    options: ["Deep specific compressions directly over the affected veins.", "Total body contraindication; refuse treatment.", "Light effleurage moving exclusively proximal to distal.", "Treat proximal to the varicosities to reduce venous congestion, and avoid direct deep pressure on the damaged valves."],
     correctAnswer: 3,
-    rationale: "Varicose veins occur when venous valves become incompetent, allowing blood to pool and causing superficial veins to become dilated and tortuous (Tortora & Derrickson, 2017)."
+    hint: "Think about the direction of venous return and how to assist fluid flow without crushing compromised vascular structures.",
+    rationale: "Direct pressure on varicose veins can damage fragile tissue. Treating proximally assists venous return and reduces back-pressure on the incompetent valves (Andrade, 2023)."
   },
   {
-    id: 9,
-    topic: "Cardiovascular System",
-    difficulty: "Easy",
-    question: "Raynaud's Phenomenon involves episodic vasospasms of the arterioles, usually in the fingers and toes. What is a common trigger for these episodes?",
-    options: ["Excessive heat", "Cold temperatures or emotional stress", "High sodium intake", "Prolonged supine positioning"],
+    id: 9, topic: "Orthopedic Assessment", difficulty: "Easy",
+    question: "During a Cyriax assessment, the client experiences pain on Active Range of Motion (AROM) and Resisted Range of Motion (RROM), but no pain on Passive Range of Motion (PROM) in the same direction. What tissue is likely injured?",
+    options: ["Inert tissue (e.g., joint capsule)", "Contractile tissue (e.g., muscle belly or tendon)", "Nerve root", "Bursa"],
     correctAnswer: 1,
-    rationale: "Raynaud's episodes are primarily triggered by exposure to cold temperatures or acute emotional stress, leading to severe vasoconstriction (Werner, 2019)."
+    hint: "Which type of tissue actively generates force during a resisted movement?",
+    rationale: "Pain upon active and resisted movement, but not passive movement, isolates the lesion to the contractile tissue unit (muscle or tendon) because the tissue is being forced to fire (Magee, 2021)."
   },
   {
-    id: 10,
-    topic: "Musculoskeletal System",
-    difficulty: "Easy",
-    question: "A sprain is defined as a stretch or tear of which specific tissue?",
-    options: ["Muscle belly", "Tendon", "Ligament", "Fascia"],
+    id: 10, topic: "Orthopedic Assessment", difficulty: "Easy",
+    question: "What specific type of normal end feel is characterized by a definitive, leathery resistance before the joint reaches its anatomical limit?",
+    options: ["Hard (Bone-to-bone)", "Soft (Tissue approximation)", "Firm", "Empty"],
     correctAnswer: 2,
-    rationale: "A sprain is a severe stretch or tear of a ligament (inert tissue connecting bone to bone), whereas a strain involves a muscle or tendon (Hertling & Kessler, 2006)."
+    hint: "This term replaces 'tissue stretch' and describes the tension felt when a joint capsule or ligament is fully elongated.",
+    rationale: "A firm end feel (previously referred to as tissue stretch) is the normal sensation of capsular or ligamentous tension at the extreme of a joint's range of motion (Magee, 2021)."
   },
   {
-    id: 11,
-    topic: "Musculoskeletal System",
-    difficulty: "Easy",
-    question: "A strain is an injury involving which structures?",
-    options: ["Ligaments and joint capsules", "Musculotendinous units", "Bursae", "Peripheral nerves"],
+    id: 11, topic: "Orthopedic Assessment", difficulty: "Medium",
+    question: "You are assessing a client with a suspected lateral ankle sprain. Which specific orthopedic test is utilized to evaluate the integrity of the calcaneofibular ligament?",
+    options: ["Anterior Drawer Test", "Talar Tilt Test", "Thompson Test", "Kleiger's Test"],
     correctAnswer: 1,
-    rationale: "A strain specifically refers to an injury to the contractile tissue—the muscle belly or its attaching tendon (Magee, 2021)."
+    hint: "This test involves inverting the calcaneus to place tension directly on the lateral ligament complex.",
+    rationale: "The Talar Tilt Test applies an inversion force to the ankle mortise specifically to assess the laxity and integrity of the calcaneofibular ligament (Magee, 2021)."
   },
   {
-    id: 12,
-    topic: "Musculoskeletal System",
-    difficulty: "Easy",
-    question: "What is the clinical definition of a contusion?",
-    options: ["A complete rupture of a muscle", "A crush injury to soft tissue resulting in capillary bleeding (a bruise)", "A hairline fracture of a bone", "The tearing of a joint capsule"],
+    id: 12, topic: "Clinical Interventions", difficulty: "Medium",
+    question: "What is the primary physiological objective of applying Joint Mobilizations in a clinical treatment plan?",
+    options: ["To actively stretch the muscle belly.", "To restore normal accessory motions (joint play) without forcing anatomical range of motion.", "To induce a systemic parasympathetic response.", "To forcefully break bone spurs within the articular capsule."],
     correctAnswer: 1,
-    rationale: "A contusion is a blunt force trauma that crushes soft tissue, causing hemorrhage from ruptured capillaries (bruising/hematoma) without breaking the skin (Werner, 2019)."
+    hint: "Consider the difference between osteokinematic (voluntary) movement and arthrokinematic (involuntary) gliding.",
+    rationale: "Joint Mobilizations are applied to safely restore the minute, involuntary accessory motions (roll, spin, glide) required for pain-free anatomical movement (Hertling & Kessler, 2006)."
   },
   {
-    id: 13,
-    topic: "Musculoskeletal System",
-    difficulty: "Easy",
-    question: "What is the very first stage of bone healing following a fracture?",
-    options: ["Callus formation", "Remodeling", "Hematoma formation", "Osteoblastic proliferation"],
+    id: 13, topic: "Sprains and Strains", difficulty: "Easy",
+    question: "A client sustained an acute whiplash injury (Cervical Sprain) 24 hours ago. What is the most appropriate initial manual intervention?",
+    options: ["Aggressive passive stretching of the SCM.", "Deep transverse frictions to the cervical ligaments.", "Manual Lymph Drainage (MLD) starting at the terminus.", "Grade 4 Joint Mobilizations of the cervical spine."],
     correctAnswer: 2,
-    rationale: "Immediately following a fracture, blood vessels tear, and a fracture hematoma forms around the site of the break. This is the first essential stage of bone healing (Tortora & Derrickson, 2017)."
+    hint: "During the acute inflammatory phase, the primary goal is edema management, not mechanical tissue deformation.",
+    rationale: "In the acute phase of a sprain, deep mechanical work is contraindicated. Manual Lymph Drainage is indicated to manage the inflammatory exudate and reduce tissue congestion (Andrade, 2023)."
   },
   {
-    id: 14,
-    topic: "Musculoskeletal System",
-    difficulty: "Easy",
-    question: "A Grade 1 (mild) sprain is characterized by:",
-    options: ["A complete rupture of the ligament with severe joint instability.", "A moderate tear with some loss of function and joint laxity.", "Micro-tearing of the ligament fibers with mild pain but no joint instability.", "Avulsion of the bone at the ligamentous attachment."],
+    id: 14, topic: "Head and Neck", difficulty: "Hard",
+    question: "Before treating the deep suboccipital muscles of a whiplash patient, which mandatory screening test must be performed to rule out vertebrobasilar insufficiency?",
+    options: ["Spurling's Test", "Vertebral Artery Test (VAT)", "Tinel's Sign", "Kernig's Test"],
+    correctAnswer: 1,
+    hint: "This test involves placing the cervical spine in extension and rotation to observe for nystagmus or dizziness.",
+    rationale: "The Vertebral Artery Test (VAT) is a mandatory safety screen to ensure the vertebral artery is not compromised before performing deep cervical work or end-range stretches (Magee, 2021)."
+  },
+  {
+    id: 15, topic: "Head and Neck", difficulty: "Medium",
+    question: "A client presents with acquired torticollis, and their sternocleidomastoid (SCM) is highly irritable and too painful to touch directly. Which indirect advanced technique is indicated as a first-line intervention?",
+    options: ["Direct ischemic compression.", "Origin & Insertion (O&I) technique.", "Transverse friction across the muscle belly.", "Heavy tapotement."],
+    correctAnswer: 1,
+    hint: "If the muscle belly is hyperalgesic, focus your manual therapy on the tendinous attachments to elicit a reflex release.",
+    rationale: "The Origin & Insertion (O&I) technique applies specific compression to the musculotendinous junctions, safely initiating a reflex release without irritating the highly sensitive muscle belly (Andrade, 2023)."
+  },
+  {
+    id: 16, topic: "Advanced Techniques", difficulty: "Hard",
+    question: "During an Oral Practical exam, a client develops a sudden, agonizing muscle spasm in their hamstring. Which advanced protocol involves physically pushing the attachments together to slacken the muscle spindles?",
+    options: ["Golgi Tendon Organ (GTO) Release", "Muscle Approximation", "Myofascial Release (MFR)", "Passive Positional Release"],
+    correctAnswer: 1,
+    hint: "This technique relies on closing the distance between the origin and insertion to 'turn off' the stretch reflex.",
+    rationale: "Muscle Approximation specifically targets active muscle spasms by physically slackening the intrafusal muscle fibers, which inhibits the stretch reflex driving the spasm (Willis College OP Protocol)."
+  },
+  {
+    id: 17, topic: "Advanced Techniques", difficulty: "Medium",
+    question: "What is the physiological mechanism behind a Golgi Tendon Organ (GTO) Release?",
+    options: ["It induces localized inflammation to speed healing.", "It physically tears fascial cross-links.", "It applies tension to the tendon, triggering an inhibitory reflex that relaxes the target muscle.", "It permanently lengthens the bone tissue."],
     correctAnswer: 2,
-    rationale: "A Grade 1 sprain involves micro-trauma or slight stretching of the ligament. There is mild pain and swelling, but the joint remains structurally stable (Magee, 2021)."
+    hint: "Think about the neurological feedback loop that protects a muscle from tearing under excessive tension.",
+    rationale: "Sustained pressure on the tendon stimulates the Golgi Tendon Organs, which neurologically inhibit the alpha motor neurons, causing the associated muscle belly to relax (Andrade, 2023)."
   },
   {
-    id: 15,
-    topic: "Musculoskeletal System",
-    difficulty: "Easy",
-    question: "Where does a Colles' fracture anatomically occur?",
-    options: ["Proximal humerus", "Distal radius (often from falling on an outstretched hand)", "Distal fibula", "Neck of the femur"],
+    id: 18, topic: "Lower Extremity", difficulty: "Easy",
+    question: "Which condition is characterized by a lateral deviation of the patella within the femoral groove, causing deep, aching anterior knee pain?",
+    options: ["Osgood-Schlatter Disease", "Patellofemoral Syndrome (PFS)", "Meniscal Tear", "Achilles Tendinopathy"],
     correctAnswer: 1,
-    rationale: "A Colles' fracture is a fracture of the distal end of the radius, characterized by posterior displacement of the distal fragment, commonly caused by a FOOSH (Fall On Outstretched Hand) injury (Magee, 2021)."
+    hint: "This syndrome is often driven by a strength imbalance between the vastus lateralis and vastus medialis.",
+    rationale: "Patellofemoral Syndrome involves the improper mechanical tracking of the patella, resulting in chondromalacia and anterior knee pain (Werner, 2019)."
   },
   {
-    id: 16,
-    topic: "Cardiovascular System",
-    difficulty: "Easy",
-    question: "What is the absolute local contraindication for treating a client with suspected Deep Vein Thrombosis (DVT)?",
-    options: ["Massage of the affected limb is strictly contraindicated.", "Avoid placing the client in a prone position.", "Do not perform tapotement on the upper back.", "Avoid massaging the unaffected limb."],
-    correctAnswer: 0,
-    rationale: "Massaging a limb with a DVT risks mechanically dislodging the blood clot, creating an embolus that could travel to the lungs, causing a potentially fatal pulmonary embolism (Werner, 2019)."
-  },
-  {
-    id: 17,
-    topic: "Cardiovascular System",
-    difficulty: "Easy",
-    question: "When treating a client with visible, severe varicose veins, what is the appropriate modification?",
-    options: ["Apply deep stripping directly over the veins to clear the blood.", "Direct massage over the affected veins is a local contraindication.", "Apply ischemic compression to the veins.", "Use deep cross-fiber friction across the veins."],
+    id: 19, topic: "Lower Extremity", difficulty: "Medium",
+    question: "To confirm Iliotibial (IT) Band Friction Syndrome, which special test applies pressure to the lateral femoral epicondyle while passively extending the knee?",
+    options: ["Ober's Test", "Noble's Compression Test", "McMurray's Test", "Lachman's Test"],
     correctAnswer: 1,
-    rationale: "Direct, deep massage over severe varicose veins is contraindicated due to the risk of damaging the already compromised vessel walls and valves, or dislodging undetected thrombi (Werner, 2019)."
+    hint: "While Ober's assesses for a contracture (tightness), this test specifically assesses for friction and pain over the bony prominence.",
+    rationale: "Noble's Compression Test specifically identifies IT Band Friction Syndrome by reproducing the sharp pain at the lateral femoral epicondyle at approximately 30 degrees of knee flexion (Magee, 2021)."
   },
   {
-    id: 18,
-    topic: "Cardiovascular System",
-    difficulty: "Easy",
-    question: "What is the classic sequence of color changes observed in the digits during a Raynaud's episode?",
-    options: ["Red, Blue, White", "White, Blue, Red (Pallor, Cyanosis, Rubor)", "Blue, White, Red", "White, Red, Blue"],
-    correctAnswer: 1,
-    rationale: "The digits typically turn white (pallor) due to severe vasoconstriction, then blue (cyanosis) as oxygen is depleted, and finally red (rubor) as blood flow returns during reactive hyperemia (Norris, 2020)."
-  },
-  {
-    id: 19,
-    topic: "Musculoskeletal System",
-    difficulty: "Easy",
-    question: "The acronym RICE is traditionally used for acute musculoskeletal injury management. What does it stand for?",
-    options: ["Rest, Ice, Compression, Elevation", "Release, Isometrics, Cross-friction, Effleurage", "Resist, Ice, Compress, Extend", "Rest, Isolate, Compress, Elevate"],
-    correctAnswer: 0,
-    rationale: "RICE (Rest, Ice, Compression, Elevation) is the standard first-aid protocol for minimizing edema and tissue damage immediately following an acute sprain or strain (Hertling & Kessler, 2006)."
-  },
-  {
-    id: 20,
-    topic: "Respiratory System",
-    difficulty: "Easy",
-    question: "Which common environmental triggers are frequently noted in a client's health history as secondary aggravators for Asthma?",
-    options: ["High protein diets", "Colds, dust, pollen, and perfumes", "Excessive hydration", "Moderate stretching"],
-    correctAnswer: 1,
-    rationale: "Asthma is a hyper-reactive airway disease; attacks are frequently triggered by environmental allergens (dust, pollen, perfumes), cold air, or upper respiratory infections (Norris, 2020)."
-  },
-  {
-    id: 21,
-    topic: "Cardiovascular System",
-    difficulty: "Easy",
-    question: "What is the primary, defining symptom of left-sided Congestive Heart Failure?",
-    options: ["Peripheral edema in the ankles", "Pulmonary edema (fluid in the lungs) and shortness of breath", "Enlarged liver (hepatomegaly)", "Ascites (fluid in the abdomen)"],
-    correctAnswer: 1,
-    rationale: "Left-sided heart failure causes blood to back up into the pulmonary circulation, leading to pulmonary congestion, edema, and severe dyspnea (shortness of breath) (Norris, 2020)."
-  },
-  {
-    id: 22,
-    topic: "Cardiovascular System",
-    difficulty: "Easy",
-    question: "What is the primary, defining symptom of right-sided Congestive Heart Failure?",
-    options: ["Pulmonary edema", "Asthma attacks", "Systemic peripheral edema (swelling in the legs, ankles, and abdomen)", "Severe headaches"],
+    id: 20, topic: "Lower Extremity", difficulty: "Hard",
+    question: "A client presents with severe anterior lower leg pain after a run. You note the tissue is tight, glossy, and warm. You assess the dorsal pedis pulse, and it is entirely absent. What is your immediate clinical action?",
+    options: ["Perform deep cross-fiber frictions to the tibialis anterior.", "Apply ice and instruct them to rest for 48 hours.", "This is a medical emergency (Acute Compartment Syndrome); instruct the client to go to the hospital immediately.", "Perform a thorough myofascial release of the crural fascia."],
     correctAnswer: 2,
-    rationale: "Right-sided heart failure prevents blood from moving efficiently through the right ventricle, causing a backup into the systemic venous system, resulting in peripheral edema and ascites (Norris, 2020)."
+    hint: "An absent pulse combined with severe pain and shiny skin indicates critical vascular compromise that can lead to tissue necrosis.",
+    rationale: "An absent pulse indicates Acute Compartment Syndrome, where mounting fascial pressure cuts off arterial blood supply. This requires emergency surgical fasciotomy (Norris, 2020)."
   },
   {
-    id: 23,
-    topic: "Musculoskeletal System",
-    difficulty: "Easy",
-    question: "Which of the following describes a Grade 3 Strain?",
-    options: ["Mild pain, no loss of strength.", "Complete rupture of the muscle or tendon unit, severe loss of function.", "Moderate tearing with a palpable gap, but still attached.", "A hairline fracture of the bone."],
+    id: 21, topic: "Myofascial Techniques", difficulty: "Medium",
+    question: "When performing 'S-Bowing' or 'C-Bowing', what is the primary structural objective?",
+    options: ["To stretch the joint capsule.", "To physically bend and deform restricted fascial planes and scar tissue.", "To stimulate the lymphatic system.", "To forcefully align osteons in healing bone."],
     correctAnswer: 1,
-    rationale: "A Grade 3 strain is a complete avulsion or rupture of the musculotendinous unit, resulting in profound weakness or complete loss of function of that specific muscle (Magee, 2021)."
+    hint: "These direct fascial techniques rely on creating sheer forces within the connective tissue matrix.",
+    rationale: "Bowing techniques apply directional pressure to physically shear and deform fascial adhesions, restoring mobility to restricted connective tissues (Willis College Clinical Guide)."
   },
   {
-    id: 24,
-    topic: "Respiratory System",
-    difficulty: "Easy",
-    question: "A client with emphysema may be taking medications such as bronchodilators or corticosteroids. What is a common side effect of corticosteroid use that affects massage therapy?",
-    options: ["Increased muscle mass", "Tissue fragility and easy bruising", "Extreme bradycardia", "Hypothermia"],
+    id: 22, topic: "Trigger Point Therapy", difficulty: "Easy",
+    question: "During palpation, you pluck a taut band of muscle and observe a transient, localized reflex flutter. What is this phenomenon called?",
+    options: ["Jump Sign", "Local Twitch Response", "Referred Pain Pattern", "Fasciculation"],
     correctAnswer: 1,
-    rationale: "Long-term use of corticosteroids can lead to thinning of the skin, tissue fragility, and increased risk of bruising, requiring the therapist to adjust pressure accordingly (Werner, 2019)."
+    hint: "This is an objective palpatory confirmation of a myofascial trigger point, distinct from the client's subjective flinching.",
+    rationale: "A Local Twitch Response is a spinal reflex characterized by a sudden, visible contraction of the muscle fibers within a taut band when a trigger point is mechanically stimulated (Andrade, 2023)."
   },
   {
-    id: 25,
-    topic: "Musculoskeletal System",
-    difficulty: "Easy",
-    question: "Which of the following is considered 'contractile tissue' when performing an orthopedic assessment?",
-    options: ["Ligaments", "Joint capsules", "Bursae", "Muscle bellies and tendons"],
+    id: 23, topic: "Trigger Point Therapy", difficulty: "Medium",
+    question: "A client complains of a tension headache that feels like a 'headband' wrapping around their skull. Which muscle group's trigger points classically refer pain in this exact pattern?",
+    options: ["Upper Trapezius", "Sternocleidomastoid", "Suboccipitals", "Levator Scapulae"],
+    correctAnswer: 2,
+    hint: "These deeply situated muscles at the base of the skull directly influence the greater occipital nerve.",
+    rationale: "Trigger points in the Suboccipital muscle group classically refer a deep, aching pain laterally to the side of the head, often described by clients as a tight 'headband' (Hertling & Kessler, 2006)."
+  },
+  {
+    id: 24, topic: "Pregnancy Modifications", difficulty: "Medium",
+    question: "During the second and third trimesters of pregnancy, prolonged supine positioning is contraindicated to prevent Supine Hypotensive Syndrome. What structure is being compressed?",
+    options: ["The abdominal aorta", "The inferior vena cava", "The sciatic nerve", "The vagus nerve"],
+    correctAnswer: 1,
+    hint: "The weight of the fetus compresses the primary vessel responsible for returning deoxygenated blood from the lower body to the heart.",
+    rationale: "The gravid uterus compresses the inferior vena cava against the lumbar spine in the supine position, drastically reducing venous return and causing systemic hypotension and dizziness (Werner, 2019)."
+  },
+  {
+    id: 25, topic: "Orthopedic Assessment", difficulty: "Hard",
+    question: "A client with chronic ankle instability exhibits a positive Talar Tilt Test. To effectively restore arthrokinematic glide before initiating active strengthening, what specific intervention should you employ?",
+    options: ["Deep frictions to the Achilles tendon.", "Joint Mobilizations utilizing Grade 2 and 3 oscillations.", "Heavy tapotement to the gastrocnemius.", "Aggressive passive stretching into plantarflexion."],
+    correctAnswer: 1,
+    hint: "Select the technique explicitly designed to address accessory motion and capsular restriction within the joint mortise.",
+    rationale: "Joint Mobilizations are specifically indicated to restore normal capsular pliability and joint play (arthrokinematic glide) in a chronically restricted joint (Hertling & Kessler, 2006)."
+  },
+  {
+    id: 26, topic: "Friction Therapy", difficulty: "Medium",
+    question: "According to Cyriax principles, what is the correct application of deep transverse friction massage on a healing ligament?",
+    options: ["Circular motions applied with light pressure.", "Movements strictly parallel to the ligament's fibers.", "Movements perpendicular (cross-fiber) to the ligament's fibers to break down irregular cross-links.", "Sustained static compression without movement."],
+    correctAnswer: 2,
+    hint: "The goal is to align the healing collagen by shearing the tissues against their natural grain.",
+    rationale: "Deep transverse frictions must be applied perpendicular to the tissue fibers to physically break down restrictive cross-links and promote parallel alignment of the healing collagen (Magee, 2021)."
+  },
+  {
+    id: 27, topic: "Cardiovascular System", difficulty: "Medium",
+    question: "A client with right-sided Congestive Heart Failure (CHF) is likely to present with which hallmark physical sign?",
+    options: ["Severe pulmonary edema and coughing.", "Pitting edema in the bilateral lower extremities.", "Cyanosis of the lips.", "Acute angina pectoris."],
+    correctAnswer: 1,
+    hint: "If the right ventricle fails to pump effectively, blood backs up into the systemic venous circulation.",
+    rationale: "Right-sided heart failure causes systemic venous congestion, leading to fluid extravasation and significant bilateral pitting edema, typically in the ankles and lower legs (Norris, 2020)."
+  },
+  {
+    id: 28, topic: "Myofascial Techniques", difficulty: "Easy",
+    question: "Which direct fascial technique utilizes full palmar contact with arms crossed, pushing in opposite directions to stretch large fascial planes like the thoracolumbar fascia?",
+    options: ["Skin Rolling", "Cross-Arm (X-Hand) Stretching", "Pincement", "J-Stroking"],
+    correctAnswer: 1,
+    hint: "The name of the technique explicitly describes the therapist's physical stance over the tissue.",
+    rationale: "Cross-Arm Stretching utilizes the therapist's body weight and crossed forearms to provide superior leverage for longitudinal and diagonal stretching of broad fascial sheets (Willis College Clinical Guide)."
+  },
+  {
+    id: 29, topic: "Head and Neck", difficulty: "Medium",
+    question: "A client with tension headaches exhibits a forward head posture. Which muscle is likely adaptively shortened, continuously pulling the occiput into extension?",
+    options: ["Longus colli", "Rhomboid major", "Suboccipitals", "Lower trapezius"],
+    correctAnswer: 2,
+    hint: "Think about the muscles that bridge the atlas, axis, and the base of the skull.",
+    rationale: "In forward head posture, the suboccipital muscles adaptively shorten to keep the eyes level with the horizon, leading to chronic tension and referred headache pain (Hertling & Kessler, 2006)."
+  },
+  {
+    id: 30, topic: "General Assessment", difficulty: "Easy",
+    question: "During an assessment, you passively move a client's joint through its full range of motion. What is the primary purpose of PROM testing?",
+    options: ["To evaluate the strength of the contractile tissues.", "To assess the integrity of the inert structures and identify the end feel.", "To trigger a stretch reflex.", "To evaluate neuromuscular coordination."],
+    correctAnswer: 1,
+    hint: "When the client is completely relaxed, the muscle bellies are not firing, allowing you to isolate the joint capsule and ligaments.",
+    rationale: "Passive Range of Motion (PROM) eliminates active muscle contraction, allowing the therapist to specifically evaluate the inert tissues (capsule, ligaments, bursa) and the structural end feel of the joint (Magee, 2021)."
+  },
+  {
+    id: 31, topic: "Lower Extremity", difficulty: "Easy",
+    question: "A client complains of sharp heel pain during their first steps in the morning. Upon palpation, you find thick, tender tissue on the sole of the foot. The Windlass test is positive. What is the likely pathology?",
+    options: ["Tarsal Tunnel Syndrome", "Achilles Tendinopathy", "Plantar Fasciitis", "Morton's Neuroma"],
+    correctAnswer: 2,
+    hint: "The pain during the 'first steps' occurs because the connective tissue under the foot contracts overnight and micro-tears upon weight-bearing.",
+    rationale: "Plantar Fasciitis classically presents with severe pain upon the first steps of the day due to micro-tearing of the tight, inflamed plantar aponeurosis (Werner, 2019)."
+  },
+  {
+    id: 32, topic: "Orthopedic Assessment", difficulty: "Medium",
+    question: "What does a positive Clarke's Sign (Patellar Grind Test) indicate?",
+    options: ["An ACL tear.", "Chondromalacia patellae or Patellofemoral Syndrome.", "A lateral meniscus tear.", "IT Band contracture."],
+    correctAnswer: 1,
+    hint: "This test involves compressing the kneecap inferiorly while the client contracts their quadriceps, generating a grinding sensation.",
+    rationale: "A positive Clarke's Sign produces pain and crepitus, indicating degradation of the articular cartilage on the posterior patella, a hallmark of Patellofemoral Syndrome (Magee, 2021)."
+  },
+  {
+    id: 33, topic: "Clinical Fundamentals", difficulty: "Easy",
+    question: "A client arrives with a systemic fever of 39.5°C (103°F) and body aches. What is the correct clinical action?",
+    options: ["Perform a full-body relaxation massage to lower their temperature.", "Apply cold hydrotherapy to their spine while massaging.", "Refuse treatment; an acute systemic infection is an absolute contraindication for massage.", "Treat only the extremities to avoid the core."],
+    correctAnswer: 2,
+    hint: "Massage increases systemic circulation, which can heavily burden an immune system already fighting an active infection.",
+    rationale: "Systemic fever indicates an acute infection. Massage is strictly contraindicated as it increases circulatory load and can further stress the compromised system (Werner, 2019)."
+  },
+  {
+    id: 34, topic: "Sprains and Strains", difficulty: "Medium",
+    question: "In the context of tissue healing, during which phase is the application of cross-fiber friction indicated to reorganize collagen?",
+    options: ["The Acute Inflammatory Phase", "The Early Subacute (Fragile Fibroblastic) Phase", "The Chronic (Remodeling) Phase", "The Hemostasis Phase"],
+    correctAnswer: 2,
+    hint: "Friction is applied only when the tissue has stabilized enough to withstand mechanical shearing without re-tearing.",
+    rationale: "Cross-fiber frictions are indicated in the chronic or late subacute (remodeling) phase, where collagen is actively cross-linking and requires mechanical stress for proper parallel alignment (Magee, 2021)."
+  },
+  {
+    id: 35, topic: "Cardiovascular System", difficulty: "Medium",
+    question: "When assessing a client with pitting edema in the lower legs, a prolonged indentation that lasts for several minutes suggests involvement of which system?",
+    options: ["The arterial system only.", "The lymphatic system or right-sided heart failure.", "The peripheral nervous system.", "The digestive system."],
+    correctAnswer: 1,
+    hint: "Pitting edema occurs when interstitial fluid accumulates faster than the venous or lymphatic return can clear it.",
+    rationale: "Pitting edema is a cardinal sign of compromised fluid return, typically indicating lymphatic insufficiency, deep vein thrombosis, or right-sided congestive heart failure (Norris, 2020)."
+  },
+  {
+    id: 36, topic: "Lower Extremity", difficulty: "Hard",
+    question: "A client presents with 'Periostitis' (Shin Splints). To effectively treat the tibialis anterior without causing excessive pain, which technique is most appropriate?",
+    options: ["High-velocity Joint Mobilizations of the tibia.", "Aggressive transverse friction directly on the tibial crest.", "Myofascial stripping parallel to the tibia, avoiding direct pressure on the inflamed periosteum.", "Deep ischemic compression on the tibial tuberosity."],
+    correctAnswer: 2,
+    hint: "The periosteum (bone covering) is highly innervated and inflamed; direct pressure on the bone will cause agonizing pain.",
+    rationale: "Treating periostitis requires releasing the hypertonic muscles pulling on the bone. Stripping the tibialis anterior parallel to the bone relieves tension without compressing the exquisitely painful, inflamed periosteum (Andrade, 2023)."
+  },
+  {
+    id: 37, topic: "Head and Neck", difficulty: "Easy",
+    question: "Which mechanism of injury is the defining characteristic of a Whiplash Associated Disorder (WAD)?",
+    options: ["A slow, repetitive strain from poor posture.", "A rapid acceleration-deceleration force that violently extends and flexes the cervical spine.", "A congenital fusion of the cervical vertebrae.", "A viral infection of the cervical nerves."],
+    correctAnswer: 1,
+    hint: "The term itself refers to the cracking motion of a whip.",
+    rationale: "Whiplash is defined by the rapid, violent acceleration and deceleration forces that cause acute sprain and strain trauma to the cervical spine, commonly seen in motor vehicle accidents (Magee, 2021)."
+  },
+  {
+    id: 38, topic: "Orthopedic Assessment", difficulty: "Medium",
+    question: "You perform the Thomas Test on a client, and their extended leg lifts off the table. Which muscle is adaptively shortened?",
+    options: ["Gluteus Maximus", "Iliopsoas", "Hamstrings", "Piriformis"],
+    correctAnswer: 1,
+    hint: "The leg lifting off the table indicates a severe restriction in hip extension.",
+    rationale: "A positive Thomas Test, where the straight leg raises off the table, indicates a contracture or adaptive shortening of the primary hip flexor, the iliopsoas (Magee, 2021)."
+  },
+  {
+    id: 39, topic: "Orthopedic Assessment", difficulty: "Medium",
+    question: "If the Ely's Test is positive (the hip spontaneously flexes when the knee is passively flexed prone), which specific muscle is contracted?",
+    options: ["Vastus Intermedius", "Biceps Femoris", "Rectus Femoris", "Semitendinosus"],
+    correctAnswer: 2,
+    hint: "This muscle crosses both the hip and the knee joint anteriorly.",
+    rationale: "The Rectus Femoris is a two-joint muscle. When it is tight, passively flexing the knee pulls the muscle taut, which forces the hip to flex to relieve the tension, resulting in a positive Ely's Test (Magee, 2021)."
+  },
+  {
+    id: 40, topic: "Respiratory System", difficulty: "Hard",
+    question: "A client with cystic fibrosis requests a massage. Which of the following is the most accurate clinical consideration?",
+    options: ["Massage is strictly contraindicated for cystic fibrosis.", "Tapotement is contraindicated due to fragile bones.", "Postural drainage combined with tapotement/vibration is highly indicated to clear thick, viscous pulmonary secretions.", "Only reflexology should be performed."],
+    correctAnswer: 2,
+    hint: "Cystic fibrosis causes the body to produce abnormally thick, sticky mucus that clogs the airways.",
+    rationale: "In cystic fibrosis, mechanical percussive techniques (cupping/hacking) combined with specific postural drainage positions are critical therapies used to dislodge and clear life-threatening mucus from the lungs (Werner, 2019)."
+  },
+  {
+    id: 41, topic: "Myofascial Techniques", difficulty: "Easy",
+    question: "What is the primary rationale for avoiding the use of massage oil or lotion when performing Myofascial Release (MFR)?",
+    options: ["To prevent allergic reactions.", "To allow the therapist to engage and grip the superficial fascia without sliding over the skin.", "To keep the client warm.", "To increase the friction and cause blistering."],
+    correctAnswer: 1,
+    hint: "MFR requires physical traction. If you slip, you cannot shear the tissue.",
+    rationale: "Myofascial Release requires sustained, dragging pressure. Lubricant causes the hands to glide over the epidermis, making it impossible to grip and mechanically deform the underlying fascial matrix (Willis College Clinical Guide)."
+  },
+  {
+    id: 42, topic: "Clinical Interventions", difficulty: "Medium",
+    question: "When applying a Proprioceptive Neuromuscular Facilitation (PNF) stretch, what action does the client perform to trigger post-isometric relaxation?",
+    options: ["They completely relax and fall asleep.", "They actively contract the target muscle isometrically against the therapist's resistance for 5-10 seconds.", "They aggressively bounce the limb.", "They hold their breath for 30 seconds."],
+    correctAnswer: 1,
+    hint: "The 'Facilitation' part of PNF requires the nervous system to fire a muscle actively before it is stretched.",
+    rationale: "PNF stretching utilizes an isometric contraction of the target muscle against resistance, which fatigues the muscle and triggers a neurological reflex (post-isometric relaxation), allowing for a deeper subsequent stretch (Andrade, 2023)."
+  },
+  {
+    id: 43, topic: "Sprains and Strains", difficulty: "Hard",
+    question: "A client sustained a severe contusion to their thigh 3 weeks ago. You palpate a hard, bone-like mass in the vastus lateralis. Deep friction and stretching are strictly contraindicated. What is the suspected condition?",
+    options: ["A massive hematoma", "Myositis Ossificans", "A lipoma", "A sebaceous cyst"],
+    correctAnswer: 1,
+    hint: "The body has mistakenly attempted to repair the deep muscle bruise by depositing calcium and bone cells.",
+    rationale: "Myositis Ossificans is the pathological calcification of muscle tissue following a severe trauma. Aggressive massage or stretching will provoke further bone deposition and is strictly contraindicated (Magee, 2021)."
+  },
+  {
+    id: 44, topic: "Cardiovascular System", difficulty: "Medium",
+    question: "Why is deep abdominal massage contraindicated for a client with an untreated, prominent abdominal aortic aneurysm?",
+    options: ["It will cause immediate constipation.", "Mechanical pressure could easily rupture the weakened arterial wall, causing fatal internal hemorrhaging.", "It will cause referred pain to the shoulder.", "It will stimulate the vagus nerve too strongly."],
+    correctAnswer: 1,
+    hint: "An aneurysm is a ballooning, fragile weakness in a major blood vessel.",
+    rationale: "An abdominal aortic aneurysm represents a critically weakened, bulging arterial wall. Any deep manual compression can trigger a catastrophic rupture, making it an absolute regional contraindication (Norris, 2020)."
+  },
+  {
+    id: 45, topic: "Advanced Techniques", difficulty: "Medium",
+    question: "You are applying Specific Compression to a trigger point in the upper trapezius. According to clinical protocols, what is the maximum acceptable pain rating you should solicit from the client?",
+    options: ["10/10", "8/10", "7/10", "A 'good pain' maximum of 4/10 to 5/10"],
     correctAnswer: 3,
-    rationale: "Contractile tissues include the muscle belly, its tendon, and the tenoperiosteal insertion. Inert tissues include ligaments, joint capsules, bursae, and fascia (Magee, 2021)."
+    hint: "If the pain is too severe, the client's nervous system will generate a protective muscle spasm, defeating the purpose of the release.",
+    rationale: "Trigger point compression must remain completely tolerable (usually a 4 to 5 out of 10). Exceeding this threshold triggers sympathetic nervous system arousal and defensive muscle guarding, rendering the technique ineffective (Andrade, 2023)."
   },
-
-  // ==========================================
-  // MEDIUM: Pathophysiology & Clinical Reasoning
-  // ==========================================
   {
-    id: 26,
-    topic: "Respiratory System",
-    difficulty: "Medium",
-    question: "Differentiate between the primary pathophysiology of Emphysema versus Chronic Bronchitis.",
-    options: [
-      "Emphysema is an infection; Bronchitis is an autoimmune disease.",
-      "Emphysema involves the destruction of alveolar walls (gas exchange unit); Chronic Bronchitis involves inflammation and excess mucus in the conducting airways.",
-      "Emphysema causes excessive mucus production; Chronic Bronchitis causes alveolar collapse.",
-      "There is no difference; they are identical processes."
-    ],
+    id: 46, topic: "Lower Extremity", difficulty: "Easy",
+    question: "Which of the following describes 'Pes Cavus'?",
+    options: ["A completely flat foot.", "An abnormally high, rigid medial longitudinal arch.", "A bunion on the great toe.", "A fusion of the tarsal bones."],
     correctAnswer: 1,
-    rationale: "Emphysema is a structural degradation of the alveoli resulting in trapped air. Chronic Bronchitis is an inflammatory response causing hypersecretion of mucus in the bronchi (Norris, 2020)."
+    hint: "This foot posture results in a rigid, 'locked' foot that absorbs shock poorly during the gait cycle.",
+    rationale: "Pes Cavus is characterized by a high, rigid medial longitudinal arch that fails to pronate adequately during walking, transferring excessive shock up the kinetic chain (Hertling & Kessler, 2006)."
   },
   {
-    id: 27,
-    topic: "Cardiovascular System",
-    difficulty: "Medium",
-    question: "Why is deep, vigorous effleurage on the lower extremities contraindicated for a client with Chronic Congestive Heart Failure (CCHF)?",
-    options: [
-      "It may cause a muscle spasm.",
-      "It significantly increases venous return, which can overload a weakened heart and precipitate acute pulmonary edema.",
-      "It restricts arterial blood flow to the feet.",
-      "It lowers blood pressure too rapidly."
-    ],
+    id: 47, topic: "Trigger Point Therapy", difficulty: "Medium",
+    question: "A client reports an aching pain running down the lateral aspect of their leg. Palpation reveals a trigger point on the anterior iliac crest. Which muscle is likely responsible?",
+    options: ["Gluteus Maximus", "Tensor Fasciae Latae (TFL)", "Vastus Medialis", "Sartorius"],
     correctAnswer: 1,
-    rationale: "In CCHF, the heart is already failing to process normal blood volumes. Pushing excess fluid back to the heart (increasing preload) can overwhelm it, causing fluid to back up into the lungs (Werner, 2019)."
+    hint: "This small muscle attaches to the IT Band and mimics the pain of trochanteric bursitis.",
+    rationale: "Trigger points in the Tensor Fasciae Latae (TFL) classically refer pain down the lateral thigh toward the knee, often closely mimicking the symptoms of IT Band Friction Syndrome or bursitis (Werner, 2019)."
   },
   {
-    id: 28,
-    topic: "Cardiovascular System",
-    difficulty: "Medium",
-    question: "What is the clinical distinction between Raynaud's Disease and Raynaud's Phenomenon?",
-    options: [
-      "Disease affects the feet; Phenomenon affects the hands.",
-      "Disease is primary (idiopathic); Phenomenon is secondary to an underlying condition like Scleroderma or Lupus.",
-      "Disease involves vasodilation; Phenomenon involves vasoconstriction.",
-      "They are identical terms with no clinical distinction."
-    ],
-    correctAnswer: 1,
-    rationale: "Raynaud's Disease is idiopathic (primary), occurring without a known cause. Raynaud's Phenomenon is secondary, presenting as a symptom of an underlying systemic or autoimmune disease such as Scleroderma (Werner, 2019)."
-  },
-  {
-    id: 29,
-    topic: "Orthopedic Assessment",
-    difficulty: "Medium",
-    question: "During an assessment, a client reports pain during Active Range of Motion (AROM) and pain in the *same* direction during Passive Range of Motion (PROM), but Resisted Range of Motion (RROM) is painless. This pattern points to a lesion in:",
-    options: ["Contractile tissue (e.g., a strain)", "Inert tissue (e.g., a sprain or capsulitis)", "Nerve root compression", "A bone fracture"],
-    correctAnswer: 1,
-    rationale: "Pain during AROM and PROM in the same direction, with painless RROM, is the classic Cyriax rule indicating an inert tissue lesion (ligament, bursa, or capsule) being stretched (Magee, 2021)."
-  },
-  {
-    id: 30,
-    topic: "Orthopedic Assessment",
-    difficulty: "Medium",
-    question: "Conversely, if a client experiences pain during AROM and RROM, but pain during PROM only occurs when the tissue is stretched in the *opposite* direction, this indicates a lesion of:",
-    options: ["Inert tissue", "Contractile tissue (muscle or tendon)", "A peripheral nerve", "A bursa"],
-    correctAnswer: 1,
-    rationale: "Pain upon active contraction (AROM/RROM) and pain when the muscle is passively stretched in the opposite direction is indicative of a contractile tissue lesion, such as a muscle strain (Magee, 2021)."
-  },
-  {
-    id: 31,
-    topic: "Cardiovascular System",
-    difficulty: "Medium",
-    question: "A client taking anti-hypertensive medications (like beta-blockers or diuretics) completes their massage. What specific safety precaution must the therapist implement at the end of the treatment?",
-    options: [
-      "Immediately stretch their lower limbs.",
-      "Have the client sit up quickly to normalize blood pressure.",
-      "Instruct the client to sit up slowly and dangle their legs before standing to prevent orthostatic hypotension.",
-      "Offer them a high-sodium beverage."
-    ],
+    id: 48, topic: "Orthopedic Assessment", difficulty: "Hard",
+    question: "During a Talar Tilt Test, a 'firm' end feel is completely absent, and the talus freely inverts with no resistance. What does this indicate?",
+    options: ["A healthy, flexible joint.", "A Grade 1 mild sprain.", "A Grade 3 complete rupture of the calcaneofibular ligament.", "A bony block."],
     correctAnswer: 2,
-    rationale: "Anti-hypertensives alter the body's vascular reflex response. Standing up too quickly can lead to a sudden drop in blood pressure (orthostatic hypotension), causing dizziness or fainting (Werner, 2019)."
+    hint: "If the 'leathery' stop is missing entirely, the structural tether holding the joint together has been severed.",
+    rationale: "An 'empty' or absent firm end feel during ligamentous stress testing indicates a complete Grade 3 rupture of the ligament, as there is no intact tissue left to provide mechanical resistance (Magee, 2021)."
   },
   {
-    id: 32,
-    topic: "Respiratory System",
-    difficulty: "Medium",
-    question: "When positioning a client with severe Emphysema or Chronic Bronchitis, what modification is frequently required?",
-    options: [
-      "The client should lie entirely prone for the duration of the treatment.",
-      "The client may require a semi-seated (Fowler's) or side-lying position, as lying flat may cause dyspnea (orthopnea).",
-      "The client must be positioned with their legs elevated above their heart.",
-      "No modifications are needed."
-    ],
+    id: 49, topic: "Head and Neck", difficulty: "Medium",
+    question: "A pregnant client in her second trimester presents with a stiff neck. Why must you adapt your treatment positioning?",
+    options: ["Pregnant clients cannot receive neck massages.", "The prone position will compress the fetus, and the supine position will compress the inferior vena cava.", "Pregnant clients must stand during treatment.", "The massage table is not strong enough."],
     correctAnswer: 1,
-    rationale: "Clients with severe COPD often suffer from orthopnea (difficulty breathing while lying flat). Semi-Fowler's or side-lying positions utilize gravity to pull abdominal organs away from the diaphragm, easing respiration (Andrade, 2023)."
+    hint: "Consider both the physical size of the abdomen and the internal vascular structures of the mother.",
+    rationale: "Standard prone and supine positions are contraindicated in the second and third trimesters to prevent fetal compression and Supine Hypotensive Syndrome. Side-lying or semi-fowler positioning is mandatory (Werner, 2019)."
   },
   {
-    id: 33,
-    topic: "Musculoskeletal System",
-    difficulty: "Medium",
-    question: "According to Willis College Oral Practical protocols, what is the required sequence when performing Manual Lymph Drainage (MLD) for an acute sprain?",
-    options: [
-      "Perform MLD strokes, then apply a heat pack.",
-      "Pump the terminus, perform MLD strokes, and immediately follow with Passive Range of Motion (PROM).",
-      "Perform deep friction, then MLD strokes.",
-      "Apply ice, perform MLD strokes, and follow with Resisted Range of Motion (RROM)."
-    ],
+    id: 50, topic: "Clinical Interventions", difficulty: "Medium",
+    question: "When performing Joint Mobilizations, which Grade is characterized by a large amplitude rhythmic oscillation performed up to the limit of the available range of motion (but not into the tissue resistance)?",
+    options: ["Grade 1", "Grade 2", "Grade 3", "Grade 4"],
     correctAnswer: 1,
-    rationale: "The clinical protocol for MLD mandates clearing the lymphatic terminus first, applying MLD to the affected area, and concluding with pain-free PROM to maintain joint mobility and fluid dynamics (Willis College OP Protocol)."
-  },
-  {
-    id: 34,
-    topic: "Musculoskeletal System",
-    difficulty: "Medium",
-    question: "A client suffered a severe contusion to their quadriceps 4 weeks ago. You palpate a hard, bone-like mass within the muscle belly. What complication has likely occurred?",
-    options: ["Deep Vein Thrombosis", "Myositis Ossificans", "A Grade 3 Strain", "Osteoarthritis"],
-    correctAnswer: 1,
-    rationale: "Myositis Ossificans is a condition where bone tissue forms within a muscle following severe trauma or hematoma. Aggressive massage or stretching is contraindicated as it exacerbates the bone growth (Magee, 2021)."
-  },
-  {
-    id: 35,
-    topic: "Musculoskeletal System",
-    difficulty: "Medium",
-    question: "What is the primary objective when treating the compensatory structures of a client whose arm is currently immobilized in a cast for a Colles' fracture?",
-    options: [
-      "Increase circulation inside the cast.",
-      "Reduce hypertonicity in the shoulder, neck, and upper back caused by the altered biomechanics and weight of the cast.",
-      "Apply deep cross-fiber friction just above the cast to speed bone healing.",
-      "Perform aggressive passive stretching of the fingers to prevent atrophy."
-    ],
-    correctAnswer: 1,
-    rationale: "While the fracture site is immobilized and locally contraindicated, the weight of the cast and loss of arm swing routinely cause severe compensatory hypertonicity in the rotator cuff, trapezius, and cervical musculature (Hertling & Kessler, 2006)."
-  },
-  {
-    id: 36,
-    topic: "Cardiovascular System",
-    difficulty: "Medium",
-    question: "While direct pressure over severe Varicose Veins is contraindicated, what is the indicated treatment for the rest of the lower limb?",
-    options: [
-      "Absolute contraindication for the entire leg.",
-      "Deep ischemic compressions on the antagonistic muscles.",
-      "Supportive superficial effleurage and elevation of the limb to assist venous return, avoiding the affected veins.",
-      "Vigorous tapotement to stimulate the valves."
-    ],
-    correctAnswer: 2,
-    rationale: "While local avoidance is necessary to prevent damage to the tortuous veins, elevating the limb and using light, proximal-to-distal supportive effleurage can assist sluggish venous return in the rest of the limb (Andrade, 2023)."
-  },
-  {
-    id: 37,
-    topic: "Respiratory System",
-    difficulty: "Medium",
-    question: "Which division of the autonomic nervous system is responsible for the bronchoconstriction observed during an Asthma attack?",
-    options: ["Sympathetic Nervous System", "Parasympathetic Nervous System", "Somatic Nervous System", "Enteric Nervous System"],
-    correctAnswer: 1,
-    rationale: "The Parasympathetic nervous system (via the vagus nerve) causes bronchoconstriction and increases mucus secretion. Asthma attacks represent a hyper-reactive parasympathetic state in the airways (Tortora & Derrickson, 2017)."
-  },
-  {
-    id: 38,
-    topic: "Musculoskeletal System",
-    difficulty: "Medium",
-    question: "During the remodeling phase of a Grade 2 ankle sprain (ligamentous injury), what massage technique is highly indicated to align collagen fibers and prevent chaotic scar tissue formation?",
-    options: ["Muscle Approximation", "Origin & Insertion", "Deep Transverse Friction (Cross-fiber friction)", "Manual Lymph Drainage"],
-    correctAnswer: 2,
-    rationale: "Deep transverse friction creates localized hyperemia and mechanically breaks down cross-links in connective tissue, encouraging parallel collagen alignment during the remodeling phase of healing (Andrade, 2023)."
-  },
-  {
-    id: 39,
-    topic: "Cardiovascular System",
-    difficulty: "Medium",
-    question: "How does the heart compensate during the early stages of Chronic Congestive Heart Failure before complete decompensation occurs?",
-    options: [
-      "The heart rate decreases (bradycardia) to save energy.",
-      "The ventricles hypertrophy (thicken) and the heart rate increases (tachycardia) to maintain cardiac output.",
-      "The heart valves permanently fuse open.",
-      "The coronary arteries shrink to increase blood pressure."
-    ],
-    correctAnswer: 1,
-    rationale: "To maintain cardiac output despite failing muscle efficiency, the sympathetic nervous system increases heart rate, and the ventricular walls hypertrophy to generate more force, eventually leading to further failure (Norris, 2020)."
-  },
-  {
-    id: 40,
-    topic: "Musculoskeletal System",
-    difficulty: "Medium",
-    question: "Differentiate between a Colles' fracture and a Pott's fracture.",
-    options: [
-      "Colles' is a fracture of the distal radius; Pott's is a fracture of the distal fibula (ankle).",
-      "Colles' is a fracture of the femur; Pott's is a fracture of the humerus.",
-      "Colles' occurs in the spine; Pott's occurs in the skull.",
-      "They are two names for the exact same wrist fracture."
-    ],
-    correctAnswer: 0,
-    rationale: "A Colles' fracture involves the distal radius (wrist), typically from a fall. A Pott's fracture involves the distal fibula and/or medial malleolus of the tibia, usually resulting from severe ankle eversion (Magee, 2021)."
-  },
-
-  // ==========================================
-  // HARD: Complex STEMs & OP Clinical Reasoning
-  // ==========================================
-  {
-    id: 41,
-    topic: "Case Scenario: Acute Strain",
-    difficulty: "Hard",
-    question: "STEM: Your client is a 15-year-old competitive baseball player. During a game 2 days ago, he sustained a Grade 2 strain of his right Triceps. There is visible black and blue bruising and edema. Based on OP testing protocols, what is the appropriate primary intervention for the affected arm?",
-    options: [
-      "Deep transverse friction to the triceps tendon to prevent scar tissue.",
-      "Manual Lymph Drainage (MLD) starting at the terminus, moving to the axilla, to manage edema, followed by pain-free PROM.",
-      "Active Resisted Stretching to restore strength immediately.",
-      "Ischemic compression to the triceps belly to relieve the spasm."
-    ],
-    correctAnswer: 1,
-    rationale: "In the acute stage (2 days post-injury) of a Grade 2 strain with bruising, deep work is strictly contraindicated. MLD is the protocol of choice to manage edema and clear cellular debris, followed by PROM (Willis College OP Protocol)."
-  },
-  {
-    id: 42,
-    topic: "Case Scenario: Postural & Respiratory",
-    difficulty: "Hard",
-    question: "STEM: A college student presents with a forward head carriage, rounded shoulders, and reduced thoracic extension (Functional Hyperkyphosis). Her health history notes she has Chronic Bronchitis and uses an inhaler. What is the clinical reasoning for addressing her hyperkyphosis?",
-    options: [
-      "To prevent her from developing a Colles' fracture.",
-      "To reduce the structural compression on her anterior rib cage, which restricts diaphragmatic excursion and exacerbates her Chronic Bronchitis.",
-      "To increase her sympathetic nervous system tone.",
-      "To prepare her for deep cross-fiber friction of the sternum."
-    ],
-    correctAnswer: 1,
-    rationale: "Functional hyperkyphosis compresses the anterior thorax, mechanically restricting lung expansion. In a client with COPD (Chronic Bronchitis), restoring thoracic extension is crucial for improving respiratory mechanics and clearing mucus (Andrade, 2023)."
-  },
-  {
-    id: 43,
-    topic: "Case Scenario: Torticollis & Pregnancy",
-    difficulty: "Hard",
-    question: "STEM: A client wakes up with acute Torticollis (neck laterally flexed right, rotated left). She also reveals she is in her third trimester of pregnancy. How does her secondary condition alter the treatment plan for her primary complaint?",
-    options: [
-      "Treatment is absolutely contraindicated during pregnancy.",
-      "She must be treated in a prone position to stabilize the spine.",
-      "Positioning must be modified to seated or side-lying to prevent supine hypotensive syndrome, and deep systemic techniques should be avoided.",
-      "Aggressive Grade 4 joint mobilizations must be used on the cervical spine."
-    ],
-    correctAnswer: 2,
-    rationale: "Advanced pregnancy requires side-lying or seated positioning to avoid vena cava compression. Furthermore, the presence of the hormone relaxin makes aggressive joint mobilizations unsafe. The Torticollis must be treated with indirect techniques (O&I) in a safe position (Werner, 2019)."
-  },
-  {
-    id: 44,
-    topic: "Case Scenario: Whiplash & Hypertension",
-    difficulty: "Hard",
-    question: "STEM: A client presents with posterior neck pain from a rear-impact collision 18 months ago (Chronic WAD). Their health history indicates primary hypertension controlled by medication. Which of the following is an essential clinical assessment step before treating the cervical spine?",
-    options: [
-      "Perform a Vertebral Artery Test (VAT) to rule out vertebrobasilar insufficiency, especially since they have a history of trauma and vascular issues.",
-      "Perform an Adam's Forward Bend Test.",
-      "Assess for deep vein thrombosis in the calves.",
-      "Perform a Phalen's test."
-    ],
-    correctAnswer: 0,
-    rationale: "The combination of whiplash trauma and hypertension puts the client at higher risk for vascular compromise. The Vertebral Artery Test must be performed to ensure cervical extension and rotation will not occlude blood flow to the brain (Magee, 2021)."
-  },
-  {
-    id: 45,
-    topic: "Case Scenario: CCHF Decompensation",
-    difficulty: "Hard",
-    question: "STEM: A regular client with stable Chronic Congestive Heart Failure (CCHF) arrives for their massage. You notice their ankles are significantly more swollen than usual, and they are short of breath just from walking into the clinic. What is your clinical action?",
-    options: [
-      "Perform aggressive MLD to clear the new swelling.",
-      "Elevate their legs and perform deep effleurage.",
-      "Halt the massage and advise them to seek immediate medical evaluation, as these are signs of acute cardiac decompensation.",
-      "Treat them in a prone position to help them relax."
-    ],
-    correctAnswer: 2,
-    rationale: "A sudden increase in peripheral edema and dyspnea in a CCHF patient indicates the heart is failing to compensate (decompensation). Massage is contraindicated as it may precipitate a medical emergency; physician referral is mandatory (Werner, 2019)."
-  },
-  {
-    id: 46,
-    topic: "Advanced OP Protocol: Muscle Spasm",
-    difficulty: "Hard",
-    question: "During an Oral Practical, your examiner simulates a client whose hamstring suddenly goes into an active, severely painful muscle spasm during treatment. Which specific advanced technique protocol must you immediately demonstrate?",
-    options: [
-      "Deep Transverse Friction to the muscle belly.",
-      "Muscle Approximation (pushing the attachments together to slacken the muscle spindles).",
-      "Grade 4 Joint Mobilizations of the knee.",
-      "Aggressive passive stretching of the hamstring."
-    ],
-    correctAnswer: 1,
-    rationale: "Muscle Approximation is an indirect technique specifically designed to relieve acute muscle spasms. Pushing the attachments together reduces the tension on the muscle spindles, signaling the nervous system to stop the involuntary contraction (Willis College OP Protocol)."
-  },
-  {
-    id: 47,
-    topic: "Advanced OP Protocol: Indirect Treatment",
-    difficulty: "Hard",
-    question: "Your OP scenario involves a client with a subacute muscle strain. The muscle belly is still 'too painful to touch' with any direct pressure. What is the designated 'first-line' indirect advanced technique you must apply?",
-    options: [
-      "Tapotement",
-      "Origin and Insertion (O&I) technique applied to the tendinous attachments.",
-      "Myofascial Release (MFR) directly over the tear.",
-      "Fascial stripping."
-    ],
-    correctAnswer: 1,
-    rationale: "When a primary injury site (muscle belly) is too sensitive, Origin & Insertion (O&I) is the required indirect protocol. Treating the tendinous attachments creates a reflexive release in the muscle belly without causing pain at the injury site (Willis College OP Protocol)."
-  },
-  {
-    id: 48,
-    topic: "Pathophysiology: Emphysema & The Heart",
-    difficulty: "Hard",
-    question: "Clients with advanced Emphysema often develop a secondary cardiovascular condition due to the destruction of the pulmonary capillary beds increasing resistance in the lungs. What is this secondary condition?",
-    options: [
-      "Cor Pulmonale (Right-sided heart failure)",
-      "Left ventricular hypertrophy",
-      "Deep Vein Thrombosis",
-      "Raynaud's Disease"
-    ],
-    correctAnswer: 0,
-    rationale: "As emphysema destroys alveolar walls, it also destroys the pulmonary capillaries. This increases pulmonary vascular resistance, forcing the right ventricle to work harder, eventually leading to right-sided heart failure, known as Cor Pulmonale (Norris, 2020)."
-  },
-  {
-    id: 49,
-    topic: "Orthopedic Assessment: Differential Diagnosis",
-    difficulty: "Hard",
-    question: "A client presents with knee pain. During assessment, Active knee extension is painful. Passive knee extension is painless. Resisted knee extension is highly painful and weak. Based on Cyriax principles, what is the clinical diagnosis?",
-    options: [
-      "A lesion in the inert tissue (e.g., knee joint capsule).",
-      "A lesion in the contractile tissue (e.g., quadriceps strain or tendinopathy).",
-      "A complete neurological block of the sciatic nerve.",
-      "A fracture of the patella."
-    ],
-    correctAnswer: 1,
-    rationale: "Pain upon active movement and resisted movement (where the muscle fires), but no pain on passive movement in the same direction, strongly indicates a lesion of the contractile tissue—in this case, the quadriceps musculotendinous unit (Magee, 2021)."
-  },
-  {
-    id: 50,
-    topic: "Case Scenario: Vascular Emergency",
-    difficulty: "Hard",
-    question: "STEM: A client with primary hypertension arrives for treatment complaining of a sudden, severe, 'tearing' pain in their upper back and abdomen. They are sweating, and their pulse is rapid and weak. What life-threatening condition, associated with hypertension, might this indicate?",
-    options: [
-      "An acute asthma attack.",
-      "A dissecting aortic aneurysm.",
-      "A severe rhomboid strain.",
-      "A localized contusion."
-    ],
-    correctAnswer: 1,
-    rationale: "Sudden, severe, 'tearing' pain in the chest or upper back in a hypertensive patient is a classic hallmark of an aortic dissection (aneurysm rupture). This is an absolute medical emergency requiring immediate ambulance dispatch (Norris, 2020)."
+    hint: "This grade sweeps through the free space of the joint to provide pain relief and move synovial fluid, without stretching the capsule.",
+    rationale: "Grade 2 mobilizations are large-amplitude oscillations performed within the free range of the joint. They are primarily used for pain management and to stimulate synovial fluid production without stressing the joint capsule (Hertling & Kessler, 2006)."
   }
 ];
