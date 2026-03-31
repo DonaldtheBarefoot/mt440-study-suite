@@ -26,22 +26,6 @@ A progressive web application and clinical simulation engine designed specifical
 * **Markdown Parsing:** Marked.js (for rendering clinical study guides)
 * **Mathematics:** KaTeX (for physiological formulas)
 
-## Local Development & Deployment
-
-Because this application dynamically fetches local data files (such as `.md` and `.js` question banks) using the JavaScript `fetch()` API, **it cannot be run by double-clicking the `index.html` file directly from your hard drive.** Modern browsers will block this due to Cross-Origin Resource Sharing (CORS) security policies.
-
-### To Run Locally:
-You must serve the directory using a local HTTP server. 
-* If using VS Code, install the **Live Server** extension and click "Go Live".
-* Alternatively, use Python from your terminal: `python -m http.server 8000`
-
-### To Deploy (GitHub Pages):
-This suite is optimized for GitHub Pages.
-1. Navigate to your repository **Settings**.
-2. Select **Pages** from the left sidebar.
-3. Under **Build and deployment**, set the source to deploy from your main branch.
-4. The application will be live at your `github.io` URL within minutes. Note: Ensure all `batch_x_questions.js` files reside in the exact same directory as their parent `index.html` to prevent 404 fetch errors.
-
 ## Authors
 
 * **Lord Donald Guindon** - *Willis College, Massage Therapy Program (Class of 2026)*
