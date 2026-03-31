@@ -1,1 +1,432 @@
-//
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treatments II (MT390) - Master Study Suite v2.0</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script src="./batch_1_questions.js"></script>
+    <script src="./batch_2_questions.js"></script>
+    <script src="./batch_3_questions.js"></script>
+    <script src="./batch_4_questions.js"></script>
+    <script src="./batch_5_questions.js"></script>
+    
+    <style>
+        /* ADHD-Friendly Customizations */
+        body { font-family: 'Inter', system-ui, -apple-system, sans-serif; background-color: #f8fafc; color: #1e293b; line-height: 1.6; scroll-behavior: smooth; }
+        .question-card { transition: all 0.2s ease-in-out; }
+        .option-label { cursor: pointer; transition: all 0.2s; }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+        /* 3-Tier Print Engine CSS */
+        @media print {
+            @page { size: letter; margin: 0.4in; }
+            * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+            
+            button, .no-print, nav, header, [id*="settings"], [id*="modal"], dialog { display: none !important; }
+            body, #root, main, div[class*="max-w-"] { display: block !important; height: auto !important; min-height: 0 !important; width: 100% !important; }
+            
+            #quiz-container { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 0.2in !important; }
+            .question-card { break-inside: avoid; page-break-inside: avoid; margin-bottom: 0 !important; padding: 8px !important; border: 1px solid #e2e8f0 !important; box-shadow: none !important; }
+            
+            h1 { font-size: 16pt !important; margin-bottom: 12px !important; }
+            h2 { font-size: 14pt !important; margin-top: 8px !important; }
+            h3, h4 { font-size: 10pt !important; margin-bottom: 4px !important; }
+            p, span, label { font-size: 9pt !important; line-height: 1.15 !important; }
+            input[type="radio"] { margin-right: 4px !important; transform: scale(0.8); }
+
+            body:not(.print-blank) .print-correct-highlight { background-color: #dcfce7 !important; border-color: #22c55e !important; }
+            body:not(.print-blank) .explanation-container { display: block !important; padding: 6px !important; margin-top: 6px !important; }
+
+            body.print-blank * { -webkit-print-color-adjust: economy !important; print-color-adjust: economy !important; background-color: transparent !important; }
+            body.print-blank .border-green-500, body.print-blank .border-red-500, body.print-blank .border-blue-500 { border-color: #e2e8f0 !important; }
+            body.print-blank .print-only-key, body.print-blank .explanation-container { display: none !important; }
+        }
+        @media screen { .print-only, .print-only-key { display: none !important; } }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col items-center pb-20">
+    <div id="root" class="w-full"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+
+        // --- ICON COMPONENTS ---
+        const IconCheck = ({ size = 24, className }) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M20 6 9 17l-5-5"/></svg>;
+        const IconX = ({ size = 24, className }) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M18 6 6 18M6 6l12 12"/></svg>;
+        const IconSettings = ({ size = 24, className }) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>;
+        const IconBook = ({ size = 24, className }) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>;
+        const IconPlay = ({ size = 24, className }) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><polygon points="5 3 19 12 5 21 5 3"/></svg>;
+
+        const fallbackBatch5 = [
+            { id: 201, topic: "Peripheral Nervous System", difficulty: "Easy", question: "Bell's Palsy involves the acute, unilateral paralysis of the facial muscles. Which cranial nerve is affected?", options: ["Trigeminal Nerve (CN V)", "Facial Nerve (CN VII)", "Vagus Nerve (CN X)", "Hypoglossal Nerve (CN XII)"], correctAnswer: 1, rationale: "Bell's Palsy is a lower motor neuron lesion of the Facial Nerve (CN VII) resulting in flaccid paralysis." }
+        ];
+
+        const loadStaticBank = () => {
+            const externalQuestions = [
+                ...(typeof window.batch1Questions !== 'undefined' ? window.batch1Questions : []),
+                ...(typeof window.batch2Questions !== 'undefined' ? window.batch2Questions : []),
+                ...(typeof window.batch3Questions !== 'undefined' ? window.batch3Questions : []),
+                ...(typeof window.batch4Questions !== 'undefined' ? window.batch4Questions : []),
+                ...(typeof window.batch5Questions !== 'undefined' ? window.batch5Questions : [])
+            ];
+            return externalQuestions.length > 0 ? externalQuestions : fallbackBatch5;
+        };
+
+        const staticBank = loadStaticBank();
+
+        const getModuleForTopic = (topic) => {
+            const t = topic.toLowerCase();
+            if (t.includes("respiratory") || t.includes("cardiovascular")) return "Quiz 1";
+            if (t.includes("lower extremity") || t.includes("upper extremity") || t.includes("pregnancy") || t.includes("musculoskeletal") || t.includes("head, neck")) return "Quiz 2";
+            if (t.includes("spinal") || t.includes("joint") || t.includes("autoimmune") || t.includes("headache") || t.includes("hand")) return "Quiz 3";
+            if (t.includes("digestive") || t.includes("metabolic") || t.includes("nervous system") || t.includes("infant") || t.includes("condition")) return "Quiz 4";
+            if (t.includes("oral practical") || t.includes("mock osce") || t.includes("capstone") || t.includes("advanced")) return "Oral Practical";
+            return "Oral Practical"; 
+        };
+
+        function App() {
+            const [view, setView] = useState('dashboard'); 
+            const [isSettingsOpen, setIsSettingsOpen] = useState(false);
+            const [dynamicQuestions, setDynamicQuestions] = useState([]);
+            const [isLoadingData, setIsLoadingData] = useState(true);
+
+            // Session Config
+            const [selectedModules, setSelectedModules] = useState(['Quiz 1', 'Quiz 2', 'Quiz 3', 'Quiz 4', 'Oral Practical']);
+            const [selectedDifficulties, setSelectedDifficulties] = useState(['Easy', 'Medium', 'Hard']);
+            const [sessionLength, setSessionLength] = useState(50);
+
+            // Active Quiz State
+            const [currentQuiz, setCurrentQuiz] = useState([]);
+            const [userAnswers, setUserAnswers] = useState({});
+            const [quizSubmitted, setQuizSubmitted] = useState(false);
+            const [visibleHints, setVisibleHints] = useState({});
+
+            useEffect(() => {
+                fetch('./treatments-ii-quiz-4.md')
+                    .then(response => {
+                        if (!response.ok) throw new Error("Markdown file not found");
+                        return response.text();
+                    })
+                    .then(text => {
+                        const delimiter = '\n###';
+                        const splitIndex = text.indexOf(delimiter);
+                        if (splitIndex !== -1) {
+                            const jsonPart = text.substring(0, splitIndex).trim();
+                            try {
+                                const parsedData = JSON.parse(jsonPart);
+                                const mappedQuestions = parsedData.map((item, idx) => ({
+                                    id: `dyn_${idx}`,
+                                    topic: "MT390 Conditions",
+                                    difficulty: "Medium",
+                                    question: `Which of the following describes the clinical findings and correct treatment parameters for ${item.condition}?`,
+                                    options: [
+                                        `${item.clinicalFindings} Treatment involves: ${item.treatment}`,
+                                        `Condition primarily affects the ${item.referredRegion || 'extremities'}. Deep pressure is generally indicated everywhere.`,
+                                        `Symptoms include severe structural deviations. Treatment: High-velocity manipulations.`,
+                                        `There are no specific clinical findings. General Swedish Massage is applied normally.`
+                                    ],
+                                    correctAnswer: 0,
+                                    rationale: `Palpation reveals: Temperature: ${item.palpation4Ts.temperature}, Tone: ${item.palpation4Ts.tone}, Tenderness: ${item.palpation4Ts.tenderness}. Contraindication note: ${item.contraindications}`
+                                }));
+                                setDynamicQuestions(mappedQuestions);
+                            } catch (e) {
+                                console.error("Error parsing JSON from MD file:", e);
+                            }
+                        }
+                        setIsLoadingData(false);
+                    })
+                    .catch(err => {
+                        console.error("Fetch error:", err);
+                        setIsLoadingData(false);
+                    });
+            }, []);
+
+            const fullMasterBank = [...staticBank, ...dynamicQuestions];
+
+            const toggleModule = (mod) => {
+                if (selectedModules.includes(mod) && selectedModules.length > 1) setSelectedModules(selectedModules.filter(m => m !== mod));
+                else if (!selectedModules.includes(mod)) setSelectedModules([...selectedModules, mod]);
+            };
+
+            const toggleDifficulty = (diff) => {
+                if (selectedDifficulties.includes(diff) && selectedDifficulties.length > 1) setSelectedDifficulties(selectedDifficulties.filter(d => d !== diff));
+                else if (!selectedDifficulties.includes(diff)) setSelectedDifficulties([...selectedDifficulties, diff]);
+            };
+
+            const generateNewQuiz = () => {
+                let pool = fullMasterBank.filter(q => 
+                    selectedModules.includes(getModuleForTopic(q.topic)) && 
+                    selectedDifficulties.includes(q.difficulty)
+                );
+                pool = pool.sort(() => 0.5 - Math.random());
+                const finalLength = sessionLength === 'All' ? pool.length : Math.min(Number(sessionLength), pool.length);
+                const selectedSet = pool.slice(0, finalLength);
+                
+                if (selectedSet.length === 0) {
+                    alert("No questions found matching these filters. Please broaden your selection.");
+                    return;
+                }
+                
+                setCurrentQuiz(selectedSet);
+                setUserAnswers({});
+                setQuizSubmitted(false);
+                setVisibleHints({});
+                setIsSettingsOpen(false);
+                setView('exam');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            };
+
+            const handleSelection = (qId, oIndex) => {
+                if (quizSubmitted) return;
+                setUserAnswers(prev => ({ ...prev, [qId]: oIndex }));
+            };
+
+            const submitQuiz = () => {
+                if (Object.keys(userAnswers).length < currentQuiz.length) {
+                    if (!window.confirm("You haven't answered all questions. Submit anyway?")) return;
+                }
+                setQuizSubmitted(true);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            };
+
+            const reviewIncorrect = () => {
+                const incorrectQs = currentQuiz.filter(q => userAnswers[q.id] !== q.correctAnswer);
+                setCurrentQuiz(incorrectQs);
+                setUserAnswers({});
+                setQuizSubmitted(false);
+                setVisibleHints({});
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            };
+
+            const toggleHint = (qId) => {
+                setVisibleHints(prev => ({ ...prev, [qId]: !prev[qId] }));
+            };
+
+            const triggerPrint = (mode) => {
+                document.body.classList.remove('print-blank', 'print-key');
+                if (mode === 'blank') document.body.classList.add('print-blank');
+                if (mode === 'key') document.body.classList.add('print-key');
+                window.print();
+            };
+
+            const answeredCount = Object.keys(userAnswers).length;
+            const progressPct = currentQuiz.length > 0 ? (answeredCount / currentQuiz.length) * 100 : 0;
+            
+            let correctCount = 0;
+            if (quizSubmitted) {
+                currentQuiz.forEach(q => { if (userAnswers[q.id] === q.correctAnswer) correctCount++; });
+            }
+            const scorePct = currentQuiz.length > 0 ? Math.round((correctCount / currentQuiz.length) * 100) : 0;
+
+            // --- RENDERERS ---
+
+            const renderSettingsModal = () => {
+                if (!isSettingsOpen) return null;
+                return (
+                    <div className="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-[100] flex items-center justify-center p-4">
+                        <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-6 animate-in zoom-in-95 duration-200">
+                            <h3 className="text-2xl font-bold text-slate-800 mb-4 border-b pb-2">Quiz Settings</h3>
+                            
+                            <div className="mb-5">
+                                <label className="block text-sm font-semibold text-slate-700 mb-2">Curriculum Modules</label>
+                                <div className="space-y-2 bg-slate-50 p-3 rounded-lg border border-slate-200 max-h-40 overflow-y-auto">
+                                    {['Quiz 1', 'Quiz 2', 'Quiz 3', 'Quiz 4', 'Oral Practical'].map(mod => (
+                                        <label key={mod} className="flex items-center cursor-pointer">
+                                            <input type="checkbox" className="mr-2 rounded text-blue-600" checked={selectedModules.includes(mod)} onChange={() => toggleModule(mod)} />
+                                            <span className="text-sm font-medium text-slate-700">{mod}</span>
+                                        </label>
+                                    ))}
+                                </div>
+                            </div>
+
+                            <div className="mb-5">
+                                <label className="block text-sm font-semibold text-slate-700 mb-2">Difficulty</label>
+                                <div className="flex gap-2">
+                                    {['Easy', 'Medium', 'Hard'].map(diff => (
+                                        <button key={diff} onClick={() => toggleDifficulty(diff)} className={`px-3 py-1.5 rounded-md text-sm font-bold border ${selectedDifficulties.includes(diff) ? 'bg-blue-100 border-blue-500 text-blue-700' : 'bg-white border-slate-300 text-slate-500'}`}>
+                                            {diff}
+                                        </button>
+                                    ))}
+                                </div>
+                            </div>
+
+                            <div className="mb-6">
+                                <label className="block text-sm font-semibold text-slate-700 mb-2">Question Count</label>
+                                <select value={sessionLength} onChange={(e) => setSessionLength(e.target.value)} className="w-full bg-slate-50 border border-slate-300 text-slate-900 rounded-lg p-2.5">
+                                    <option value="10">10 Questions (Quick Review)</option>
+                                    <option value="25">25 Questions (Mid-length)</option>
+                                    <option value="50">50 Questions (Standard Exam)</option>
+                                    <option value="All">All Matching Questions (Marathon)</option>
+                                </select>
+                            </div>
+
+                            <div className="flex gap-3 justify-end">
+                                <button onClick={() => setIsSettingsOpen(false)} className="px-4 py-2 text-slate-600 hover:bg-slate-100 rounded-lg transition font-medium">Cancel</button>
+                                <button onClick={generateNewQuiz} className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg transition">Generate Quiz</button>
+                            </div>
+                        </div>
+                    </div>
+                );
+            };
+
+            if (view === 'dashboard') {
+                return (
+                    <div className="max-w-4xl mx-auto p-6 md:p-12 animate-in fade-in zoom-in-95 duration-500">
+                        {renderSettingsModal()}
+                        <div className="text-center mb-12">
+                            <div className="inline-flex items-center justify-center w-20 h-20 bg-blue-100 text-blue-700 rounded-3xl mb-6 shadow-sm">
+                                <IconBook size={40} />
+                            </div>
+                            <h1 className="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">Treatments II Study Suite</h1>
+                            <p className="text-lg text-slate-500 max-w-2xl mx-auto">
+                                Evidence-based clinical simulation engine for MT390. Master your pathology, orthopedic assessments, and Oral Practical protocols.
+                            </p>
+                        </div>
+                        <div className="bg-slate-900 p-8 rounded-3xl border border-slate-800 shadow-lg text-white flex flex-col justify-center items-center text-center max-w-lg mx-auto">
+                            <h3 className="text-2xl font-bold mb-2">Master Question Bank</h3>
+                            <p className="text-slate-400 mb-6 text-sm">{isLoadingData ? "Syncing Data..." : `${fullMasterBank.length} rigorously cited clinical scenarios loaded.`}</p>
+                            <button onClick={() => setIsSettingsOpen(true)} className="bg-blue-500 hover:bg-blue-400 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-md flex items-center gap-2 w-full justify-center">
+                                <IconPlay size={20} /> Configure & Launch
+                            </button>
+                        </div>
+                    </div>
+                );
+            }
+
+            return (
+                <div className="w-full">
+                    {renderSettingsModal()}
+                    
+                    {/* Sticky Header */}
+                    <div className="sticky top-0 w-full bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm z-50 px-4 py-3 flex justify-between items-center no-print">
+                        <div className="max-w-6xl mx-auto w-full flex justify-between items-center gap-4">
+                            <div className="flex items-center gap-4 flex-1">
+                                <span className="font-bold text-slate-800 hidden md:inline">MT390 Suite</span>
+                                <div className="w-full max-w-md bg-slate-200 rounded-full h-3">
+                                    <div className="bg-blue-600 h-3 rounded-full transition-all duration-500" style={{ width: `${progressPct}%` }}></div>
+                                </div>
+                                <span className="text-sm font-semibold text-slate-600 whitespace-nowrap">{answeredCount} / {currentQuiz.length}</span>
+                            </div>
+                            <div className="flex gap-2">
+                                <button onClick={() => setIsSettingsOpen(true)} className="bg-slate-100 hover:bg-slate-200 text-slate-700 p-2 rounded-lg transition" title="Quiz Settings">
+                                    <IconSettings size={20} />
+                                </button>
+                                <button onClick={submitQuiz} disabled={quizSubmitted} className={`font-bold py-2 px-6 rounded-lg transition shadow-sm ${quizSubmitted ? 'bg-slate-300 text-slate-500 cursor-not-allowed' : 'bg-green-600 hover:bg-green-700 text-white'}`}>
+                                    Grade Exam
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="max-w-5xl mx-auto px-4 mt-8">
+                        <header className="mb-8 text-center">
+                            <h1 className="text-4xl font-extrabold text-slate-800 mb-3 tracking-tight">Treatments II - Master Exam</h1>
+                            <p className="text-slate-500 print-only">Generated for Offline PDF Study.</p>
+                        </header>
+
+                        {/* Print Engine Control */}
+                        <div className="bg-blue-50 border border-blue-100 rounded-xl p-4 mb-8 flex flex-wrap justify-center gap-4 no-print shadow-sm">
+                            <span className="font-semibold text-blue-800 w-full text-center mb-1">🖨️ PDF Print Engine</span>
+                            <button onClick={() => triggerPrint('study')} className="bg-white border border-blue-200 hover:bg-blue-100 text-blue-700 py-2 px-4 rounded shadow-sm text-sm font-medium transition">📝 Print Study Guide</button>
+                            <button onClick={() => triggerPrint('blank')} className="bg-white border border-blue-200 hover:bg-blue-100 text-blue-700 py-2 px-4 rounded shadow-sm text-sm font-medium transition">📄 Print Blank Exam</button>
+                            <button onClick={() => triggerPrint('key')} className="bg-white border border-blue-200 hover:bg-blue-100 text-blue-700 py-2 px-4 rounded shadow-sm text-sm font-medium transition">🔑 Print Answer Key</button>
+                        </div>
+
+                        {/* Grade Display Banner */}
+                        {quizSubmitted && (
+                            <div className="bg-green-50 border-2 border-green-500 rounded-2xl p-8 mb-8 text-center shadow-md no-print animate-in zoom-in-95 duration-300">
+                                <h2 className="text-3xl font-extrabold text-green-800 mb-2">Exam Complete!</h2>
+                                <div className="text-5xl font-black text-green-600 mb-4">{scorePct}%</div>
+                                <p className="text-lg text-green-700 font-medium mb-6">{correctCount} / {currentQuiz.length} Correct</p>
+                                {correctCount < currentQuiz.length && (
+                                    <button onClick={reviewIncorrect} className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-xl transition shadow-sm">
+                                        Study Incorrect Answers Only
+                                    </button>
+                                )}
+                            </div>
+                        )}
+
+                        <section>
+                            <div className="flex justify-between items-end border-b pb-3 mb-8">
+                                <h3 className="text-2xl font-bold text-slate-800">Multiple Choice Questions</h3>
+                                <span className="text-slate-500 font-medium no-print">{currentQuiz.length} Questions Loaded</span>
+                            </div>
+
+                            <div id="quiz-container" className="space-y-6">
+                                {currentQuiz.map((q, idx) => {
+                                    const qNum = idx + 1;
+                                    const isAnswered = userAnswers[q.id] !== undefined;
+                                    const selectedVal = userAnswers[q.id];
+                                    const isCorrect = selectedVal === q.correctAnswer;
+                                    
+                                    let cardBorder = 'border-slate-200';
+                                    if (quizSubmitted) { cardBorder = isCorrect ? 'border-green-500' : 'border-red-500'; }
+
+                                    return (
+                                        <div key={q.id} className={`bg-white rounded-xl shadow-sm p-6 border-2 ${cardBorder} question-card`}>
+                                            <div className="flex justify-between items-start mb-4">
+                                                <h4 className="text-lg font-bold text-slate-800"><span className="text-blue-600 mr-2">{qNum}.</span> {q.question}</h4>
+                                                <span className="text-xs font-semibold px-2 py-1 bg-slate-100 text-slate-500 rounded no-print whitespace-nowrap ml-4">{q.topic}</span>
+                                            </div>
+                                            
+                                            <div className="space-y-3 mb-4">
+                                                {q.options.map((opt, oIndex) => {
+                                                    let labelClass = 'bg-white border-slate-200';
+                                                    if (isAnswered && !quizSubmitted) {
+                                                        if (selectedVal === oIndex) labelClass = 'bg-blue-50 border-blue-500';
+                                                    } else if (quizSubmitted) {
+                                                        if (oIndex === q.correctAnswer) labelClass = 'bg-green-100 border-green-500';
+                                                        else if (selectedVal === oIndex) labelClass = 'bg-red-100 border-red-500 opacity-70';
+                                                    }
+
+                                                    return (
+                                                        <label key={oIndex} className={`flex items-start p-3 border rounded-lg option-label ${labelClass} ${oIndex === q.correctAnswer ? 'print-correct-highlight' : ''} ${!quizSubmitted ? 'hover:bg-slate-50' : ''}`}>
+                                                            <input type="radio" name={`q${q.id}`} value={oIndex} checked={selectedVal === oIndex} disabled={quizSubmitted} onChange={() => handleSelection(q.id, oIndex)} className="mt-1 mr-3 text-blue-600 focus:ring-blue-500 cursor-pointer" />
+                                                            <span className="text-slate-700 font-medium">{opt}</span>
+                                                        </label>
+                                                    );
+                                                })}
+                                            </div>
+
+                                            <div className="print-only-key mb-2 font-medium text-slate-800"><span className="text-slate-500">Correct Answer:</span> {q.options[q.correctAnswer]}</div>
+
+                                            {/* Hint Logic - Conditionally render if 'hint' exists in data source */}
+                                            {q.hint && !quizSubmitted && (
+                                                <div className="no-print mb-4">
+                                                    <button onClick={() => toggleHint(q.id)} className="text-sm font-semibold text-blue-500 hover:text-blue-700 flex items-center gap-1">💡 Show Hint</button>
+                                                    {visibleHints[q.id] && (
+                                                        <div className="mt-2 p-3 bg-yellow-50 text-yellow-800 rounded-lg text-sm italic border border-yellow-200">{q.hint}</div>
+                                                    )}
+                                                </div>
+                                            )}
+
+                                            {/* Clinical Rationale Block - Shows after submission or in Study Guide Print */}
+                                            <div className={`${quizSubmitted ? 'block' : 'hidden'} explanation-container mt-4 p-4 rounded-lg bg-slate-50 border-l-4 border-blue-500`}>
+                                                <p className="font-semibold text-slate-800 mb-1">Evidence-Based Rationale:</p>
+                                                <p className="text-slate-700 text-sm mb-1">{q.rationale}</p>
+                                            </div>
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
