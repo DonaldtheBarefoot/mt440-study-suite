@@ -1,595 +1,409 @@
 /**
  * MT390 Treatments II - Master Clinical Simulator
- * Phase 3 - Action 5: Batch 5 (Questions 201 - 250)
+ * Phase 5: Batch 5 (Questions 201 - 250)
  * Curriculum: Oral Practical (OP) Capstone, Mock OSCE Scenarios & Advanced Integration
- * Difficulty Distribution: 25 Easy, 15 Medium, 10 Hard
+ * Features: v2.0 Hint Integration & APA Citations
  */
 
 window.batch5Questions = [
-  // ==========================================
-  // EASY: Foundational Definitions & Protocols
-  // ==========================================
   {
-    id: 201,
-    topic: "Peripheral Nervous System",
-    difficulty: "Easy",
+    id: 201, topic: "Nervous System Integration", difficulty: "Easy",
     question: "Bell's Palsy involves the acute, unilateral paralysis of the facial muscles. Which specific cranial nerve is affected in this condition?",
     options: ["Trigeminal Nerve (CN V)", "Facial Nerve (CN VII)", "Vagus Nerve (CN X)", "Hypoglossal Nerve (CN XII)"],
     correctAnswer: 1,
+    hint: "This nerve controls the muscles of facial expression and is highly vulnerable to viral inflammation as it exits the skull.",
     rationale: "Bell's Palsy is a lower motor neuron lesion of the Facial Nerve (Cranial Nerve VII), often triggered by a virus or extreme stress, resulting in flaccid paralysis of one side of the face (Werner, 2019)."
   },
   {
-    id: 202,
-    topic: "Peripheral Nervous System",
-    difficulty: "Easy",
-    question: "According to Willis College clinical protocols, what is a crucial visual indicator used to differentiate Bell's Palsy from a Stroke (CVA)?",
-    options: ["A stroke causes bilateral paralysis; Bell's Palsy is unilateral.", "A stroke typically spares the upper face (the client can still wrinkle their forehead); Bell's Palsy paralyzes the entire half of the face, including the forehead.", "Bell's Palsy causes severe slurring of speech; stroke does not.", "There is no visual way to differentiate them."],
+    id: 202, topic: "OP Protocols: Clinical Differentiation", difficulty: "Hard",
+    question: "According to clinical protocols, what is a crucial visual indicator used to differentiate Bell's Palsy from a Stroke (CVA)?",
+    options: ["A stroke causes bilateral paralysis; Bell's Palsy is unilateral.", "In Bell's Palsy, the client cannot close their eye or wrinkle their forehead on the affected side. In a stroke, the forehead is typically spared due to bilateral cortical innervation.", "A stroke only affects the lower jaw.", "Bell's palsy causes severe resting tremors."],
     correctAnswer: 1,
-    rationale: "Because the upper face receives bilateral upper motor neuron innervation, a stroke (upper motor neuron lesion) usually leaves forehead movement intact. Bell's Palsy (a peripheral, lower motor neuron lesion) wipes out nerve conduction to the entire affected side of the face, including the forehead (Norris, 2020)."
+    hint: "Think about the dual wiring from the brain to the upper face. A brain lesion won't knock out the forehead, but a cut wire in the face will.",
+    rationale: "Because the upper face receives motor signals from both hemispheres of the brain, an upper motor neuron lesion (stroke) typically spares the forehead. A peripheral lesion (Bell's Palsy) knocks out the entire half of the face (Norris, 2020)."
   },
   {
-    id: 203,
-    topic: "Oral Practical Protocols",
-    difficulty: "Easy",
-    question: "When presented with an acute Grade 2 strain (with visible edema and bruising) during an Oral Practical, which advanced modality MUST you select as your primary intervention?",
-    options: ["Deep Transverse Friction", "Manual Lymph Drainage (MLD)", "Active Resisted Stretching", "Ischemic Compression"],
-    correctAnswer: 1,
-    rationale: "In the acute stage of a tissue tear, bleeding and edema are present. Deep work is strictly contraindicated. MLD is the required advanced protocol to manage the swelling and clear cellular debris (Willis College OP Protocol)."
-  },
-  {
-    id: 204,
-    topic: "Oral Practical Protocols",
-    difficulty: "Easy",
-    question: "What is the very first required step when performing Manual Lymph Drainage (MLD) on a swollen extremity?",
-    options: ["Apply a hot hydrotherapy pack to the extremity.", "Pump the lymphatic terminus (the venous angles at the base of the neck).", "Perform effleurage directly over the swelling.", "Stretch the affected muscles."],
-    correctAnswer: 1,
-    rationale: "MLD protocols strictly require 'clearing the drains' first. Pumping the terminus prepares the central lymphatic system to receive the excess fluid that will be pushed proximally from the affected extremity (Andrade, 2023)."
-  },
-  {
-    id: 205,
-    topic: "Oral Practical Protocols",
-    difficulty: "Easy",
-    question: "The 'Origin & Insertion (O&I)' technique is classified as what type of treatment approach?",
-    options: ["A direct, mechanical approach.", "An indirect, neurologically reflexive approach.", "A vascular flushing technique.", "A joint mobilization."],
-    correctAnswer: 1,
-    rationale: "O&I is an indirect technique. By treating the tendinous attachments rather than the muscle belly, it utilizes the nervous system's reflex arcs to safely reduce hypertonicity in an injured or exquisitely painful muscle (Willis College OP Protocol)."
-  },
-  {
-    id: 206,
-    topic: "Oral Practical Protocols",
-    difficulty: "Easy",
-    question: "Which sensory receptor is the specific target of the Golgi Tendon Organ (GTO) release technique?",
-    options: ["Muscle Spindles", "Ruffini Corpuscles", "Golgi Tendon Organs located in the musculotendinous junction", "Pacinian Corpuscles"],
+    id: 203, topic: "Nervous System Integration", difficulty: "Medium",
+    question: "During an OP, you are treating a client with Parkinson's Disease. They present with severe rigidity and a resting tremor. What is the primary focus of your manual therapy?",
+    options: ["Aggressive stretching to break the contractures.", "Deep friction to the basal ganglia.", "Rhythmic, soothing techniques to down-regulate the sympathetic nervous system and maintain available joint mobility.", "High-velocity joint manipulations."],
     correctAnswer: 2,
-    rationale: "GTO release specifically targets the Golgi tendon organs at the musculotendinous junction. Applying tension (bowing) to the tendon triggers an autogenic inhibition reflex, causing the associated muscle belly to relax (Andrade, 2023)."
+    hint: "You cannot cure the neurological deficit, but you can manage the hyper-aroused state of the nervous system and the resulting stiffness.",
+    rationale: "Massage cannot reverse the loss of dopamine in Parkinson's Disease. The goal is palliative: using rhythmic, relaxing techniques to reduce rigidity, manage pain, and provide profound sympathetic sedation (Andrade, 2023)."
   },
   {
-    id: 207,
-    topic: "Oral Practical Protocols",
-    difficulty: "Easy",
-    question: "During a massage, a client's calf suddenly goes into an active, painful cramp. Which advanced technique involves pushing the muscle's attachments together to relieve the spasm?",
-    options: ["Origin and Insertion (O&I)", "Muscle Approximation", "Myofascial Release (MFR)", "Deep Transverse Friction"],
+    id: 204, topic: "Nervous System Integration", difficulty: "Medium",
+    question: "A client with Multiple Sclerosis (MS) is scheduled for a massage. Which environmental factor must you strictly control to prevent triggering Uhthoff's phenomenon?",
+    options: ["The volume of the music.", "The ambient temperature and the use of hot hydrotherapy.", "The lighting in the room.", "The scent of the massage oil."],
     correctAnswer: 1,
-    rationale: "Muscle Approximation mechanically shortens the spasming muscle. This removes the stretch from the intrafusal fibers of the muscle spindles, decreasing the stretch reflex and signaling the muscle to relax (Willis College OP Protocol)."
+    hint: "Demyelinated nerves short-circuit when the core body temperature rises.",
+    rationale: "Uhthoff's phenomenon is the temporary worsening of MS symptoms caused by an increase in body temperature. Hot packs, heavy blankets, or overheated rooms are contraindicated (Werner, 2019)."
   },
   {
-    id: 208,
-    topic: "Orthopedic Assessment",
-    difficulty: "Easy",
-    question: "When applying Cyriax rules, if a client experiences pain during Active Range of Motion (AROM) and Resisted Range of Motion (RROM), but no pain during Passive Range of Motion (PROM) in the same direction, what tissue is injured?",
-    options: ["Inert Tissue (e.g., Ligament)", "Contractile Tissue (e.g., Muscle or Tendon)", "Nervous Tissue", "Bone"],
-    correctAnswer: 1,
-    rationale: "Contractile lesions (strains) cause pain when the muscle actively contracts (AROM/RROM) and when it is passively stretched in the opposite direction. Passive movement in the same direction simply slackens the muscle and is usually painless (Magee, 2021)."
-  },
-  {
-    id: 209,
-    topic: "Spinal & Postural Conditions",
-    difficulty: "Easy",
-    question: "In a client with severe Hyperkyphosis, the anterior chest muscles (Pectoralis Major and Minor) are typically in what state?",
-    options: ["Overstretched and weak", "Adaptively shortened, hypertonic, and fibrotic", "Completely atrophied", "Unaffected"],
-    correctAnswer: 1,
-    rationale: "The forward-rounded shoulders characteristic of hyperkyphosis chronically slacken the pectoral muscles, causing them to adaptively shorten and develop fascial contractures (Hertling & Kessler, 2006)."
-  },
-  {
-    id: 210,
-    topic: "Peripheral Nervous System",
-    difficulty: "Easy",
-    question: "True Sciatica involves the compression of the sciatic nerve roots. At what spinal levels do these nerve roots exit?",
-    options: ["C5-T1", "T12-L3", "L4-S3", "S4-S5"],
-    correctAnswer: 2,
-    rationale: "The sciatic nerve is formed by the anterior rami of the L4 through S3 spinal nerve roots. Compression at these specific lumbar/sacral levels defines a true radicular sciatica (Tortora & Derrickson, 2017)."
-  },
-  {
-    id: 211,
-    topic: "Peripheral Nervous System",
-    difficulty: "Easy",
-    question: "Carpal Tunnel Syndrome involves the entrapment of the Median nerve beneath which structure?",
-    options: ["The Extensor Retinaculum", "The Flexor Retinaculum (Transverse Carpal Ligament)", "The Palmar Aponeurosis", "The Coracoclavicular Ligament"],
-    correctAnswer: 1,
-    rationale: "The carpal tunnel is an inelastic space bound by the carpal bones posteriorly and the thick flexor retinaculum anteriorly. The median nerve and nine flexor tendons pass through this narrow tunnel (Magee, 2021)."
-  },
-  {
-    id: 212,
-    topic: "Peripheral Nervous System",
-    difficulty: "Easy",
-    question: "Which of the following describes the mechanism of 'Double Crush Syndrome'?",
-    options: ["A single nerve is compressed at two different anatomical sites (e.g., the neck and the wrist).", "Both the right and left arms are fractured.", "A muscle is strained at both its origin and insertion.", "Two different nerves are cut simultaneously."],
+    id: 205, topic: "Nervous System Integration", difficulty: "Hard",
+    question: "A client who survived Poliomyelitis in childhood presents decades later with profound, new-onset muscle weakness and severe fatigue. What is the diagnosis and the appropriate massage modification?",
+    options: ["Post-Polio Syndrome. Massage must be extremely gentle and non-fatiguing to preserve the overworked, dying motor units.", "Active Polio Infection. Refuse treatment.", "Multiple Sclerosis. Use deep friction.", "Peripheral Neuropathy. Apply heat."],
     correctAnswer: 0,
-    rationale: "Double Crush Syndrome occurs when a proximal compression (like TOS in the neck) impairs axonal transport, rendering the distal portion of the nerve highly susceptible to injury from minor compression (like Carpal Tunnel at the wrist) (Magee, 2021)."
+    hint: "The compensatory nerve cells that took over the workload years ago are now burning out from exhaustion. Do not force them to work harder.",
+    rationale: "Post-Polio Syndrome involves the late-stage exhaustion of compensatory motor neurons. Aggressive or fatiguing massage is contraindicated; treatments must be short, gentle, and highly supportive (Werner, 2019)."
   },
   {
-    id: 213,
-    topic: "Head, Neck & Upper Extremity",
-    difficulty: "Easy",
-    question: "A client presents with acute Torticollis. Their head is laterally flexed to the right and rotated to the left. Which Sternocleidomastoid (SCM) is in spasm?",
-    options: ["The Left SCM", "The Right SCM", "Both equally", "Neither; it is a trapezius spasm"],
-    correctAnswer: 1,
-    rationale: "The unilateral action of the SCM is to laterally flex the head to the SAME side and rotate the head to the OPPOSITE side. Therefore, a right side-bend and left rotation points definitively to a Right SCM spasm (Werner, 2019)."
-  },
-  {
-    id: 214,
-    topic: "Musculoskeletal System",
-    difficulty: "Easy",
-    question: "A Colles' fracture, frequently seen in elderly clients following a fall, occurs at which bone?",
-    options: ["The proximal femur", "The distal fibula", "The distal radius (wrist)", "The surgical neck of the humerus"],
+    id: 206, topic: "OP Protocols: Severe Nerve Lesions", difficulty: "Medium",
+    question: "STEM: During an OP, you are presented with a client who sustained a complete severance of the Radial Nerve at the mid-humerus. The examiner asks: 'What specific manual technique is an absolute contraindication for the posterior forearm?'",
+    options: ["Light effleurage.", "Passive Range of Motion.", "Passive stretching of the paralyzed extensor muscles.", "Manual Lymph Drainage."],
     correctAnswer: 2,
-    rationale: "A Colles' fracture is a classic 'Fall On Outstretched Hand' (FOOSH) injury resulting in a transverse fracture of the distal radius with posterior displacement of the distal fragment (Magee, 2021)."
+    hint: "Flaccid muscles have no stretch reflex to protect themselves, and pulling on a severed nerve will rip the fragile, regenerating tissue.",
+    rationale: "Passively stretching flaccid, denervated tissue will cause micro-tearing. Furthermore, placing tension on a regenerating nerve axon will disrupt the delicate healing process, making it an absolute contraindication (Andrade, 2023)."
   },
   {
-    id: 215,
-    topic: "Head, Neck & Upper Extremity",
-    difficulty: "Easy",
-    question: "During a TMJ assessment, the client experiences severe pain and restriction when opening their mouth (depressing the mandible). Which muscle is the primary depressor of the mandible?",
-    options: ["Masseter", "Temporalis", "Medial Pterygoid", "Lateral Pterygoid"],
-    correctAnswer: 3,
-    rationale: "The Lateral Pterygoid is the primary muscle responsible for depressing (opening) and protruding the mandible. The Masseter, Temporalis, and Medial Pterygoids are all elevators (closers) (Hertling & Kessler, 2006)."
+    id: 207, topic: "Advanced Integration", difficulty: "Easy",
+    question: "When performing Manual Lymph Drainage (MLD) for acute edema, which anatomical region must be 'pumped' or cleared FIRST according to clinical protocols?",
+    options: ["The affected joint.", "The terminus (the supraclavicular fossa).", "The cisterna chyli.", "The inguinal nodes."],
+    correctAnswer: 1,
+    hint: "You cannot empty a backed-up sink if the main drain is clogged.",
+    rationale: "MLD protocols strictly require clearing the proximal pathways first. Pumping the terminus (where lymph re-enters the venous system) creates a vacuum effect to draw fluid up from the distal extremities (Andrade, 2023)."
   },
   {
-    id: 216,
-    topic: "Head, Neck & Upper Extremity",
-    difficulty: "Easy",
-    question: "What is the hallmark symptom of the 'Freezing' stage of Adhesive Capsulitis (Frozen Shoulder)?",
-    options: ["Severe, acute pain that is often worse at night, accompanied by a gradual loss of ROM.", "Painless, complete immobility of the joint.", "Sudden, spontaneous recovery of movement.", "Numbness and tingling down the arm."],
-    correctAnswer: 0,
-    rationale: "The initial 'Freezing' stage is dominated by severe, active capsular inflammation. It is highly painful (especially resting/night pain) as the joint begins to lose its range of motion (Andrade, 2023)."
-  },
-  {
-    id: 217,
-    topic: "Lower Extremity",
-    difficulty: "Easy",
-    question: "A client reports sharp, stabbing heel pain that is incredibly severe during their first few steps out of bed in the morning, but slightly improves as they walk around. What is the diagnosis?",
-    options: ["Achilles Tendinitis", "Tarsal Tunnel Syndrome", "Plantar Fasciitis", "Compartment Syndrome"],
+    id: 208, topic: "OP Protocols: Advanced Techniques", difficulty: "Medium",
+    question: "A client complains of a severe, acute muscle spasm in their gastrocnemius during treatment. Which advanced technique is immediately indicated to disarm the neurological reflex?",
+    options: ["Aggressive passive dorsiflexion.", "Origin & Insertion technique.", "Muscle Approximation (pushing the attachments together).", "Deep ischemic compression to the belly."],
     correctAnswer: 2,
-    rationale: "This is the classic, pathognomonic presentation of Plantar Fasciitis. The inflamed fascia heals and shortens overnight; the first weight-bearing steps in the morning aggressively tear these fresh, weak cross-links, causing severe pain (Werner, 2019)."
+    hint: "Physically fold the muscle to turn off the alarm bells inside the muscle spindle.",
+    rationale: "Muscle Approximation physically slackens the intrafusal fibers of the muscle spindle. This removes the mechanical tension driving the stretch reflex, safely and effectively shutting down the active spasm (Willis College OP Protocol)."
   },
   {
-    id: 218,
-    topic: "Lower Extremity",
-    difficulty: "Easy",
-    question: "The Iliotibial (IT) Band inserts distally on Gerdy's tubercle. Where is Gerdy's tubercle located?",
-    options: ["The lateral epicondyle of the femur", "The head of the fibula", "The anterolateral aspect of the proximal tibia", "The medial malleolus"],
+    id: 209, topic: "OP Protocols: Advanced Techniques", difficulty: "Medium",
+    question: "To effectively perform a Golgi Tendon Organ (GTO) release on a hypertonic muscle, what specific mechanical input is required?",
+    options: ["Rapid, light tapping on the tendon.", "Sustained, specific compression or 'bowing' directly on the tendon (at the musculotendinous junction).", "Skin rolling over the muscle belly.", "High-velocity thrusting."],
+    correctAnswer: 1,
+    hint: "You must simulate extreme tension on the tendon to trick the brain into relaxing the muscle to prevent a tear.",
+    rationale: "GTO release requires sustained mechanical deformation (compression or bowing) of the tendon. This artificial tension triggers autogenic inhibition, causing the alpha motor neurons to reflexively relax the target muscle (Andrade, 2023)."
+  },
+  {
+    id: 210, topic: "OP Protocols: Advanced Techniques", difficulty: "Easy",
+    question: "Which advanced technique is the primary 'indirect' choice when a client's muscle belly is far too painful or hyperalgesic to touch directly?",
+    options: ["Deep transverse friction.", "Origin and Insertion (O&I) technique.", "Myofascial stripping.", "Ischemic compression."],
+    correctAnswer: 1,
+    hint: "If you cannot touch the middle of the string, you must work on the ends where it ties to the bone.",
+    rationale: "The Origin & Insertion (O&I) technique applies pressure to the tendinous attachments rather than the muscle belly. This safely stimulates mechanoreceptors to induce a reflex release without irritating the hypersensitive tissue (Willis College OP Protocol)."
+  },
+  {
+    id: 211, topic: "Mock OSCE: Secondary Conditions", difficulty: "Hard",
+    question: "STEM: Your client presents with acute Torticollis (Wryneck). During the intake, they mention they are 28 weeks pregnant. How does this secondary condition drastically alter your treatment plan?",
+    options: ["Pregnancy prevents the use of any cervical massage.", "The client must be treated in a seated or side-lying position (avoiding prolonged supine or prone) to prevent Supine Hypotensive Syndrome. Deep abdominal work is also contraindicated.", "You must use heavy tapotement on the SCM.", "You must refer them out immediately."],
+    correctAnswer: 1,
+    hint: "The neck injury requires treatment, but the mechanical weight of the fetus dictates how the client can safely be positioned on the table.",
+    rationale: "In the third trimester, the gravid uterus can compress the inferior vena cava if the client is supine, causing a dangerous drop in maternal blood pressure. Positioning must be modified to side-lying or semi-Fowler, regardless of the primary neck complaint (Werner, 2019)."
+  },
+  {
+    id: 212, topic: "Mock OSCE: Secondary Conditions", difficulty: "Hard",
+    question: "STEM: A client presents with a severe Whiplash injury sustained 4 days ago. They also have a history of Primary Hypertension. Which assessment is absolutely critical, and what physiological response must you monitor?",
+    options: ["The Thomas Test; monitor for hip pain.", "The Vertebral Artery Test (VAT) is mandatory to rule out vascular compromise. Additionally, you must monitor for orthostatic hypotension when they get off the table due to anti-hypertensive medications.", "The Slump Test; monitor for sciatica.", "The Phalen's Test; monitor for hand numbness."],
+    correctAnswer: 1,
+    hint: "Whiplash violently snaps the neck, endangering the arteries. Blood pressure medication makes clients dizzy when they stand up.",
+    rationale: "Whiplash trauma heavily stresses the cervical vessels, mandating a VAT screen. Secondly, anti-hypertensive medications blunt the body's ability to regulate blood pressure upon standing, creating a high risk for fainting (orthostatic hypotension) (Magee, 2021)."
+  },
+  {
+    id: 213, topic: "Mock OSCE: Complex Pathologies", difficulty: "Medium",
+    question: "STEM: Your client presents with Functional Hyperkyphosis. Their health history notes chronic Bronchitis and the use of an inhaler. What is the primary impairment you are trying to resolve in this specific scenario?",
+    options: ["A weak pectoralis major.", "Restricted thoracic extension and anterior fascial adhesions that are mechanically limiting the expansion of the rib cage, exacerbating their respiratory distress.", "A torn rhomboid.", "A hypertonic diaphragm."],
+    correctAnswer: 1,
+    hint: "If the shoulders are permanently rolled forward, the lungs physically cannot inflate fully.",
+    rationale: "Functional hyperkyphosis involves adaptively shortened anterior structures (pectorals) that lock the thorax in flexion. Releasing these structures improves rib cage mechanics, directly aiding the client's comorbid respiratory condition (Andrade, 2023)."
+  },
+  {
+    id: 214, topic: "Mock OSCE: Complex Pathologies", difficulty: "Hard",
+    question: "STEM: A client complains of right-sided Temporomandibular Joint (TMJ) pain that refers into their teeth. They have an S-curve deviation upon opening. Their history notes Osteoarthritis (OA) in their knees. What does the S-curve indicate, and does the OA affect your TMJ treatment?",
+    options: ["The S-curve indicates a dislocated jaw. The OA means you cannot touch them.", "The S-curve indicates a muscular imbalance (motor control issue). The OA in the knees does not directly contraindicate TMJ work, but indicates a systemic tendency toward joint degeneration that warrants gentle assessment.", "The S-curve indicates trigeminal neuralgia.", "The S-curve indicates a fractured mandible."],
+    correctAnswer: 1,
+    hint: "A wandering jaw that returns to center is a muscle timing issue. OA is a 'wear and tear' disease, so if they have it in their knees, their other joints might be fragile too.",
+    rationale: "An S-curve deviation implies an altered muscular firing sequence (usually the pterygoids), rather than a hard structural block. While OA in the knees doesn't preclude TMJ work, it requires the therapist to be mindful of overall joint health and avoid aggressive capsular forcing (Hertling & Kessler, 2006)."
+  },
+  {
+    id: 215, topic: "Mock OSCE: Red Flags", difficulty: "Hard",
+    question: "STEM: A 65-year-old client with Osteoporosis (T-score -2.9) presents with back pain. The OP examiner asks: 'Can you perform Grade 3 Joint Mobilizations on their thoracic spine to increase extension?'",
+    options: ["Yes, to stimulate bone growth.", "Yes, but only if you use a lot of oil.", "No. Severe osteoporosis is an absolute local contraindication for high-grade joint mobilizations or heavy downward compressions due to the severe risk of fracturing the fragile vertebrae.", "Yes, if they sign a waiver."],
     correctAnswer: 2,
-    rationale: "The IT Band crosses the lateral knee joint and inserts onto Gerdy's tubercle, located on the anterolateral aspect of the lateral tibial condyle (Magee, 2021)."
+    hint: "A T-score of -2.9 means the bones resemble fragile honeycomb. Pushing on them forcefully will break them.",
+    rationale: "Osteoporosis involves severe loss of bone density. Applying Grade 3 or 4 mobilizations, which push into the tissue resistance barrier, carries an unacceptable risk of causing pathological fractures or rib subluxations (Werner, 2019)."
   },
   {
-    id: 219,
-    topic: "Special Populations (Pregnancy)",
-    difficulty: "Easy",
-    question: "To prevent Supine Hypotensive Syndrome during the third trimester of pregnancy, what is the safest treatment position?",
-    options: ["Prone, with a specialized cutout pillow.", "Supine, with the head elevated 10 degrees.", "Side-lying, supported by bolsters.", "Seated, bent forward over a desk."],
+    id: 216, topic: "Peripheral Nervous System", difficulty: "Medium",
+    question: "During an assessment for Thoracic Outlet Syndrome, you perform Wright's Test (Hyperabduction). The radial pulse disappears. Which specific anatomical chokepoint is implicated?",
+    options: ["Between the clavicle and first rib.", "Between the anterior and middle scalenes.", "Beneath the pectoralis minor and the coracoid process.", "At the pronator teres."],
     correctAnswer: 2,
-    rationale: "Side-lying (particularly left side-lying) is the gold standard for late-stage pregnancy massage. It entirely removes the weight of the uterus from the inferior vena cava, preventing compromised venous return to the heart (Werner, 2019)."
+    hint: "Lifting the arm high above the head stretches the neurovascular bundle tightly underneath this specific chest muscle.",
+    rationale: "Wright's Test hyperabducts the arm, selectively stretching the axillary artery and brachial plexus under a hypertonic pectoralis minor. A diminished pulse confirms this specific entrapment site (Magee, 2021)."
   },
   {
-    id: 220,
-    topic: "Cardiovascular System",
-    difficulty: "Easy",
-    question: "Raynaud's Phenomenon is characterized by severe episodic vasoconstriction of the digits. What are the two most common triggers for an episode?",
-    options: ["Heat and humidity", "Cold temperatures and emotional stress", "Exercise and stretching", "High sodium intake and caffeine"],
+    id: 217, topic: "Peripheral Nervous System", difficulty: "Medium",
+    question: "A client presents with 'Double Crush Syndrome' involving the median nerve. What does this mean for your treatment plan?",
+    options: ["You only need to treat the carpal tunnel.", "The nerve is compressed in two places (e.g., the neck and the wrist). You MUST treat the proximal entrapment (TOS) first or concurrently, otherwise treating the distal entrapment (CTS) will fail.", "The nerve is completely severed.", "The client has both Lupus and MS."],
     correctAnswer: 1,
-    rationale: "Raynaud's vasospasms are primarily triggered by exposure to cold environments or acute emotional/psychological stress, leading to the classic pallor (white) and cyanosis (blue) of the fingers or toes (Norris, 2020)."
+    hint: "If a garden hose is kinked at the house and at the nozzle, fixing just the nozzle won't restore the water pressure.",
+    rationale: "Double Crush Syndrome dictates that a proximal nerve compression disrupts the axoplasmic flow, making the distal nerve highly vulnerable. Both the proximal source (e.g., scalenes) and the distal symptom (e.g., carpal tunnel) must be treated for clinical success (Hertling & Kessler, 2006)."
   },
   {
-    id: 221,
-    topic: "Respiratory System",
-    difficulty: "Easy",
-    question: "Which chronic respiratory condition involves the permanent destruction of the alveolar walls, resulting in a loss of lung elasticity and a 'barrel chest'?",
-    options: ["Asthma", "Chronic Bronchitis", "Emphysema", "Sinusitis"],
+    id: 218, topic: "Mock OSCE: Acute Trauma", difficulty: "Hard",
+    question: "STEM: A client tore their Anterior Cruciate Ligament (ACL) 3 days ago. The knee is massively swollen, hot, and painful. What is the required Willis College OP protocol for this acute stage?",
+    options: ["Deep transverse friction to the ACL.", "Lachman's test followed by high-velocity joint mobilizations.", "RICE protocol (Rest, Ice, Compression, Elevation), Manual Lymph Drainage to clear the effusion, and treatment of compensatory hip/ankle structures. Direct mechanical work on the knee is contraindicated.", "Aggressive hamstring stretches."],
     correctAnswer: 2,
-    rationale: "Emphysema breaks down the elastin in the alveoli. The lungs lose their ability to passively recoil during exhalation, trapping air and structurally expanding the ribcage into a 'barrel' shape (Norris, 2020)."
+    hint: "The joint is a balloon of acute inflammatory fluid and severed tissue. Do not touch the injury site directly.",
+    rationale: "In the acute stage of a Grade 3 sprain, the primary goals are managing inflammation and protecting the joint. Direct massage, friction, and joint play are absolutely contraindicated. MLD and compensatory care are the standards of practice (Andrade, 2023)."
   },
   {
-    id: 222,
-    topic: "Cardiovascular System",
-    difficulty: "Easy",
-    question: "Unilateral swelling, redness, deep heat, and severe localized aching in the calf following a long period of immobility are classic red-flag signs of:",
-    options: ["A Grade 1 Gastrocnemius strain", "Deep Vein Thrombosis (DVT)", "Raynaud's Disease", "Varicose Veins"],
-    correctAnswer: 1,
-    rationale: "These are the hallmark signs of a Deep Vein Thrombosis. Massage of the limb is an absolute local contraindication due to the severe risk of dislodging the thrombus, causing a pulmonary embolism (Werner, 2019)."
-  },
-  {
-    id: 223,
-    topic: "Respiratory System",
-    difficulty: "Easy",
-    question: "Asthma is clinically defined as a chronic inflammatory disorder of the airways characterized by:",
-    options: ["Permanent alveolar destruction.", "Reversible bronchospasm and excessive mucus production.", "A bacterial infection of the lungs.", "A collapse of the trachea."],
-    correctAnswer: 1,
-    rationale: "Unlike Emphysema, Asthma involves hyper-reactive airways that constrict (bronchospasm) in response to triggers. This constriction is reversible with medication (bronchodilators) or the removal of the trigger (Norris, 2020)."
-  },
-  {
-    id: 224,
-    topic: "Autoimmune Conditions",
-    difficulty: "Easy",
-    question: "What is the primary difference in the pathophysiology of Rheumatoid Arthritis (RA) compared to Osteoarthritis (OA)?",
-    options: ["RA is a mechanical wear-and-tear condition; OA is an autoimmune disease.", "RA is a systemic autoimmune disease targeting synovial membranes; OA is a localized, degenerative mechanical breakdown of articular cartilage.", "RA only affects the spine; OA only affects the hands.", "They are the exact same condition."],
-    correctAnswer: 1,
-    rationale: "RA is driven by an aberrant immune response causing systemic, bilateral joint inflammation. OA is driven by mechanical stress and aging, leading to the localized degradation of cartilage in specific, usually weight-bearing, joints (Werner, 2019)."
-  },
-  {
-    id: 225,
-    topic: "Systemic Contraindications",
-    difficulty: "Easy",
-    question: "Why are Grade 4 joint mobilizations and heavy, direct vertical compressions absolutely contraindicated for a client with advanced Osteoporosis?",
-    options: ["It will cause a muscle spasm.", "Osteoporotic bones are highly porous and fragile; these forces carry a massive risk of causing pathological fractures (especially in the ribs and vertebrae).", "It will cure the condition too quickly.", "It decreases blood pressure."],
-    correctAnswer: 1,
-    rationale: "Osteoporosis severely compromises bone density. The structural integrity of the ribs and spine cannot withstand high-velocity thrusts or heavy vertical shearing forces; applying them is a direct safety liability (Magee, 2021)."
-  },
-
-  // ==========================================
-  // MEDIUM: Pathophysiology & Clinical Reasoning
-  // ==========================================
-  {
-    id: 226,
-    topic: "Peripheral Nervous System",
-    difficulty: "Medium",
-    question: "During an Oral Practical, you are treating a client recovering from Bell's Palsy. They have right-sided facial flaccidity. How should you mechanically apply your massage strokes to the affected tissue?",
-    options: [
-      "Vigorous downward strokes to stretch the tissue.",
-      "Gentle, upward strokes. The tissue is flaccid and lacks tone; gravity is already pulling it down. Strokes should lift the tissue to prevent further overstretching of the paralyzed muscles.",
-      "Deep cross-fiber friction across the facial nerve.",
-      "Tapotement directly over the eye."
-    ],
-    correctAnswer: 1,
-    rationale: "In flaccid paralysis, the muscles have lost their resting tone. Dragging the tissue downward exacerbates the mechanical strain on the paralyzed tissue. All strokes must be supportive and directed superiorly (upward) (Willis College OP Protocol)."
-  },
-  {
-    id: 227,
-    topic: "Oral Practical Protocols",
-    difficulty: "Medium",
-    question: "You are testing an acute triceps strain (2 days old) during an OP. You correctly choose to perform Manual Lymph Drainage (MLD) to address the edema. After completing the MLD strokes, what is the mandatory final step of the protocol?",
-    options: [
-      "Apply an ice pack for 20 minutes.",
-      "Perform Active Resisted Range of Motion (RROM).",
-      "Perform pain-free Passive Range of Motion (PROM) of the affected joints.",
-      "Apply deep friction to the injury site."
-    ],
+    id: 219, topic: "Orthopedic Assessment", difficulty: "Medium",
+    question: "You are assessing a client with lateral elbow pain. You perform Cozen's Test (resisted wrist extension/radial deviation), which is positive. What structure is damaged?",
+    options: ["The common flexor tendon (Medial Epicondylitis).", "The ulnar collateral ligament.", "The common extensor tendon, specifically the Extensor Carpi Radialis Brevis (Lateral Epicondylitis).", "The radial nerve."],
     correctAnswer: 2,
-    rationale: "Willis College MLD protocol strictly dictates that lymphatic drainage strokes must be followed by pain-free PROM. This utilizes the joint's 'muscle pump' action to further assist the transit of the newly mobilized lymph fluid into the venous system (Willis College OP Protocol)."
+    hint: "This test forces the muscles that lift the back of the hand to fire forcefully.",
+    rationale: "Cozen's test actively engages the wrist extensors. Pain at the lateral epicondyle confirms Lateral Epicondylitis (Tennis Elbow), primarily involving the ECRB tendon (Magee, 2021)."
   },
   {
-    id: 228,
-    topic: "Case Scenario: Torticollis & Dislocation",
-    difficulty: "Medium",
-    question: "STEM: 14-year-old Jamie presents with an acute right SCM Torticollis. His health history notes he dislocated his right shoulder 3 days ago, which has been reduced and is in a sling. How do you adapt your Torticollis treatment?",
-    options: [
-      "Remove the sling and stretch the shoulder to relax the neck.",
-      "The right shoulder is an absolute local contraindication due to the acute capsular tear. Leave the arm in the sling. Treat the acute right SCM spasm indirectly (using O&I at the mastoid and clavicle) to avoid transferring any force to the unstable shoulder joint.",
-      "Massage is absolutely contraindicated for the entire body.",
-      "Perform Grade 3 joint mobilizations on the cervical spine."
-    ],
+    id: 220, topic: "Mock OSCE: OP Protocol", difficulty: "Easy",
+    question: "During an Oral Practical, you are instructed to perform 'Myofascial Release' (MFR) on the IT Band. What must you explicitly avoid using on the client's skin?",
+    options: ["Your hands.", "Massage lotion or oil.", "A drape.", "Conversation."],
     correctAnswer: 1,
-    rationale: "This Mock OSCE stem tests safety and protocol integration. A 3-day-old dislocation is highly unstable; the shoulder must not be moved. The torticollis is an acute spasm ('painful to touch'), mandating indirect treatment (O&I) while strictly protecting the compromised shoulder (Willis College OP Protocol)."
+    hint: "You need a 'stick-and-drag' interface to physically shear the connective tissue.",
+    rationale: "MFR requires sustained mechanical traction to deform the fascial matrix. Lubricants cause the therapist's hands to slide over the epidermis, completely defeating the purpose of the technique (Willis College OP Protocol)."
   },
   {
-    id: 229,
-    topic: "Case Scenario: Hyperkyphosis & Bronchitis",
-    difficulty: "Medium",
-    question: "STEM: A college student presents with Functional Hyperkyphosis. They also have Chronic Bronchitis. Why is the hyperkyphosis specifically detrimental to their secondary condition?",
-    options: [
-      "It causes them to play too many video games.",
-      "The depressed, protracted chest wall structurally compresses the thorax, restricting diaphragmatic excursion and lung expansion. This mechanical restriction severely limits their ability to clear mucus, exacerbating the bronchitis.",
-      "It increases their blood pressure.",
-      "It causes Thoracic Outlet Syndrome."
-    ],
+    id: 221, topic: "Systemic Conditions Integration", difficulty: "Medium",
+    question: "A client with Systemic Lupus Erythematosus (SLE) presents with joint pain. They are currently taking high-dose systemic corticosteroids. What clinical modification is required?",
+    options: ["Deep tissue massage to flush the medication.", "Long-term steroid use degrades collagen, causing tissue fragility and osteoporosis. Deep pressure, aggressive stretching, and joint mobilizations are contraindicated.", "Apply hot packs to all joints.", "Treat only the left side of the body."],
     correctAnswer: 1,
-    rationale: "Functional hyperkyphosis mechanically locks the ribcage into a state of forced exhalation. For a client with COPD (chronic bronchitis), this inability to fully expand the lungs traps mucus and drastically impairs respiratory efficiency (Andrade, 2023)."
+    hint: "Steroids are powerful anti-inflammatories, but over time, they melt away the structural integrity of skin, tendons, and bones.",
+    rationale: "Systemic corticosteroids inhibit collagen synthesis. This leads to profound tissue fragility, making the client highly susceptible to bruising, tearing, and pathological fractures if standard mechanical pressure is applied (Werner, 2019)."
   },
   {
-    id: 230,
-    topic: "Case Scenario: TMJ & Knee OA",
-    difficulty: "Medium",
-    question: "STEM: A client presents with right-sided TMJ pain (C-curve deviation to the right). Their history includes severe bilateral Knee Osteoarthritis (OA). How does the knee OA alter your treatment plan for the TMJ?",
-    options: [
-      "It doesn't; treat the jaw normally.",
-      "Knee OA requires you to perform deep friction on the jaw.",
-      "The TMJ treatment requires the client to lie supine for an extended period. Severe knee OA makes lying with straight legs painful. You must provide a large bolster under their knees to offload the joints and ensure comfort before treating the jaw.",
-      "You must treat the knees first before touching the face."
-    ],
+    id: 222, topic: "Systemic Conditions Integration", difficulty: "Hard",
+    question: "A client with Ankylosing Spondylitis (AS) in the late chronic stage presents with a fully fused 'bamboo spine'. They ask you to 'crack their back' to restore mobility. What is your response?",
+    options: ["Perform a Grade 5 high-velocity thrust.", "Explain that the spinal ligaments have ossified (turned to bone). The fusion is permanent and structural. Joint mobilizations are completely contraindicated, and treatment must focus on palliative soft tissue care and respiratory mechanics.", "Apply deep transverse friction to the spine.", "Use a mechanical traction table."],
+    correctAnswer: 1,
+    hint: "You cannot massage or mobilize bone back into a ligament.",
+    rationale: "In late-stage AS, the spine structurally fuses due to pathological ossification. Any attempt to forcefully mobilize or manipulate the fused segments will cause a catastrophic fracture (Werner, 2019)."
+  },
+  {
+    id: 223, topic: "Advanced Techniques", difficulty: "Easy",
+    question: "According to Cyriax, what is the primary purpose of Deep Transverse Friction on a healing ligament?",
+    options: ["To cause immediate numbing.", "To physically break down irregular cross-links and stimulate the parallel alignment of the healing collagen matrix.", "To push swelling out of the joint.", "To stimulate bone growth."],
+    correctAnswer: 1,
+    hint: "Scar tissue heals in a messy, haphazard web. You must rub across the grain to comb it straight.",
+    rationale: "Deep transverse friction acts as a mechanical stressor that disrupts disorganized scar tissue and encourages fibroblasts to lay down new collagen parallel to the lines of tension, restoring normal tensile strength (Magee, 2021)."
+  },
+  {
+    id: 224, topic: "Clinical Differentiation", difficulty: "Medium",
+    question: "How do you differentiate between a 'firm' end feel and a 'hard' end feel during an orthopedic assessment?",
+    options: ["They are the exact same thing.", "A firm end feel is the leathery stop of a stretched joint capsule/ligament. A hard end feel is the abrupt, unyielding stop of bone hitting bone.", "A firm end feel only happens in muscles.", "A hard end feel means the client is tense."],
+    correctAnswer: 1,
+    hint: "One feels like stretching a thick leather belt; the other feels like pushing two rocks together.",
+    rationale: "A firm end feel (tissue stretch) represents the normal elastic limit of the capsuloligamentous complex. A hard end feel (bone-to-bone) represents the anatomical limit of the joint surfaces meeting, such as in elbow extension (Magee, 2021)."
+  },
+  {
+    id: 225, topic: "OP Protocols: Joint Mobilizations", difficulty: "Medium",
+    question: "During an OP, you are asked to perform Grade 2 Joint Mobilizations on the glenohumeral joint. What is the defining characteristic of a Grade 2 mobilization?",
+    options: ["A small oscillation at the end of the range.", "A large amplitude rhythmic oscillation performed within the free, available range of motion, NOT pushing into the tissue resistance.", "A high-velocity thrust.", "A static, sustained stretch for 60 seconds."],
+    correctAnswer: 1,
+    hint: "Grade 1 and 2 are for pain and fluid movement. They stay safely within the easy, open space of the joint.",
+    rationale: "Grade 2 mobilizations are utilized for pain modulation and stimulating synovial fluid. They are large-amplitude movements that deliberately avoid stressing or stretching the joint capsule (Hertling & Kessler, 2006)."
+  },
+  {
+    id: 226, topic: "Digestive System Integration", difficulty: "Hard",
+    question: "A client with Crohn's Disease (an Inflammatory Bowel Disease) presents during an acute flare-up, reporting severe abdominal pain and bloody stools. What is the absolute rule regarding abdominal massage?",
+    options: ["Perform clockwise massage to soothe the bowel.", "Abdominal massage is an absolute regional contraindication. Mechanical pressure on an actively ulcerated bowel carries a critical risk of causing a life-threatening intestinal perforation.", "Perform counter-clockwise massage.", "Apply deep ischemic compression to the colon."],
+    correctAnswer: 1,
+    hint: "The intestinal walls are severely inflamed, thin, and bleeding. Pressing on them could cause them to burst.",
+    rationale: "IBD causes deep, destructive ulcerations in the gastrointestinal tract. Any manual compression during a flare-up is strictly contraindicated due to the extreme risk of rupturing the compromised tissue (Werner, 2019)."
+  },
+  {
+    id: 227, topic: "Metabolic System Integration", difficulty: "Medium",
+    question: "A client with long-standing Diabetes Mellitus presents with Diabetic Neuropathy in their feet. What specific precaution must you take?",
+    options: ["Massage their feet as hard as possible to wake up the nerves.", "Avoid deep pressure or temperature extremes (hot/cold packs) on the feet, as the client has lost protective sensation and cannot feel if you are causing tissue damage or burns.", "Never touch the feet.", "Use only ice on the feet."],
+    correctAnswer: 1,
+    hint: "If the alarm system is broken, the house can burn down without the owner knowing.",
+    rationale: "Diabetic neuropathy abolishes the sensory feedback loop. The client cannot warn the therapist if the pressure is injurious or if a hydrotherapy application is burning the skin, mandating strict visual monitoring and conservative pressure (Norris, 2020)."
+  },
+  {
+    id: 228, topic: "Mock OSCE: Complex Pathologies", difficulty: "Medium",
+    question: "STEM: A client presents with a severe tension headache and a forward head posture. Palpation reveals a massive trigger point in the upper trapezius. Before applying ischemic compression, you must establish the pain scale. What is the target threshold?",
+    options: ["Push until it hits a 9/10 to ensure a deep release.", "The pressure must elicit a 'good pain' that stays below the client's guarding threshold (usually 4/10 to 5/10), otherwise the nervous system will reflexively spasm the muscle to protect it.", "No pain should ever be felt.", "Push until the client stops breathing."],
+    correctAnswer: 1,
+    hint: "If you cause too much pain, the sympathetic nervous system takes over and fights back.",
+    rationale: "Effective trigger point therapy relies on neurological yielding. Exceeding the client's pain tolerance triggers sympathetic arousal and defensive muscle guarding, rendering the technique useless and potentially worsening the headache (Andrade, 2023)."
+  },
+  {
+    id: 229, topic: "Nervous System Integration", difficulty: "Easy",
+    question: "A client reports an aching pain that radiates from their gluteal region down the back of their thigh, but stops at the knee. They sit on a thick wallet all day. Which condition is most likely?",
+    options: ["Lumbar Disc Herniation (Sciatica)", "Piriformis Syndrome", "Plantar Fasciitis", "IT Band Syndrome"],
+    correctAnswer: 1,
+    hint: "The thick wallet physically crushes the muscle that the large nerve runs directly underneath.",
+    rationale: "Piriformis Syndrome is a peripheral entrapment of the sciatic nerve by a hypertonic piriformis muscle, often mechanically aggravated by prolonged sitting on hard objects (Werner, 2019)."
+  },
+  {
+    id: 230, topic: "Orthopedic Assessment", difficulty: "Hard",
+    question: "During an assessment for the client in the previous question, you perform the Slump Test. The client's leg pain disappears completely when they extend their cervical spine (look up at the ceiling). What does this prove?",
+    options: ["It proves they have Piriformis Syndrome.", "It proves the pain is originating from the spinal cord/dura (e.g., a disc herniation), NOT the piriformis muscle, because moving the neck only slackens the continuous neural tube, it does not attach to the hip.", "It proves they have a hamstring tear.", "It proves nothing."],
+    correctAnswer: 1,
+    hint: "If moving the head fixes a problem in the leg, the problem must be connected to the central 'wire' that connects the two.",
+    rationale: "The Slump Test differentiates peripheral from central nerve compressions. Because the piriformis muscle doesn't connect to the neck, symptom relief via cervical extension definitively isolates the lesion to the neuromeningeal tract (Magee, 2021)."
+  },
+  {
+    id: 231, topic: "Mock OSCE: Red Flags", difficulty: "Hard",
+    question: "STEM: A client presents with sudden, severe bilateral weakness in their legs, numbness in their groin ('saddle anesthesia'), and mentions they lost control of their bladder this morning. What is the immediate required action?",
+    options: ["Perform deep gluteal massage.", "Apply hot packs to the lumbar spine.", "Recognize this as Cauda Equina Syndrome, a catastrophic spinal cord compression. Terminate the assessment and advise them to go to the Emergency Room immediately to prevent permanent paralysis.", "Perform the Thomas Test."],
     correctAnswer: 2,
-    rationale: "This is a test of holistic patient management. A primary complaint in the head/neck often means the client is immobile on the table. If they have a secondary condition like knee OA, proper bolstering is an absolute requirement for clinical comfort and safety (Werner, 2019)."
+    hint: "Bilateral leg failure and a loss of bowel/bladder control means the main breaker panel for the lower body has been crushed.",
+    rationale: "Saddle anesthesia and bowel/bladder incontinence are the ultimate red flags for Cauda Equina Syndrome. This requires emergency surgical decompression; any delay or manual therapy intervention is negligent (Magee, 2021)."
   },
   {
-    id: 231,
-    topic: "Case Scenario: Hyperlordosis & IBS",
-    difficulty: "Medium",
-    question: "STEM: A lawyer presents with lumbar Hyperlordosis and chronic Irritable Bowel Syndrome (IBS-C/Constipation). You find severe contracture in the Psoas major. What is the biomechanical link?",
-    options: [
-      "The Psoas is attached to the stomach.",
-      "A severely hypertonic Psoas pulls the lumbar spine into an anterior pelvic tilt. This structural shift physically decreases the volume of the abdominal cavity, compressing the viscera and restricting the normal motility required to relieve constipation.",
-      "The Psoas causes food allergies.",
-      "There is no link."
-    ],
+    id: 232, topic: "Mock OSCE: Red Flags", difficulty: "Hard",
+    question: "STEM: A client presents with severe anterior lower leg pain after running. The skin over the tibialis anterior is tight, glossy, and warm. You palpate for the dorsal pedis pulse, and it is completely absent. What is the diagnosis?",
+    options: ["Shin Splints (Periostitis).", "Acute Compartment Syndrome. The fascial pressure has cut off arterial blood supply. This is a medical emergency requiring immediate hospitalization.", "A stress fracture.", "A calf cramp."],
     correctAnswer: 1,
-    rationale: "The Psoas forms the posterior wall of the abdominal cavity. Severe contracture alters the space available for the digestive organs. Relieving the musculoskeletal restriction (Psoas) can decompress the visceral space, aiding normal bowel function (Andrade, 2023)."
+    hint: "An absent pulse means the tissue is currently suffocating and will soon die.",
+    rationale: "An absent pulse combined with severe pain and shiny, tight skin indicates Acute Compartment Syndrome. The fascial compartment pressure has exceeded arterial pressure, leading to imminent tissue necrosis if not surgically relieved (Norris, 2020)."
   },
   {
-    id: 232,
-    topic: "Orthopedic Assessment",
-    difficulty: "Medium",
-    question: "When performing the Adam's Forward Bend Test, you observe a right-sided rib hump when the client is standing. When the client bends forward, the rib hump disappears. What is your clinical impression?",
-    options: [
-      "A structural scoliosis requiring surgery.",
-      "A functional scoliosis. Because the curve straightens when gravity/muscular tension is altered during flexion, the bones are not permanently rotated.",
-      "A herniated disc.",
-      "A compression fracture."
-    ],
+    id: 233, topic: "Systemic Conditions Integration", difficulty: "Medium",
+    question: "A client who underwent an axillary lymph node dissection for breast cancer 5 years ago presents with massive, painless swelling in their right arm. What is this condition, and what is the treatment approach?",
+    options: ["Deep vein thrombosis; use deep friction.", "Secondary Lymphedema. Requires specialized Manual Lymph Drainage (MLD) to reroute the fluid. Deep tissue massage on the affected arm is strictly contraindicated as it will crush the remaining fragile lymphatic vessels.", "Cellulitis; apply heat.", "Muscle hypertrophy; do nothing."],
     correctAnswer: 1,
-    rationale: "A rib hump that disappears upon forward flexion is the definitive sign of a functional (postural/muscular) scoliosis. If the hump remains, the vertebrae are permanently rotated, indicating a structural scoliosis (Magee, 2021)."
+    hint: "The surgical removal of the nodes destroyed the drainage pipes. You must gently coax the fluid to a different set of pipes.",
+    rationale: "Secondary Lymphedema results from surgical lymphatic destruction. MLD is highly indicated, but standard deep tissue massage will irreversibly damage the delicate compensatory lymphatic capillaries the body is trying to rebuild (Andrade, 2023)."
   },
   {
-    id: 233,
-    topic: "Orthopedic Assessment",
-    difficulty: "Medium",
-    question: "According to Cyriax principles, if a client has a Grade 2 strain of their Biceps Brachii, which of the following testing patterns will they exhibit?",
-    options: [
-      "Painful Active Elbow Flexion, Painless Passive Elbow Flexion, Painful Passive Elbow Extension.",
-      "Painless Active Elbow Flexion, Painful Passive Elbow Flexion.",
-      "Pain in all directions regardless of movement.",
-      "No pain on resisted movements."
-    ],
-    correctAnswer: 0,
-    rationale: "A strained muscle hurts when it contracts (Active Flexion) and when it is stretched (Passive Extension). It typically does NOT hurt when it is passively shortened or slackened (Passive Flexion) (Magee, 2021)."
+    id: 234, topic: "Systemic Conditions Integration", difficulty: "Medium",
+    question: "A client with Chronic Fatigue Syndrome (CFS/ME) asks for a vigorous 90-minute deep tissue massage to 'wake up their muscles'. Why must you refuse this specific request?",
+    options: ["Because they will get a rash.", "Because CFS is defined by Post-Exertional Malaise (PEM). A vigorous 90-minute session will overwhelm their broken cellular energy systems and trigger a massive, multi-day symptom crash.", "Because their bones are too fragile.", "Because they will fall asleep on the table."],
+    correctAnswer: 1,
+    hint: "Even receiving a massage requires the body to expend energy to process the sensory input and heal the micro-trauma.",
+    rationale: "In CFS, the body cannot produce energy normally. Any physical stress (including aggressive bodywork) triggers Post-Exertional Malaise, leading to a profound and debilitating exacerbation of pain and fatigue (Werner, 2019)."
   },
   {
-    id: 234,
-    topic: "Cardiovascular System",
-    difficulty: "Medium",
-    question: "A client with stable Chronic Congestive Heart Failure (CCHF) requests a full-body relaxation massage. What specific technique modification is mandated?",
-    options: [
-      "Perform deep, vigorous effleurage on the legs to pump blood to the heart.",
-      "Elevate the legs above the heart for the entire treatment.",
-      "Avoid deep, continuous, sweeping effleurage towards the heart (especially on the lower extremities) to prevent artificially increasing venous return, which could overload the weakened heart.",
-      "Perform the entire massage in a prone position."
-    ],
+    id: 235, topic: "OP Protocols: Assessment", difficulty: "Easy",
+    question: "During an OP, you are performing a Cyriax assessment. The client has pain on Active Range of Motion, pain on Resisted Range of Motion, but NO pain when you passively move the joint for them. Where is the lesion?",
+    options: ["In the joint capsule (inert tissue).", "In the muscle belly or tendon (contractile tissue).", "In the bone.", "In the bursa."],
+    correctAnswer: 1,
+    hint: "What tissue is completely turned off and relaxed during a passive movement?",
+    rationale: "If the pain only occurs when the muscle is forced to fire (active/resisted), but disappears when the muscle is relaxed (passive), the lesion is isolated to the contractile unit (Magee, 2021)."
+  },
+  {
+    id: 236, topic: "OP Protocols: Assessment", difficulty: "Medium",
+    question: "You perform the Lachman's Test on a client's knee. The tibia translates excessively forward with a 'mushy' or empty end feel. What structure has been ruptured?",
+    options: ["The Posterior Cruciate Ligament (PCL).", "The Anterior Cruciate Ligament (ACL).", "The Medial Collateral Ligament (MCL).", "The Patellar Tendon."],
+    correctAnswer: 1,
+    hint: "This ligament prevents the shin bone from sliding out the front of the knee.",
+    rationale: "Lachman's Test specifically assesses the ACL. Excessive anterior tibial translation with a soft or empty end feel confirms a Grade 3 complete rupture of the ligament (Magee, 2021)."
+  },
+  {
+    id: 237, topic: "Mock OSCE: Advanced Protocols", difficulty: "Hard",
+    question: "STEM: A client presents with a severe contracture of the right Iliopsoas, resulting in an anterior pelvic tilt. Which Proprioceptive Neuromuscular Facilitation (PNF) technique would be most effective, and how is it performed?",
+    options: ["Skin rolling the abdomen.", "Post-Isometric Relaxation (PIR) or Contract-Relax. You bring the hip into extension to the barrier, have the client isometrically contract the iliopsoas (flex the hip) against your resistance for 5-10 seconds, then client relaxes, and you stretch further into extension.", "Deep friction to the ASIS.", "Muscle approximation of the glutes."],
+    correctAnswer: 1,
+    hint: "You must fatigue the tight muscle by making it fight you before you can effectively stretch it.",
+    rationale: "PNF stretching (Contract-Relax) utilizes autogenic inhibition. The isometric contraction of the hypertonic iliopsoas fatigues the muscle and triggers a neurological relaxation phase, allowing the therapist to safely increase the range of extension (Andrade, 2023)."
+  },
+  {
+    id: 238, topic: "Clinical Integration", difficulty: "Medium",
+    question: "A client with Rheumatoid Arthritis (RA) presents for an appointment. They state that two of their finger joints are currently 'flaring up'—they are red, swollen, and hot. What is the clinical protocol?",
+    options: ["Perform Grade 4 joint mobilizations on the fingers.", "Apply deep transverse friction to the swollen joints.", "Massage, stretching, and hydrotherapy (heat) are absolute local contraindications on the actively flaring joints to prevent further destruction of the synovial membrane.", "Apply ice and stretch them aggressively."],
     correctAnswer: 2,
-    rationale: "The failing heart in CCHF cannot process normal blood volumes. Increasing 'preload' by forcefully pushing fluid from the legs back to the core can quickly overwhelm the heart, leading to pulmonary edema (Werner, 2019)."
+    hint: "The immune system is currently attacking and dissolving the joint tissue. Mechanical pressure will speed up the destruction.",
+    rationale: "During an acute RA flare-up, the joints are actively inflamed and structurally unstable due to pannus formation. Any manual therapy on these specific joints will exacerbate the autoimmune destruction and is strictly contraindicated (Werner, 2019)."
   },
   {
-    id: 235,
-    topic: "Metabolic Conditions",
-    difficulty: "Medium",
-    question: "During treatment of a diabetic client, you notice a small, painless, unhealed puncture wound on the bottom of their foot. What is the clinical implication?",
-    options: [
-      "It is a minor scrape; apply a bandage and continue.",
-      "It is a diabetic ulcer resulting from peripheral neuropathy (loss of pain sensation) and ischemia. Massage of the limb is contraindicated; refer the client for immediate medical wound care to prevent gangrene.",
-      "Apply deep friction to stimulate healing.",
-      "Soak the foot in hot water."
-    ],
+    id: 239, topic: "Mock OSCE: OP Protocol", difficulty: "Hard",
+    question: "STEM: You are treating a client with a history of deep vein thrombosis (DVT) in their left calf 3 years ago. They are currently on anticoagulant medication (blood thinners). They complain of left calf tightness. What technique must you absolutely avoid?",
+    options: ["Light effleurage.", "Deep, sustained ischemic compression or aggressive deep tissue stripping to the calf.", "Passive range of motion of the ankle.", "Reflexology."],
     correctAnswer: 1,
-    rationale: "Diabetic neuropathy masks pain, allowing minor wounds to go unnoticed. Poor circulation prevents healing, making these ulcers highly prone to severe infection and necrosis. Immediate medical referral is required (Norris, 2020)."
+    hint: "Blood thinners make the vascular system highly prone to severe internal bleeding and bruising from mechanical pressure.",
+    rationale: "Clients on anticoagulant therapy are highly susceptible to severe hematomas and tissue damage from mechanical compression. Deep ischemic work or aggressive stripping is locally contraindicated (Andrade, 2023)."
   },
   {
-    id: 236,
-    topic: "Autoimmune Conditions",
-    difficulty: "Medium",
-    question: "Clients with Scleroderma frequently present with Raynaud's Phenomenon. What is the pathophysiological connection?",
-    options: [
-      "Scleroderma causes an allergy to cold weather.",
-      "Scleroderma causes an overproduction of collagen, leading to fibrosis of the connective tissues surrounding the small peripheral blood vessels. This structurally compromises the vessels, making them highly susceptible to severe, episodic vasospasms.",
-      "Scleroderma destroys the nerves in the hands.",
-      "They are unrelated conditions."
-    ],
-    correctAnswer: 1,
-    rationale: "Raynaud's is a classic secondary complication of Scleroderma. The pathological thickening (fibrosis) of the tissue physically constricts the arterioles, exacerbating the hyper-reactive vasoconstriction triggered by cold or stress (Norris, 2020)."
-  },
-  {
-    id: 237,
-    topic: "Oral Practical Protocols",
-    difficulty: "Medium",
-    question: "In Myofascial Release (MFR), the physical phenomenon of tissue elongation is termed 'Thixotropy' or 'Creep'. What must the therapist do to achieve this?",
-    options: [
-      "Apply heavy oil and glide quickly.",
-      "Apply a moderate, sustained tensional force directly into the tissue barrier and wait (often 90-120 seconds) without gliding over the skin, allowing the viscoelastic fascia to physically deform and lengthen.",
-      "Perform high-velocity joint thrusts.",
-      "Use tapotement over the fascia."
-    ],
-    correctAnswer: 1,
-    rationale: "Fascia is a viscoelastic substance. It does not release via quick stretching. It requires sustained, uninterrupted mechanical tension to trigger the physical phase-change (thixotropy) that allows the collagen fibers to slide and lengthen (the 'creep' phenomenon) (Andrade, 2023)."
-  },
-  {
-    id: 238,
-    topic: "Oral Practical Protocols",
-    difficulty: "Medium",
-    question: "When applying Post-Isometric Relaxation (PIR) to lengthen a tight hamstrings, you instruct the client to contract the hamstring at 20% strength against your resistance for 10 seconds. What neurological reflex occurs when they stop contracting, allowing you to stretch the muscle further?",
-    options: [
-      "The Stretch Reflex",
-      "Reciprocal Inhibition",
-      "Autogenic Inhibition (Post-Isometric Relaxation)",
-      "The Pain-Gate Mechanism"
-    ],
+    id: 240, topic: "Nervous System Integration", difficulty: "Easy",
+    question: "Which entrapment syndrome is characterized by a positive Phalen's test, a positive Tinel's sign at the wrist, and numbness in the thumb, index, and middle fingers?",
+    options: ["Cubital Tunnel Syndrome", "Thoracic Outlet Syndrome", "Carpal Tunnel Syndrome", "Guyon's Canal Syndrome"],
     correctAnswer: 2,
-    rationale: "Following an isometric contraction, a muscle experiences a brief, neurologically mandated refractory period where it is temporarily inhibited from contracting again (autogenic inhibition). This 'window' allows the therapist to safely passively lengthen the tissue to a new barrier (Andrade, 2023)."
+    hint: "This syndrome compresses the median nerve directly under the flexor retinaculum.",
+    rationale: "These are the classic, hallmark diagnostic indicators for Carpal Tunnel Syndrome, representing an entrapment of the median nerve at the wrist (Magee, 2021)."
   },
   {
-    id: 239,
-    topic: "Oral Practical Protocols",
-    difficulty: "Medium",
-    question: "Based on the Convex-Concave rule, if a client has a restriction in glenohumeral External Rotation, in which direction should you apply a Grade 3 joint mobilization glide to the head of the humerus?",
-    options: [
-      "Posteriorly",
-      "Anteriorly",
-      "Superiorly",
-      "Inferiorly"
-    ],
+    id: 241, topic: "OP Protocols: Joint Mobilizations", difficulty: "Hard",
+    question: "According to the Convex-Concave rule, if a client lacks shoulder Abduction, in which direction must you glide the humeral head to restore arthrokinematic motion?",
+    options: ["Superiorly.", "Anteriorly.", "Inferiorly (Caudally).", "Posteriorly."],
+    correctAnswer: 2,
+    hint: "As the arm bone rolls UP, the ball must slide DOWN so it doesn't pop out of the socket.",
+    rationale: "The Convex-Concave rule states that a convex surface (humeral head) moving on a stable concave surface (glenoid) slides in the opposite direction of the bone shaft. Therefore, to increase upward abduction, an inferior glide is required (Hertling & Kessler, 2006)."
+  },
+  {
+    id: 242, topic: "Mock OSCE: Acute Trauma", difficulty: "Medium",
+    question: "A client presents 24 hours after rolling their ankle (Inversion Sprain). The lateral ankle is severely swollen and bruised. What is the most appropriate hydrotherapy application?",
+    options: ["A hot hydrocollator pack to increase circulation.", "A cold compress or ice pack to manage the acute inflammatory exudate and provide analgesia.", "A contrast bath.", "Warm paraffin wax."],
     correctAnswer: 1,
-    rationale: "The humeral head is convex, moving on the concave glenoid fossa. According to the rule, the intra-articular glide occurs in the OPPOSITE direction of the bone shaft's movement. For the humerus to externally rotate (roll posteriorly), the head must glide anteriorly (Magee, 2021)."
+    hint: "Heat dilates blood vessels, which would pour more fluid into an already swollen, bleeding joint.",
+    rationale: "In the acute inflammatory phase (first 24-72 hours), cold hydrotherapy is indicated to induce vasoconstriction, limiting further edema and providing vital pain relief (Andrade, 2023)."
   },
   {
-    id: 240,
-    topic: "Peripheral Nervous System",
-    difficulty: "Medium",
-    question: "A client with Carpal Tunnel Syndrome also presents with a severely hypertonic Pectoralis Minor. Why must the therapist treat the chest before treating the wrist?",
-    options: [
-      "To prevent a heart attack.",
-      "To address potential Double Crush Syndrome. The tight pec minor may be compressing the brachial plexus (TOS). If the proximal nerve is compressed, treating the distal entrapment (wrist) alone will not resolve the neurological symptoms.",
-      "Because wrist massage causes chest pain.",
-      "It is a distraction technique."
-    ],
+    id: 243, topic: "Clinical Differentiation", difficulty: "Medium",
+    question: "How do you clinically differentiate between a structural scoliosis and a functional scoliosis?",
+    options: ["By taking their blood pressure.", "By performing Adam's Forward Bend Test. If the rib hump remains when they bend over, it is structural (bony). If the spine straightens out, it is functional (muscular).", "By asking how long they have had it.", "By performing the Slump Test."],
     correctAnswer: 1,
-    rationale: "In Double Crush Syndrome, proximal impingement impairs the nerve's axoplasmic flow, making it highly susceptible to distal compression. Successful treatment mandates releasing the proximal entrapment site (the Thoracic Outlet) first (Hertling & Kessler, 2006)."
+    hint: "You must remove the influence of the postural muscles to see if the bones themselves are twisted.",
+    rationale: "Adam's Forward Bend Test removes the active postural tone of the erector spinae. If the scoliotic curve and rotational rib hump persist in flexion, the deformity is fixed within the bone structure (Magee, 2021)."
   },
-
-  // ==========================================
-  // HARD: Complex STEMs & OP Clinical Reasoning
-  // ==========================================
   {
-    id: 241,
-    topic: "Mock OSCE: Acute Strain Protocol",
-    difficulty: "Hard",
-    question: "STEM: Your client is a 15-year-old baseball player with a Grade 2 Triceps strain sustained 2 days ago. There is visible black and blue bruising. Your examiner asks for your complete treatment plan for the affected arm. What is the precise Willis College protocol?",
-    options: [
-      "Deep cross-fiber friction to the triceps tendon, followed by ice.",
-      "Active Resisted stretching to regain strength, followed by deep effleurage.",
-      "The injury is Acute. Deep work is an absolute local CI. Protocol: 1) Pump the terminus. 2) Apply MLD strokes proximal to distal on the arm, moving fluid toward the axillary nodes. 3) Finish with pain-free Passive Range of Motion (PROM) of the elbow/shoulder.",
-      "Apply Muscle Approximation directly over the bruise."
-    ],
+    id: 244, topic: "Digestive System Integration", difficulty: "Easy",
+    question: "During a general abdominal massage for digestion, in which quadrant should the strokes ultimately terminate to encourage the evacuation of the bowel?",
+    options: ["Upper Right Quadrant.", "Lower Right Quadrant.", "Lower Left Quadrant (following the descending and sigmoid colon).", "Upper Left Quadrant."],
     correctAnswer: 2,
-    rationale: "This is a direct test of the Mock OSCE grading rubric. For a 2-day-old strain with bruising, the tissue is actively bleeding/inflamed. MLD is the ONLY indicated advanced technique, and it must follow the strict sequence of Terminus -> MLD -> PROM (Willis College OP Protocol)."
+    hint: "This is where the colon makes its final turn into the rectum.",
+    rationale: "The large intestine terminates at the descending and sigmoid colon in the lower left quadrant. All abdominal massage strokes for constipation must follow the clockwise path and end here to assist fecal movement (Werner, 2019)."
   },
   {
-    id: 242,
-    topic: "Mock OSCE: Bell's Palsy Management",
-    difficulty: "Hard",
-    question: "STEM: A 47-year-old RCMP officer awoke 3 weeks ago with right-side facial paralysis. Diagnosed as Bell's Palsy. You have confirmed it is not a stroke. What specific mechanical precautions must you verbally state and apply during this Oral Practical scenario?",
-    options: [
-      "I will use heavy, downward friction to stimulate the nerves.",
-      "I will apply aggressive Grade 4 joint mobilizations to the cervical spine.",
-      "The facial tissue is flaccid. I must avoid any downward strokes that would stretch the paralyzed tissue. All strokes must be light and directed upwards. Furthermore, because the blink reflex is compromised, I must ensure eye care (e.g., verifying the eye is taped or patched) to prevent corneal abrasions.",
-      "I will treat the client exclusively in the prone position."
-    ],
-    correctAnswer: 2,
-    rationale: "Treating Bell's Palsy requires understanding flaccid tissue mechanics (gravity is the enemy; support the tissue upward) and recognizing the secondary danger of corneal damage due to the inability to blink (CN VII controls the orbicularis oculi) (Werner, 2019)."
-  },
-  {
-    id: 243,
-    topic: "Mock OSCE: Torticollis & Acute Dislocation",
-    difficulty: "Hard",
-    question: "STEM: 14-year-old Jamie presents with an acute Acquired Torticollis (right SCM). He also dislocated his right shoulder 3 days ago, which is currently in a sling. The examiner tells you to treat the SCM. What is the ONLY safe approach?",
-    options: [
-      "Remove the sling, apply MFR to the pectorals, and stretch the neck.",
-      "Apply deep ischemic compression directly to the SCM belly.",
-      "The shoulder is highly unstable and locally contraindicated; leave the sling on. The SCM is in acute spasm. I must use an indirect technique. I will apply Origin & Insertion (O&I) specifically to the mastoid process and medial clavicle, ensuring absolutely no movement or pressure is transferred to the shoulder joint.",
-      "Perform Grade 3 cervical mobilizations."
-    ],
-    correctAnswer: 2,
-    rationale: "This scenario combines an acute muscle spasm (requiring indirect treatment like O&I) with a massive structural contraindication (a 3-day-old dislocation). The student must explicitly state how they will protect the shoulder while effectively treating the neck reflexively (Willis College OP Protocol)."
-  },
-  {
-    id: 244,
-    topic: "Mock OSCE: Respiratory Integration",
-    difficulty: "Hard",
-    question: "STEM: A college student presents with Functional Hyperkyphosis and Chronic Bronchitis. The examiner asks: 'What is your primary clinical outcome for releasing the bilateral anterior chest adhesions?' What is the correct OP response?",
-    options: [
-      "To improve their posture so they look better.",
-      "To prevent Thoracic Outlet Syndrome.",
-      "To remove the mechanical restriction of the protracted ribcage. Releasing the pectorals and fascial adhesions restores thoracic mobility, allowing for maximum diaphragmatic excursion. This improves their respiratory mechanics, which is critical for clearing mucus associated with their Chronic Bronchitis.",
-      "To strengthen their rhomboids."
-    ],
-    correctAnswer: 2,
-    rationale: "In Treatments II, posture is not just aesthetic; it affects organ function. For a COPD client, treating hyperkyphosis is a respiratory intervention. The OP rubric requires the student to articulate this physiological link (Andrade, 2023)."
-  },
-  {
-    id: 245,
-    topic: "Mock OSCE: Colles Fracture Post-Op",
-    difficulty: "Hard",
-    question: "STEM: Mrs. Jones (78) broke her left wrist (Colles' Fracture) 6 weeks ago. The cast was just removed. The wrist is stiff, and she complains of severe aching in her left shoulder and neck. How do you structure this treatment plan?",
-    options: [
-      "Apply aggressive Grade 4 mobilizations to the wrist to break the cast adhesions.",
-      "Ignore the neck and focus entirely on deep tissue of the forearm.",
-      "The newly healed fracture site is fragile; use only gentle heat, MLD, and low-grade (1 & 2) joint play on the wrist for pain relief. The primary massage focus must be resolving the compensatory hypertonicity in the neck, upper trapezius, and rotator cuff caused by 6 weeks of immobilization in a sling.",
-      "Perform full-body tapotement."
-    ],
-    correctAnswer: 2,
-    rationale: "At 6 weeks, bone is newly consolidated but not fully remodeled (especially at age 78). Aggressive local work is contraindicated. The clinical priority is managing the severe secondary compensatory spasms in the kinetic chain while providing palliative care to the fracture site (Hertling & Kessler, 2006)."
-  },
-  {
-    id: 246,
-    topic: "Mock OSCE: Lumbar Posture & Digestion",
-    difficulty: "Hard",
-    question: "STEM: A lawyer presents with severe morning stiffness, lower back pain, and a diagnosed Hyperlordosis. She sits all day at work. Her history includes Irritable Bowel Syndrome (IBS). You find severe, fibrotic contractures in her anterior thighs. What muscle is the primary culprit, and how does it relate to her IBS?",
-    options: [
-      "The Hamstrings; they cause diarrhea.",
-      "The Rectus Femoris and Iliopsoas (hip flexors). Sitting all day adaptively shortens these muscles, driving the anterior pelvic tilt (Hyperlordosis). The contracted Psoas physically crowds the posterior abdominal wall, increasing intra-abdominal pressure and restricting the visceral mobility required for normal IBS digestion.",
-      "The Gluteus Maximus; it compresses the sciatic nerve.",
-      "The Abdominals; they are too strong."
-    ],
+    id: 245, topic: "Systemic Conditions Integration", difficulty: "Medium",
+    question: "A pregnant client in her 3rd trimester reports feeling dizzy, nauseous, and short of breath when she lies flat on her back. What is the physiological cause?",
+    options: ["She is having a panic attack.", "Supine Hypotensive Syndrome. The weight of the fetus is physically crushing the inferior vena cava against her spine, cutting off blood return to her heart.", "She is allergic to the massage oil.", "She is dehydrated."],
     correctAnswer: 1,
-    rationale: "Prolonged sitting causes severe hip flexor contracture (Lower Crossed Syndrome). The student must link the biomechanical shortening of the psoas/rectus femoris to the structural crowding of the abdominal cavity, thereby connecting the musculoskeletal impairment to the visceral (IBS) complaint (Andrade, 2023)."
+    hint: "The large vein returning blood from the legs is located deep in the abdomen, directly beneath the heavy uterus.",
+    rationale: "Supine positioning in late pregnancy causes the gravid uterus to occlude the inferior vena cava, leading to a drastic drop in venous return and cardiac output. The client must be immediately moved to a side-lying position (Werner, 2019)."
   },
   {
-    id: 247,
-    topic: "Mock OSCE: TMJ Dysfunction & OA",
-    difficulty: "Hard",
-    question: "STEM: A client presents with right-sided TMJ pain. The jaw deviates to the right in a 'C-curve' when opening. They also have bilateral knee Osteoarthritis (OA). How do you assess and treat this, accommodating the OA?",
-    options: [
-      "Force the jaw straight. Ignore the knees.",
-      "Assess for right-sided hypomobility. Bolster the knees extensively while supine to offload the OA joints. Treat the hypertonic jaw elevators (Masseter, Temporalis) and specifically perform intra-oral release (if permitted) or external release of the right Lateral Pterygoid to correct the C-curve deviation.",
-      "Treat the knees with deep friction; apply ice to the jaw.",
-      "Perform an Adam's forward bend test."
-    ],
+    id: 246, topic: "Mock OSCE: Advanced Protocols", difficulty: "Hard",
+    question: "STEM: During an OP, the examiner points to a client's upper trapezius and says, 'This muscle is extremely hypertonic, but the client cannot tolerate direct pressure on the belly. Demonstrate the Origin & Insertion (O&I) technique.' Where do you place your hands?",
+    options: ["On the middle of the muscle belly.", "On the occipital ridge and the lateral third of the clavicle/acromion.", "On the spinous processes of the lumbar spine.", "On the sternum."],
     correctAnswer: 1,
-    rationale: "A C-curve deviation toward the right indicates a restriction on the right side (the jaw cannot glide forward on that side). Treatment targets the restricted masticatory muscles. The OP rubric requires explicit verbalization of the knee bolster to manage the secondary OA comorbidity safely (Magee, 2021)."
+    hint: "You must know the exact anatomical attachments of the upper trapezius to perform this technique.",
+    rationale: "The O&I technique requires specific compression on the tendinous attachments. The upper trapezius originates on the external occipital protuberance/nuchal line and inserts on the lateral clavicle and acromion process (Willis College OP Protocol)."
   },
   {
-    id: 248,
-    topic: "Advanced Integration: Pregnancy Emergency",
-    difficulty: "Hard",
-    question: "STEM: A client in her 34th week of pregnancy is receiving a side-lying massage. Suddenly, her gastrocnemius goes into a severe, screaming muscle cramp. She also mentions that leg has been feeling hot and swollen for two days. What is the ONLY correct clinical action?",
-    options: [
-      "Immediately apply Muscle Approximation to the gastrocnemius attachments.",
-      "Apply deep ischemic compression to the belly of the calf.",
-      "DO NOT TOUCH THE LEG. Unilateral heat, swelling, and a sudden 'cramp' in a pregnant client are massive red flags for a Deep Vein Thrombosis (DVT). Massage is absolutely contraindicated. Terminate the treatment and advise immediate emergency medical evaluation.",
-      "Perform aggressive dorsiflexion stretching."
-    ],
+    id: 247, topic: "Orthopedic Assessment", difficulty: "Medium",
+    question: "A client reports severe heel pain with their first steps out of bed. You perform the Windlass Test (passively extending the great toe while the client bears weight). The test reproduces the sharp pain in their heel. What is the diagnosis?",
+    options: ["Achilles Tendinopathy", "Tarsal Tunnel Syndrome", "Plantar Fasciitis", "Morton's Neuroma"],
     correctAnswer: 2,
-    rationale: "While a normal cramp requires Muscle Approximation, the presence of unilateral heat and swelling in a pregnant client (hypercoagulable state) changes the diagnosis to a suspected DVT. Any mechanical intervention, including approximation or stretching, risks a fatal pulmonary embolism (Werner, 2019)."
+    hint: "Extending the big toe pulls the thick tissue on the bottom of the foot completely taut, straining the attachment at the heel.",
+    rationale: "The Windlass mechanism tightens the plantar aponeurosis to support the arch. A positive test (pain at the medial calcaneal tubercle) confirms the mechanical irritation characteristic of Plantar Fasciitis (Magee, 2021)."
   },
   {
-    id: 249,
-    topic: "Advanced Integration: Whiplash & Vascular Risk",
-    difficulty: "Hard",
-    question: "STEM: A client presents with chronic Whiplash (18 months post-MVA) and Primary Hypertension (controlled by beta-blockers). You plan to assess their cervical ROM and treat the suboccipitals. What two critical safety protocols must you verbally confirm with the examiner?",
-    options: [
-      "1) I will apply deep friction. 2) I will stretch the neck.",
-      "1) Because of the trauma and hypertension, I MUST perform the Vertebral Artery Test (VAT) prior to applying extension/rotation to rule out vascular occlusion. 2) Because of the beta-blockers, I must assist the client in sitting up slowly at the end of treatment to prevent orthostatic hypotension.",
-      "1) I will test for Carpal Tunnel. 2) I will apply heat.",
-      "1) I will perform MLD. 2) I will check their blood sugar."
-    ],
-    correctAnswer: 1,
-    rationale: "This stem tests the 'Red Flags' section of the OP rubric. High-velocity trauma (MVA) plus vascular disease (hypertension) mandates a VAT screen. Secondly, anti-hypertensive medications blunt the body's ability to regulate blood pressure upon standing, requiring orthostatic hypotension protocols (Magee, 2021)."
+    id: 248, topic: "Clinical Integration", difficulty: "Hard",
+    question: "A client presents with 'Frozen Shoulder' (Adhesive Capsulitis) in the acute 'Freezing' stage. The joint is exquisitely painful and ROM is severely limited. What is your treatment plan?",
+    options: ["Forceful Grade 4 joint mobilizations to break the frozen capsule.", "Aggressive stretching past the pain barrier.", "Pain-free active range of motion, pendulum exercises, and treating the compensatory neck and scapular muscles. Aggressive mechanical forcing is strictly contraindicated.", "Complete immobilization in a sling for 6 months."],
+    correctAnswer: 2,
+    hint: "The joint is actively inflamed and thickening. Forcing it will only provoke the immune system to lay down more scar tissue.",
+    rationale: "During the acute 'freezing' stage, the capsule is actively inflamed. Aggressive stretching or high-grade mobilizations will trigger further inflammatory responses and worsen the contracture. Treatment is palliative and supportive (Andrade, 2023)."
   },
   {
-    id: 250,
-    topic: "The Capstone: The OP Spasm Scenario",
-    difficulty: "Hard",
+    id: 249, topic: "Mock OSCE: Red Flags", difficulty: "Hard",
+    question: "STEM: During an OP, a client presents with unilateral swelling, heat, and deep, throbbing pain in their right calf. They recently returned from a 14-hour flight. What must you do?",
+    options: ["Perform deep effleurage to move the fluid.", "Perform a GTO release on the Achilles.", "Recognize the cardinal signs of a Deep Vein Thrombosis (DVT). Massage to the area is an absolute contraindication. Terminate the session and refer them for emergency medical imaging.", "Apply a hot pack."],
+    correctAnswer: 2,
+    hint: "Prolonged immobility on a plane causes blood to pool and clot in the deep veins of the leg.",
+    rationale: "Unilateral heat, swelling, and pain following prolonged immobility are classic red flags for a DVT. Any mechanical manipulation could dislodge the thrombus, causing a fatal pulmonary embolism (Norris, 2020)."
+  },
+  {
+    id: 250, topic: "The Capstone: The OP Spasm Scenario", difficulty: "Hard",
     question: "STEM: During the final minutes of your OP, the examiner points to the client's hamstring and says, 'The client has just developed an active, agonizing muscle spasm right here. Show me your immediate intervention.' What is the required Willis College physical demonstration?",
-    options: [
-      "I will forcefully stretch the hamstring by flexing the hip and extending the knee.",
-      "I will apply deep, direct elbow pressure to the center of the spasm.",
-      "I will apply the 'Muscle Approximation' technique. I will grasp the tissue near the ischial tuberosity and the posterior knee, and physically push the attachments together to slacken the muscle spindles, holding until the reflex yields.",
-      "I will perform rapid tapotement to confuse the nerve."
-    ],
+    options: ["I will forcefully stretch the hamstring by flexing the hip and extending the knee.", "I will apply deep, direct elbow pressure to the center of the spasm.", "I will apply the 'Muscle Approximation' technique. I will grasp the tissue near the ischial tuberosity and the posterior knee, and physically push the attachments together to slacken the muscle spindles, holding until the reflex yields.", "I will perform rapid tapotement to confuse the nerve."],
     correctAnswer: 2,
-    rationale: "The Willis College Clinical Guide explicitly designates Muscle Approximation as the primary advanced protocol for an active muscle spasm. Stretching an active spasm can tear the tissue; deep pressure exacerbates the pain. Approximation uses neurophysiology (slackening intrafusal fibers) to safely disarm the reflex (Willis College OP Protocol)."
+    hint: "Do not pull the muscle apart; fold it together to turn off the alarm.",
+    rationale: "The Willis College Clinical Guide explicitly designates Muscle Approximation as the primary advanced protocol for an active muscle spasm. Stretching an active spasm can tear the tissue; deep pressure exacerbates the pain. Approximation uses neurophysiology to safely disarm the reflex (Willis College OP Protocol)."
   }
 ];
