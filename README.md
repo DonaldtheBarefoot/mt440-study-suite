@@ -1,4 +1,4 @@
-# Student-RMT-Matrix
+# RMT-Student-Hub
 
 A progressive web application and clinical simulation engine designed specifically for the MT390 and MT440 massage therapy curriculum. This suite provides an interactive, evidence-based testing environment for pathology, orthopedic assessments, and Oral Practical protocols.
 
