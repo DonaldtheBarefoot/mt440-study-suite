@@ -1,25 +1,36 @@
-// --- APP LOGIC ---
-let currentExamQuestions = [];
+/**
+ * A&P: Nervous System (MT450) - Application Logic
+ * Meticulously reviewed for robust execution and strict HTML ID correspondence.
+ */
+
 let currentQuestionIndex = 0;
 let score = 0;
-let selectedOptionIndex = null;
-const QUESTIONS_PER_MODULE = 25; 
+let activeExamPool = [];
 
-// DOM Elements
-const configScreen = document.getElementById('config-screen');
-const quizScreen = document.getElementById('quiz-screen');
-const resultsScreen = document.getElementById('results-screen');
-const startBtn = document.getElementById('start-btn');
-const errorMsg = document.getElementById('error-msg');
-const questionText = document.getElementById('question-text');
-const optionsContainer = document.getElementById('options');
-const progressText = document.getElementById('progress');
-const submitBtn = document.getElementById('submit-btn');
-const nextBtn = document.getElementById('next-btn');
-const explanationDiv = document.getElementById('explanation');
-const finalScoreText = document.getElementById('final-score');
+// --- DOM Dictionary ---
+// These variables must exactly match the IDs in your index.html file.
+const DOM = {
+    configSection: document.getElementById('config-section'),
+    examSection: document.getElementById('exam-section'),
+    resultsSection: document.getElementById('results-section'),
+    errorMsg: document.getElementById('error-msg'),
+    questionText: document.getElementById('question-text'),
+    optionsContainer: document.getElementById('options-container'),
+    progressText: document.getElementById('progress-text'),
+    nextBtn: document.getElementById('next-btn'),
+    hintContainer: document.getElementById('hint-container'),
+    hintText: document.getElementById('hint-text'),
+    finalScore: document.getElementById('final-score'),
+    startBtn: document.getElementById('start-btn'),
+    restartBtn: document.getElementById('restart-btn')
+};
 
-// Fisher-Yates Shuffle Algorithm
+// --- Utility Functions ---
+
+/**
+ * Fisher-Yates Shuffle Algorithm
+ * Randomizes array elements in place.
+ */
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -28,112 +39,171 @@ function shuffleArray(array) {
     return array;
 }
 
-// Start Exam Listener
-startBtn.addEventListener('click', () => {
-    const selectedModules = Array.from(document.querySelectorAll('input[type="checkbox"]:checked')).map(cb => cb.value);
-    
-    if (selectedModules.length === 0) {
-        errorMsg.style.display = 'block';
+/**
+ * Retrieves checked categories robustly via attribute targeting.
+ */
+function getSelectedCategories() {
+    if (!DOM.configSection) return [];
+    const checkboxes = DOM.configSection.querySelectorAll('input[type="checkbox"]:checked');
+    return Array.from(checkboxes).map(cb => cb.value);
+}
+
+// --- Core Application Flow ---
+
+/**
+ * Validates configuration and initializes the clinical simulation.
+ */
+function startExam() {
+    const selectedCategories = getSelectedCategories();
+
+    // Guard: Empty Selection
+    if (selectedCategories.length === 0) {
+        if (DOM.errorMsg) {
+            DOM.errorMsg.style.display = 'block';
+            DOM.errorMsg.innerText = "Clinical finding: No categories selected. Please select at least one to begin.";
+        } else {
+            alert("Please select at least one category to begin.");
+        }
         return;
     }
 
-    // Build the exam array based on configurations
-    currentExamQuestions = [];
-    selectedModules.forEach(mod => {
-        let modQuestions = questionBank.filter(q => q.module === mod || (mod === "Final Exam" && q.module !== "Final Exam")); 
-        modQuestions = shuffleArray(modQuestions);
-        currentExamQuestions = currentExamQuestions.concat(modQuestions.slice(0, QUESTIONS_PER_MODULE));
-    });
+    if (DOM.errorMsg) DOM.errorMsg.style.display = 'none';
 
-    currentExamQuestions = shuffleArray(currentExamQuestions);
+    // Filter master array based on user selection
+    const filteredQuestions = allQuestions.filter(q => selectedCategories.includes(q.category));
 
-    if (currentExamQuestions.length === 0) {
-        alert("No questions found for the selected modules. Please update your questions.js file.");
-        return;
-    }
+    // Deep copy to isolate the active session from the master bank
+    activeExamPool = JSON.parse(JSON.stringify(filteredQuestions));
+
+    // Shuffle question order and internal options
+    shuffleArray(activeExamPool);
+    activeExamPool.forEach(q => shuffleArray(q.options));
+
+    currentQuestionIndex = 0;
+    score = 0;
 
     // Transition UI
-    configScreen.classList.remove('active');
-    quizScreen.classList.add('active');
-    loadQuestion();
-});
+    if (DOM.configSection) DOM.configSection.classList.add('hidden');
+    if (DOM.resultsSection) DOM.resultsSection.classList.add('hidden');
+    if (DOM.examSection) DOM.examSection.classList.remove('hidden');
 
-// Load Question Data
-function loadQuestion() {
-    const q = currentExamQuestions[currentQuestionIndex];
-    progressText.innerText = `Question ${currentQuestionIndex + 1} of ${currentExamQuestions.length} | Module: ${q.module}`;
-    questionText.innerText = q.question;
-    optionsContainer.innerHTML = '';
-    
-    // Reset States
-    explanationDiv.style.display = 'none';
-    submitBtn.style.display = 'block';
-    submitBtn.disabled = true;
-    nextBtn.classList.add('hidden');
-    selectedOptionIndex = null;
-
-    // Inject Buttons
-    q.options.forEach((opt, index) => {
-        const btn = document.createElement('button');
-        btn.className = 'option-btn';
-        btn.innerText = opt;
-        btn.onclick = () => selectOption(btn, index);
-        optionsContainer.appendChild(btn);
-    });
+    renderQuestion();
 }
 
-// Handle Option Selection
-function selectOption(btn, index) {
-    // Lock out selection if already answered
-    if (!nextBtn.classList.contains('hidden')) return; 
-    
-    document.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
-    btn.classList.add('selected');
-    selectedOptionIndex = index;
-    submitBtn.disabled = false;
+/**
+ * Renders the active question and maps clinical hints.
+ */
+function renderQuestion() {
+    const currentQuestion = activeExamPool[currentQuestionIndex];
+
+    // Update Progress
+    if (DOM.progressText) {
+        DOM.progressText.innerText = `Question ${currentQuestionIndex + 1} of ${activeExamPool.length} | Category: ${currentQuestion.category}`;
+    }
+
+    // Render Question
+    if (DOM.questionText) {
+        DOM.questionText.innerText = currentQuestion.question;
+    }
+
+    // Render Options
+    if (DOM.optionsContainer) {
+        DOM.optionsContainer.innerHTML = ''; // Purge previous elements
+        
+        currentQuestion.options.forEach(option => {
+            const button = document.createElement('button');
+            button.className = "w-full text-left p-4 mb-3 rounded-xl border-2 border-slate-200 hover:bg-slate-50 hover:border-indigo-400 transition-all focus:outline-none";
+            button.innerText = option;
+            button.onclick = () => handleAnswerSelection(button, option, currentQuestion.answer, currentQuestion.hint);
+            DOM.optionsContainer.appendChild(button);
+        });
+    }
+
+    // Reset UI State for new question
+    if (DOM.hintContainer) DOM.hintContainer.classList.add('hidden');
+    if (DOM.nextBtn) DOM.nextBtn.classList.add('hidden');
 }
 
-// Submission and Grading Logic
-submitBtn.addEventListener('click', () => {
-    const q = currentExamQuestions[currentQuestionIndex];
-    const buttons = document.querySelectorAll('.option-btn');
+/**
+ * Evaluates selection, locks the UI, and reveals clinical findings.
+ */
+function handleAnswerSelection(selectedElement, selectedOption, correctAnswer, hint) {
+    if (!DOM.optionsContainer) return;
     
-    // Lock buttons
-    buttons.forEach(b => b.disabled = true);
+    const buttons = DOM.optionsContainer.getElementsByTagName('button');
 
-    // Grade logic
-    if (selectedOptionIndex === q.answer) {
-        buttons[selectedOptionIndex].classList.add('correct');
+    // UI Lockout
+    for (let btn of buttons) {
+        btn.disabled = true;
+        btn.style.pointerEvents = 'none'; // Prevent further hover interactions
+        
+        // Universally reveal correct answer
+        if (btn.innerText === correctAnswer) {
+            btn.classList.remove('border-slate-200', 'hover:bg-slate-50');
+            btn.classList.add('bg-emerald-100', 'border-emerald-500', 'text-emerald-900', 'font-bold');
+        }
+    }
+
+    // Evaluate user selection
+    if (selectedOption === correctAnswer) {
         score++;
     } else {
-        buttons[selectedOptionIndex].classList.add('incorrect');
-        buttons[q.answer].classList.add('correct');
+        selectedElement.classList.remove('border-slate-200');
+        selectedElement.classList.add('bg-rose-100', 'border-rose-500', 'text-rose-900');
     }
 
-    // Reveal Explanation
-    explanationDiv.innerHTML = `<strong>Explanation:</strong> ${q.explanation}`;
-    explanationDiv.style.display = 'block';
-    
-    // Toggle Buttons
-    submitBtn.style.display = 'none';
-    nextBtn.classList.remove('hidden');
-    
-    if (currentQuestionIndex === currentExamQuestions.length - 1) {
-        nextBtn.innerText = "View Results";
+    // Reveal Clinical Hint
+    if (DOM.hintContainer && DOM.hintText) {
+        DOM.hintText.innerText = hint;
+        DOM.hintContainer.classList.remove('hidden');
     }
-});
 
-// Navigation Logic
-nextBtn.addEventListener('click', () => {
+    // Reveal Next Button
+    if (DOM.nextBtn) DOM.nextBtn.classList.remove('hidden');
+}
+
+/**
+ * Advances the simulation sequence.
+ */
+function nextQuestion() {
     currentQuestionIndex++;
-    if (currentQuestionIndex >= currentExamQuestions.length) {
-        // End of Quiz
-        quizScreen.classList.remove('active');
-        resultsScreen.classList.add('active');
-        const percentage = Math.round((score / currentExamQuestions.length) * 100);
-        finalScoreText.innerText = `Your Score: ${score}/${currentExamQuestions.length} (${percentage}%)`;
+    if (currentQuestionIndex < activeExamPool.length) {
+        renderQuestion();
     } else {
-        // Next Question
-        loadQuestion();
+        finishExam();
     }
+}
+
+/**
+ * Concludes the simulation and calculates performance metrics.
+ */
+function finishExam() {
+    if (DOM.examSection) DOM.examSection.classList.add('hidden');
+    if (DOM.resultsSection) DOM.resultsSection.classList.remove('hidden');
+
+    if (DOM.finalScore) {
+        const percentage = Math.round((score / activeExamPool.length) * 100);
+        DOM.finalScore.innerText = `Clinical Impression: ${score} / ${activeExamPool.length} (${percentage}%)`;
+    }
+}
+
+/**
+ * Resets the application state to the configuration interface.
+ */
+function restartApp() {
+    if (DOM.resultsSection) DOM.resultsSection.classList.add('hidden');
+    if (DOM.configSection) DOM.configSection.classList.remove('hidden');
+    
+    // Purge checkbox selections
+    if (DOM.configSection) {
+        const checkboxes = DOM.configSection.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach(cb => cb.checked = false);
+    }
+}
+
+// --- Initialization ---
+document.addEventListener('DOMContentLoaded', () => {
+    if (DOM.startBtn) DOM.startBtn.addEventListener('click', startExam);
+    if (DOM.nextBtn) DOM.nextBtn.addEventListener('click', nextQuestion);
+    if (DOM.restartBtn) DOM.restartBtn.addEventListener('click', restartApp);
 });
