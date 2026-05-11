@@ -1,1430 +1,1408 @@
-// --- QUESTION BANK ---
-// Expand this array with your full set of questions according to the syllabus.
-const questionBank = [
-// ==========================================
-    // QUIZ 1 QUESTIONS (Nervous Tissue & Pathologies)
-    // ==========================================
+/**
+ * A&P: Nervous System (MT450) - Question Bank
+ * Total Target: 200 Questions
+ * Current Load: Questions 1 - 25
+ */
+
+const allQuestions = [
     {
-        module: "Quiz 1",
-        question: "What are the two principal cell types that make up nervous tissue?",
-        options: ["Somatic and Autonomic cells", "Neurons and Neuroglia", "Astrocytes and Microglia", "Epithelial and Connective cells"],
-        answer: 1,
-        explanation: "Nervous tissue consists of two principal cell types: highly specialized, excitable neurons and smaller, more numerous support cells called neuroglia."
+        category: "Cranial Nerves",
+        question: "Which cranial nerve provides motor innervation to the muscles of facial expression?",
+        options: ["CN V (Trigeminal)", "CN VII (Facial)", "CN IX (Glossopharyngeal)", "CN XII (Hypoglossal)"],
+        answer: "CN VII (Facial)",
+        hint: "Think about the nerve that passes through the parotid gland but does not innervate it."
     },
     {
-        module: "Quiz 1",
-        question: "Which neuroglial cells are the most numerous in the Central Nervous System (CNS) and are responsible for maintaining the blood-brain barrier?",
-        options: ["Astrocytes", "Microglia", "Oligodendrocytes", "Schwann cells"],
-        answer: 0,
-        explanation: "Astrocytes are the largest and most numerous glial cells in the CNS. Their processes wrap around blood capillaries to form and maintain the blood-brain barrier."
+        category: "Clinical Findings",
+        question: "A client presents with unilateral ptosis, miosis, and anhidrosis. What is the most likely clinical impression?",
+        options: ["Bell's Palsy", "Horner's Syndrome", "Trigeminal Neuralgia", "Thoracic Outlet Syndrome"],
+        answer: "Horner's Syndrome",
+        hint: "This triad indicates a disruption of the sympathetic pathway to the head and face."
     },
     {
-        module: "Quiz 1",
-        question: "In the Peripheral Nervous System (PNS), which cells produce the myelin sheath around a single axon?",
-        options: ["Satellite cells", "Schwann cells", "Oligodendrocytes", "Ependymal cells"],
-        answer: 1,
-        explanation: "Schwann cells (neurolemmocytes) produce the myelin sheath around single axons in the PNS and aid in axon regeneration."
+        category: "Spinal Cord & Tracts",
+        question: "Which ascending tract is primarily responsible for transmitting pain and temperature sensation?",
+        options: ["Dorsal Column-Medial Lemniscal Pathway", "Lateral Spinothalamic Tract", "Anterior Spinocerebellar Tract", "Corticospinal Tract"],
+        answer: "Lateral Spinothalamic Tract",
+        hint: "Decussation of these fibers occurs at or near the level of entry in the spinal cord."
     },
     {
-        module: "Quiz 1",
-        question: "Which structure serves as the primary receiving or input portion of a neuron?",
-        options: ["Axon", "Cell Body (Soma)", "Dendrites", "Synaptic End Bulbs"],
-        answer: 2,
-        explanation: "Dendrites are highly branched, tapering extensions that serve as the primary receiving or input portion of the neuron, directing signals toward the cell body."
+        category: "Autonomic Nervous System",
+        question: "Which neurotransmitter is released by postganglionic sympathetic neurons targeting the heart?",
+        options: ["Acetylcholine", "Epinephrine", "Norepinephrine", "Dopamine"],
+        answer: "Norepinephrine",
+        hint: "This neurotransmitter binds to adrenergic receptors to increase heart rate."
     },
     {
-        module: "Quiz 1",
-        question: "What is the typical resting membrane potential of a polarized neuron?",
-        options: ["+30 mV", "-55 mV", "-70 mV", "-90 mV"],
-        answer: 2,
-        explanation: "In a resting state, the cell membrane is polarized, maintaining a resting membrane potential of approximately -70 millivolts (mV)."
+        category: "Clinical Findings",
+        question: "During an assessment, a client exhibits a positive Babinski sign (upgoing toes). In an adult, these clinical findings typically indicate an upper motor neuron lesion. Which tract is most likely involved?",
+        options: ["Corticospinal Tract", "Spinothalamic Tract", "Vestibulospinal Tract", "Rubrospinal Tract"],
+        answer: "Corticospinal Tract",
+        hint: "This is the primary descending motor pathway controlling voluntary movement."
     },
     {
-        module: "Quiz 1",
-        question: "During the depolarizing phase of an action potential, which ion rapidly rushes into the cell?",
-        options: ["Potassium (K+)", "Calcium (Ca2+)", "Sodium (Na+)", "Chloride (Cl-)"],
-        answer: 2,
-        explanation: "Depolarization occurs when a stimulus reaches the threshold (-55 mV), causing voltage-gated sodium (Na+) channels to open and positively charged Na+ ions to rush into the cell."
+        category: "Brain Anatomy",
+        question: "Which lobe of the cerebrum contains the primary motor cortex?",
+        options: ["Frontal Lobe", "Parietal Lobe", "Temporal Lobe", "Occipital Lobe"],
+        answer: "Frontal Lobe",
+        hint: "This cortex is located in the precentral gyrus."
     },
     {
-        module: "Quiz 1",
-        question: "What process is responsible for restoring the negative resting membrane potential during repolarization?",
-        options: ["Influx of Sodium (Na+)", "Efflux of Potassium (K+)", "Influx of Calcium (Ca2+)", "Efflux of Chloride (Cl-)"],
-        answer: 1,
-        explanation: "During repolarization, voltage-gated Na+ channels close while voltage-gated potassium (K+) channels open. The outward flow (efflux) of K+ restores the negative membrane potential."
+        category: "Nervous Tissue",
+        question: "Which glial cells are responsible for producing myelin in the central nervous system (CNS)?",
+        options: ["Schwann cells", "Oligodendrocytes", "Astrocytes", "Microglia"],
+        answer: "Oligodendrocytes",
+        hint: "Unlike their peripheral counterparts, these cells can wrap around multiple axons simultaneously."
     },
     {
-        module: "Quiz 1",
-        question: "What is saltatory conduction?",
-        options: ["Conduction of a signal across an unmyelinated axon.", "The continuous opening of sodium channels along the entire axon.", "The highly efficient process where an electrical signal 'leaps' from one Node of Ranvier to the next.", "The chemical transmission of a signal across a synaptic cleft."],
-        answer: 2,
-        explanation: "Saltatory conduction occurs in myelinated axons, where the insulating myelin sheath forces the electrical impulse to leap from one unmyelinated gap (Node of Ranvier) to the next, drastically speeding up conduction."
+        category: "Special Senses",
+        question: "Which photoreceptor cells in the retina are responsible for color vision and visual acuity in bright light?",
+        options: ["Rods", "Cones", "Bipolar cells", "Ganglion cells"],
+        answer: "Cones",
+        hint: "These are highly concentrated in the fovea centralis."
     },
     {
-        module: "Quiz 1",
-        question: "Multiple Sclerosis (MS) is characterized by the progressive autoimmune destruction of which specific structure?",
-        options: ["Schwann cells in the PNS", "Oligodendrocytes and myelin sheaths in the CNS", "Dendritic spines of motor neurons", "Acetylcholine receptors at the neuromuscular junction"],
-        answer: 1,
-        explanation: "MS is an idiopathic, autoimmune disease that destroys oligodendrocytes and myelin sheaths within the Central Nervous System (CNS), replacing them with hardened scar tissue (plaques)."
+        category: "Clinical Findings",
+        question: "A client reports a sharp, shooting pain radiating down the posterior aspect of their thigh and leg. Which nerve is most likely involved in these clinical findings?",
+        options: ["Femoral nerve", "Sciatic nerve", "Obturator nerve", "Pudendal nerve"],
+        answer: "Sciatic nerve",
+        hint: "This is the largest nerve in the body, composed of the tibial and common fibular divisions."
     },
     {
-        module: "Quiz 1",
-        question: "Which of the following is an absolute contraindication during an acute flare-up of Multiple Sclerosis?",
-        options: ["Rigorous circulatory bodywork", "Gentle range of motion exercises", "Craniosacral therapy", "Lymphatic drainage"],
-        answer: 0,
-        explanation: "During an acute MS flare, the patient's system is highly taxed and actively inflamed. Rigorous circulatory bodywork can overwhelm the nervous system and is absolutely contraindicated."
+        category: "Autonomic Nervous System",
+        question: "Which cranial nerve carries the vast majority of parasympathetic outflow to the thoracic and abdominal viscera?",
+        options: ["CN III (Oculomotor)", "CN VII (Facial)", "CN IX (Glossopharyngeal)", "CN X (Vagus)"],
+        answer: "CN X (Vagus)",
+        hint: "Its name translates to 'wanderer' in Latin."
     },
     {
-        module: "Quiz 1",
-        question: "Which pathophysiology involves excessive neurotransmitter release that hyperstimulates neurons, potentially leading to cellular damage or death?",
-        options: ["Hyperpolarization", "Saltatory conduction", "Spatial summation", "Excitotoxicity"],
-        answer: 3,
-        explanation: "Excitotoxicity is a state where excessive neurotransmitter release hyperstimulates post-synaptic neurons, which can lead to metabolic exhaustion and cellular death."
+        category: "Spinal Cord & Tracts",
+        question: "The anterior (ventral) horn of the spinal cord gray matter primarily contains the cell bodies of what type of neurons?",
+        options: ["Somatic sensory", "Visceral sensory", "Somatic motor", "Visceral motor"],
+        answer: "Somatic motor",
+        hint: "These lower motor neurons directly innervate skeletal muscle fibers."
     },
     {
-        module: "Quiz 1",
-        question: "Which neuroglial cells function as the immune defense of the CNS by clearing cellular debris and phagocytizing microbes?",
-        options: ["Microglia", "Ependymal cells", "Astrocytes", "Satellite cells"],
-        answer: 0,
-        explanation: "Microglia are small cells that function as phagocytes, acting as the resident immune defense of the CNS."
+        category: "Clinical Findings",
+        question: "Carpal tunnel syndrome involves the mechanical compression of which nerve at the anterior wrist?",
+        options: ["Ulnar nerve", "Radial nerve", "Median nerve", "Musculocutaneous nerve"],
+        answer: "Median nerve",
+        hint: "This compression affects the flexor compartment and can cause atrophy of the thenar eminence."
     },
     {
-        module: "Quiz 1",
-        question: "Which structural classification applies to neurons with one main dendrite and one axon, frequently found in the retina of the eye and the inner ear?",
-        options: ["Multipolar neurons", "Bipolar neurons", "Unipolar neurons", "Pseudounipolar neurons"],
-        answer: 1,
-        explanation: "Bipolar neurons have one main dendrite and one axon. They are typically associated with special senses and are found in the retina, inner ear, and olfactory area."
+        category: "Brain Anatomy",
+        question: "Which structure of the diencephalon acts as the primary sensory relay station for most information ascending to the cerebral cortex?",
+        options: ["Hypothalamus", "Epithalamus", "Thalamus", "Basal ganglia"],
+        answer: "Thalamus",
+        hint: "It acts as the brain's central switchboard, filtering sensory input."
     },
     {
-        module: "Quiz 1",
-        question: "What term describes the time during which an excitable cell cannot generate another action potential, no matter how strong the stimulus?",
-        options: ["Relative refractory period", "Latent period", "Absolute refractory period", "Hyperpolarization phase"],
-        answer: 2,
-        explanation: "During the absolute refractory period, the voltage-gated sodium channels must return to their resting state before they can be reopened, making a second action potential impossible."
+        category: "Cranial Nerves",
+        question: "Which cranial nerve is entirely sensory and transmits both auditory and equilibrium information?",
+        options: ["CN II (Optic)", "CN VIII (Vestibulocochlear)", "CN IX (Glossopharyngeal)", "CN XI (Accessory)"],
+        answer: "CN VIII (Vestibulocochlear)",
+        hint: "This nerve exits the posterior cranial fossa through the internal acoustic meatus."
     },
     {
-        module: "Quiz 1",
-        question: "Exposure to environmental nervous system poisons, such as certain lawn pesticides, typically causes harm by interfering with what process?",
-        options: ["The production of cerebrospinal fluid", "The mechanical protection of the spinal cord", "Neurotransmitter degradation at the synaptic cleft", "The synthesis of red blood cells"],
-        answer: 2,
-        explanation: "Many neurotoxins and organophosphate pesticides act as acetylcholinesterase (AChE) inhibitors, preventing the removal of neurotransmitters at the synapse and causing severe overstimulation."
+        category: "Nervous Tissue",
+        question: "The resting membrane potential of a typical mammalian neuron is approximately:",
+        options: ["+30 mV", "0 mV", "-70 mV", "-90 mV"],
+        answer: "-70 mV",
+        hint: "This state is actively maintained by the sodium-potassium exchange pump and leak channels."
     },
     {
-        module: "Quiz 1",
-        question: "Which division of the peripheral nervous system is known as the 'brain of the gut'?",
-        options: ["Somatic Nervous System", "Enteric Nervous System", "Sympathetic Nervous System", "Parasympathetic Nervous System"],
-        answer: 1,
-        explanation: "The Enteric Nervous System (ENS) is a localized network of neurons embedded in the walls of the gastrointestinal tract, often referred to as the 'brain of the gut'."
+        category: "Clinical Findings",
+        question: "During an assessment, you note a client has an exaggerated lumbar lordosis and an anterior pelvic tilt. Which muscle group would likely present with hypertonicity and require self-care tool considerations?",
+        options: ["Hamstrings", "Gluteus maximus", "Iliopsoas", "Rectus abdominis"],
+        answer: "Iliopsoas",
+        hint: "This muscle is a primary, powerful flexor of the hip joint."
     },
     {
-        module: "Quiz 1",
-        question: "What is the primary difference between white matter and gray matter in the central nervous system?",
-        options: ["White matter contains primarily myelinated axons; gray matter contains neuronal cell bodies, dendrites, and unmyelinated axons.", "White matter consists of neuroglia; gray matter consists of neurons.", "White matter is found only in the brain; gray matter is found only in the spinal cord.", "White matter generates graded potentials; gray matter generates action potentials."],
-        answer: 0,
-        explanation: "The whitish color of white matter is due to the presence of lipid-rich myelin sheaths around axons. Gray matter lacks abundant myelin and contains cell bodies and dendrites."
+        category: "Special Senses",
+        question: "Which structure of the inner ear is primarily responsible for detecting angular or rotational acceleration of the head?",
+        options: ["Cochlea", "Saccule", "Utricle", "Semicircular canals"],
+        answer: "Semicircular canals",
+        hint: "These structures are arranged in three orthogonal planes (X, Y, and Z)."
     },
     {
-        module: "Quiz 1",
-        question: "Which cells line the brain's ventricles and the spinal cord's central canal, producing and assisting in the circulation of cerebrospinal fluid (CSF)?",
-        options: ["Astrocytes", "Microglia", "Ependymal cells", "Schwann cells"],
-        answer: 2,
-        explanation: "Ependymal cells are cuboidal/columnar neuroglia that line the ventricles and central canal. They produce, monitor, and assist in the circulation of CSF via their cilia."
+        category: "Brain Anatomy",
+        question: "The primary somatosensory cortex is geographically located in which cerebral structure?",
+        options: ["Precentral gyrus", "Postcentral gyrus", "Superior temporal gyrus", "Cingulate gyrus"],
+        answer: "Postcentral gyrus",
+        hint: "It is situated immediately posterior to the central sulcus in the parietal lobe."
     },
     {
-        module: "Quiz 1",
-        question: "What happens when a neuron's membrane potential reaches the specific threshold of approximately -55 mV?",
-        options: ["The action potential is aborted.", "Voltage-gated potassium channels close.", "Voltage-gated sodium channels rapidly open, initiating an action potential.", "The cell enters a permanent refractory period."],
-        answer: 2,
-        explanation: "According to the all-or-none principle, once depolarization reaches the threshold level (around -55 mV), voltage-gated sodium channels open automatically, triggering an action potential."
+        category: "Cranial Nerves",
+        question: "Which cranial nerve provides the motor innervation to the sternocleidomastoid and upper trapezius muscles?",
+        options: ["CN IX (Glossopharyngeal)", "CN X (Vagus)", "CN XI (Accessory)", "CN XII (Hypoglossal)"],
+        answer: "CN XI (Accessory)",
+        hint: "A spinal root of this nerve travels up through the foramen magnum before exiting the skull."
     },
     {
-        module: "Quiz 1",
-        question: "Mood and neurodevelopmental disorders, such as anxiety and depression, heavily influence the autonomic nervous system. This often results in prolonged dominance of which state?",
-        options: ["Parasympathetic dominance (rest-and-digest)", "Somatic inhibition", "Enteric hypermotility", "Sympathetic dominance (fight-or-flight)"],
-        answer: 3,
-        explanation: "Mood disorders often feature complex neurochemical imbalances and HPA-axis dysfunction, frequently locking the patient into a state of prolonged sympathetic (fight-or-flight) dominance and somatic tension."
+        category: "Autonomic Nervous System",
+        question: "The sympathetic trunk ganglia, which run vertically on either side of the spine, are also classified as:",
+        options: ["Prevertebral ganglia", "Paravertebral ganglia", "Terminal ganglia", "Intramural ganglia"],
+        answer: "Paravertebral ganglia",
+        hint: "The prefix implies they are located 'alongside' the vertebrae."
     },
     {
-        module: "Quiz 1",
-        question: "What is spatial summation?",
-        options: ["The build-up of neurotransmitter released by a single presynaptic end bulb fired many times in rapid succession.", "The build-up of neurotransmitter released simultaneously by several different presynaptic end bulbs.", "The jumping of an action potential between nodes of Ranvier.", "The process of a neuron repairing its severed axon."],
-        answer: 1,
-        explanation: "Spatial summation is the summation of postsynaptic potentials occurring at different locations (spaces) on the membrane simultaneously, typically from multiple different presynaptic neurons."
-    },
-    {
-        module: "Quiz 1",
-        question: "Which of the following is a classic systemic presentation of Multiple Sclerosis?",
-        options: ["Unilateral blistering rash along a single dermatome", "Flaccid paralysis confined to the lower extremities", "Profound fatigue, spasticity, tremors, and progressive loss of vision", "Resting tremors and a shuffling gait"],
-        answer: 2,
-        explanation: "Because MS causes demyelination of both sensory and motor neurons in the CNS, common systemic presentations include profound fatigue, spasticity, tremors, and sensory deficits like progressive vision loss."
-    },
-    {
-        module: "Quiz 1",
-        question: "What structure on a Schwann cell forms a regeneration tube that guides and stimulates the regrowth of damaged peripheral axons?",
-        options: ["The Myelin Sheath", "The Neurolemma", "The Node of Ranvier", "The Dendritic Spine"],
-        answer: 1,
-        explanation: "In the PNS, the outermost nucleated cytoplasmic layer of the Schwann cell forms the neurolemma. If an axon is injured, the neurolemma aids regeneration by forming a repair tube."
-    },
-    {
-        module: "Quiz 1",
-        question: "Which functional classification of neurons primarily carries impulses away from the central nervous system to effector organs like muscles or glands?",
-        options: ["Sensory (afferent) neurons", "Interneurons", "Motor (efferent) neurons", "Bipolar neurons"],
-        answer: 2,
-        explanation: "Motor, or efferent, neurons convey action potentials away from the CNS to effectors (muscles and glands) in the periphery."
-    },
-    {
-        module: "Quiz 1",
-        question: "Which process creates the unequal distribution of ions that maintains a neuron's resting membrane potential?",
-        options: ["Passive diffusion of calcium", "The active transport by the sodium-potassium (Na+/K+) pump", "The breakdown of myelin by macrophages", "The influx of chloride ions during hyperpolarization"],
-        answer: 1,
-        explanation: "The resting membrane potential is maintained primarily by the unequal permeability of the membrane to various ions and the constant, active transport of the sodium-potassium (Na+/K+) pump, which ejects 3 Na+ for every 2 K+ brought in."
-    },
-    
-// ==========================================
-    // QUIZ 2 QUESTIONS (Spinal Cord, Nerves & Pathologies)
-    // ==========================================
-    {
-        module: "Quiz 2",
+        category: "Spinal Cord & Tracts",
         question: "At what vertebral level does the adult spinal cord typically terminate?",
-        options: ["T9-T12", "C4-T1", "L1-L2", "S2-S4"],
-        answer: 2,
-        explanation: "The spinal cord is a delicate, cylindrical structure situated within the vertebral canal that extends from the medulla oblongata to the superior border of the second lumbar vertebra (L1-L2)."
+        options: ["T12 - L1", "L1 - L2", "L3 - L4", "S1 - S2"],
+        answer: "L1 - L2",
+        hint: "This tapering inferior end is known as the conus medullaris."
     },
     {
-        module: "Quiz 2",
-        question: "Because the spinal cord ends early in the vertebral column, lower nerve roots must angle downwards like a horse's tail. What is this formation called?",
-        options: ["Conus medullaris", "Cauda equina", "Filum terminale", "Lumbar plexus"],
-        answer: 1,
-        explanation: "The cauda equina (horse's tail) is the collection of nerve roots at the inferior end of the vertebral canal, angling downwards because the spinal cord ends at L1-L2."
+        category: "Nervous Tissue",
+        question: "The unmyelinated gaps between adjacent Schwann cells along a peripheral axon are called:",
+        options: ["Synaptic clefts", "Nodes of Ranvier", "Axon hillocks", "Motor end plates"],
+        answer: "Nodes of Ranvier",
+        hint: "These gaps are essential for the rapid propagation of action potentials via saltatory conduction."
     },
     {
-        module: "Quiz 2",
-        question: "The spinal cord exhibits two prominent enlargements that house the neural circuitry for the upper and lower limbs. Where are they located?",
-        options: ["Cervical (C4-T1) and Lumbosacral (T9-T12)", "Thoracic (T1-T8) and Sacral (S1-S5)", "Cervical (C1-C4) and Lumbar (L1-L4)", "Brainstem and Conus Medullaris"],
-        answer: 0,
-        explanation: "The spinal cord exhibits a cervical enlargement (C4-T1) for upper limb circuitry and a lumbosacral enlargement (T9-T12) for lower limb circuitry."
+        category: "Clinical Findings",
+        question: "A client presents with 'drop foot' and an inability to actively dorsiflex their ankle. This clinical impression points to a potential lesion of which nerve?",
+        options: ["Tibial nerve", "Common fibular (peroneal) nerve", "Saphenous nerve", "Sural nerve"],
+        answer: "Common fibular (peroneal) nerve",
+        hint: "This nerve is highly superficial and vulnerable where it wraps around the neck of the fibula."
     },
     {
-        module: "Quiz 2",
-        question: "Internally, the spinal cord consists of a butterfly-shaped core of gray matter. What does this gray matter primarily contain?",
-        options: ["Bundles of heavily myelinated axons", "Cerebrospinal fluid and meninges", "Unmyelinated axons, dendrites, and cell bodies", "Ascending sensory tracts only"],
-        answer: 2,
-        explanation: "The gray matter core contains unmyelinated axons, dendrites, and cell bodies, whereas the surrounding white matter contains bundles of myelinated axons."
+        category: "Brain Anatomy",
+        question: "Which region of the brainstem contains the critical autonomic centers regulating heart rate, blood vessel diameter, and respiration?",
+        options: ["Midbrain", "Pons", "Medulla oblongata", "Cerebellum"],
+        answer: "Medulla oblongata",
+        hint: "This is the most inferior portion of the brainstem, continuous with the spinal cord."
     },
     {
-        module: "Quiz 2",
-        question: "Which horn of the spinal cord's gray matter contains somatic motor neurons that send impulses to skeletal muscles?",
-        options: ["Posterior horn", "Anterior horn", "Lateral horn", "Dorsal root ganglion"],
-        answer: 1,
-        explanation: "The anterior (somatic motor) horns contain the cell bodies of somatic motor neurons, which provide nerve impulses for the contraction of skeletal muscles."
+        category: "Clinical Findings",
+        question: "Thoracic Outlet Syndrome (TOS) can involve the compression of the brachial plexus between the clavicle and the first rib. What is the specific anatomical name for this passageway?",
+        options: ["Anterior scalene triangle", "Costoclavicular space", "Subcoracoid space", "Quadrangular space"],
+        answer: "Costoclavicular space",
+        hint: "The name directly references the two bony structures forming the superior and inferior borders of the space."
     },
     {
-        module: "Quiz 2",
+        category: "Nervous Tissue",
+        question: "During an action potential, the rapid depolarization phase is primarily driven by the inward rush of which ion?",
+        options: ["Potassium (K+)", "Calcium (Ca2+)", "Sodium (Na+)", "Chloride (Cl-)"],
+        answer: "Sodium (Na+)",
+        hint: "Voltage-gated channels for this ion open when the membrane potential reaches the threshold of -55 mV."
+    },
+    {
+        category: "Brain Anatomy",
+        question: "Which brain structure is primarily responsible for the coordination of voluntary movements, posture, and maintaining equilibrium?",
+        options: ["Cerebrum", "Cerebellum", "Hypothalamus", "Thalamus"],
+        answer: "Cerebellum",
+        hint: "Its name translates to 'little brain' in Latin, located posterior to the pons."
+    },
+    {
+        category: "Spinal Cord & Tracts",
+        question: "The dorsal root ganglion of a spinal nerve contains:",
+        options: ["Cell bodies of sensory neurons", "Cell bodies of motor neurons", "Axons of motor neurons", "Synapses between sensory and motor neurons"],
+        answer: "Cell bodies of sensory neurons",
+        hint: "These are unipolar neurons that bring afferent information from the periphery toward the central nervous system."
+    },
+    {
+        category: "Clinical Findings",
+        question: "A client reports numbness and tingling in their medial forearm extending into the fourth and fifth digits. These clinical findings suggest an entrapment of which nerve?",
+        options: ["Median nerve", "Radial nerve", "Ulnar nerve", "Musculocutaneous nerve"],
+        answer: "Ulnar nerve",
+        hint: "This nerve is particularly superficial as it passes through the cubital tunnel posterior to the medial epicondyle."
+    },
+    {
+        category: "Cranial Nerves",
+        question: "Which cranial nerve is responsible for the parasympathetic constriction of the pupil (miosis)?",
+        options: ["CN II (Optic)", "CN III (Oculomotor)", "CN IV (Trochlear)", "CN VI (Abducens)"],
+        answer: "CN III (Oculomotor)",
+        hint: "This nerve also supplies four of the six extraocular muscles."
+    },
+    {
+        category: "Autonomic Nervous System",
+        question: "Activation of the parasympathetic nervous system generally produces which of the following physiological responses?",
+        options: ["Dilation of the bronchioles", "Increased heart rate", "Increased gastrointestinal peristalsis", "Glycogen breakdown in the liver"],
+        answer: "Increased gastrointestinal peristalsis",
+        hint: "Think of the 'rest and digest' response."
+    },
+    {
+        category: "Special Senses",
+        question: "The primary gustatory (taste) cortex is located in which region of the cerebral cortex?",
+        options: ["Insula", "Occipital lobe", "Prefrontal cortex", "Superior temporal gyrus"],
+        answer: "Insula",
+        hint: "This lobe is hidden deep within the lateral sulcus."
+    },
+    {
+        category: "Clinical Findings",
+        question: "A client presents with 'wrist drop' and an inability to actively extend their digits. What is the most likely clinical impression regarding nerve involvement?",
+        options: ["Median nerve lesion", "Radial nerve lesion", "Ulnar nerve lesion", "Axillary nerve lesion"],
+        answer: "Radial nerve lesion",
+        hint: "This nerve innervates the entire posterior extensor compartment of the arm and forearm."
+    },
+    {
+        category: "Spinal Cord & Tracts",
         question: "How many pairs of spinal nerves emerge from the human spinal cord?",
-        options: ["12 pairs", "31 pairs", "43 pairs", "24 pairs"],
-        answer: 1,
-        explanation: "There are 31 pairs of spinal nerves: 8 cervical, 12 thoracic, 5 lumbar, 5 sacral, and 1 coccygeal."
+        options: ["12 pairs", "24 pairs", "31 pairs", "33 pairs"],
+        answer: "31 pairs",
+        hint: "They are divided into 8 cervical, 12 thoracic, 5 lumbar, 5 sacral, and 1 coccygeal pair."
     },
     {
-        module: "Quiz 2",
-        question: "Spinal nerves connect to the spinal cord via two bundles of axons. What is contained within the posterior (dorsal) root?",
-        options: ["Motor axons traveling to muscles", "Sympathetic autonomic fibers", "Sensory axons and a ganglion containing sensory neuron cell bodies", "Only unmyelinated axons"],
-        answer: 2,
-        explanation: "The posterior root contains sensory axons and features a spinal (dorsal root) ganglion, which houses the cell bodies of sensory neurons."
+        category: "Brain Anatomy",
+        question: "The thick band of commissural white matter fibers connecting the left and right cerebral hemispheres is the:",
+        options: ["Corpus callosum", "Internal capsule", "Fornix", "Corona radiata"],
+        answer: "Corpus callosum",
+        hint: "This structure allows the two hemispheres to communicate directly with one another."
     },
     {
-        module: "Quiz 2",
-        question: "Why are all spinal nerves classified as 'mixed nerves'?",
-        options: ["Because they contain both central and peripheral nervous tissue.", "Because they carry both sympathetic and parasympathetic signals.", "Because they contain both unmyelinated and myelinated fibers.", "Because their anterior and posterior roots merge, combining sensory and motor fibers."],
-        answer: 3,
-        explanation: "Because spinal nerves contain both sensory fibers (from the posterior root) and motor fibers (from the anterior root), they are classified as mixed nerves."
+        category: "Nervous Tissue",
+        question: "What is the specialized junction where a neuron communicates with another cell (either another neuron, muscle, or gland) called?",
+        options: ["Motor end plate", "Dendritic spine", "Synapse", "Axon terminal"],
+        answer: "Synapse",
+        hint: "It can be chemical (involving neurotransmitters) or electrical (via gap junctions)."
     },
     {
-        module: "Quiz 2",
-        question: "Shortly after passing through the intervertebral foramen, a spinal nerve splits into branches called rami. Which ramus serves the limbs and the anterolateral trunk?",
-        options: ["Posterior ramus", "Anterior ramus", "Meningeal branch", "Communicating ramus"],
-        answer: 1,
-        explanation: "The anterior ramus is the large branch that serves the muscles and structures of the upper and lower limbs, as well as the anterolateral trunk."
+        category: "Clinical Findings",
+        question: "During a physical assessment, tapping the patellar tendon elicits a stretch reflex. This specific reflex arc tests the integrity of which spinal cord levels?",
+        options: ["L1 - L2", "L2 - L4", "L5 - S1", "S1 - S2"],
+        answer: "L2 - L4",
+        hint: "These are the same roots that form the femoral nerve, which innervates the quadriceps."
     },
     {
-        module: "Quiz 2",
-        question: "Which group of spinal nerves do NOT form complex networks called plexuses, but instead form direct intercostal nerves?",
-        options: ["C1-C4", "T2-T12", "L1-L4", "L4-S4"],
-        answer: 1,
-        explanation: "Except for thoracic nerves T2-T12, which form direct intercostal nerves serving the intercostal spaces, all other anterior rami join adjacent nerves to form plexuses."
+        category: "Cranial Nerves",
+        question: "Which condition involves sudden, severe, shock-like facial pain typically triggered by light touch, chewing, or brushing teeth?",
+        options: ["Bell's Palsy", "Trigeminal Neuralgia", "Glossopharyngeal Neuralgia", "Temporal Arteritis"],
+        answer: "Trigeminal Neuralgia",
+        hint: "This pathology involves CN V and is often referred to as tic douloureux."
     },
     {
-        module: "Quiz 2",
-        question: "The Cervical Plexus (C1-C4/C5) crucially gives rise to which nerve that provides motor innervation to the diaphragm?",
-        options: ["Vagus nerve", "Phrenic nerve", "Axillary nerve", "Sciatic nerve"],
-        answer: 1,
-        explanation: "The cervical plexus gives rise to the phrenic nerve, which is essential for breathing as it provides motor innervation to the diaphragm."
+        category: "Autonomic Nervous System",
+        question: "Which of the following receptors does acetylcholine (ACh) bind to at the neuromuscular junction of skeletal muscle?",
+        options: ["Alpha-adrenergic", "Beta-adrenergic", "Muscarinic cholinergic", "Nicotinic cholinergic"],
+        answer: "Nicotinic cholinergic",
+        hint: "These are always excitatory ionotropic receptors, unlike the GPCR ones found on target organs of the parasympathetic system."
     },
     {
-        module: "Quiz 2",
-        question: "The Brachial Plexus supplies the shoulders and upper limbs. What are its spinal nerve roots?",
-        options: ["C1-C4", "C5-T1", "T2-T12", "L1-L4"],
-        answer: 1,
-        explanation: "The Brachial Plexus is formed by the anterior rami of spinal nerves C5-T1."
+        category: "Spinal Cord & Tracts",
+        question: "The collection of spinal nerve roots extending inferior to the conus medullaris in the vertebral canal is called the:",
+        options: ["Filum terminale", "Cauda equina", "Lumbar plexus", "Sacral promontory"],
+        answer: "Cauda equina",
+        hint: "The name translates literally from Latin to 'horse's tail'."
     },
     {
-        module: "Quiz 2",
-        question: "Which of the following nerves is NOT one of the five major terminal branches of the Brachial Plexus?",
-        options: ["Radial nerve", "Median nerve", "Femoral nerve", "Ulnar nerve"],
-        answer: 2,
-        explanation: "The five major terminal branches of the brachial plexus are the axillary, musculocutaneous, radial, median, and ulnar nerves. The femoral nerve belongs to the Lumbar plexus."
+        category: "Clinical Findings",
+        question: "Piriformis syndrome involves the hypertonicity or spasm of the piriformis muscle compressing which major peripheral nerve?",
+        options: ["Pudendal nerve", "Superior gluteal nerve", "Inferior gluteal nerve", "Sciatic nerve"],
+        answer: "Sciatic nerve",
+        hint: "This compression mimics lumbar radiculopathy and causes posterior leg pain."
     },
     {
-        module: "Quiz 2",
-        question: "What is the longest and largest nerve in the human body, generated by the Sacral Plexus?",
-        options: ["Femoral nerve", "Tibial nerve", "Sciatic nerve", "Pudendal nerve"],
-        answer: 2,
-        explanation: "The Sacral Plexus generates the sciatic nerve, the longest nerve in the human body, which is actually two nerves (tibial and common fibular) bound by a common sheath."
+        category: "Brain Anatomy",
+        question: "Which specific area of the cerebral cortex is typically responsible for the comprehension of written and spoken language?",
+        options: ["Broca's area", "Wernicke's area", "Primary auditory cortex", "Prefrontal cortex"],
+        answer: "Wernicke's area",
+        hint: "A lesion here results in fluent but nonsensical aphasia ('word salad')."
     },
     {
-        module: "Quiz 2",
-        question: "A client reports paresthesia and numbness traveling down the posterior thigh to the foot. The massage therapist suspects compression of the sciatic nerve. Which spinal segments form this nerve?",
-        options: ["C5-T1", "T12-L3", "L4-S3", "S4-Co1"],
-        answer: 2,
-        explanation: "The sciatic nerve originates from the Sacral Plexus, specifically spinal segments L4-S3. Treatment would target gluteal and piriformis tension."
+        category: "Nervous Tissue",
+        question: "Which type of glial cell acts as the resident macrophage of the central nervous system, performing phagocytosis of cellular debris and pathogens?",
+        options: ["Astrocytes", "Microglia", "Ependymal cells", "Satellite cells"],
+        answer: "Microglia",
+        hint: "These are the smallest of the glial cells and are derived from mesoderm rather than ectoderm."
     },
     {
-        module: "Quiz 2",
-        question: "What is the correct sequential pathway of a somatic spinal reflex arc?",
-        options: ["Sensory Receptor -> Sensory Neuron -> Integrating Center -> Motor Neuron -> Effector", "Sensory Neuron -> Sensory Receptor -> Motor Neuron -> Integrating Center -> Effector", "Effector -> Motor Neuron -> Integrating Center -> Sensory Neuron -> Sensory Receptor", "Integrating Center -> Sensory Receptor -> Sensory Neuron -> Motor Neuron -> Effector"],
-        answer: 0,
-        explanation: "A reflex arc follows five precise steps: 1) Sensory Receptor, 2) Sensory Neuron, 3) Integrating Center (CNS), 4) Motor Neuron, 5) Effector (muscle or gland)."
+        category: "Special Senses",
+        question: "The sensory receptors for olfaction (smell) are classified as:",
+        options: ["Mechanoreceptors", "Photoreceptors", "Chemoreceptors", "Nociceptors"],
+        answer: "Chemoreceptors",
+        hint: "These receptors bind to specific odorant molecules dissolved in the nasal mucosa."
     },
     {
-        module: "Quiz 2",
-        question: "In a reflex arc, what determines whether a reflex is monosynaptic or polysynaptic?",
-        options: ["The type of sensory receptor stimulated.", "Whether the integrating center has a single synapse or multiple synapses involving interneurons.", "The size of the effector muscle.", "Whether the reflex travels to the brain or stays in the spinal cord."],
-        answer: 1,
-        explanation: "An integrating center with a single synapse between the sensory and motor neuron forms a monosynaptic reflex, while multiple synapses involving interneurons form a polysynaptic reflex."
+        category: "Clinical Findings",
+        question: "A traction injury to the upper roots of the brachial plexus during birth can result in a 'waiter's tip' deformity. This clinical impression is known as:",
+        options: ["Klumpke's Palsy", "Erb's Palsy", "Saturday Night Palsy", "Pronator Teres Syndrome"],
+        answer: "Erb's Palsy",
+        hint: "This injury primarily affects the C5 and C6 nerve roots."
     },
     {
-        module: "Quiz 2",
-        question: "Because spinal nerves innervate highly specific, predictable segments of the skin, a therapist can use this mapping to pinpoint peripheral nerve compression. What are these skin segments called?",
-        options: ["Myotomes", "Funiculi", "Dermatomes", "Ganglia"],
-        answer: 2,
-        explanation: "Dermatomes are specific segments of skin innervated by sensory neurons that arise from a single spinal nerve ganglion."
+        category: "Cranial Nerves",
+        question: "The afferent (sensory) limb of the gag reflex is mediated by which cranial nerve?",
+        options: ["CN V (Trigeminal)", "CN VII (Facial)", "CN IX (Glossopharyngeal)", "CN X (Vagus)"],
+        answer: "CN IX (Glossopharyngeal)",
+        hint: "This nerve senses the stimulation of the posterior pharyngeal wall, while another nerve handles the motor response."
     },
     {
-        module: "Quiz 2",
-        question: "Which highly contagious viral infection selectively targets and destroys lower motor neurons in the anterior horn of the spinal cord?",
-        options: ["Meningitis", "Encephalitis", "Poliomyelitis", "Herpes Zoster"],
-        answer: 2,
-        explanation: "Poliomyelitis is a viral infection that selectively destroys lower motor neurons in the anterior horns, leading to flaccid paralysis and severe muscle atrophy."
+        category: "Autonomic Nervous System",
+        question: "Sympathetic preganglionic neurons originate in the lateral horns of the spinal cord gray matter at which vertebral levels?",
+        options: ["C1 - C8", "T1 - L2", "L3 - S2", "S2 - S4"],
+        answer: "T1 - L2",
+        hint: "Because of this specific anatomical origin, the sympathetic division is also called the thoracolumbar division."
     },
     {
-        module: "Quiz 2",
-        question: "What is a massive, life-threatening sympathetic response triggered by noxious stimuli below the level of a spinal cord injury (SCI)?",
-        options: ["Autonomic dysreflexia", "Parkinsonian rigidity", "Post-Polio Syndrome", "Spinal shock"],
-        answer: 0,
-        explanation: "Autonomic dysreflexia is a medical emergency in clients with an SCI above T6, where a noxious stimulus below the injury triggers a massive, uncompensated sympathetic surge."
+        category: "Spinal Cord & Tracts",
+        question: "The brachial plexus is formed by the anterior rami of which spinal nerves?",
+        options: ["C1 - C4", "C5 - T1", "T1 - T12", "L1 - L4"],
+        answer: "C5 - T1",
+        hint: "These roots combine to form the superior, middle, and inferior trunks in the posterior triangle of the neck."
     },
     {
-        module: "Quiz 2",
-        question: "During an active outbreak of Herpes Zoster (Shingles), why is local massage over the affected dermatome absolutely contraindicated?",
-        options: ["It causes muscle atrophy.", "It risks spreading the virus and inflicts severe pain on hypersensitized skin.", "It permanently damages the motor neurons.", "It triggers autonomic dysreflexia."],
-        answer: 1,
-        explanation: "Shingles causes a painful, blistering rash along a dermatome. Local massage is absolutely contraindicated to prevent spreading the infection and causing severe pain to the client."
+        category: "Brain Anatomy",
+        question: "Cerebrospinal fluid (CSF) is primarily produced by specialized ependymal cells within the ventricles known as the:",
+        options: ["Arachnoid villi", "Choroid plexus", "Substantia nigra", "Corpora quadrigemina"],
+        answer: "Choroid plexus",
+        hint: "This structure continuously filters blood plasma to create a supportive and protective fluid bath for the CNS."
     },
     {
-        module: "Quiz 2",
-        question: "The white matter of the spinal cord is organized into regions called columns or funiculi. What is the primary function of the tracts within these columns?",
-        options: ["To integrate reflex arcs independently of the brain.", "To serve as ascending sensory highways to the brain and descending motor highways from the brain.", "To produce cerebrospinal fluid.", "To directly innervate local skeletal muscles."],
-        answer: 1,
-        explanation: "The white matter columns contain bundles of axons called tracts. Ascending tracts carry sensory input up to the brain, while descending tracts carry motor output down from the brain."
+        category: "Clinical Findings",
+        question: "If a client presents with sharp pain radiating from the neck down the arm, and manual assessment reveals significant trigger points and hypertonicity in the anterior and middle scalenes, which structure is likely being compressed?",
+        options: ["Vertebral artery", "Vagus nerve", "Brachial plexus", "Phrenic nerve"],
+        answer: "Brachial plexus",
+        hint: "This is a classic presentation of Anterior Scalene Syndrome, a form of Thoracic Outlet Syndrome."
     },
     {
-        module: "Quiz 2",
-        question: "Which structure anchors the inferior end of the spinal cord to the coccyx, providing longitudinal stability?",
-        options: ["Conus medullaris", "Cauda equina", "Filum terminale", "Denticulate ligaments"],
-        answer: 2,
-        explanation: "The filum terminale is an extension of the pia mater that arises from the conus medullaris and anchors the spinal cord to the coccyx."
+        category: "Spinal Cord & Tracts",
+        question: "The phrenic nerve, which provides the sole motor innervation to the diaphragm, arises from which spinal cord segments?",
+        options: ["C1 - C3", "C3 - C5", "C5 - C7", "C7 - T1"],
+        answer: "C3 - C5",
+        hint: "Remember the mnemonic: 'Three, four, and five keep the diaphragm alive.'"
     },
     {
-        module: "Quiz 2",
-        question: "If a massage client experiences weak hip flexion and knee extension, a nerve originating from which plexus might be compromised?",
-        options: ["Cervical Plexus", "Brachial Plexus", "Lumbar Plexus", "Sacral Plexus"],
-        answer: 2,
-        explanation: "The Lumbar Plexus (L1-L4) gives rise to the femoral nerve, which innervates the anterior thigh muscles responsible for hip flexion and knee extension."
+        category: "Clinical Findings",
+        question: "During a neurological assessment, you find diminished sensation over the lateral aspect of the forearm and the thumb. Which dermatome is most likely affected?",
+        options: ["C5", "C6", "C7", "C8"],
+        answer: "C6",
+        hint: "This nerve root also contributes heavily to the motor function of wrist extension."
     },
     {
-        module: "Quiz 2",
-        question: "Which connective tissue layer heavily protects the fragile spinal cord and consists of the dura mater, arachnoid mater, and pia mater?",
-        options: ["The Epineurium", "The Meninges", "The Blood-Brain Barrier", "The Myelin Sheath"],
-        answer: 1,
-        explanation: "Because the spinal cord is fragile, it relies on three protective connective tissue layers known as the meninges: the outer dura mater, middle arachnoid mater, and inner pia mater."
-    },
-    
-// ==========================================
-    // QUIZ 3 QUESTIONS (Brain & Cranial Nerves)
-    // ==========================================
-    {
-        module: "Quiz 3",
-        question: "During embryonic development, the brain and spinal cord form from which early tissue structure?",
-        options: ["Mesodermal notochord", "Ectodermal neural tube", "Endodermal gut tube", "Neural crest cells"],
-        answer: 1,
-        explanation: "The entire central nervous system, including the brain and spinal cord, develops from the ectodermal neural tube."
+        category: "Clinical Findings",
+        question: "A client demonstrates weakness when asked to actively dorsiflex and invert their foot against resistance. These clinical findings suggest a potential lesion at which myotomal level?",
+        options: ["L2", "L3", "L4", "S1"],
+        answer: "L4",
+        hint: "This root level is primarily tested via the tibialis anterior muscle."
     },
     {
-        module: "Quiz 3",
-        question: "The adult brain consists of which four major functional regions?",
-        options: ["Medulla, Pons, Midbrain, Thalamus", "Frontal, Parietal, Temporal, Occipital lobes", "Brain stem, Cerebellum, Diencephalon, Cerebrum", "Cerebral cortex, White matter, Basal ganglia, Limbic system"],
-        answer: 2,
-        explanation: "The four major regions of the adult brain are the brain stem (medulla, pons, midbrain), cerebellum, diencephalon (thalamus, hypothalamus, epithalamus), and the cerebrum."
+        category: "Brain Anatomy",
+        question: "Which of the cranial meninges is the deepest layer, intimately clinging to the surface of the brain and spinal cord?",
+        options: ["Dura mater", "Arachnoid mater", "Pia mater", "Ependymal layer"],
+        answer: "Pia mater",
+        hint: "Its name translates from Latin to 'tender mother'."
     },
     {
-        module: "Quiz 3",
-        question: "Which specific neuroglial cells are primarily responsible for maintaining the highly selective Blood-Brain Barrier (BBB)?",
-        options: ["Astrocytes", "Microglia", "Schwann cells", "Ependymal cells"],
-        answer: 0,
-        explanation: "Astrocytes secrete chemicals that maintain the selective permeability characteristics of the tight junctions between endothelial cells, fundamentally creating the Blood-Brain Barrier."
+        category: "Autonomic Nervous System",
+        question: "Which endocrine gland acts as a modified sympathetic ganglion, releasing epinephrine and norepinephrine directly into the bloodstream?",
+        options: ["Thyroid gland", "Pineal gland", "Anterior pituitary", "Adrenal medulla"],
+        answer: "Adrenal medulla",
+        hint: "This gland sits atop the kidneys and amplifies the 'fight or flight' response."
     },
     {
-        module: "Quiz 3",
-        question: "Cerebrospinal fluid (CSF) is continually produced within the brain's ventricles by which capillary networks?",
-        options: ["Arachnoid villi", "Choroid plexuses", "Circle of Willis", "Dural venous sinuses"],
-        answer: 1,
-        explanation: "The choroid plexuses are networks of blood capillaries in the walls of the ventricles that, along with ependymal cells, produce cerebrospinal fluid."
+        category: "Nervous Tissue",
+        question: "During an action potential, the repolarization phase—returning the membrane potential toward resting state—is primarily caused by the efflux (exit) of which ion?",
+        options: ["Sodium (Na+)", "Potassium (K+)", "Calcium (Ca2+)", "Chloride (Cl-)"],
+        answer: "Potassium (K+)",
+        hint: "These voltage-gated channels open slowly and remain open longer than the sodium channels."
     },
     {
-        module: "Quiz 3",
-        question: "Through which structures is cerebrospinal fluid (CSF) eventually reabsorbed back into the venous bloodstream?",
-        options: ["Choroid plexuses", "Cerebral aqueducts", "Arachnoid villi (granulations)", "Interventricular foramina"],
-        answer: 2,
-        explanation: "CSF is gradually reabsorbed into the blood through arachnoid villi, which are fingerlike extensions of the arachnoid mater that project into the dural venous sinuses."
+        category: "Cranial Nerves",
+        question: "If a client presents with a unilateral lesion of the Hypoglossal nerve (CN XII), what clinical finding would you expect when they protrude their tongue?",
+        options: ["Loss of taste on the anterior two-thirds", "The tongue deviates toward the unaffected side", "The tongue deviates toward the affected side", "Inability to swallow"],
+        answer: "The tongue deviates toward the affected side",
+        hint: "The intrinsic muscles on the functioning side push the tongue over toward the weak/paralyzed side."
     },
     {
-        module: "Quiz 3",
-        question: "Which vital region of the brain stem contains the cardiovascular center (regulating heart rate) and the medullary respiratory center?",
-        options: ["Midbrain", "Pons", "Medulla oblongata", "Thalamus"],
-        answer: 2,
-        explanation: "The medulla oblongata forms the inferior part of the brain stem and houses critical nuclei that regulate vital autonomic functions like heart rate, blood pressure, and breathing."
+        category: "Clinical Findings",
+        question: "A cyclist presents with numbness in their fourth and fifth digits and weakness in spreading their fingers. If these clinical findings are caused by entrapment at the wrist, which anatomical structure is involved?",
+        options: ["Carpal tunnel", "Guyon's canal", "Cubital tunnel", "Spiral groove"],
+        answer: "Guyon's canal",
+        hint: "This ulnar nerve entrapment site is located between the pisiform and the hook of the hamate."
     },
     {
-        module: "Quiz 3",
-        question: "Which brain structure, located posterior to the brain stem, is primarily responsible for evaluating, coordinating, and smoothing out voluntary motor movements?",
-        options: ["Hypothalamus", "Cerebellum", "Cerebrum", "Basal ganglia"],
-        answer: 1,
-        explanation: "The cerebellum's primary function is to evaluate how well movements initiated by motor areas in the cerebrum are actually being carried out, correcting them to ensure smooth, coordinated action and balance."
+        category: "Spinal Cord & Tracts",
+        question: "The Achilles (calcaneal) tendon reflex primarily tests the integrity of which spinal cord segments?",
+        options: ["L2 - L4", "L4 - L5", "L5 - S1", "S1 - S2"],
+        answer: "S1 - S2",
+        hint: "This tests the tibial nerve and the gastroc-soleus complex."
     },
     {
-        module: "Quiz 3",
-        question: "What is the primary function of the Thalamus?",
-        options: ["It produces oxytocin and antidiuretic hormone.", "It acts as the primary relay station for most sensory impulses reaching the cerebral cortex.", "It regulates the sleep-wake cycle through melatonin production.", "It initiates voluntary motor impulses for skeletal muscles."],
-        answer: 1,
-        explanation: "The thalamus makes up 80% of the diencephalon and acts as the major relay station for most sensory impulses (except smell) that reach the primary somatosensory areas of the cerebral cortex."
+        category: "Spinal Cord & Tracts",
+        question: "The anterior compartment of the thigh, including the quadriceps femoris group, is innervated by which major branch of the lumbar plexus?",
+        options: ["Obturator nerve", "Femoral nerve", "Sciatic nerve", "Ilioinguinal nerve"],
+        answer: "Femoral nerve",
+        hint: "This nerve passes deep to the inguinal ligament."
     },
     {
-        module: "Quiz 3",
-        question: "Which small but crucial part of the diencephalon controls the Autonomic Nervous System (ANS), regulates body temperature, and governs the pituitary gland?",
-        options: ["Epithalamus", "Thalamus", "Hypothalamus", "Midbrain"],
-        answer: 2,
-        explanation: "The hypothalamus is a major regulator of homeostasis, controlling the ANS, producing hormones, regulating emotional and behavioral patterns, and controlling body temperature."
+        category: "Brain Anatomy",
+        question: "Which collection of subcortical nuclei is crucial for starting, stopping, and monitoring the intensity of voluntary movements?",
+        options: ["Basal ganglia", "Limbic system", "Reticular formation", "Corpora quadrigemina"],
+        answer: "Basal ganglia",
+        hint: "Parkinson's disease involves the degeneration of dopamine-releasing neurons that target this structure."
     },
     {
-        module: "Quiz 3",
-        question: "The highly folded convolutions (ridges) covering the surface of the cerebral cortex are known as:",
-        options: ["Sulci", "Fissures", "Gyri", "Tracts"],
-        answer: 2,
-        explanation: "During embryonic development, the gray matter of the cortex enlarges out of proportion to underlying white matter, folding onto itself to form ridges called gyri (or convolutions)."
+        category: "Special Senses",
+        question: "The auditory ossicles—the malleus, incus, and stapes—are located within which distinct anatomical region of the ear?",
+        options: ["External acoustic meatus", "Tympanic cavity (Middle ear)", "Bony labyrinth (Inner ear)", "Membranous labyrinth"],
+        answer: "Tympanic cavity (Middle ear)",
+        hint: "They bridge the gap between the tympanic membrane and the oval window."
     },
     {
-        module: "Quiz 3",
-        question: "The right and left cerebral hemispheres are connected internally by a broad band of white matter tracts called the:",
-        options: ["Corpus callosum", "Longitudinal fissure", "Internal capsule", "Cerebral peduncles"],
-        answer: 0,
-        explanation: "The corpus callosum is a thick band of commissural tract axons that extends between the two cerebral hemispheres, allowing them to communicate."
+        category: "Clinical Findings",
+        question: "Prolonged use of ill-fitting crutches can compress a major nerve in the axilla, leading to triceps weakness and 'wrist drop'. Which nerve is implicated in this clinical impression?",
+        options: ["Median nerve", "Ulnar nerve", "Axillary nerve", "Radial nerve"],
+        answer: "Radial nerve",
+        hint: "This nerve innervates all the extensor muscles of the upper limb."
     },
     {
-        module: "Quiz 3",
-        question: "Which ring of structures on the inner border of the cerebrum and diencephalon is recognized as the 'emotional brain'?",
-        options: ["Basal ganglia", "Limbic system", "Reticular activating system", "Cerebellar cortex"],
-        answer: 1,
-        explanation: "The limbic system plays a primary role in a range of emotions, including pain, pleasure, docility, affection, and anger. It also heavily involves the amygdala and hippocampus."
+        category: "Autonomic Nervous System",
+        question: "The parasympathetic nervous system is anatomically described as having what type of outflow?",
+        options: ["Thoracolumbar", "Craniosacral", "Cervicothoracic", "Lumbosacral"],
+        answer: "Craniosacral",
+        hint: "Its preganglionic fibers originate in the brainstem and the S2-S4 spinal cord segments."
     },
     {
-        module: "Quiz 3",
-        question: "A client reports an inability to feel fear or recognize stressful, dangerous situations. These symptoms heavily suggest a dysfunction in which specific brain structure?",
-        options: ["The Amygdala", "The Medulla Oblongata", "The Occipital Lobe", "The Corpus Callosum"],
-        answer: 0,
-        explanation: "The amygdala, a key component of the limbic system, is centrally involved in processing fear, aggression, and evaluating the emotional significance of stimuli."
+        category: "Nervous Tissue",
+        question: "Which of the following is the primary inhibitory neurotransmitter in the adult central nervous system?",
+        options: ["Glutamate", "Acetylcholine", "GABA (Gamma-aminobutyric acid)", "Substance P"],
+        answer: "GABA (Gamma-aminobutyric acid)",
+        hint: "It causes hyperpolarization of the postsynaptic membrane, moving it further from threshold."
     },
     {
-        module: "Quiz 3",
-        question: "Which lobe of the cerebrum houses the primary visual area?",
+        category: "Cranial Nerves",
+        question: "The corneal reflex (blinking when the cornea is touched) involves two cranial nerves. Which nerve serves as the afferent (sensory) limb of this reflex arc?",
+        options: ["CN II (Optic)", "CN III (Oculomotor)", "CN V (Trigeminal)", "CN VII (Facial)"],
+        answer: "CN V (Trigeminal)",
+        hint: "Specifically, the ophthalmic branch (V1) senses the stimulus."
+    },
+    {
+        category: "Clinical Findings",
+        question: "A client reports a burning, tingling sensation localized strictly to the anterolateral aspect of their thigh, exacerbated by wearing a heavy tool belt. What is the most likely clinical impression?",
+        options: ["Sciatica", "Meralgia Paresthetica", "Piriformis Syndrome", "Femoral nerve neuropathy"],
+        answer: "Meralgia Paresthetica",
+        hint: "This involves the entrapment of the lateral femoral cutaneous nerve near the ASIS."
+    },
+    {
+        category: "Spinal Cord & Tracts",
+        question: "In the spinal canal, the space located between the dura mater and the periosteum of the vertebrae, which contains fat and a venous plexus, is the:",
+        options: ["Subarachnoid space", "Subdural space", "Epidural space", "Subpial space"],
+        answer: "Epidural space",
+        hint: "This is the target site for certain types of spinal anesthesia."
+    },
+    {
+        category: "Brain Anatomy",
+        question: "Which diencephalic structure serves as the main visceral control center of the body, regulating body temperature, hunger, thirst, and sleep-wake cycles?",
+        options: ["Thalamus", "Epithalamus", "Hypothalamus", "Medulla oblongata"],
+        answer: "Hypothalamus",
+        hint: "It acts as the crucial link between the nervous and endocrine systems via the pituitary gland."
+    },
+    {
+        category: "Clinical Findings",
+        question: "A client presents with severe lower back pain, bilateral leg weakness, and reports recent onset of urinary incontinence and numbness in their perineal region (saddle anesthesia). These clinical findings represent a medical emergency known as:",
+        options: ["Spinal Stenosis", "Cauda Equina Syndrome", "Lumbar Radiculopathy", "Spondylolisthesis"],
+        answer: "Cauda Equina Syndrome",
+        hint: "This requires immediate decompression to prevent permanent neurological damage to the lower nerve roots."
+    },
+    {
+        category: "Spinal Cord & Tracts",
+        question: "When testing the biceps brachii deep tendon reflex, which primary spinal cord segment is being evaluated?",
+        options: ["C4", "C5", "C7", "C8"],
+        answer: "C5",
+        hint: "This segment, along with C6, forms the superior trunk of the brachial plexus and the musculocutaneous nerve."
+    },
+    {
+        category: "Cranial Nerves",
+        question: "Which cranial nerve completely bypasses the thalamus and synapses directly in the cerebral cortex?",
+        options: ["CN I (Olfactory)", "CN II (Optic)", "CN VIII (Vestibulocochlear)", "CN X (Vagus)"],
+        answer: "CN I (Olfactory)",
+        hint: "Its fibers pass through the cribriform plate of the ethmoid bone."
+    },
+    {
+        category: "Autonomic Nervous System",
+        question: "Postganglionic parasympathetic fibers release acetylcholine, which binds to what specific type of receptors on the effector organs (e.g., smooth muscle, glands)?",
+        options: ["Nicotinic receptors", "Muscarinic receptors", "Alpha-1 receptors", "Beta-2 receptors"],
+        answer: "Muscarinic receptors",
+        hint: "These are G-protein coupled receptors, unlike the ionotropic receptors found at the neuromuscular junction."
+    },
+    {
+        category: "Special Senses",
+        question: "The maculae, located within the saccule and utricle of the inner ear, are responsible for detecting:",
+        options: ["Rotational acceleration", "Static equilibrium and linear acceleration", "High-frequency sound waves", "Low-frequency sound waves"],
+        answer: "Static equilibrium and linear acceleration",
+        hint: "They contain hair cells embedded in an otolithic membrane."
+    },
+    {
+        category: "Clinical Findings",
+        question: "A client experiences aching pain in their proximal anterior forearm and numbness in their lateral 3.5 digits. The symptoms worsen with resisted forearm pronation. What is the most likely clinical impression?",
+        options: ["Carpal Tunnel Syndrome", "Cubital Tunnel Syndrome", "Pronator Teres Syndrome", "Radial Tunnel Syndrome"],
+        answer: "Pronator Teres Syndrome",
+        hint: "This involves compression of the median nerve between the two heads of a specific forearm muscle, proximal to the wrist."
+    },
+    {
+        category: "Clinical Findings",
+        question: "A client presents with unilateral facial paralysis, including the inability to close their eye or wrinkle their forehead. What is the most likely clinical impression?",
+        options: ["Trigeminal Neuralgia", "Bell's Palsy", "Horner's Syndrome", "Stroke (Upper Motor Neuron Lesion)"],
+        answer: "Bell's Palsy",
+        hint: "This involves a lower motor neuron lesion of CN VII. In a stroke, forehead wrinkling is usually spared due to bilateral cortical innervation."
+    },
+    {
+        category: "Brain Anatomy",
+        question: "The primary visual cortex is located in which lobe of the cerebrum?",
         options: ["Frontal lobe", "Parietal lobe", "Temporal lobe", "Occipital lobe"],
-        answer: 3,
-        explanation: "The occipital lobe, located at the posterior aspect of the brain, receives visual information and is involved in visual perception."
+        answer: "Occipital lobe",
+        hint: "This region surrounds the calcarine sulcus on the medial surface of the hemisphere."
     },
     {
-        module: "Quiz 3",
-        question: "Which specialized area of the frontal lobe is directly involved in the motor execution of speech production?",
-        options: ["Wernicke's area", "Broca's speech area", "Primary somatosensory area", "Primary motor area"],
-        answer: 1,
-        explanation: "Broca's speech area is located in the frontal lobe (usually the left hemisphere) and contains the neural circuitry responsible for the muscular movements required to speak."
+        category: "Special Senses",
+        question: "Which avascular structure of the eye changes shape to precisely focus light onto the retina?",
+        options: ["Cornea", "Iris", "Lens", "Fovea centralis"],
+        answer: "Lens",
+        hint: "Its shape is altered by the contraction and relaxation of the ciliary muscle."
     },
     {
-        module: "Quiz 3",
-        question: "How many pairs of cranial nerves originate from the brain?",
-        options: ["31 pairs", "12 pairs", "10 pairs", "8 pairs"],
-        answer: 1,
-        explanation: "There are 12 pairs of cranial nerves, named primarily for their distribution or function, and numbered I through XII using Roman numerals."
+        category: "Autonomic Nervous System",
+        question: "A sympathetic nervous system response will cause which of the following effects on the pupil?",
+        options: ["Miosis (constriction)", "Mydriasis (dilation)", "No change", "Unequal sizes"],
+        answer: "Mydriasis (dilation)",
+        hint: "This allows more light to enter the eye to improve far vision during a 'fight or flight' scenario."
     },
     {
-        module: "Quiz 3",
-        question: "Which cranial nerve (CN I) is entirely sensory and carries impulses for the sense of smell?",
-        options: ["Optic nerve", "Oculomotor nerve", "Olfactory nerve", "Trochlear nerve"],
-        answer: 2,
-        explanation: "Cranial Nerve I is the olfactory nerve, an entirely sensory nerve that conducts nerve impulses for olfaction (smell)."
+        category: "Nervous Tissue",
+        question: "The rapid, 'leaping' transmission of an action potential along a myelinated axon is termed:",
+        options: ["Continuous conduction", "Synaptic transmission", "Saltatory conduction", "Retrograde transport"],
+        answer: "Saltatory conduction",
+        hint: "The action potential jumps from one Node of Ranvier to the next."
     },
     {
-        module: "Quiz 3",
-        question: "Which cranial nerve is widely distributed into the thorax and abdomen, providing critical parasympathetic regulation of the heart, lungs, and GI tract?",
-        options: ["Glossopharyngeal nerve (IX)", "Vagus nerve (X)", "Accessory nerve (XI)", "Hypoglossal nerve (XII)"],
-        answer: 1,
-        explanation: "The Vagus nerve (CN X) is the only cranial nerve that extends substantially beyond the head and neck, carrying the vast majority of parasympathetic ('rest and digest') motor outflow to the thoracic and abdominal viscera."
+        category: "Spinal Cord & Tracts",
+        question: "The dorsal column-medial lemniscal (DCML) pathway is responsible for transmitting which types of sensory information?",
+        options: ["Pain and temperature", "Unconscious proprioception", "Fine touch, vibration, and conscious proprioception", "Crude touch and pressure"],
+        answer: "Fine touch, vibration, and conscious proprioception",
+        hint: "This pathway decussates in the medulla oblongata, not at the spinal cord level."
     },
     {
-        module: "Quiz 3",
-        question: "A massage client presents with Bell's Palsy, displaying unilateral paralysis of the facial expression muscles. Which cranial nerve is affected?",
-        options: ["Trigeminal nerve (V)", "Facial nerve (VII)", "Glossopharyngeal nerve (IX)", "Oculomotor nerve (III)"],
-        answer: 1,
-        explanation: "The Facial nerve (CN VII) innervates the muscles of facial expression. Damage or viral infection of this nerve leads to Bell's Palsy."
+        category: "Clinical Findings",
+        question: "A client reports pain and numbness on the medial aspect of their hand after resting their elbows on a desk for prolonged periods. This points to a clinical impression of Cubital Tunnel Syndrome, affecting which nerve?",
+        options: ["Median nerve", "Radial nerve", "Ulnar nerve", "Musculocutaneous nerve"],
+        answer: "Ulnar nerve",
+        hint: "This nerve passes directly behind the medial epicondyle of the humerus."
     },
     {
-        module: "Quiz 3",
-        question: "The Trigeminal nerve (CN V) is the largest cranial nerve. What is its dual 'mixed' function?",
-        options: ["Somatic sensation of the face and motor control of chewing (mastication).", "Sense of taste and motor control of facial expressions.", "Vision and control of eye movement.", "Hearing and maintenance of equilibrium."],
-        answer: 0,
-        explanation: "The Trigeminal nerve provides sensory innervation to the skin of the face (touch, pain, thermal) and motor innervation to the muscles of mastication."
+        category: "Cranial Nerves",
+        question: "Which cranial nerve provides the sensation of taste to the anterior two-thirds of the tongue?",
+        options: ["CN V (Trigeminal)", "CN VII (Facial)", "CN IX (Glossopharyngeal)", "CN XII (Hypoglossal)"],
+        answer: "CN VII (Facial)",
+        hint: "The chorda tympani branch of this nerve carries these special sensory fibers."
     },
     {
-        module: "Quiz 3",
-        question: "Which cranial nerve is entirely sensory and carries impulses for both hearing and equilibrium?",
-        options: ["Optic nerve (II)", "Abducens nerve (VI)", "Vestibulocochlear nerve (VIII)", "Accessory nerve (XI)"],
-        answer: 2,
-        explanation: "The Vestibulocochlear nerve (CN VIII) contains two branches: the vestibular branch carries equilibrium signals, and the cochlear branch carries hearing signals."
+        category: "Brain Anatomy",
+        question: "Cerebrospinal fluid (CSF) is reabsorbed into the venous blood stream via which structures?",
+        options: ["Choroid plexuses", "Arachnoid granulations (villi)", "Cerebral aqueduct", "Interventricular foramina"],
+        answer: "Arachnoid granulations (villi)",
+        hint: "These project into the superior sagittal sinus."
     },
     {
-        module: "Quiz 3",
-        question: "Which cranial nerve provides the motor output to the sternocleidomastoid (SCM) and trapezius muscles, making it highly relevant to massage therapists?",
-        options: ["Trigeminal nerve (V)", "Facial nerve (VII)", "Vagus nerve (X)", "Accessory nerve (XI)"],
-        answer: 3,
-        explanation: "The Accessory nerve (CN XI) is a motor nerve that supplies the sternocleidomastoid and trapezius muscles to coordinate head and shoulder movements."
+        category: "Special Senses",
+        question: "The spiral organ (Organ of Corti), which contains the hair cells responsible for hearing, rests upon which membrane?",
+        options: ["Tectorial membrane", "Vestibular membrane", "Tympanic membrane", "Basilar membrane"],
+        answer: "Basilar membrane",
+        hint: "The vibration of this membrane causes the stereocilia to bend against the rigid membrane above them."
     },
     {
-        module: "Quiz 3",
-        question: "The Hypoglossal nerve (CN XII) innervates muscles required for speech and swallowing. Which structure does it primarily control?",
-        options: ["The pharynx", "The larynx", "The tongue", "The soft palate"],
-        answer: 2,
-        explanation: "The Hypoglossal nerve (CN XII) is a motor nerve that controls the muscles of the tongue during speech and swallowing."
+        category: "Autonomic Nervous System",
+        question: "The parasympathetic preganglionic fibers of the Vagus nerve (CN X) originate from which brainstem region?",
+        options: ["Midbrain", "Pons", "Medulla oblongata", "Spinal cord"],
+        answer: "Medulla oblongata",
+        hint: "This is the most inferior portion of the brainstem."
     },
     {
-        module: "Quiz 3",
-        question: "Parkinson's Disease involves the progressive degeneration of dopamine-releasing neurons extending from the substantia nigra. Where is the substantia nigra located?",
-        options: ["The Cerebellum", "The Midbrain", "The Medulla Oblongata", "The Spinal Cord"],
-        answer: 1,
-        explanation: "The substantia nigra is a large, darkly pigmented nucleus located in the midbrain. Loss of its dopaminergic neurons leads to the tremors and rigidity associated with Parkinson's."
+        category: "Spinal Cord & Tracts",
+        question: "The cervical plexus (C1-C4) provides cutaneous innervation to the anterior neck and motor innervation to several neck muscles. What is its most important branch?",
+        options: ["Lesser occipital nerve", "Great auricular nerve", "Ansa cervicalis", "Phrenic nerve"],
+        answer: "Phrenic nerve",
+        hint: "Without this nerve, autonomous breathing is not possible."
     },
     {
-        module: "Quiz 3",
-        question: "Which network of neurons extends through the brainstem and acts as a filter for sensory input, maintaining consciousness and arousal from sleep?",
-        options: ["The Reticular Activating System (RAS)", "The Basal Ganglia", "The Limbic System", "The Circle of Willis"],
-        answer: 0,
-        explanation: "The ascending portion of the reticular formation is called the Reticular Activating System (RAS). When activated, it helps maintain consciousness and wakes the cerebral cortex from sleep."
-    },
-
-// ==========================================
-    // QUIZ 4 QUESTIONS (Autonomic Nervous System)
-    // ==========================================
-    {
-        module: "Quiz 4",
-        question: "Which of the following effectors are exclusively innervated by the autonomic nervous system (ANS)?",
-        options: ["Skeletal muscle", "Smooth muscle, cardiac muscle, and glands", "Sensory receptors of the skin", "The cerebral cortex"],
-        answer: 1,
-        explanation: "Unlike the somatic nervous system which controls voluntary skeletal muscle, the ANS operates involuntarily, innervating smooth muscle, cardiac muscle, and glands."
+        category: "Clinical Findings",
+        question: "During an assessment for cervicogenic headaches, you find severe hypertonicity in the suboccipital triangle. Which nerve, piercing the semispinalis capitis, is frequently compressed here, necessitating careful self-care tool considerations?",
+        options: ["Lesser occipital nerve", "Greater occipital nerve", "Suprascapular nerve", "Transverse cervical nerve"],
+        answer: "Greater occipital nerve",
+        hint: "This is the dorsal ramus of C2 and provides sensation to the back of the scalp."
     },
     {
-        module: "Quiz 4",
-        question: "Unlike the somatic nervous system which uses a single motor neuron, the autonomic motor pathway fundamentally utilizes how many motor neurons in sequence?",
-        options: ["One", "Two", "Three", "Four"],
-        answer: 1,
-        explanation: "The ANS motor pathway consists of two neurons in series: a preganglionic neuron extending from the CNS to an autonomic ganglion, and a postganglionic neuron extending from the ganglion to the effector."
+        category: "Cranial Nerves",
+        question: "Evaluating a client's ability to resist shoulder elevation (shrugging) tests the motor integrity of which cranial nerve?",
+        options: ["CN IX (Glossopharyngeal)", "CN X (Vagus)", "CN XI (Accessory)", "CN XII (Hypoglossal)"],
+        answer: "CN XI (Accessory)",
+        hint: "This nerve innervates the upper trapezius and sternocleidomastoid."
     },
     {
-        module: "Quiz 4",
-        question: "Because its preganglionic cell bodies are located in the lateral horns of the 12 thoracic and first 2 lumbar segments of the spinal cord, the sympathetic division is also called the:",
-        options: ["Craniosacral division", "Thoracolumbar division", "Enteric division", "Cervicobrachial division"],
-        answer: 1,
-        explanation: "The sympathetic division is functionally known as the thoracolumbar division because its nerve outflow specifically originates from the T1 to L2 spinal segments."
+        category: "Nervous Tissue",
+        question: "The critical threshold membrane potential that must be reached to trigger an action potential in a typical neuron is approximately:",
+        options: ["-90 mV", "-70 mV", "-55 mV", "+30 mV"],
+        answer: "-55 mV",
+        hint: "Reaching this voltage causes voltage-gated sodium channels to rapidly open."
     },
     {
-        module: "Quiz 4",
-        question: "The parasympathetic division is often referred to as the craniosacral division. From which specific cranial nerves does parasympathetic outflow originate?",
-        options: ["I, II, VIII, and IX", "III, VII, IX, and X", "V, VII, XI, and XII", "IV, V, VI, and X"],
-        answer: 1,
-        explanation: "Parasympathetic outflow arises from cranial nerves III (Oculomotor), VII (Facial), IX (Glossopharyngeal), and X (Vagus), as well as sacral spinal nerves S2-S4."
+        category: "Brain Anatomy",
+        question: "Which structure of the limbic system is crucial for the consolidation of short-term memory into long-term memory?",
+        options: ["Amygdala", "Hippocampus", "Cingulate gyrus", "Fornix"],
+        answer: "Hippocampus",
+        hint: "Its name is derived from the Greek word for 'seahorse' due to its shape."
     },
     {
-        module: "Quiz 4",
-        question: "Which cranial nerve carries approximately 80% of the entire body's parasympathetic outflow to the organs of the thorax and upper abdomen?",
-        options: ["Trigeminal (CN V)", "Facial (CN VII)", "Vagus (CN X)", "Hypoglossal (CN XII)"],
-        answer: 2,
-        explanation: "The Vagus nerve (CN X) is the dominant conduit for the parasympathetic nervous system, heavily regulating the heart, lungs, and gastrointestinal tract."
+        category: "Special Senses",
+        question: "The 'blind spot' of the eye, where no photoreceptors are present, corresponds to which anatomical structure?",
+        options: ["Fovea centralis", "Macula lutea", "Optic disc", "Ora serrata"],
+        answer: "Optic disc",
+        hint: "This is the site where the optic nerve exits and retinal blood vessels enter."
     },
     {
-        module: "Quiz 4",
-        question: "Where are sympathetic trunk (chain) ganglia typically located?",
-        options: ["Embedded within the walls of the target organs.", "In a vertical row on either side of the vertebral column.", "Deep within the brainstem.", "In the dorsal root ganglia."],
-        answer: 1,
-        explanation: "Sympathetic trunk ganglia lie in vertical rows on both sides of the vertebral column, allowing sympathetic responses to broadly and rapidly affect multiple organs simultaneously."
+        category: "Clinical Findings",
+        question: "Tarsal Tunnel Syndrome involves the compression of which nerve posterior to the medial malleolus?",
+        options: ["Deep fibular nerve", "Superficial fibular nerve", "Tibial nerve", "Sural nerve"],
+        answer: "Tibial nerve",
+        hint: "This nerve travels alongside the posterior tibial artery beneath the flexor retinaculum."
     },
     {
-        module: "Quiz 4",
-        question: "Where are parasympathetic terminal ganglia typically located?",
-        options: ["Very close to or embedded within the wall of the target organ.", "In a vertical row alongside the spinal cord.", "In the anterior horn of the spinal cord.", "Anterior to the abdominal aorta."],
-        answer: 0,
-        explanation: "Because parasympathetic responses are highly localized and specific, their terminal ganglia are located very close to, or literally inside the walls of, the target effector organs."
-    },
-    {
-        module: "Quiz 4",
-        question: "Which neurotransmitter is released by ALL autonomic preganglionic neurons (both sympathetic and parasympathetic)?",
-        options: ["Norepinephrine (NE)", "Dopamine", "Acetylcholine (ACh)", "Serotonin"],
-        answer: 2,
-        explanation: "All sympathetic and parasympathetic preganglionic neurons are cholinergic, meaning they synthesize and exclusively release Acetylcholine (ACh)."
-    },
-    {
-        module: "Quiz 4",
-        question: "In the sympathetic division, what is the primary neurotransmitter released by most postganglionic neurons at the effector organ?",
-        options: ["Acetylcholine (ACh)", "Norepinephrine (NE)", "Glutamate", "GABA"],
-        answer: 1,
-        explanation: "Most sympathetic postganglionic neurons are adrenergic; they release Norepinephrine (NE), which drives the body's 'fight-or-flight' physiological responses."
-    },
-    {
-        module: "Quiz 4",
-        question: "In the parasympathetic division, what is the neurotransmitter released by postganglionic neurons at the effector organ?",
-        options: ["Norepinephrine (NE)", "Epinephrine", "Acetylcholine (ACh)", "Dopamine"],
-        answer: 2,
-        explanation: "All parasympathetic postganglionic neurons are cholinergic and release Acetylcholine (ACh) to trigger 'rest-and-digest' responses."
-    },
-    {
-        module: "Quiz 4",
-        question: "Receptors that bind Acetylcholine (ACh) are called cholinergic receptors. What are the two types of cholinergic receptors?",
-        options: ["Alpha and Beta", "Nicotinic and Muscarinic", "Mu and Delta", "D1 and D2"],
-        answer: 1,
-        explanation: "The two primary types of cholinergic receptors are nicotinic receptors (found on postganglionic cell bodies) and muscarinic receptors (found on target effectors like smooth muscle)."
-    },
-    {
-        module: "Quiz 4",
-        question: "Which modified sympathetic ganglion releases epinephrine and norepinephrine directly into the bloodstream to prolong the 'fight-or-flight' response?",
-        options: ["The anterior pituitary gland", "The adrenal medulla", "The pineal gland", "The celiac ganglion"],
-        answer: 1,
-        explanation: "The adrenal medulla acts as a modified sympathetic ganglion. Instead of extending axons to organs, its chromaffin cells secrete epinephrine and norepinephrine directly into the blood as hormones."
-    },
-    {
-        module: "Quiz 4",
-        question: "The acronym 'SLUDD' is used to describe the primary responses of which autonomic division?",
+        category: "Autonomic Nervous System",
+        question: "In the male reproductive system, which autonomic division is responsible for achieving an erection?",
         options: ["Sympathetic", "Parasympathetic", "Somatic", "Enteric"],
-        answer: 1,
-        explanation: "SLUDD stands for Salivation, Lacrimation, Urination, Digestion, and Defecation—all of which are physiological processes stimulated by the parasympathetic ('rest-and-digest') division."
+        answer: "Parasympathetic",
+        hint: "Remember the mnemonic: 'Point' (Parasympathetic) and 'Shoot' (Sympathetic)."
     },
     {
-        module: "Quiz 4",
-        question: "During a sympathetic 'fight-or-flight' response, what happens to the diameter of the airways (bronchioles) in the lungs?",
-        options: ["They constrict to protect the lungs from toxins.", "They heavily secrete mucus to trap pathogens.", "They dilate to allow faster movement of air in and out.", "They spasm uncontrollably."],
-        answer: 2,
-        explanation: "Sympathetic stimulation causes bronchodilation (widening of the airways), allowing greater airflow and increased oxygen uptake required for physical exertion."
+        category: "Spinal Cord & Tracts",
+        question: "Where do the second-order neurons of the spinothalamic tract decussate (cross over)?",
+        options: ["Medulla oblongata", "Midbrain", "At the spinal cord level of entry", "Thalamus"],
+        answer: "At the spinal cord level of entry",
+        hint: "They cross over through the anterior white commissure before ascending to the brain."
     },
     {
-        module: "Quiz 4",
-        question: "How does sympathetic stimulation affect blood vessels supplying the gastrointestinal tract and kidneys?",
-        options: ["It causes severe vasodilation to increase organ activity.", "It causes vasoconstriction to shunt blood toward skeletal muscles.", "It has no effect on visceral blood vessels.", "It causes them to rupture under high pressure."],
-        answer: 1,
-        explanation: "During a stress response, the sympathetic division vasoconstricts blood vessels to non-essential organs (like the GI tract and kidneys) to shunt more blood to active skeletal muscles and the brain."
+        category: "Cranial Nerves",
+        question: "Which cranial nerve provides motor innervation exclusively to the lateral rectus muscle of the eye?",
+        options: ["CN III (Oculomotor)", "CN IV (Trochlear)", "CN V (Trigeminal)", "CN VI (Abducens)"],
+        answer: "CN VI (Abducens)",
+        hint: "The action of this muscle abducts the eye (moves it laterally away from the midline)."
     },
     {
-        module: "Quiz 4",
-        question: "Which specific structure of the brain acts as the major control and integration center for the Autonomic Nervous System?",
-        options: ["The Cerebellum", "The Thalamus", "The Hypothalamus", "The Corpus Callosum"],
-        answer: 2,
-        explanation: "The hypothalamus is the primary integrating center for the ANS. It receives sensory input related to visceral functions, emotions, and temperature, and adjusts autonomic output accordingly."
+        category: "Nervous Tissue",
+        question: "Which glial cells are characterized by their star shape and play a vital role in maintaining the blood-brain barrier?",
+        options: ["Oligodendrocytes", "Microglia", "Ependymal cells", "Astrocytes"],
+        answer: "Astrocytes",
+        hint: "They are the most abundant glial cells in the CNS and regulate the chemical environment around neurons."
     },
     {
-        module: "Quiz 4",
-        question: "What does the term 'Autonomic Tone' refer to?",
-        options: ["The resting tension of skeletal muscles.", "The baseline electrical frequency of the heart.", "The balance between sympathetic and parasympathetic activity.", "The vocal changes observed during extreme stress."],
-        answer: 2,
-        explanation: "Autonomic tone is the balance between sympathetic and parasympathetic activity, tightly regulated by the hypothalamus to maintain homeostasis."
+        category: "Brain Anatomy",
+        question: "The superior colliculi, located on the posterior aspect of the midbrain, are primarily involved in:",
+        options: ["Auditory reflexes", "Visual reflexes", "Motor coordination", "Regulating sleep"],
+        answer: "Visual reflexes",
+        hint: "They help coordinate head and eye movements to visually track a moving object."
     },
     {
-        module: "Quiz 4",
-        question: "What is the expected parasympathetic effect on the muscular pupil of the eye?",
-        options: ["Dilation (mydriasis)", "Constriction (miosis)", "Rapid twitching (nystagmus)", "Tearing (lacrimation)"],
-        answer: 1,
-        explanation: "Parasympathetic stimulation contracts the circular muscles of the iris, causing the pupil to constrict (miosis) to protect the retina from excessive light during resting states."
+        category: "Clinical Findings",
+        question: "A client exhibits a 'steppage gait' due to an inability to dorsiflex the foot. This clinical impression is most likely caused by damage to which nerve?",
+        options: ["Deep fibular (peroneal) nerve", "Superficial fibular (peroneal) nerve", "Tibial nerve", "Saphenous nerve"],
+        answer: "Deep fibular (peroneal) nerve",
+        hint: "This nerve innervates the anterior compartment of the leg."
     },
     {
-        module: "Quiz 4",
-        question: "Why do the effects of sympathetic activation last significantly longer than parasympathetic activation?",
-        options: ["Sympathetic neurons are shorter.", "ACh is destroyed rapidly, whereas Norepinephrine lingers in the synaptic cleft and is also released as a hormone.", "The parasympathetic system runs out of ATP faster.", "Sympathetic responses do not require the brainstem."],
-        answer: 1,
-        explanation: "Sympathetic responses are widespread and prolonged because NE lingers in the cleft, and the adrenal medulla releases epinephrine/NE directly into the bloodstream where it takes minutes to be cleared."
+        category: "Special Senses",
+        question: "The axons of the olfactory receptor cells pass through the foramina of which bony structure to reach the olfactory bulb?",
+        options: ["Sella turcica", "Crista galli", "Cribriform plate of the ethmoid bone", "Superior orbital fissure"],
+        answer: "Cribriform plate of the ethmoid bone",
+        hint: "Trauma to this specific area of the skull can result in anosmia (loss of the sense of smell)."
     },
     {
-        module: "Quiz 4",
-        question: "Which condition involves a massive, exaggerated sympathetic reflex response triggered by noxious stimuli in patients with spinal cord injuries above T6?",
-        options: ["Raynaud's phenomenon", "Horner's syndrome", "Autonomic dysreflexia", "Parkinson's disease"],
-        answer: 2,
-        explanation: "Autonomic dysreflexia is a life-threatening sympathetic surge (causing severe hypertension and headache) in response to a stimulus (like a full bladder) below the level of a high spinal cord injury."
+        category: "Clinical Findings",
+        question: "A client presents with 'winging' of the scapula, where the medial border becomes prominent, especially when pushing against a wall. This clinical finding indicates a lesion of which nerve?",
+        options: ["Suprascapular nerve", "Thoracodorsal nerve", "Long thoracic nerve", "Dorsal scapular nerve"],
+        answer: "Long thoracic nerve",
+        hint: "This nerve innervates the serratus anterior and is vulnerable to injury due to its superficial course along the lateral thoracic wall."
     },
     {
-        module: "Quiz 4",
-        question: "A client reports severe, painful blanching and cyanosis in their fingers when exposed to cold. This is an excessive sympathetic response known as:",
-        options: ["Diabetic neuropathy", "Multiple Sclerosis", "Raynaud's phenomenon", "Shingles"],
-        answer: 2,
-        explanation: "Raynaud's phenomenon is characterized by excessive sympathetic stimulation of smooth muscle in the arterioles of the digits, causing intense vasoconstriction and restricted blood flow upon cold exposure."
+        category: "Spinal Cord & Tracts",
+        question: "When performing a neurological assessment, testing the strength of elbow extension and wrist flexion primarily evaluates which myotome?",
+        options: ["C5", "C6", "C7", "C8"],
+        answer: "C7",
+        hint: "This nerve root also provides the sensory dermatome for the middle finger."
     },
     {
-        module: "Quiz 4",
-        question: "Which of the following is considered an autonomic reflex rather than a somatic reflex?",
-        options: ["Withdrawing a hand from a hot stove.", "The patellar (knee-jerk) reflex.", "Alteration of heart rate in response to low blood pressure.", "Maintaining balance on an unstable surface."],
-        answer: 2,
-        explanation: "Autonomic reflexes (visceral reflexes) regulate controlled conditions in the body, such as blood pressure, digestion, and heart rate, using smooth muscle, cardiac muscle, or glands as effectors."
+        category: "Clinical Findings",
+        question: "A traction injury during birth or severe upward pull of the arm can damage the inferior trunk (C8-T1) of the brachial plexus. This results in a 'claw hand' deformity, a clinical impression known as:",
+        options: ["Erb's Palsy", "Klumpke's Palsy", "Saturday Night Palsy", "Thoracic Outlet Syndrome"],
+        answer: "Klumpke's Palsy",
+        hint: "This affects the intrinsic muscles of the hand supplied primarily by the ulnar nerve."
     },
     {
-        module: "Quiz 4",
-        question: "As a massage therapist, employing slow, rhythmic, soothing strokes primarily aims to decrease sympathetic tone and increase the dominance of which cranial nerve?",
-        options: ["The Trigeminal nerve", "The Optic nerve", "The Vagus nerve", "The Accessory nerve"],
-        answer: 2,
-        explanation: "Soothing massage techniques aim to stimulate parasympathetic dominance, heavily relying on the Vagus nerve (CN X) to slow the heart rate and lower blood pressure."
+        category: "Brain Anatomy",
+        question: "Which region of the cerebral cortex is responsible for the motor aspects of speech production, where a lesion results in expressive (non-fluent) aphasia?",
+        options: ["Wernicke's area", "Broca's area", "Primary motor cortex", "Prefrontal cortex"],
+        answer: "Broca's area",
+        hint: "This area is typically located in the left frontal lobe, superior to the lateral sulcus."
     },
     {
-        module: "Quiz 4",
-        question: "What happens to liver function during a mass sympathetic discharge?",
-        options: ["It dramatically increases bile production.", "It increases glycogenolysis (converting glycogen to glucose) to provide energy.", "It begins storing excess glucose as fat.", "It shuts down entirely to conserve energy."],
-        answer: 1,
-        explanation: "During a 'fight-or-flight' response, the liver breaks down stored glycogen into glucose (glycogenolysis) and releases it into the blood to fuel active skeletal muscles."
+        category: "Cranial Nerves",
+        question: "The Mandibular division (V3) of the Trigeminal nerve passes through which opening in the skull?",
+        options: ["Foramen rotundum", "Foramen ovale", "Superior orbital fissure", "Jugular foramen"],
+        answer: "Foramen ovale",
+        hint: "Remember the mnemonic for the branches of CN V exiting the skull: Standing Room Only (SRO)."
     },
     {
-        module: "Quiz 4",
-        question: "In the context of autonomic pathways, what is 'Dual Innervation'?",
-        options: ["A muscle that is controlled by both the brain and the spinal cord.", "An organ that receives nerve impulses from both the sympathetic and parasympathetic divisions.", "A sensory receptor that can detect both heat and pain.", "A nerve that contains both sensory and motor fibers."],
-        answer: 1,
-        explanation: "Most organs feature dual innervation, meaning they receive impulses from both sympathetic and parasympathetic neurons, which typically have antagonistic (opposing) effects."
+        category: "Spinal Cord & Tracts",
+        question: "The triceps brachii deep tendon reflex is utilized to evaluate the integrity of which primary spinal nerve root?",
+        options: ["C5", "C6", "C7", "T1"],
+        answer: "C7",
+        hint: "This is the primary nerve root for the middle trunk of the brachial plexus."
     },
-
-    // ==========================================
-    // QUIZ 5 QUESTIONS (Special Senses & Advanced Pathologies)
-    // ==========================================
     {
-        module: "Quiz 5",
-        question: "Which of the following describes a 'receptor potential' as opposed to a 'generator potential'?",
-        options: ["It triggers the continuous release of neurotransmitters across a synapse rather than generating an action potential directly.", "It is only found in somatic motor neurons.", "It is responsible for initiating muscle contraction.", "It bypasses the central nervous system entirely."],
-        answer: 0,
-        explanation: "Special senses (like vision, hearing, taste, and equilibrium) utilize receptor potentials, which cause the sensory receptor cell to release neurotransmitters across a synapse to a first-order neuron, rather than generating the action potential itself."
+        category: "Clinical Findings",
+        question: "A client reports pain and numbness isolated to the medial side of their hand, the pinky finger, and the medial half of the ring finger. Which dermatome is most likely affected?",
+        options: ["C6", "C7", "C8", "T1"],
+        answer: "C8",
+        hint: "This sensory distribution aligns precisely with the sensory territory of the ulnar nerve in the hand."
     },
     {
-        module: "Quiz 5",
-        question: "Which type of sensory receptor is rapidly adapting and responsible for fine touch?",
-        options: ["Nociceptors", "Type I cutaneous mechanoreceptors (Tactile discs)", "Corpuscles of touch (Meissner corpuscles)", "Muscle spindles"],
-        answer: 2,
-        explanation: "Corpuscles of touch (Meissner corpuscles) are rapidly adapting touch receptors located in the dermal papillae of hairless skin, responsible for fine touch."
+        category: "Nervous Tissue",
+        question: "The physical gap between a synaptic terminal and the receiving cell membrane is called the:",
+        options: ["Synaptic vesicle", "Synaptic cleft", "Axon hillock", "Node of Ranvier"],
+        answer: "Synaptic cleft",
+        hint: "Neurotransmitters must diffuse across this space to bind to postsynaptic receptors."
     },
     {
-        module: "Quiz 5",
-        question: "Why does a heart attack often produce pain that radiates down the left arm?",
-        options: ["Because the heart is located entirely on the left side of the body.", "Due to referred pain, where visceral sensory nerve fibers converge on the same spinal segments as somatic pain fibers from the arm.", "Because nociceptors in the arm become hyperexcitable during stress.", "Because the left arm loses blood supply during a myocardial infarction."],
-        answer: 1,
-        explanation: "Referred pain occurs when visceral pain is felt in a superficial area far from the stimulated organ. This happens because the visceral sensory neurons and somatic sensory neurons converge on the same segments of the spinal cord (e.g., T1-T5 for the heart and left arm)."
+        category: "Autonomic Nervous System",
+        question: "Which of the following describes the anatomical pathway of sympathetic preganglionic fibers exiting the spinal nerve to enter the sympathetic chain ganglion?",
+        options: ["Gray rami communicantes", "White rami communicantes", "Dorsal root", "Ventral ramus"],
+        answer: "White rami communicantes",
+        hint: "They appear this color because these preganglionic fibers are myelinated."
     },
     {
-        module: "Quiz 5",
-        question: "Which sensory receptors wrap around specialized intrafusal muscle fibers to monitor changes in muscle length and prevent overstretching?",
-        options: ["Golgi tendon organs", "Joint kinesthetic receptors", "Muscle spindles", "Pacinian corpuscles"],
-        answer: 2,
-        explanation: "Muscle spindles are proprioceptors embedded within skeletal muscles that detect changes in muscle length, triggering stretch reflexes to prevent overstretching and tissue damage."
+        category: "Special Senses",
+        question: "The tough, opaque, outer fibrous layer of the eye that provides shape and protects internal parts is the:",
+        options: ["Cornea", "Choroid", "Retina", "Sclera"],
+        answer: "Sclera",
+        hint: "This is commonly referred to as the 'white of the eye'."
     },
     {
-        module: "Quiz 5",
-        question: "Which network of neurons is responsible for awakening the cerebral cortex from sleep and maintaining consciousness?",
-        options: ["The Basal Ganglia", "The Reticular Activating System (RAS)", "The Limbic System", "The Parasympathetic Nervous System"],
-        answer: 1,
-        explanation: "The Reticular Activating System (RAS) consists of sensory axons that project to the cerebral cortex. Increased activity in the RAS causes awakening (arousal) and maintains consciousness."
+        category: "Clinical Findings",
+        question: "Following a fracture of the surgical neck of the humerus, a client cannot abduct their arm beyond 15 degrees and has sensory loss over the lateral shoulder. Which nerve is likely compromised?",
+        options: ["Radial nerve", "Axillary nerve", "Suprascapular nerve", "Musculocutaneous nerve"],
+        answer: "Axillary nerve",
+        hint: "This nerve travels through the quadrangular space to innervate the deltoid and teres minor."
     },
     {
-        module: "Quiz 5",
-        question: "Memory consolidation—the reinforcement that results from frequent retrieval of a piece of information—is deeply associated with a neural property known as:",
-        options: ["Hyperpolarization", "Plasticity", "Spinal reflexology", "Saltatory conduction"],
-        answer: 1,
-        explanation: "Plasticity is the capability of the nervous system to change based on experience. Memory consolidation structurally changes the brain through long-term potentiation."
+        category: "Brain Anatomy",
+        question: "Which structure in the limbic system is primarily associated with processing emotions, particularly fear and the 'fight or flight' response?",
+        options: ["Hippocampus", "Amygdala", "Fornix", "Cingulate gyrus"],
+        answer: "Amygdala",
+        hint: "This almond-shaped mass of nuclei is located deep within the temporal lobe."
     },
     {
-        module: "Quiz 5",
-        question: "In the olfactory epithelium, which cells undergo continuous cell division to produce new olfactory receptor neurons throughout a person's life?",
-        options: ["Supporting cells", "Olfactory glands (Bowman's glands)", "Basal cells", "Mitral cells"],
-        answer: 2,
-        explanation: "Basal cells are stem cells located at the base of the olfactory epithelium that constantly divide to replace olfactory receptor cells (which live for only about a month)."
+        category: "Spinal Cord & Tracts",
+        question: "In the cross-section of the spinal cord, the posterior (dorsal) horns of the gray matter contain:",
+        options: ["Somatic motor nuclei", "Visceral motor nuclei", "Somatic and visceral sensory nuclei", "Sympathetic preganglionic cell bodies"],
+        answer: "Somatic and visceral sensory nuclei",
+        hint: "This region receives incoming afferent information from the periphery."
     },
     {
-        module: "Quiz 5",
-        question: "Which special sense pathway is unique because its nerve impulses reach the cerebral cortex WITHOUT first synapsing in the thalamus?",
-        options: ["Vision", "Gustation (Taste)", "Audition (Hearing)", "Olfaction (Smell)"],
-        answer: 3,
-        explanation: "Olfaction is the only sensory modality that bypasses the thalamic relay station entirely, projecting directly to the primary olfactory area in the temporal lobe and the limbic system."
+        category: "Clinical Findings",
+        question: "A client experiences sharp, burning pain between the third and fourth metatarsal heads, exacerbated by tight footwear. What is the most likely clinical impression?",
+        options: ["Plantar fasciitis", "Tarsal Tunnel Syndrome", "Morton's Neuroma", "Sural nerve entrapment"],
+        answer: "Morton's Neuroma",
+        hint: "This is a benign enlargement of an interdigital nerve, commonly caused by mechanical compression."
     },
     {
-        module: "Quiz 5",
-        question: "Which three cranial nerves are responsible for transmitting gustatory (taste) impulses to the brain?",
-        options: ["I, II, and VIII", "V, VII, and XI", "VII (Facial), IX (Glossopharyngeal), and X (Vagus)", "III, IV, and VI"],
-        answer: 2,
-        explanation: "Taste sensations are carried by the Facial nerve (anterior 2/3 of tongue), Glossopharyngeal nerve (posterior 1/3), and Vagus nerve (epiglottis and pharynx)."
+        category: "Cranial Nerves",
+        question: "The Trochlear nerve (CN IV) provides motor innervation to which extraocular muscle?",
+        options: ["Superior rectus", "Lateral rectus", "Superior oblique", "Inferior oblique"],
+        answer: "Superior oblique",
+        hint: "This muscle passes through a pulley-like structure (trochlea) to depress and intort the eye."
     },
     {
-        module: "Quiz 5",
-        question: "The fibrous tunic is the superficial layer of the eyeball. What two structures make up this layer?",
-        options: ["The choroid and the retina", "The iris and the pupil", "The cornea and the sclera", "The lens and the ciliary body"],
-        answer: 2,
-        explanation: "The fibrous tunic consists of the anterior transparent cornea (which focuses light) and the posterior white sclera (which provides shape and protection)."
+        category: "Autonomic Nervous System",
+        question: "Stimulation of the vagus nerve (parasympathetic) will have what effect on the respiratory system?",
+        options: ["Bronchodilation", "Bronchoconstriction", "Increased respiratory rate", "Decreased mucus secretion"],
+        answer: "Bronchoconstriction",
+        hint: "During 'rest and digest', maximum airway diameter is not required."
     },
     {
-        module: "Quiz 5",
-        question: "What is the primary function of the iris?",
-        options: ["To nourish the retina with blood.", "To regulate the amount of light entering the eyeball through the pupil.", "To convert light into electrical signals.", "To change the shape of the lens for focusing."],
-        answer: 1,
-        explanation: "The iris contains smooth muscle fibers (controlled by the autonomic nervous system) that dilate or constrict the pupil to regulate how much light enters the eye."
+        category: "Brain Anatomy",
+        question: "The bulging region of the brainstem that acts as a bridge connecting the cerebellum to the cerebrum and lower brainstem is the:",
+        options: ["Midbrain", "Pons", "Medulla oblongata", "Thalamus"],
+        answer: "Pons",
+        hint: "It also contains pneumotaxic and apneustic centers that help regulate breathing."
     },
     {
-        module: "Quiz 5",
-        question: "Why does the 'blind spot' (optic disc) lack the ability to process visual images?",
-        options: ["It is permanently covered by the eyelid.", "It is the site where the optic nerve exits the eye, meaning there are no rods or cones present.", "It is blocked by the shadow of the iris.", "It is damaged by excessive UV light exposure."],
-        answer: 1,
-        explanation: "The optic disc is where the axons of retinal ganglion cells exit the eyeball to form the optic nerve. Because it contains no photoreceptors, it creates a visual blind spot."
+        category: "Clinical Findings",
+        question: "A client presents with weak elbow flexion and decreased sensation along the lateral aspect of the forearm. These clinical findings suggest a lesion of which nerve?",
+        options: ["Radial nerve", "Median nerve", "Ulnar nerve", "Musculocutaneous nerve"],
+        answer: "Musculocutaneous nerve",
+        hint: "This nerve pierces the coracobrachialis muscle and innervates the biceps brachii and brachialis."
     },
     {
-        module: "Quiz 5",
-        question: "Which photoreceptors are highly sensitive to light and allow us to see in dim surroundings (black-and-white vision)?",
-        options: ["Rods", "Cones", "Maculae", "Ganglion cells"],
-        answer: 0,
-        explanation: "Rods function optimally in dim light and do not provide color vision. Cones require bright light and are responsible for high-acuity color vision."
+        category: "Spinal Cord & Tracts",
+        question: "The brachioradialis deep tendon reflex is primarily used to evaluate the integrity of which spinal segment?",
+        options: ["C5", "C6", "C7", "C8"],
+        answer: "C6",
+        hint: "This nerve root also supplies the dermatome for the thumb and lateral forearm."
     },
     {
-        module: "Quiz 5",
-        question: "What dynamic process occurs when the ciliary muscle contracts, releasing tension on the suspensory ligaments to allow the lens to become more spherical for near-vision?",
-        options: ["Refraction", "Transduction", "Accommodation", "Convergence"],
-        answer: 2,
-        explanation: "Accommodation is the process where the lens increases its curvature (becomes thicker/more spherical) to focus on near objects."
+        category: "Special Senses",
+        question: "The tympanic membrane separates which two regions of the ear?",
+        options: ["External ear and middle ear", "Middle ear and inner ear", "Inner ear and cochlea", "Auricle and external acoustic meatus"],
+        answer: "External ear and middle ear",
+        hint: "Sound waves directly strike this structure, causing it to vibrate."
     },
     {
-        module: "Quiz 5",
-        question: "Which vision pathology is characterized by an abnormal increase in intraocular pressure due to the buildup of aqueous humor, potentially leading to irreversible blindness?",
-        options: ["Cataracts", "Macular degeneration", "Glaucoma", "Presbyopia"],
-        answer: 2,
-        explanation: "Glaucoma occurs when aqueous humor cannot adequately drain through the scleral venous sinus, building pressure that compresses the lens into the vitreous body and damages the optic nerve."
+        category: "Clinical Findings",
+        question: "A client reports severe shooting pain down the back of their leg, extending below the knee. While Piriformis Syndrome is a potential cause, if the pain is caused by a herniated lumbar disc compressing the nerve root, the correct clinical impression is:",
+        options: ["True Sciatica (Lumbar Radiculopathy)", "Cauda Equina Syndrome", "Meralgia Paresthetica", "Femoral Neuropathy"],
+        answer: "True Sciatica (Lumbar Radiculopathy)",
+        hint: "This distinguishes a central nerve root compression from a peripheral entrapment."
     },
     {
-        module: "Quiz 5",
-        question: "What is the anatomical sequence of the auditory ossicles that transmit sound vibrations from the tympanic membrane to the oval window?",
-        options: ["Stapes -> Incus -> Malleus", "Malleus -> Incus -> Stapes", "Incus -> Malleus -> Stapes", "Malleus -> Stapes -> Incus"],
-        answer: 1,
-        explanation: "The malleus (hammer) attaches to the eardrum, articulates with the incus (anvil), which in turn articulates with the stapes (stirrup) resting in the oval window."
+        category: "Nervous Tissue",
+        question: "Which of the following accurately describes the absolute refractory period of an action potential?",
+        options: ["A second action potential can be initiated if the stimulus is exceptionally strong", "The neuron cannot respond to another stimulus, no matter how strong", "The cell is hyperpolarized below resting potential", "Sodium channels are resetting from their inactive state"],
+        answer: "The neuron cannot respond to another stimulus, no matter how strong",
+        hint: "This occurs because the voltage-gated sodium channels are already open or are in their inactivated state."
     },
     {
-        module: "Quiz 5",
-        question: "Which structure connects the middle ear to the nasopharynx to equalize air pressure on both sides of the eardrum?",
-        options: ["The external auditory canal", "The auditory (Eustachian) tube", "The round window", "The cochlea"],
-        answer: 1,
-        explanation: "The auditory (Eustachian) tube normally remains closed but opens during swallowing or yawning to equalize pressure, ensuring the tympanic membrane can vibrate freely."
+        category: "Spinal Cord & Tracts",
+        question: "The lumbar plexus is formed by the anterior (ventral) rami of which spinal nerves?",
+        options: ["T12 - L3", "L1 - L4", "L4 - S4", "S1 - S4"],
+        answer: "L1 - L4",
+        hint: "The major branches of this plexus include the femoral and obturator nerves."
     },
     {
-        module: "Quiz 5",
-        question: "Within the inner ear, which specialized structure rests on the basilar membrane and contains the hair cells responsible for converting mechanical sound waves into electrical nerve impulses?",
-        options: ["The spiral organ (Organ of Corti)", "The crista ampullaris", "The macula", "The tectorial membrane"],
-        answer: 0,
-        explanation: "The spiral organ (Organ of Corti) is the true organ of hearing. As fluid pressure waves move the basilar membrane, the hair cells bend against the tectorial membrane, triggering a receptor potential."
+        category: "Clinical Findings",
+        question: "During an assessment, a client with a history of diabetes reports 'glove and stocking' numbness and tingling in their distal extremities. The most likely clinical impression is:",
+        options: ["Peripheral Polyneuropathy", "Multiple Sclerosis", "Amyotrophic Lateral Sclerosis (ALS)", "Guillain-Barré Syndrome"],
+        answer: "Peripheral Polyneuropathy",
+        hint: "This systemic condition typically affects the longest nerve fibers first, starting symmetrically in the feet and hands."
     },
     {
-        module: "Quiz 5",
-        question: "Which inner ear structures are primarily responsible for Dynamic Equilibrium (detecting rotational acceleration or deceleration of the head)?",
-        options: ["The utricle and saccule", "The cochlea", "The semicircular ducts", "The auditory ossicles"],
-        answer: 2,
-        explanation: "The three semicircular ducts are oriented at 90-degree angles to each other. Their ampullae contain cristae with hair cells that detect rotational/dynamic movements of the head."
+        category: "Cranial Nerves",
+        question: "The sensory limb of the pupillary light reflex (sensing the bright light) is mediated by which cranial nerve?",
+        options: ["CN II (Optic)", "CN III (Oculomotor)", "CN IV (Trochlear)", "CN VI (Abducens)"],
+        answer: "CN II (Optic)",
+        hint: "This nerve carries visual information from the retina to the brain."
     },
     {
-        module: "Quiz 5",
-        question: "Which inner ear structures contain the maculae, which are responsible for Static Equilibrium (detecting linear acceleration and head tilt relative to gravity)?",
-        options: ["The semicircular canals", "The utricle and saccule (within the vestibule)", "The tympanic membrane", "The helicotrema"],
-        answer: 1,
-        explanation: "The utricle and saccule contain maculae, which feature hair cells embedded in an otolithic membrane. Gravity pulls on the heavy otoliths during a head tilt, bending the hair cells."
+        category: "Cranial Nerves",
+        question: "When evaluating the motor function of the Facial nerve (CN VII), which action would you ask the client to perform?",
+        options: ["Shrug their shoulders against resistance", "Protrude their tongue and move it side to side", "Puff out their cheeks and tightly close their eyes", "Clench their jaw while you palpate the masseter"],
+        answer: "Puff out their cheeks and tightly close their eyes",
+        hint: "This nerve innervates the muscles of facial expression, including the buccinator and orbicularis oculi."
     },
     {
-        module: "Quiz 5",
-        question: "An age-related sensorineural hearing loss that usually begins with the loss of high-pitched sounds is called:",
-        options: ["Presbyopia", "Tinnitus", "Presbycusis", "Cataracts"],
-        answer: 2,
-        explanation: "Presbycusis is progressive, age-related hearing loss caused by the cumulative damage and loss of hair cells within the spiral organ."
+        category: "Clinical Findings",
+        question: "During an assessment, you suspect an ulnar nerve entrapment. You ask the client to grip a piece of paper between their thumb and index finger while you try to pull it away. The client's thumb flexes at the interphalangeal joint to compensate for adductor pollicis weakness. What is the name of this clinical finding?",
+        options: ["Tinel's Sign", "Froment's Sign", "Phalen's Sign", "Babinski Sign"],
+        answer: "Froment's Sign",
+        hint: "This tests the motor innervation of the adductor pollicis, which is supplied by the ulnar nerve, not the median nerve."
     },
     {
-        module: "Quiz 5",
-        question: "A client reports a persistent, annoying ringing or buzzing sensation in their ears. What is the clinical term for this condition?",
-        options: ["Strabismus", "Nystagmus", "Vertigo", "Tinnitus"],
-        answer: 3,
-        explanation: "Tinnitus is a ringing, roaring, or clicking in the ears. It is frequently caused by loud noise exposure, impacted cerumen, or nerve degeneration."
+        category: "Autonomic Nervous System",
+        question: "Which division of the autonomic nervous system stimulates the contraction of the detrusor muscle and the relaxation of the internal urethral sphincter, promoting urination?",
+        options: ["Sympathetic division", "Parasympathetic division", "Somatic nervous system", "Enteric nervous system"],
+        answer: "Parasympathetic division",
+        hint: "This action aligns with the 'rest and digest' (and eliminate) functions of this division."
     },
     {
-        module: "Quiz 5",
-        question: "Loss of transparency of the lens of the eye, often caused by changes in lens proteins due to aging or UV exposure, is known as:",
-        options: ["A cataract", "Glaucoma", "Myopia", "Astigmatism"],
-        answer: 0,
-        explanation: "A cataract is a clouding of the normally clear lens of the eye, obstructing the passage of light and leading to blindness if surgically untreated."
+        category: "Spinal Cord & Tracts",
+        question: "In Brown-Séquard syndrome (a hemisection of the spinal cord), how does the loss of pain and temperature sensation present inferior to the level of the lesion?",
+        options: ["Contralateral loss", "Ipsilateral loss", "Bilateral loss", "No loss of pain sensation"],
+        answer: "Contralateral loss",
+        hint: "Because the spinothalamic tract decussates at the level of entry in the spinal cord, damage to one side affects the opposite side of the body below the lesion."
     },
     {
-        module: "Quiz 5",
-        question: "As a massage therapist, why is understanding the physiological process of the Reticular Activating System (RAS) important?",
-        options: ["It helps therapists diagnose brain tumors.", "It dictates the type of massage oil used.", "It explains why slow, rhythmic inputs (like Swedish massage) can decrease sensory overload, inhibit the RAS, and promote deep relaxation.", "It determines the exact location of motor nerve compression."],
-        answer: 2,
-        explanation: "The RAS filters sensory input. Monotonous, soothing, and rhythmic sensory input (like Swedish massage) fails to stimulate the RAS, helping shift the client from sympathetic arousal to parasympathetic relaxation/sleepiness."
+        category: "Brain Anatomy",
+        question: "Cerebrospinal fluid (CSF) flows from the third ventricle to the fourth ventricle via which anatomical passageway?",
+        options: ["Interventricular foramina (of Monro)", "Cerebral aqueduct (of Sylvius)", "Central canal", "Median aperture (of Magendie)"],
+        answer: "Cerebral aqueduct (of Sylvius)",
+        hint: "This narrow channel passes through the midbrain."
     },
     {
-        module: "Quiz 5",
-        question: "If a patient suffers damage to the vestibulocochlear nerve (Cranial Nerve VIII), which two sensory modalities will be severely impaired?",
-        options: ["Vision and Smell", "Hearing and Equilibrium", "Taste and Swallowing", "Facial expression and Chewing"],
-        answer: 1,
-        explanation: "Cranial Nerve VIII has a cochlear branch (transmitting auditory information) and a vestibular branch (transmitting equilibrium/balance information)."
+        category: "Special Senses",
+        question: "Which structure connects the middle ear cavity to the nasopharynx, allowing for the equalization of pressure on both sides of the tympanic membrane?",
+        options: ["External acoustic meatus", "Pharyngotympanic (Eustachian) tube", "Cochlear duct", "Semicircular canal"],
+        answer: "Pharyngotympanic (Eustachian) tube",
+        hint: "This tube is usually closed but opens during swallowing or yawning."
     },
-
-    // ==========================================
-    // FINAL EXAM QUESTIONS (Comprehensive Course Review)
-    // ==========================================
     {
-        module: "Final Exam",
-        question: "Which of the following correctly pairs the myelin-producing neuroglial cells with their respective nervous system division?",
-        options: ["Astrocytes (CNS) and Satellite cells (PNS)", "Oligodendrocytes (CNS) and Schwann cells (PNS)", "Microglia (CNS) and Ependymal cells (PNS)", "Schwann cells (CNS) and Oligodendrocytes (PNS)"],
-        answer: 1,
-        explanation: "Oligodendrocytes myelinate multiple axons in the Central Nervous System (CNS), whereas Schwann cells myelinate single axons in the Peripheral Nervous System (PNS)."
+        category: "Clinical Findings",
+        question: "To assess for median nerve compression at the wrist, a therapist asks the client to press the dorsal aspects of their hands together with wrists fully flexed for 60 seconds. Reproduction of numbness and tingling is a positive finding for which orthopedic test?",
+        options: ["Tinel's Sign", "Phalen's Test", "Finkelstein's Test", "Allen's Test"],
+        answer: "Phalen's Test",
+        hint: "This posture actively compresses the space within the carpal tunnel."
     },
     {
-        module: "Final Exam",
-        question: "During an action potential, the absolute refractory period ensures that the nerve impulse propagates in only one direction. What dictates this period?",
-        options: ["The depletion of intracellular ATP.", "The temporary inactivation of voltage-gated sodium (Na+) channels.", "The continuous influx of calcium (Ca2+) ions.", "The exhaustion of neurotransmitter vesicles."],
-        answer: 1,
-        explanation: "During the absolute refractory period, voltage-gated Na+ channels cannot reopen until they reset to their resting state, preventing the action potential from traveling backward."
+        category: "Nervous Tissue",
+        question: "An Excitatory Postsynaptic Potential (EPSP) causes the localized postsynaptic membrane to undergo:",
+        options: ["Hyperpolarization", "Depolarization", "Repolarization", "No change in resting potential"],
+        answer: "Depolarization",
+        hint: "This brings the membrane potential closer to the threshold necessary to fire an action potential."
     },
     {
-        module: "Final Exam",
-        question: "The white matter of the spinal cord contains specific ascending and descending tracts. What type of information does the lateral spinothalamic tract carry?",
-        options: ["Voluntary motor commands to skeletal muscles.", "Subconscious proprioception to the cerebellum.", "Sensory impulses for pain and temperature to the brain.", "Autonomic regulation of heart rate."],
-        answer: 2,
-        explanation: "Ascending tracts like the spinothalamic tract carry sensory information up to the brain. Specifically, the lateral spinothalamic tract conveys pain and temperature sensations."
+        category: "Cranial Nerves",
+        question: "While the Glossopharyngeal nerve (CN IX) provides the sensory (afferent) limb of the gag reflex, which nerve provides the motor (efferent) limb responsible for the muscular contraction?",
+        options: ["CN V (Trigeminal)", "CN VII (Facial)", "CN X (Vagus)", "CN XII (Hypoglossal)"],
+        answer: "CN X (Vagus)",
+        hint: "This nerve innervates the majority of the muscles of the pharynx and soft palate."
     },
     {
-        module: "Final Exam",
-        question: "A client presents with 'foot drop' and an inability to dorsiflex their ankle. Which peripheral nerve, originating from the sacral plexus, is most likely compromised?",
-        options: ["Femoral nerve", "Common fibular (peroneal) nerve", "Obturator nerve", "Pudendal nerve"],
-        answer: 1,
-        explanation: "The common fibular nerve, a major branch of the sciatic nerve, innervates the anterior compartment of the lower leg. Damage leads to an inability to dorsiflex, causing 'foot drop'."
+        category: "Clinical Findings",
+        question: "A client falls asleep with their arm draped over the back of a chair, compressing a nerve in the axillary/spiral groove region. They wake up with an inability to extend their wrist. What is the most likely clinical impression?",
+        options: ["Saturday Night Palsy (Radial nerve)", "Honeymoon Palsy (Posterior interosseous nerve)", "Crutch Palsy (Axillary nerve)", "Ape Hand (Median nerve)"],
+        answer: "Saturday Night Palsy (Radial nerve)",
+        hint: "This specific mechanism of injury is classic for high radial nerve compression."
     },
     {
-        module: "Final Exam",
-        question: "Which sequence accurately traces the continuous flow of cerebrospinal fluid (CSF) through the central nervous system?",
-        options: ["Arachnoid villi -> Ventricles -> Subdural space -> Central canal", "Lateral ventricles -> Third ventricle -> Cerebral aqueduct -> Fourth ventricle -> Subarachnoid space", "Fourth ventricle -> Third ventricle -> Interventricular foramen -> Dural venous sinuses", "Choroid plexus -> Epidural space -> Subarachnoid space -> Brainstem"],
-        answer: 1,
-        explanation: "CSF is produced in the lateral ventricles, flows through the interventricular foramina to the third ventricle, down the cerebral aqueduct to the fourth ventricle, and out into the subarachnoid space."
+        category: "Brain Anatomy",
+        question: "On the motor homunculus (located on the precentral gyrus), which area of the body has the largest proportional representation due to the complexity of its fine motor movements?",
+        options: ["The trunk", "The legs and feet", "The face and hands", "The proximal arms"],
+        answer: "The face and hands",
+        hint: "Cortical space is allocated based on the precision of motor control required, not the physical size of the body part."
     },
     {
-        module: "Final Exam",
-        question: "The primary motor area, responsible for the voluntary execution of skeletal muscle movement, is located in which specific convolution of the cerebral cortex?",
-        options: ["Postcentral gyrus of the parietal lobe", "Precentral gyrus of the frontal lobe", "Superior temporal gyrus", "Occipital pole"],
-        answer: 1,
-        explanation: "The precentral gyrus of the frontal lobe houses the primary motor cortex. The postcentral gyrus of the parietal lobe houses the primary somatosensory cortex."
+        category: "Autonomic Nervous System",
+        question: "Sympathetic preganglionic fibers that innervate the abdominal viscera do not synapse in the sympathetic chain. Instead, they pass through to synapse in which specific structures?",
+        options: ["Paravertebral ganglia", "Prevertebral (collateral) ganglia", "Terminal ganglia", "Intramural ganglia"],
+        answer: "Prevertebral (collateral) ganglia",
+        hint: "Examples include the celiac and superior mesenteric ganglia, located anterior to the vertebral column."
     },
     {
-        module: "Final Exam",
-        question: "Which cranial nerve provides the essential 'rest-and-digest' parasympathetic innervation to the heart, lungs, and the majority of the gastrointestinal tract?",
-        options: ["Glossopharyngeal (IX)", "Accessory (XI)", "Vagus (X)", "Hypoglossal (XII)"],
-        answer: 2,
-        explanation: "The Vagus nerve (CN X) is the primary conduit for the parasympathetic nervous system, heavily regulating thoracic and abdominal viscera."
+        category: "Spinal Cord & Tracts",
+        question: "Which of the following clinical findings is characteristic of an Upper Motor Neuron (UMN) lesion, distinguishing it from a Lower Motor Neuron (LMN) lesion?",
+        options: ["Severe muscle atrophy", "Flaccid paralysis", "Hyperreflexia and spasticity", "Fasciculations (muscle twitches)"],
+        answer: "Hyperreflexia and spasticity",
+        hint: "Because the inhibitory influence from the brain is lost, the intact spinal reflex arcs become hyperactive."
     },
     {
-        module: "Final Exam",
-        question: "In the autonomic nervous system, how do sympathetic and parasympathetic pathways anatomically differ regarding the length of their neurons?",
-        options: ["Sympathetic has short preganglionic and long postganglionic neurons; Parasympathetic has long preganglionic and short postganglionic neurons.", "Both divisions have short preganglionic neurons.", "Sympathetic has long preganglionic and short postganglionic neurons; Parasympathetic has short preganglionic and long postganglionic neurons.", "Parasympathetic pathways consist of only one motor neuron."],
-        answer: 0,
-        explanation: "Sympathetic ganglia are close to the spinal cord (chain ganglia), resulting in short preganglionic and long postganglionic fibers. Parasympathetic ganglia are near/in the target organs, resulting in long preganglionic and short postganglionic fibers."
+        category: "Clinical Findings",
+        question: "During an assessment for lumbar radiculopathy, you passively elevate the client's supine, extended leg. Reproduction of sharp, shooting pain down the posterior thigh and leg between 35 and 70 degrees is a positive finding for which test?",
+        options: ["Kernig's Test", "Slump Test", "Straight Leg Raise (SLR) Test", "Patrick's (FABER) Test"],
+        answer: "Straight Leg Raise (SLR) Test",
+        hint: "This test places tension directly on the sciatic nerve and the lower lumbar nerve roots."
     },
     {
-        module: "Final Exam",
-        question: "All autonomic preganglionic neurons release ________, while most sympathetic postganglionic neurons release ________.",
-        options: ["Norepinephrine; Acetylcholine", "Acetylcholine; Norepinephrine", "Dopamine; Serotonin", "Epinephrine; Glutamate"],
-        answer: 1,
-        explanation: "Preganglionic neurons of both divisions are cholinergic (release ACh). Most sympathetic postganglionic neurons are adrenergic (release NE) to trigger fight-or-flight responses."
+        category: "Special Senses",
+        question: "In the visual pathway, fibers from the medial (nasal) half of each retina cross over to the opposite side of the brain at which anatomical structure?",
+        options: ["Optic nerve", "Optic chiasm", "Optic tract", "Lateral geniculate nucleus"],
+        answer: "Optic chiasm",
+        hint: "This partial decussation ensures that the left visual field is processed by the right hemisphere, and vice versa."
     },
     {
-        module: "Final Exam",
-        question: "A patient suffering from severe peripheral neuropathy reports a complete loss of 'fine touch' and vibration sense in their hands. Which specific encapsulated sensory receptors are likely failing?",
-        options: ["Free nerve endings", "Nociceptors", "Meissner corpuscles and Pacinian corpuscles", "Muscle spindles"],
-        answer: 2,
-        explanation: "Meissner (corpuscles of touch) and Pacinian (lamellated) corpuscles are encapsulated mechanoreceptors responsible for fine touch and vibration. Free nerve endings primarily detect pain and temperature."
+        category: "Nervous Tissue",
+        question: "In the Peripheral Nervous System (PNS), if a nerve fiber is severed, it has the potential to regenerate. Which cells form a regeneration tube to guide the growing axon back to its target?",
+        options: ["Oligodendrocytes", "Astrocytes", "Schwann cells", "Microglia"],
+        answer: "Schwann cells",
+        hint: "Unlike in the CNS, these cells promote, rather than inhibit, axon regeneration."
     },
     {
-        module: "Final Exam",
-        question: "The Reticular Activating System (RAS) is a diffuse neural network vital for awakening the cerebral cortex. Where is the RAS primarily located?",
-        options: ["Throughout the brainstem", "In the basal ganglia", "Within the corpus callosum", "In the prefrontal cortex"],
-        answer: 0,
-        explanation: "The RAS is an ascending network of tracts running through the brainstem (medulla, pons, and midbrain) that filters sensory input and maintains cerebral arousal and consciousness."
+        category: "Clinical Findings",
+        question: "To test the functional integrity of the deep fibular (peroneal) nerve, you would assess the client's ability to resist against which specific motion?",
+        options: ["Plantarflexion and inversion", "Plantarflexion and eversion", "Dorsiflexion and inversion", "Dorsiflexion and eversion"],
+        answer: "Dorsiflexion and inversion",
+        hint: "This tests the primary action of the tibialis anterior muscle."
     },
     {
-        module: "Final Exam",
-        question: "Which structure in the limbic system is crucially responsible for consolidating short-term memories into long-term memories?",
-        options: ["The Amygdala", "The Hippocampus", "The Medulla", "The Thalamus"],
-        answer: 1,
-        explanation: "The hippocampus is the primary memory consolidation center of the brain. Damage to this area (as seen in early Alzheimer's disease) severely impairs the ability to form new long-term memories."
+        category: "Brain Anatomy",
+        question: "Which bundle of white matter fibers directly connects Wernicke's area (language comprehension) to Broca's area (language production)?",
+        options: ["Corpus callosum", "Arcuate fasciculus", "Internal capsule", "Fornix"],
+        answer: "Arcuate fasciculus",
+        hint: "Damage to this tract results in conduction aphasia, where a patient can understand and speak but cannot accurately repeat words."
     },
     {
-        module: "Final Exam",
-        question: "Which of the following describes the difference between Guillain-Barré Syndrome (GBS) and Multiple Sclerosis (MS)?",
-        options: ["GBS causes demyelination in the CNS, while MS causes demyelination in the PNS.", "GBS is caused by a neurotoxin, while MS is a bacterial infection.", "GBS causes acute demyelination in the PNS, while MS causes chronic demyelination in the CNS.", "GBS only affects sensory neurons, while MS only affects motor neurons."],
-        answer: 2,
-        explanation: "Both are autoimmune demyelinating diseases, but GBS attacks Schwann cells in the peripheral nervous system (causing acute flaccid paralysis), whereas MS attacks oligodendrocytes in the central nervous system."
+        category: "Cranial Nerves",
+        question: "Asking a client to follow your finger visually in an 'H-pattern' without moving their head evaluates the function of which group of cranial nerves?",
+        options: ["CN II, III, and IV", "CN III, IV, and VI", "CN II, IV, and VI", "CN III, V, and VII"],
+        answer: "CN III, IV, and VI",
+        hint: "This test assesses all the motor nerves that control the extraocular muscles."
     },
     {
-        module: "Final Exam",
-        question: "What pathophysiological mechanism defines Parkinson's Disease?",
-        options: ["Autoimmune destruction of acetylcholine receptors at the neuromuscular junction.", "Progressive degeneration of dopamine-producing neurons in the substantia nigra of the midbrain.", "Viral destruction of lower motor neurons in the anterior horns of the spinal cord.", "Ischemic necrosis of the primary motor cortex."],
-        answer: 1,
-        explanation: "Parkinson's is caused by the death of dopaminergic neurons in the substantia nigra, leading to an imbalance in the basal ganglia that causes resting tremors, bradykinesia, and rigidity."
+        category: "Autonomic Nervous System",
+        question: "Which type of adrenergic receptor is primarily found in the heart, where its stimulation by norepinephrine results in an increased heart rate and contractility?",
+        options: ["Alpha-1", "Alpha-2", "Beta-1", "Beta-2"],
+        answer: "Beta-1",
+        hint: "Remember the clinical mnemonic: You have '1' heart and '2' lungs."
     },
     {
-        module: "Final Exam",
-        question: "A client experiences sharp, shooting pain radiating into their thumb, index, and middle fingers, often worsening at night. Which nerve is most likely compressed within the wrist?",
-        options: ["Radial nerve", "Ulnar nerve", "Median nerve", "Musculocutaneous nerve"],
-        answer: 2,
-        explanation: "Carpal Tunnel Syndrome involves the compression of the median nerve as it passes under the flexor retinaculum, causing paresthesia and pain in the lateral 3.5 digits."
+        category: "Clinical Findings",
+        question: "You are assessing a client for Thoracic Outlet Syndrome. You locate their radial pulse, passively extend and externally rotate their arm, and ask them to actively rotate and extend their head toward the affected side. A diminished pulse indicates compression by the anterior and middle scalenes. What is this test called?",
+        options: ["Wright's Hyperabduction Test", "Adson's Test", "Eden's (Military Brace) Test", "Roos Test"],
+        answer: "Adson's Test",
+        hint: "This specifically tensions the scalene triangle, narrowing the space for the brachial plexus and subclavian artery."
     },
     {
-        module: "Final Exam",
-        question: "Which of the following accurately describes a Cerebrovascular Accident (CVA / Stroke)?",
-        options: ["A progressive neurodegenerative disease affecting memory.", "A sudden focal neurological deficit resulting from either ischemia (blockage) or hemorrhage (rupture) of blood vessels in the brain.", "An autoimmune attack on the blood-brain barrier.", "A temporary drop in blood pressure causing fainting."],
-        answer: 1,
-        explanation: "A stroke (CVA) occurs when the blood supply to a part of the brain is suddenly interrupted by a clot (ischemic) or a ruptured blood vessel (hemorrhagic), causing rapid tissue death."
+        category: "Spinal Cord & Tracts",
+        question: "The majority of the fibers in the descending corticospinal tract cross over to the contralateral side of the body in which region of the central nervous system?",
+        options: ["Midbrain", "Medullary pyramids", "Cervical spinal cord", "Pons"],
+        answer: "Medullary pyramids",
+        hint: "This decussation is why the left motor cortex controls the right side of the body."
     },
     {
-        module: "Final Exam",
-        question: "In the physiology of vision, what is the process of 'accommodation'?",
-        options: ["The constriction of the pupil in bright light.", "The conversion of light waves into electrical receptor potentials by rhodopsin.", "The contraction of the ciliary muscle to increase the curvature of the lens for near-vision focusing.", "The crossing over of optic nerve fibers at the optic chiasm."],
-        answer: 2,
-        explanation: "Accommodation is the active process where the ciliary muscles contract, taking tension off the suspensory ligaments and allowing the lens to bulge (become more spherical) to focus on close objects."
+        category: "Brain Anatomy",
+        question: "The large venous channel located within the longitudinal fissure, between the two layers of the cranial dura mater, which drains blood and CSF away from the brain, is the:",
+        options: ["Straight sinus", "Transverse sinus", "Superior sagittal sinus", "Cavernous sinus"],
+        answer: "Superior sagittal sinus",
+        hint: "Arachnoid granulations protrude directly into this specific structure."
     },
     {
-        module: "Final Exam",
-        question: "Which anatomical structure separates the external ear from the middle ear and vibrates in response to sound waves?",
-        options: ["The Oval Window", "The Tympanic Membrane", "The Tectorial Membrane", "The Round Window"],
-        answer: 1,
-        explanation: "The tympanic membrane (eardrum) is a thin partition that separates the external auditory canal from the middle ear, translating acoustic sound waves into mechanical vibrations."
+        category: "Clinical Findings",
+        question: "To evaluate the motor branch of the Mandibular division (V3) of the Trigeminal nerve, you should instruct the client to:",
+        options: ["Smile widely", "Clench their teeth while you palpate the masseter and temporalis", "Swallow a sip of water", "Stick their tongue straight out"],
+        answer: "Clench their teeth while you palpate the masseter and temporalis",
+        hint: "This division is the only part of CN V that carries motor fibers, specifically for the muscles of mastication."
     },
     {
-        module: "Final Exam",
-        question: "Which special sense utilizes 'hair cells' embedded in a gelatinous otolithic membrane to detect static equilibrium (linear acceleration and gravity)?",
-        options: ["The spiral organ (Organ of Corti)", "The semicircular canals", "The utricle and saccule (maculae)", "The olfactory epithelium"],
-        answer: 2,
-        explanation: "The maculae within the utricle and saccule of the vestibule contain hair cells weighted with calcium carbonate crystals (otoliths). Gravity pulls on these during linear movements or head tilts, detecting static equilibrium."
+        category: "Special Senses",
+        question: "Within the cochlea, the specific sensory structures that transduce mechanical sound waves into electrical nerve impulses are the:",
+        options: ["Otoliths", "Hair cells", "Supporting cells", "Ganglion cells"],
+        answer: "Hair cells",
+        hint: "The bending of their stereocilia opens mechanically-gated ion channels."
     },
     {
-        module: "Final Exam",
-        question: "Amyotrophic Lateral Sclerosis (ALS), or Lou Gehrig's disease, is characterized by the rapid degeneration of what specific neural structures?",
-        options: ["Upper motor neurons in the cortex and lower motor neurons in the brainstem and spinal cord.", "Sensory tracts in the posterior columns of the spinal cord.", "The myelin sheaths of the peripheral nervous system.", "The basal ganglia and limbic system."],
-        answer: 0,
-        explanation: "ALS is a fatal neurodegenerative disease that strictly targets motor neurons (both upper and lower), leading to progressive skeletal muscle atrophy and paralysis without affecting sensory or cognitive functions."
+        category: "Nervous Tissue",
+        question: "The resting membrane potential of a neuron is primarily maintained by the active transport of which ions?",
+        options: ["Pumping 3 Na+ out and 2 K+ in", "Pumping 2 Na+ out and 3 K+ in", "Pumping 3 Ca2+ out and 2 Na+ in", "Pumping Cl- in and Na+ out"],
+        answer: "Pumping 3 Na+ out and 2 K+ in",
+        hint: "This is the function of the Sodium-Potassium (Na+/K+) ATPase pump, which requires ATP to work against the concentration gradient."
     },
     {
-        module: "Final Exam",
-        question: "Thoracic Outlet Syndrome (TOS) typically involves the compression of the Brachial Plexus and subclavian vessels. Between which two muscles is this compression most common?",
-        options: ["Pectoralis major and Deltoid", "Anterior and Middle Scalenes", "Trapezius and Levator Scapulae", "Biceps brachii and Triceps brachii"],
-        answer: 1,
-        explanation: "The roots and trunks of the Brachial Plexus pass through a narrow physical triangle created by the anterior scalene, middle scalene, and the first rib. Hypertonicity here leads to TOS."
+        category: "Brain Anatomy",
+        question: "The dural venous sinuses, which collect blood and cerebrospinal fluid from the brain, ultimately empty into which major vessel?",
+        options: ["External jugular vein", "Internal jugular vein", "Superior vena cava", "Vertebral vein"],
+        answer: "Internal jugular vein",
+        hint: "This large vein exits the skull through the jugular foramen alongside cranial nerves IX, X, and XI."
     },
     {
-        module: "Final Exam",
-        question: "When a massage therapist applies deep, slow, sustained pressure to a hypertonic muscle, they stimulate Golgi Tendon Organs (GTOs). What reflex does this trigger?",
-        options: ["A stretch reflex causing the muscle to contract harder.", "A withdrawal reflex pulling the limb away from the pressure.", "An inverse stretch (tendon) reflex causing the muscle to relax to prevent tendon tearing.", "A crossed-extensor reflex stabilizing the opposite limb."],
-        answer: 2,
-        explanation: "GTOs monitor muscle tension. When stimulated by deep, sustained pressure or excessive tension, they trigger an inhibitory polysynaptic reflex that forces the muscle to relax (the inverse stretch reflex)."
+        category: "Cranial Nerves",
+        question: "The Vagus nerve (CN X) exits the cranial cavity through which anatomical opening?",
+        options: ["Foramen magnum", "Jugular foramen", "Superior orbital fissure", "Hypoglossal canal"],
+        answer: "Jugular foramen",
+        hint: "It shares this exit route with the Glossopharyngeal (CN IX) and Accessory (CN XI) nerves."
     },
     {
-        module: "Final Exam",
-        question: "Meningitis is a potentially fatal inflammation of the meninges. Why is bacterial meningitis generally considered a more acute medical emergency than viral meningitis?",
-        options: ["Bacterial meningitis cannot cross the blood-brain barrier.", "Bacteria rapidly consume glucose and release toxins, causing severe brain edema, increased intracranial pressure, and rapid necrosis.", "Viral meningitis only affects the spinal cord, leaving the brain intact.", "Bacteria destroy the skull bones before attacking the brain."],
-        answer: 1,
-        explanation: "Bacterial meningitis is highly aggressive; the bacteria multiply rapidly in the nutrient-rich CSF, triggering massive inflammation, edema, and high intracranial pressure that can cause brain damage or death within hours."
+        category: "Spinal Cord & Tracts",
+        question: "The delicate strand of fibrous tissue (pia mater) that anchors the spinal cord to the coccyx is called the:",
+        options: ["Conus medullaris", "Cauda equina", "Filum terminale", "Denticulate ligament"],
+        answer: "Filum terminale",
+        hint: "This structure provides longitudinal support to the spinal cord within the vertebral canal."
     },
     {
-        module: "Final Exam",
-        question: "Which of the following best defines 'Autonomic Tone'?",
-        options: ["The audible frequency of nerve impulses traveling through a nerve.", "The continuous, simultaneous baseline activity of both the sympathetic and parasympathetic divisions, regulated by the hypothalamus.", "The total loss of sympathetic function following a spinal cord injury.", "The strength of a skeletal muscle contraction."],
-        answer: 1,
-        explanation: "Autonomic tone is the balance between sympathetic ('fight-or-flight') and parasympathetic ('rest-and-digest') activity, constantly adjusted by the hypothalamus to maintain systemic homeostasis."
+        category: "Clinical Findings",
+        question: "A client presents with 'foot drop' and sensory loss over the dorsum of the foot, but the web space between the first and second toes has intact sensation. The clinical impression points to a lesion of the:",
+        options: ["Tibial nerve", "Superficial fibular (peroneal) nerve", "Deep fibular (peroneal) nerve", "Common fibular (peroneal) nerve"],
+        answer: "Superficial fibular (peroneal) nerve",
+        hint: "The deep branch specifically innervates the first web space, so its sparing isolates the superficial branch."
     },
     {
-        module: "Final Exam",
-        question: "If a patient presents with a severed spinal cord at the C3 segment, what will be the most immediate, life-threatening consequence?",
-        options: ["Loss of bowel and bladder control.", "Paraplegia (paralysis of the lower limbs only).", "Loss of sympathetic output to the eyes.", "Respiratory arrest due to the loss of phrenic nerve output to the diaphragm."],
-        answer: 3,
-        explanation: "The phrenic nerve, which drives the diaphragm for breathing, originates from the cervical plexus (C3-C5). A transection at C3 severs the brain's control over the diaphragm, causing immediate respiratory arrest."
+        category: "Autonomic Nervous System",
+        question: "Parasympathetic ganglia are typically located very close to, or entirely within, the walls of their target organs. These are collectively referred to as:",
+        options: ["Paravertebral ganglia", "Prevertebral ganglia", "Terminal (or intramural) ganglia", "Dorsal root ganglia"],
+        answer: "Terminal (or intramural) ganglia",
+        hint: "Because of this location, parasympathetic postganglionic fibers are characteristically very short."
     },
-
-    // ==========================================
-    // FINAL EXAM QUESTIONS (Expansion: Questions 26 - 75)
-    // ==========================================
     {
-        module: "Final Exam",
-        question: "Within the neuronal cell body, what are Nissl bodies?",
-        options: ["Mitochondria responsible for massive ATP production.", "Prominent clusters of rough endoplasmic reticulum used to synthesize proteins and neurotransmitters.", "Vesicles storing acetylcholine at the synaptic end bulb.", "Lysosomes that break down cellular debris."],
-        answer: 1,
-        explanation: "Nissl bodies are prominent clusters of rough endoplasmic reticulum in a neuron's cell body, crucial for synthesizing the high volume of proteins and neurotransmitters required for nerve function."
+        category: "Special Senses",
+        question: "The aqueous humor of the eye is continuously produced by the ciliary processes and drains into the venous system via the:",
+        options: ["Vitreous chamber", "Canal of Schlemm (scleral venous sinus)", "Nasolacrimal duct", "Optic disc"],
+        answer: "Canal of Schlemm (scleral venous sinus)",
+        hint: "A blockage in this drainage pathway leads to increased intraocular pressure, known as glaucoma."
     },
     {
-        module: "Final Exam",
-        question: "How does the sodium-potassium (Na+/K+) pump actively maintain the resting membrane potential?",
-        options: ["It pumps 3 Na+ out of the cell and 2 K+ into the cell.", "It pumps 2 Na+ out of the cell and 3 K+ into the cell.", "It pumps 3 Na+ into the cell and 2 K+ out of the cell.", "It allows passive diffusion of both ions until equilibrium is reached."],
-        answer: 0,
-        explanation: "To maintain the negative -70mV resting potential, the Na+/K+ pump uses ATP to eject 3 positively charged sodium ions for every 2 positively charged potassium ions it brings in, causing a net outward loss of positive charge."
+        category: "Clinical Findings",
+        question: "To differentiate between Pronator Teres Syndrome and Carpal Tunnel Syndrome (both involving the median nerve), which specific clinical finding would only be present in Pronator Teres Syndrome?",
+        options: ["Tinel's sign at the wrist", "Weakness of the thenar muscles", "Loss of sensation over the thenar eminence", "Numbness in the index and middle fingers"],
+        answer: "Loss of sensation over the thenar eminence",
+        hint: "The palmar cutaneous branch of the median nerve branches off proximal to the carpal tunnel, meaning it is spared in Carpal Tunnel Syndrome but affected higher up in the forearm."
     },
     {
-        module: "Final Exam",
-        question: "Which of the following is NOT one of the three primary mechanisms for removing neurotransmitters from the synaptic cleft?",
-        options: ["Diffusion away from the cleft", "Enzymatic degradation (e.g., Acetylcholinesterase)", "Cellular reuptake by the presynaptic neuron or glia", "Phagocytosis by wandering macrophages"],
-        answer: 3,
-        explanation: "Neurotransmitters are removed via diffusion, enzymatic degradation, and cellular reuptake. Macrophages do not actively phagocytize neurotransmitters at the synapse."
+        category: "Nervous Tissue",
+        question: "During the relative refractory period of an action potential, a neuron can only fire a second action potential if the stimulus is unusually strong. This period corresponds primarily to the status of which ion channels?",
+        options: ["Voltage-gated sodium channels are locked closed", "Voltage-gated potassium channels remain open", "Ligand-gated sodium channels are depleted", "Calcium channels are hyperactive"],
+        answer: "Voltage-gated potassium channels remain open",
+        hint: "The continued efflux of these ions keeps the membrane hyperpolarized, requiring a larger-than-normal depolarizing stimulus to reach threshold."
     },
     {
-        module: "Final Exam",
-        question: "If a peripheral nerve axon is severed, it can undergo Wallerian degeneration and potentially repair itself. What is an absolute requirement for this regeneration to occur?",
-        options: ["The neuron must be located in the Central Nervous System.", "The cell body must remain intact and Schwann cells must form a neurolemma regeneration tube.", "Astrocytes must migrate to the injury site.", "The severed axon must be unmyelinated."],
-        answer: 1,
-        explanation: "In the PNS, if the cell body is intact, Schwann cells can form a regeneration tube (neurolemma) to guide the severed axon as it grows back. CNS axons largely lack this capability."
+        category: "Brain Anatomy",
+        question: "The thin, membrane-like partition that separates the two lateral ventricles in the midline of the brain is the:",
+        options: ["Corpus callosum", "Septum pellucidum", "Falx cerebri", "Tentorium cerebelli"],
+        answer: "Septum pellucidum",
+        hint: "It stretches vertically between the corpus callosum and the fornix."
     },
     {
-        module: "Final Exam",
-        question: "Which type of neural circuit involves an incoming impulse stimulating the first neuron, which stimulates the second, which stimulates the third, while also sending branches back to re-stimulate earlier neurons?",
-        options: ["Diverging circuit", "Converging circuit", "Reverberating circuit", "Parallel after-discharge circuit"],
-        answer: 2,
-        explanation: "A reverberating circuit sends impulses back through the circuit over and over again. This is utilized in rhythmic activities like breathing, waking up, and short-term memory."
+        category: "Spinal Cord & Tracts",
+        question: "The dorsal (posterior) roots of the spinal cord are exclusively composed of which type of nerve fibers?",
+        options: ["Efferent (Motor)", "Afferent (Sensory)", "Sympathetic preganglionic", "Mixed motor and sensory"],
+        answer: "Afferent (Sensory)",
+        hint: "If this root is severed, the client will experience complete anesthesia in the corresponding dermatome, but retain motor function."
     },
     {
-        module: "Final Exam",
-        question: "Which connective tissue sheath covers the entire gross peripheral nerve (e.g., the sciatic nerve)?",
-        options: ["Endoneurium", "Perineurium", "Epineurium", "Myelin sheath"],
-        answer: 2,
-        explanation: "The epineurium is the outermost tough, fibrous connective tissue sheath covering the entire nerve. The perineurium wraps fascicles, and the endoneurium wraps individual axons."
+        category: "Cranial Nerves",
+        question: "Which cranial nerve provides the parasympathetic fibers that control the shape of the lens (accommodation) and pupil constriction?",
+        options: ["CN II (Optic)", "CN III (Oculomotor)", "CN VII (Facial)", "CN IX (Glossopharyngeal)"],
+        answer: "CN III (Oculomotor)",
+        hint: "These preganglionic fibers synapse in the ciliary ganglion."
     },
     {
-        module: "Final Exam",
-        question: "If a massage client has a herniated intervertebral disc compressing a spinal nerve root, in which direction does the nucleus pulposus typically herniate?",
-        options: ["Anteriorly", "Posterolaterally", "Directly inferiorly", "Directly laterally"],
-        answer: 1,
-        explanation: "Discs most frequently herniate posterolaterally because the posterior longitudinal ligament is thinner than the anterior one, directing the protruding nucleus pulposus backward and sideways into the fragile nerve root."
+        category: "Clinical Findings",
+        question: "A client reports pain and numbness in the palm of their hand and the first three digits. If manual assessment reveals hypertonicity in the forearm flexors, what soft tissue structure should you evaluate before applying self-care tool considerations for Carpal Tunnel Syndrome?",
+        options: ["Extensor retinaculum", "Flexor retinaculum (Transverse carpal ligament)", "Palmar aponeurosis", "Bicipital aponeurosis"],
+        answer: "Flexor retinaculum (Transverse carpal ligament)",
+        hint: "This ligament forms the roof of the carpal tunnel and directly compresses the median nerve when inflamed."
     },
     {
-        module: "Final Exam",
-        question: "Striking the 'funny bone' causes tingling and pain. Which nerve, passing behind the medial epicondyle of the humerus, is actually being struck?",
-        options: ["Median nerve", "Radial nerve", "Axillary nerve", "Ulnar nerve"],
-        answer: 3,
-        explanation: "The ulnar nerve passes superficially through the cubital tunnel behind the medial epicondyle. Striking it compresses the nerve against the bone, causing classic 'funny bone' pain."
+        category: "Autonomic Nervous System",
+        question: "Which neurotransmitter is universally released by all preganglionic neurons in both the sympathetic and parasympathetic divisions?",
+        options: ["Norepinephrine", "Epinephrine", "Acetylcholine", "Dopamine"],
+        answer: "Acetylcholine",
+        hint: "This neurotransmitter binds to nicotinic receptors on the postganglionic cell bodies."
     },
     {
-        module: "Final Exam",
-        question: "Which spinal reflex causes you to automatically shift your weight to your opposite leg when you step on a sharp tack?",
-        options: ["Stretch reflex", "Flexor (withdrawal) reflex", "Crossed-extensor reflex", "Tendon reflex"],
-        answer: 2,
-        explanation: "While the flexor reflex pulls the injured foot away, the crossed-extensor reflex simultaneously sends signals across the spinal cord to extend the muscles of the opposite leg to maintain your balance."
+        category: "Special Senses",
+        question: "The gustatory (taste) pathway relies on three cranial nerves to carry information to the brain. Which of the following is NOT one of them?",
+        options: ["CN VII (Facial)", "CN IX (Glossopharyngeal)", "CN X (Vagus)", "CN XII (Hypoglossal)"],
+        answer: "CN XII (Hypoglossal)",
+        hint: "This nerve provides strictly motor control to the tongue, not sensory or taste information."
     },
     {
-        module: "Final Exam",
-        question: "In the context of spinal cord anatomy, what is found in the epidural space?",
-        options: ["Cerebrospinal fluid", "Adipose (fat) tissue and a network of veins", "The cauda equina", "The denticulate ligaments"],
-        answer: 1,
-        explanation: "The epidural space, located between the dura mater and the wall of the vertebral canal, is packed with a protective cushion of adipose tissue and blood vessels."
+        category: "Brain Anatomy",
+        question: "The central sulcus of the cerebral cortex is a key landmark separating which two lobes?",
+        options: ["Frontal and Parietal", "Parietal and Occipital", "Frontal and Temporal", "Temporal and Parietal"],
+        answer: "Frontal and Parietal",
+        hint: "It separates the primary motor cortex (anteriorly) from the primary somatosensory cortex (posteriorly)."
     },
     {
-        module: "Final Exam",
-        question: "Cerebral Palsy (CP) is a group of motor disorders affecting movement and muscle tone. Which of the following is a hallmark characteristic of CP?",
-        options: ["It is a progressive neurodegenerative disease.", "It involves a genetic autoimmune attack on myelin.", "It is a non-progressive permanent disorder resulting from brain damage before, during, or shortly after birth.", "It selectively destroys sensory neurons while leaving motor neurons completely intact."],
-        answer: 2,
-        explanation: "Cerebral Palsy is non-progressive. The initial brain injury (often due to hypoxia or trauma around the time of birth) causes permanent motor deficits, but the brain lesion itself does not worsen over time."
+        category: "Clinical Findings",
+        question: "A client presents with ptosis (drooping eyelid), a laterally deviated and depressed eye, and a persistently dilated pupil. These clinical findings strongly suggest a lesion of the:",
+        options: ["Optic nerve (CN II)", "Oculomotor nerve (CN III)", "Trochlear nerve (CN IV)", "Abducens nerve (CN VI)"],
+        answer: "Oculomotor nerve (CN III)",
+        hint: "Because this nerve supplies four of the extraocular muscles, plus the levator palpebrae superioris and the pupillary sphincter, its loss causes a 'down and out' gaze and an unresponsive pupil."
     },
     {
-        module: "Final Exam",
-        question: "Which ascending spinal tract is primarily responsible for carrying conscious proprioception, fine touch, and vibration up to the brain?",
-        options: ["Lateral spinothalamic tract", "Anterior spinocerebellar tract", "Posterior column-medial lemniscus pathway", "Corticospinal tract"],
-        answer: 2,
-        explanation: "The posterior (dorsal) columns heavily transmit conscious proprioception, fine touch, and vibratory sensations up to the medulla, where they cross over via the medial lemniscus to the thalamus."
+        category: "Spinal Cord & Tracts",
+        question: "Which descending motor tract is primarily responsible for the subconscious regulation of balance, muscle tone, and posture in response to inner ear signals?",
+        options: ["Corticospinal tract", "Vestibulospinal tract", "Tectospinal tract", "Rubrospinal tract"],
+        answer: "Vestibulospinal tract",
+        hint: "These fibers originate from nuclei in the pons and medulla that receive direct input from cranial nerve VIII."
     },
     {
-        module: "Final Exam",
-        question: "Due to the blood-brain barrier (BBB), many substances cannot cross from the blood into the brain tissue. Which of the following CAN freely cross the BBB?",
-        options: ["Large proteins", "Most antibiotics", "Lipid-soluble substances (e.g., oxygen, carbon dioxide, alcohol, anesthetics)", "White blood cells"],
-        answer: 2,
-        explanation: "Lipid-soluble substances can diffuse easily through the plasma membranes of the endothelial cells making up the BBB, which is why substances like alcohol and general anesthetics affect the brain rapidly."
+        category: "Cranial Nerves",
+        question: "The trigeminal ganglion (Gasserian ganglion), which houses the cell bodies of the sensory fibers for the face, is located in the:",
+        options: ["Middle cranial fossa", "Anterior cranial fossa", "Posterior cranial fossa", "Pterygopalatine fossa"],
+        answer: "Middle cranial fossa",
+        hint: "It sits in a small depression on the petrous portion of the temporal bone known as Meckel's cave."
     },
     {
-        module: "Final Exam",
-        question: "Cerebrospinal fluid (CSF) flows from the third ventricle down into the fourth ventricle via which narrow channel?",
-        options: ["Interventricular foramen", "Central canal", "Cerebral aqueduct (Aqueduct of Sylvius)", "Median aperture"],
-        answer: 2,
-        explanation: "The cerebral aqueduct passes through the midbrain, securely connecting the third ventricle (in the diencephalon) to the fourth ventricle (between the brainstem and cerebellum)."
+        category: "Nervous Tissue",
+        question: "In the peripheral nervous system, the outermost layer of a Schwann cell, which contains its cytoplasm and nucleus, is called the:",
+        options: ["Endoneurium", "Perineurium", "Neurilemma", "Axolemma"],
+        answer: "Neurilemma",
+        hint: "This layer is crucial for the regeneration of damaged peripheral nerve fibers."
     },
     {
-        module: "Final Exam",
-        question: "On the posterior aspect of the midbrain are four rounded elevations called the corpora quadrigemina. What is the function of the superior colliculi?",
-        options: ["They act as the primary relay station for all incoming pain signals.", "They serve as reflex centers for certain visual activities, tracking moving objects, and the visual startle reflex.", "They process conscious hearing and auditory memory.", "They release dopamine to the basal ganglia."],
-        answer: 1,
-        explanation: "The two superior colliculi handle visual reflexes (like turning your head when you see something out of the corner of your eye), while the two inferior colliculi handle auditory startle reflexes."
+        category: "Clinical Findings",
+        question: "A client wears a tight wristwatch or handcuffs, leading to localized numbness on the dorsum of their thumb and index finger. This transient nerve entrapment (Wartenberg's Syndrome) affects which structure?",
+        options: ["Deep radial nerve", "Superficial branch of the radial nerve", "Dorsal cutaneous branch of the ulnar nerve", "Median nerve"],
+        answer: "Superficial branch of the radial nerve",
+        hint: "This branch provides purely sensory innervation to the lateral dorsum of the hand."
     },
     {
-        module: "Final Exam",
-        question: "The Pineal Gland, which secretes melatonin to promote sleepiness, is anatomically part of which brain region?",
-        options: ["Thalamus", "Hypothalamus", "Epithalamus", "Midbrain"],
-        answer: 2,
-        explanation: "The epithalamus, a small region superior and posterior to the thalamus, consists of the pineal gland and the habenular nuclei."
+        category: "Autonomic Nervous System",
+        question: "The concept of 'dual innervation' refers to the fact that most visceral organs:",
+        options: ["Have both somatic and autonomic control", "Are supplied by both the left and right sympathetic chains", "Receive input from both the sympathetic and parasympathetic divisions", "Can secrete both neurotransmitters and hormones"],
+        answer: "Receive input from both the sympathetic and parasympathetic divisions",
+        hint: "These two divisions typically exert antagonistic (opposing) effects on the target organ."
     },
     {
-        module: "Final Exam",
-        question: "Where is the primary somatosensory area (the region that precisely pinpoints where somatic sensations like touch and pain originate) located?",
-        options: ["Precentral gyrus of the frontal lobe", "Postcentral gyrus of the parietal lobe", "Occipital lobe", "Temporal lobe"],
-        answer: 1,
-        explanation: "The primary somatosensory area is located directly posterior to the central sulcus on the postcentral gyrus of the parietal lobe."
+        category: "Brain Anatomy",
+        question: "The primary auditory cortex, responsible for the conscious perception of sound, is located in which region?",
+        options: ["Superior temporal gyrus", "Postcentral gyrus", "Cingulate gyrus", "Prefrontal cortex"],
+        answer: "Superior temporal gyrus",
+        hint: "This area is situated in the temporal lobe, just inferior to the lateral sulcus."
     },
     {
-        module: "Final Exam",
-        question: "Which cranial nerve is responsible for controlling the levator palpebrae superioris muscle (which raises the upper eyelid) and four of the six extrinsic eye muscles?",
-        options: ["Optic nerve (II)", "Oculomotor nerve (III)", "Trochlear nerve (IV)", "Abducens nerve (VI)"],
-        answer: 1,
-        explanation: "The Oculomotor nerve (CN III) controls most of the eye's movements, constricts the pupil, and raises the eyelid. Damage can lead to ptosis (drooping eyelid) and strabismus."
+        category: "Special Senses",
+        question: "The fovea centralis, the area of highest visual acuity in the retina, contains:",
+        options: ["Only rods", "Only cones", "An equal mixture of rods and cones", "No photoreceptors"],
+        answer: "Only cones",
+        hint: "This is the structural reason why looking directly at a brightly lit object provides the sharpest, most colorful image."
     },
     {
-        module: "Final Exam",
-        question: "Trigeminal Neuralgia (Tic Douloureux) is a pathology characterized by:",
-        options: ["Flaccid paralysis of the facial expression muscles on one side of the face.", "Extreme, sudden, burning facial pain triggered by light touch or chewing, affecting Cranial Nerve V.", "Progressive loss of vision and hearing.", "Inability to move the tongue during speech."],
-        answer: 1,
-        explanation: "Trigeminal Neuralgia is a severe neuropathic pain condition affecting the Trigeminal nerve (CN V). The pain is often described as the most agonizing pain known to medicine, triggered by mundane actions like brushing teeth."
+        category: "Clinical Findings",
+        question: "While assessing a client with chronic neck pain, you note diminished sensation over the C5 dermatome and weakness in shoulder abduction. A positive Spurling's Test confirms your clinical impression of:",
+        options: ["Cervical radiculopathy", "Thoracic outlet syndrome", "Brachial plexus traction injury", "Spinal cord compression (Myelopathy)"],
+        answer: "Cervical radiculopathy",
+        hint: "Spurling's Test actively compresses the intervertebral foramen, reproducing symptoms of a compressed nerve root."
     },
-    {
-        module: "Final Exam",
-        question: "In patients with epilepsy, a seizure is fundamentally caused by:",
-        options: ["A severe drop in systemic blood pressure.", "An abnormal, synchronous, and excessive electrical discharge of millions of neurons in the brain.", "The rupture of a major cerebral artery.", "An autoimmune attack against myelin."],
-        answer: 1,
-        explanation: "Epileptic seizures are transient bouts of abnormal, excessive brain electrical activity. They can manifest as convulsions, sensory disturbances, or brief losses of consciousness."
-    },
-    {
-        module: "Final Exam",
-        question: "Which two specific microscopic lesions in the brain are the hallmark pathophysiological signs of Alzheimer's disease?",
-        options: ["Demyelinated plaques and destroyed Schwann cells.", "Ischemic necrosis and hemorrhagic pools.", "Beta-amyloid plaques (outside neurons) and neurofibrillary tangles (inside neurons).", "Lewy bodies and massive dopamine depletion."],
-        answer: 2,
-        explanation: "Alzheimer's disease is characterized by the accumulation of toxic beta-amyloid plaques between neurons and twisted tau protein neurofibrillary tangles inside neurons, leading to massive neuronal death."
-    },
-    {
-        module: "Final Exam",
-        question: "In the autonomic nervous system, what happens when Acetylcholine (ACh) binds to Nicotinic receptors?",
-        options: ["It always causes an inhibitory (relaxing) response.", "It causes a slow, prolonged, G-protein coupled response.", "It always causes excitation (depolarization) of the postsynaptic cell.", "It triggers the massive release of adrenaline from the spleen."],
-        answer: 2,
-        explanation: "Nicotinic receptors (found on all autonomic postganglionic cell bodies and at the neuromuscular junction) are ligand-gated ion channels. When ACh binds, they open immediately, always causing a rapid excitatory depolarization."
-    },
-    {
-        module: "Final Exam",
-        question: "During heavy parasympathetic stimulation, what is the combined effect on the heart and the digestive system?",
-        options: ["Heart rate increases; Digestion ceases.", "Heart rate decreases; Digestion is heavily stimulated.", "Both heart rate and digestion are stimulated.", "Both heart rate and digestion are inhibited."],
-        answer: 1,
-        explanation: "The parasympathetic division ('rest-and-digest') lowers the heart rate to conserve energy while aggressively promoting gastrointestinal motility and secretion."
-    },
-    {
-        module: "Final Exam",
-        question: "To quickly elevate blood pressure and widen airways during an emergency, the sympathetic division releases neurotransmitters as well as hormones. Where do these sympathetic hormones come from?",
-        options: ["The anterior pituitary", "The adrenal medulla", "The pineal gland", "The thyroid gland"],
-        answer: 1,
-        explanation: "The adrenal medulla is a modified sympathetic ganglion. Upon sympathetic stimulation, its chromaffin cells dump Epinephrine (80%) and Norepinephrine (20%) directly into the blood to prolong the fight-or-flight response."
-    },
-    {
-        module: "Final Exam",
-        question: "Where are the prevertebral (collateral) ganglia of the sympathetic nervous system typically located?",
-        options: ["Inside the walls of the target organs.", "In a vertical chain directly alongside the spinal cord.", "Anterior to the vertebral column, close to large abdominal arteries (e.g., celiac ganglion).", "Within the cranial vault."],
-        answer: 2,
-        explanation: "Prevertebral ganglia (like the celiac, superior mesenteric, and inferior mesenteric ganglia) lie anterior to the spine and predominantly innervate organs below the diaphragm."
-    },
-    {
-        module: "Final Exam",
-        question: "Complex Regional Pain Syndrome (CRPS) is a severe, chronic pain condition that typically affects an arm or leg after an injury. What is a key pathophysiological feature of CRPS?",
-        options: ["It is caused exclusively by a bacterial infection in the joint.", "It features extreme neuroinflammation and severe autonomic nervous system dysregulation (e.g., abnormal sweating, skin color, and temperature changes).", "It only affects the central nervous system, sparing peripheral nerves.", "It is easily cured with basic NSAIDs."],
-        answer: 1,
-        explanation: "CRPS involves maladaptive neuroplasticity where the sympathetic nervous system becomes wildly dysregulated, causing profound, burning pain, swelling, and trophic skin changes vastly out of proportion to the original injury."
+   {
+        category: "Spinal Cord & Tracts",
+        question: "During a neurological examination, you test the patellar reflex and grade the response as a '2+'. What does this grade indicate?",
+        options: ["Areflexia (no response)", "Hyporeflexia (sluggish response)", "Normal, expected response", "Hyperreflexia (brisk response)"],
+        answer: "Normal, expected response",
+        hint: "The standard reflex grading scale ranges from 0 to 4+."
     },
     {
-        module: "Final Exam",
-        question: "Spina Bifida is a congenital neural tube defect where the vertebral arches fail to close during embryonic development. What maternal dietary deficiency is a massive risk factor for this condition?",
-        options: ["Vitamin C", "Calcium", "Iron", "Folic acid (Vitamin B9)"],
-        answer: 3,
-        explanation: "A deficiency in folic acid during the earliest weeks of pregnancy drastically increases the risk of neural tube defects like spina bifida and anencephaly."
+        category: "Brain Anatomy",
+        question: "The Circle of Willis is an important arterial anastomosis at the base of the brain. Which artery connects the left and right anterior cerebral arteries?",
+        options: ["Posterior communicating artery", "Anterior communicating artery", "Middle cerebral artery", "Basilar artery"],
+        answer: "Anterior communicating artery",
+        hint: "This short vessel acts as a critical bridge between the left and right anterior circulations."
     },
     {
-        module: "Final Exam",
-        question: "Some sensory receptors adapt rapidly to constant stimuli (like not feeling your clothes after you put them on), while others adapt very slowly. Which receptors are inherently slowly adapting (tonic)?",
-        options: ["Pacinian corpuscles (vibration)", "Meissner corpuscles (light touch)", "Nociceptors (pain)", "Hair root plexuses"],
-        answer: 2,
-        explanation: "Nociceptors (pain receptors) and proprioceptors are slowly adapting. This is protective; the body needs continuous awareness of tissue damage and limb position, so these receptors do not 'fade out' easily."
+        category: "Clinical Findings",
+        question: "When evaluating a client's soft palate, you ask them to say 'Ahhh.' You note that the uvula deviates toward the unaffected side. This clinical finding suggests a unilateral lesion of which cranial nerve?",
+        options: ["CN IX (Glossopharyngeal)", "CN X (Vagus)", "CN XI (Accessory)", "CN XII (Hypoglossal)"],
+        answer: "CN X (Vagus)",
+        hint: "The functioning muscles on the healthy side pull the uvula away from the paralyzed side."
     },
     {
-        module: "Final Exam",
-        question: "What is the physiological difference between 'fast pain' and 'slow pain'?",
-        options: ["Fast pain travels on unmyelinated C fibers; Slow pain travels on myelinated A-delta fibers.", "Fast pain is precisely localized and travels on myelinated A-delta fibers; Slow pain is a diffuse, aching, throbbing sensation traveling on unmyelinated C fibers.", "Fast pain only occurs in internal organs; Slow pain only occurs on the skin.", "Fast pain relies on Acetylcholine; Slow pain relies on Dopamine."],
-        answer: 1,
-        explanation: "Fast pain (sharp, prickling) is rapidly conducted via myelinated A-delta fibers and is precisely localized. Slow pain (burning, aching) is conducted via slower, unmyelinated C fibers and tends to be more diffuse."
+        category: "Nervous Tissue",
+        question: "Once acetylcholine (ACh) binds to its receptor at the synaptic cleft, how is its action rapidly terminated to prevent continuous stimulation?",
+        options: ["Reuptake into the presynaptic terminal", "Diffusion away from the synapse", "Degradation by the enzyme acetylcholinesterase (AChE)", "Absorption by surrounding astrocytes"],
+        answer: "Degradation by the enzyme acetylcholinesterase (AChE)",
+        hint: "This enzyme breaks the neurotransmitter down into acetate and choline."
     },
     {
-        module: "Final Exam",
-        question: "If a patient suffers a severe stroke in the right primary motor cortex, what type of paralysis will they exhibit?",
-        options: ["Flaccid paralysis on the left side of the body.", "Spastic paralysis on the left side of the body.", "Spastic paralysis on the right side of the body.", "Flaccid paralysis on both sides of the body."],
-        answer: 1,
-        explanation: "Damage to upper motor neurons (in the cortex) results in spastic paralysis (hypertonia, exaggerated reflexes) on the contralateral (opposite) side of the body due to the decussation of tracts in the medulla."
+        category: "Autonomic Nervous System",
+        question: "The phenomenon of 'referred pain' (e.g., experiencing left arm pain during a myocardial infarction) occurs primarily because:",
+        options: ["Visceral and somatic sensory fibers converge on the same spinothalamic tract neurons", "Sympathetic preganglionic fibers misfire", "Efferent motor pathways are overly stimulated", "Dorsal root ganglia become physically compressed"],
+        answer: "Visceral and somatic sensory fibers converge on the same spinothalamic tract neurons",
+        hint: "The brain interprets the incoming visceral pain signal as originating from the more commonly stimulated somatic dermatome."
     },
     {
-        module: "Final Exam",
-        question: "During Rapid Eye Movement (REM) sleep, which unique physiological phenomenon occurs to prevent us from acting out our dreams?",
-        options: ["Massive sympathetic surges cause rigid muscle locking.", "The brainstem aggressively inhibits somatic motor neurons, causing temporary skeletal muscle atonia (paralysis).", "The cerebellum assumes full control of all voluntary movement.", "The spinal cord completely shuts off sensory input."],
-        answer: 1,
-        explanation: "During REM sleep, alongside high brain activity and dreaming, descending motor pathways are profoundly inhibited, causing temporary skeletal muscle paralysis to protect the sleeper."
+        category: "Special Senses",
+        question: "The crista ampullaris, a sensory organ located within the semicircular canals, is specifically designed to detect:",
+        options: ["Linear acceleration", "Static equilibrium", "Dynamic equilibrium (rotational movement)", "High-frequency auditory tones"],
+        answer: "Dynamic equilibrium (rotational movement)",
+        hint: "The fluid (endolymph) within the canals bends the cupula of this structure when the head rotates."
     },
     {
-        module: "Final Exam",
-        question: "A patient suffers a traumatic brain injury and can clearly remember their childhood, but cannot form any new memories or remember what they ate for breakfast. This condition is called:",
-        options: ["Retrograde amnesia", "Anterograde amnesia", "Synesthesia", "Aphasia"],
-        answer: 1,
-        explanation: "Anterograde amnesia is the inability to form new memories after the neurological injury occurs, often due to severe damage to the hippocampus. Retrograde amnesia is the loss of past memories."
+        category: "Clinical Findings",
+        question: "A client reports severe shooting pain into their right thumb, index, and middle fingers. Before finalizing a clinical impression of Carpal Tunnel Syndrome, you assess the cervical spine and find significant C6 nerve root compression. This scenario, where a nerve is compressed in two separate locations, is known as:",
+        options: ["Double Crush Syndrome", "Tinel's Phenomenon", "Wallerian Degeneration", "Referred Neuropathy"],
+        answer: "Double Crush Syndrome",
+        hint: "A proximal compression makes the distal portion of the nerve more susceptible to injury."
     },
     {
-        module: "Final Exam",
-        question: "Olfactory transduction begins when an odorant binds to an olfactory receptor protein. This binding activates a G-protein. What is the immediate next step?",
-        options: ["Calcium channels slam shut.", "Adenylate cyclase produces cyclic AMP (cAMP), which opens sodium channels to depolarize the cell.", "The cell immediately undergoes mitosis.", "Acetylcholine is released into the nasal cavity."],
-        answer: 1,
-        explanation: "Olfactory receptors use a second-messenger system. The G-protein activates adenylate cyclase to produce cAMP. The cAMP opens a sodium (Na+) channel, causing the depolarizing receptor potential."
+        category: "Spinal Cord & Tracts",
+        question: "For rapid clinical mapping of dermatomes, the sensory innervation around the level of the umbilicus (belly button) is supplied by which nerve root?",
+        options: ["T4", "T7", "T10", "L1"],
+        answer: "T10",
+        hint: "Remember the mnemonic: 'T-10 for the belly ben-ten (button).'"
     },
     {
-        module: "Final Exam",
-        question: "Which of the following is NOT one of the five primary tastes recognized by gustatory receptor cells?",
-        options: ["Umami", "Sour", "Spicy (Pungent)", "Bitter"],
-        answer: 2,
-        explanation: "The five primary tastes are sour, sweet, bitter, salty, and umami (savory/meaty). 'Spicy' is not a taste; it is actually a pain/heat sensation transmitted by the Trigeminal nerve."
+        category: "Brain Anatomy",
+        question: "Which of the following structures acts as the 'filter' that helps create the blood-brain barrier, heavily restricting the passage of substances from the blood into the CNS?",
+        options: ["Ependymal cell cilia", "Astrocyte perivascular feet and endothelial tight junctions", "Microglial phagosomes", "Choroid plexus tight junctions"],
+        answer: "Astrocyte perivascular feet and endothelial tight junctions",
+        hint: "These two components work together to make the brain capillaries the least permeable in the body."
     },
     {
-        module: "Final Exam",
-        question: "In the center of the retina is a small depression called the fovea centralis. Why is this the area of highest visual acuity (sharpest vision)?",
-        options: ["It contains only rods and no cones.", "It is the exact spot where the optic nerve exits the eye.", "It contains a high concentration of cones and lacks overlying blood vessels to scatter the light.", "It is the only part of the retina covered in myelin."],
-        answer: 2,
-        explanation: "The fovea centralis (located within the macula lutea) contains exclusively cones. Furthermore, the bipolar and ganglion cell layers are pushed aside here, allowing light to hit the cones directly for ultra-sharp color vision."
+        category: "Cranial Nerves",
+        question: "Which cranial nerve provides the somatic sensation (touch, pain, temperature) for the anterior two-thirds of the tongue?",
+        options: ["CN V (Trigeminal)", "CN VII (Facial)", "CN IX (Glossopharyngeal)", "CN XII (Hypoglossal)"],
+        answer: "CN V (Trigeminal)",
+        hint: "Specifically, this is handled by the lingual nerve branch of the mandibular division (V3). Taste is handled by a different nerve."
     },
     {
-        module: "Final Exam",
-        question: "A client who has 'Myopia' (nearsightedness) has an eyeball that is physically too long, or a lens that is too thick. Where does the visual image focus?",
-        options: ["Directly on the retina, but inverted.", "In front of the retina.", "Behind the retina.", "On the optic disc (blind spot)."],
-        answer: 1,
-        explanation: "In myopia, because the eyeball is too long relative to the focusing power of the cornea and lens, the image converges and focuses in front of the retina, making distant objects appear blurry."
+        category: "Nervous Tissue",
+        question: "An Inhibitory Postsynaptic Potential (IPSP) typically occurs when a neurotransmitter causes the opening of channels for which ion, leading to hyperpolarization?",
+        options: ["Sodium (Na+)", "Calcium (Ca2+)", "Chloride (Cl-)", "Magnesium (Mg2+)"],
+        answer: "Chloride (Cl-)",
+        hint: "The influx of this negatively charged ion pushes the membrane potential further below the resting state."
     },
     {
-        module: "Final Exam",
-        question: "What is the protective function of the tensor tympani and stapedius muscles in the middle ear?",
-        options: ["They vibrate to generate low-frequency sounds.", "They pump fluid into the cochlea.", "They tightly contract in response to loud noises, restricting the movement of the ossicles to prevent inner ear damage.", "They open the Eustachian tube during yawning."],
-        answer: 2,
-        explanation: "These tiny muscles govern the tympanic reflex. When exposed to dangerously loud sounds, they contract to dampen the vibrations of the malleus and stapes, protecting the fragile hair cells of the cochlea."
+        category: "Clinical Findings",
+        question: "During an assessment, you suspect Guillain-Barré Syndrome (GBS) based on the rapid onset of bilateral ascending weakness. GBS is characterized by the autoimmune destruction of myelin in which system?",
+        options: ["Central Nervous System (Oligodendrocytes)", "Peripheral Nervous System (Schwann cells)", "Central Nervous System (Astrocytes)", "Peripheral Nervous System (Satellite cells)"],
+        answer: "Peripheral Nervous System (Schwann cells)",
+        hint: "This contrasts with Multiple Sclerosis, which targets the CNS."
     },
     {
-        module: "Final Exam",
-        question: "Inside the cochlea, the membranous labyrinth (cochlear duct) is filled with a unique fluid that is extremely high in potassium (K+). What is this fluid called?",
-        options: ["Perilymph", "Endolymph", "Cerebrospinal fluid", "Aqueous humor"],
-        answer: 1,
-        explanation: "Endolymph fills the membranous labyrinth. Its unusually high concentration of K+ is critical for generating auditory signals when the hair cells bend and mechanically open their K+ channels."
+        category: "Autonomic Nervous System",
+        question: "The extensive network of intrinsic neurons situated within the walls of the gastrointestinal tract, often termed the 'brain of the gut', is the:",
+        options: ["Sympathetic chain", "Parasympathetic intramural ganglia", "Enteric nervous system", "Celiac plexus"],
+        answer: "Enteric nervous system",
+        hint: "It can function independently but is heavily modulated by the autonomic nervous system."
     },
     {
-        module: "Final Exam",
-        question: "Meniere's Disease is an inner ear disorder characterized by episodic vertigo, tinnitus, and fluctuating hearing loss. What is the suspected pathophysiological cause?",
-        options: ["A bacterial infection eating the ossicles.", "An autoimmune destruction of the tympanic membrane.", "An overproduction or under-absorption of endolymph, causing increased pressure and swelling within the membranous labyrinth.", "Calcification of the stapes in the oval window."],
-        answer: 2,
-        explanation: "Meniere's disease is linked to endolymphatic hydrops—an abnormal buildup of endolymph fluid in the inner ear that distorts the structures responsible for hearing and balance."
+        category: "Spinal Cord & Tracts",
+        question: "The lateral corticospinal tract primarily controls:",
+        options: ["Voluntary, skilled movements of the distal limbs", "Subconscious regulation of posture", "Voluntary movements of the axial (trunk) musculature", "Pain and temperature sensation"],
+        answer: "Voluntary, skilled movements of the distal limbs",
+        hint: "Because this tract decussates in the medulla, a lesion in the right cerebral cortex affects the left hand."
     },
     {
-        module: "Final Exam",
-        question: "What distinguishes Encephalitis from Meningitis?",
-        options: ["Encephalitis is a viral infection of the brain tissue (parenchyma) itself, while Meningitis is an inflammation of the protective layers (meninges) surrounding the brain and spinal cord.", "Encephalitis is always bacterial; Meningitis is always viral.", "Encephalitis only affects the spinal cord; Meningitis only affects the brain.", "Encephalitis is an autoimmune disorder; Meningitis is a genetic mutation."],
-        answer: 0,
-        explanation: "Meningitis affects the meninges and CSF, often causing a stiff neck and severe headache. Encephalitis is an acute inflammation of the actual brain tissue, frequently causing severe neurological deficits, confusion, and seizures."
+        category: "Special Senses",
+        question: "In the condition of myopia (nearsightedness), where does the focal point of the visual image fall relative to the retina?",
+        options: ["Exactly on the retina", "Posterior to the retina", "Anterior to the retina", "On the optic disc"],
+        answer: "Anterior to the retina",
+        hint: "This typically occurs because the eyeball is too long relative to the focusing power of the lens."
     },
     {
-        module: "Final Exam",
-        question: "In the cerebral cortex, language and logic are typically lateralized to the left hemisphere, while the right hemisphere heavily dominates which functions?",
-        options: ["Math and scientific reasoning.", "Spoken language and grammar.", "Visual-spatial awareness, artistic/musical creativity, and emotional context of language.", "Regulating basic heart rate and breathing."],
-        answer: 2,
-        explanation: "For most people, the right hemisphere is the creative side, dominating in spatial pattern recognition, facial recognition, emotional processing, and artistic awareness."
+        category: "Clinical Findings",
+        question: "When evaluating a client with a history of anterior shoulder dislocations, you note significant atrophy of the deltoid and teres minor. If implementing self-care tool considerations for the surrounding fascial network, you must be cautious of entrapment in which anatomical space?",
+        options: ["Triangular space", "Quadrangular space", "Subcoracoid space", "Cubital fossa"],
+        answer: "Quadrangular space",
+        hint: "The axillary nerve and posterior circumflex humeral artery pass through this exact opening."
     },
     {
-        module: "Final Exam",
-        question: "Huntington's Disease is a fatal genetic disorder characterized by rapid, jerky, involuntary movements called chorea. This is caused by the degeneration of which specific brain region?",
-        options: ["The Cerebellum", "The Basal Ganglia (specifically the corpus striatum)", "The primary motor cortex", "The Occipital lobe"],
-        answer: 1,
-        explanation: "Huntington's involves the destruction of GABA and ACh secreting neurons in the basal ganglia. Without these inhibitory signals, the motor cortex becomes hyperactive, causing the hallmark choreatic movements."
+        category: "Brain Anatomy",
+        question: "The network of neurons running through the core of the brainstem that is responsible for maintaining cerebral cortical alertness and filtering out repetitive sensory stimuli is the:",
+        options: ["Limbic system", "Reticular Activating System (RAS)", "Basal ganglia", "Medullary pyramids"],
+        answer: "Reticular Activating System (RAS)",
+        hint: "A severe lesion to this network results in an irreversible coma."
     },
     {
-        module: "Final Exam",
-        question: "Trace the correct auditory pathway from the inner ear to the brain.",
-        options: ["Vestibulocochlear nerve -> Medulla -> Inferior colliculus -> Thalamus -> Temporal lobe", "Vestibulocochlear nerve -> Pons -> Superior colliculus -> Hypothalamus -> Parietal lobe", "Vestibulocochlear nerve -> Cerebellum -> Midbrain -> Occipital lobe", "Vagus nerve -> Thalamus -> Temporal lobe"],
-        answer: 0,
-        explanation: "Auditory impulses travel via CN VIII to the cochlear nuclei in the medulla, cross over, travel up to the inferior colliculus (midbrain), relay through the medial geniculate nucleus of the thalamus, and end in the primary auditory cortex in the temporal lobe."
+        category: "Cranial Nerves",
+        question: "A client reports unilateral hearing loss and severe vertigo. If these clinical findings are caused by a benign tumor (Acoustic Neuroma) compressing a nerve, which cranial nerve is affected?",
+        options: ["CN V (Trigeminal)", "CN VII (Facial)", "CN VIII (Vestibulocochlear)", "CN IX (Glossopharyngeal)"],
+        answer: "CN VIII (Vestibulocochlear)",
+        hint: "This nerve carries both auditory and balance information from the inner ear."
     },
     {
-        module: "Final Exam",
-        question: "Myofascial Pain Syndrome is characterized by the presence of highly localized, hyper-irritable nodules within tight bands of muscle fascia. What are these specific nodules called?",
-        options: ["Amyloid plaques", "Tender points", "Trigger points", "Fibrotic cysts"],
-        answer: 2,
-        explanation: "Trigger points are the hallmark of myofascial pain syndrome. When pressed, they not only cause severe local pain but often refer pain to a predictable distant area."
+        category: "Nervous Tissue",
+        question: "Multiple Sclerosis (MS) is a progressive neurodegenerative disease characterized by the immune system attacking:",
+        options: ["Acetylcholine receptors at the neuromuscular junction", "Schwann cells in the peripheral nervous system", "Oligodendrocytes in the central nervous system", "Dopaminergic neurons in the substantia nigra"],
+        answer: "Oligodendrocytes in the central nervous system",
+        hint: "This results in the slowing or complete block of action potential propagation in the brain and spinal cord."
     },
     {
-        module: "Final Exam",
-        question: "Attention Deficit Hyperactivity Disorder (ADHD) involves complex neurodevelopmental delays. Which neurotransmitters are primarily dysregulated in the prefrontal cortex of patients with ADHD?",
-        options: ["Acetylcholine and Glutamate", "Dopamine and Norepinephrine", "Serotonin and Endorphins", "GABA and Substance P"],
-        answer: 1,
-        explanation: "ADHD pathophysiology heavily involves the under-activity or rapid reuptake of Dopamine and Norepinephrine in the frontal lobe, impairing executive function, focus, and impulse control."
+        category: "Clinical Findings",
+        question: "A client presents with an inability to extend their great toe (Hallux). To isolate the myotome responsible for this action (Extensor Hallucis Longus), you are primarily evaluating which spinal nerve root?",
+        options: ["L3", "L4", "L5", "S1"],
+        answer: "L5",
+        hint: "This is a classic neurological screening test for lumbar radiculopathy originating from the L4-L5 disc space."
     },
     {
-        module: "Final Exam",
-        question: "What is a primary distinction between a Migraine headache and a Tension-type headache?",
-        options: ["Tension headaches cause a visual aura; Migraines do not.", "Migraines are often unilateral, throbbing, worsened by activity, and accompanied by nausea/photophobia. Tension headaches are usually bilateral, non-throbbing, and feel like a tight band around the head.", "Migraines are caused by muscular trigger points; Tension headaches are caused by cerebral hemorrhage.", "Migraines only last 15 minutes; Tension headaches last for months."],
-        answer: 1,
-        explanation: "Migraines are severe neurovascular events characterized by intense, throbbing, often unilateral pain with systemic symptoms (nausea, light sensitivity). Tension headaches are musculo-skeletal, presenting as a dull, bilateral 'squeezing' pain without systemic symptoms."
+        category: "Autonomic Nervous System",
+        question: "During a severe stress response, the sympathetic nervous system triggers the release of renin from the kidneys. What is the primary systemic effect of this release?",
+        options: ["Decreased heart rate", "Increased blood pressure", "Bronchoconstriction", "Increased urine output"],
+        answer: "Increased blood pressure",
+        hint: "Renin initiates a cascade that ultimately leads to vasoconstriction and sodium/water retention."
     },
     {
-        module: "Final Exam",
-        question: "Which neuroglial cell type forms the myelin sheath in the Peripheral Nervous System and assists deeply in axon regeneration?",
-        options: ["Oligodendrocytes", "Astrocytes", "Schwann cells", "Ependymal cells"],
-        answer: 2,
-        explanation: "Schwann cells myelinate PNS axons and form the neurolemma, which guides nerve repair. Oligodendrocytes myelinate CNS axons but do not aid in repair."
+        category: "Spinal Cord & Tracts",
+        question: "For rapid clinical mapping of dermatomes, the sensory innervation around the level of the nipples is supplied by which nerve root?",
+        options: ["C8", "T4", "T7", "T10"],
+        answer: "T4",
+        hint: "Remember the clinical mnemonic: 'T-4 at the pore (nipple).'"
     },
     {
-        module: "Final Exam",
-        question: "A polysynaptic reflex arc involves at least three neurons. Which neuron is entirely confined within the Central Nervous System, analyzing the sensory input and directing the motor output?",
-        options: ["The afferent neuron", "The interneuron (association neuron)", "The efferent neuron", "The preganglionic neuron"],
-        answer: 1,
-        explanation: "Interneurons are located entirely within the CNS (brain and spinal cord). They integrate incoming sensory information and elicit the appropriate motor response."
+        category: "Brain Anatomy",
+        question: "Lesions of the cerebellum typically produce motor deficits on which side of the body relative to the lesion?",
+        options: ["Contralateral side", "Ipsilateral side", "Bilateral", "No motor deficits are produced"],
+        answer: "Ipsilateral side",
+        hint: "Unlike the cerebral cortex, cerebellar pathways either do not cross, or they cross twice, returning to the same side."
     },
     {
-        module: "Final Exam",
-        question: "In the physiology of cerebrospinal fluid, why is the arachnoid villi's reabsorption rate critical?",
-        options: ["It must filter out glucose from the brain.", "It must exactly match the production rate by the choroid plexus (approx. 20 mL/hr) to maintain a constant, safe intracranial pressure.", "It must pump CSF backward into the ventricles during sleep.", "It destroys old red blood cells."],
-        answer: 1,
-        explanation: "CSF is produced continuously. If the arachnoid villi cannot reabsorb it back into the venous sinuses at the exact same rate (due to a blockage or tumor), fluid builds up, causing hydrocephalus and massive brain damage."
+        category: "Cranial Nerves",
+        question: "Which cranial nerve provides the parasympathetic stimulation to the submandibular and sublingual salivary glands?",
+        options: ["CN V (Trigeminal)", "CN VII (Facial)", "CN IX (Glossopharyngeal)", "CN X (Vagus)"],
+        answer: "CN VII (Facial)",
+        hint: "The chorda tympani branch travels with the lingual nerve to reach these glands."
     },
     {
-        module: "Final Exam",
-        question: "Damage to the Wernicke's area (usually in the left temporal/parietal lobe) results in which type of aphasia?",
-        options: ["Non-fluent aphasia: inability to articulate or form words, though understanding is intact.", "Fluent aphasia: ability to speak clearly, but the words make no sense ('word salad') and the patient cannot comprehend spoken language.", "Global aphasia: complete paralysis of the tongue.", "Visual aphasia: inability to recognize written letters."],
-        answer: 1,
-        explanation: "Wernicke's area is responsible for language comprehension. Damage leads to fluent (receptive) aphasia, where patients can physically speak fluidly, but cannot understand language or form logical sentences."
+        category: "Clinical Findings",
+        question: "A client presents with weakness in shoulder elevation (shrugging). Upon examination, you note the affected shoulder sits visibly lower than the unaffected side. This clinical finding most strongly suggests a lesion of which nerve?",
+        options: ["Dorsal scapular nerve", "Suprascapular nerve", "Long thoracic nerve", "Spinal accessory nerve (CN XI)"],
+        answer: "Spinal accessory nerve (CN XI)",
+        hint: "This nerve innervates the upper trapezius, which is the primary elevator of the scapula."
     }
+];
